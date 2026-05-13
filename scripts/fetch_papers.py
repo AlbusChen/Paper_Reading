@@ -22,7 +22,7 @@ PRIMARY_KEYWORDS = [
     "communication efficiency", "multi-agent efficiency",
     "cooperative agent", "agent collaboration",
     "decentralized", "swarm intelligence",
-    "message passing", "agent interaction",
+    "message passing between agents", "inter-agent communication",
 ]
 
 SECONDARY_KEYWORDS = [
