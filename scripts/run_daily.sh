@@ -4,6 +4,7 @@
 
 set -euo pipefail
 
+CLAUDE=/raid/longhorn/huangchen/anaconda3/bin/claude
 REPO_DIR="/raid/longhorn/huangchen/Paper_Reading"
 LOG_DIR="${REPO_DIR}/papers/logs"
 DATE=$(date -d "yesterday" +%Y-%m-%d)
@@ -13,8 +14,7 @@ mkdir -p "${LOG_DIR}"
 
 echo "[$(date)] Starting daily paper collection for ${DATE}" | tee "${LOGFILE}"
 
-# Run claude with the daily prompt
 cd "${REPO_DIR}"
-claude --dangerouslySkipPermissions -p "$(cat scripts/daily_prompt.md)" >> "${LOGFILE}" 2>&1
+"${CLAUDE}" --dangerouslySkipPermissions -p "$(cat scripts/daily_prompt.md)" >> "${LOGFILE}" 2>&1
 
 echo "[$(date)] Done." | tee -a "${LOGFILE}"
