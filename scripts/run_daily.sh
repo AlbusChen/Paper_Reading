@@ -15,6 +15,6 @@ mkdir -p "${LOG_DIR}"
 echo "[$(date)] Starting daily paper collection for ${DATE}" | tee "${LOGFILE}"
 
 cd "${REPO_DIR}"
-"${CLAUDE}" --dangerouslySkipPermissions -p "$(cat scripts/daily_prompt.md)" >> "${LOGFILE}" 2>&1
+"${CLAUDE}" --dangerously-skip-permissions -p "$(cat scripts/daily_prompt.md)" >> "${LOGFILE}" 2>&1
 
 echo "[$(date)] Done." | tee -a "${LOGFILE}"
