@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-06-03</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年06月03日</h1>
+  <p>Daily Paper Digest · June 03, 2026</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="2026-06-02.html">← 06-02</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="2026-06-04.html">06-04 →</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>34</span> 篇</div>
+  <div class="stat">高度相关 <span>2</span> 篇</div>
+  <div class="stat">相关 <span>7</span> 篇</div>
+  <div class="stat">技术报告 <span>3</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-06-03 17:31 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01717" target="_blank">Decentralized Instruction Tuning: Conflict-Aware Splitting and Weight Merging</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Minsik Choi, Geewook Kim · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">decentralized</span><span class="tag tag-kw">weight merging</span><span class="tag tag-kw">communication-free</span></div>
+  <div class="summary-en">This work tackles the scalability of instruction tuning by training model components independently and reconciling them in parameter space, avoiding inter-partition communication. Grounded in a local quadratic analysis, it shows weight merging yields curvature-weighted variance reduction and that conflict-based data splitting concentrates gains along high-curvature directions; the resulting MERIT pipeline partitions data along principal gradient-conflict axes, fine-tunes partitions without communication, and applies a single-step token-weighted average. On Qwen2.5-VL-3B across 136 Vision-FLAN tasks it improves the average from 54.3 to 57.0 while matching centralized training at minimal overhead.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对指令微调的可扩展性，提出让各模型分量独立训练、再在参数空间合并，从而避免分区间通信。基于局部二次分析，作者证明权重合并可实现“曲率加权的方差缩减”，而基于冲突的数据切分能沿高曲率方向集中收益；据此提出的 MERIT 流程沿主要梯度冲突轴划分数据、无通信地微调各分区，并做一步式 token 加权平均。在 Qwen2.5-VL-3B 的 136 个 Vision-FLAN 任务上，平均分从 54.3 提升至 57.0，以极小开销达到集中式训练的效果。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01717" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01717" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01770" target="_blank">Adaptive Auto-Harness: Sustained Self-Improvement for Agentic System Deployment on Open-Ended Task Streams</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Zewen Liu, Zhan Shi, Yisi Sang, Bing He et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agentic</span><span class="tag tag-kw">self-improvement</span></div>
+  <div class="summary-en">Existing auto-harness systems that optimize LLM agents (e.g., A-Evolve, GEPA) assume static benchmarks, but real deployments face unbounded growing histories, heterogeneous tasks, and shifting distributions. This paper decomposes the performance gap into evolution and adaptation losses and introduces a framework with a stateful multi-agent evolver, a harness tree with routing logic, and human-steering for weak historical signals. On prediction-market, security-competition, and event-forecasting task streams it outperforms five baselines, with gains attributed to better construction, routing, or targeted human guidance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">现有自动化框架（如 A-Evolve、GEPA）在优化 LLM 智能体时假设基准是静态的，但真实部署面临历史无限增长、任务异构与分布漂移等挑战。本文将性能差距分解为演化损失与适应损失，提出包含有状态多智能体演化器、带路由逻辑的“框架树”以及人类引导机制的系统。在预测市场、安全竞赛与事件预测三类开放任务流上，该方法超越五个基线，增益来自更优的构建、路由或定向人工指导。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01770" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01770" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">🏢 技术报告 / Tech Reports</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03159" target="_blank">NVIDIA OmniDreams: Real-Time Generative World Model for Closed-Loop Autonomous Vehicle Simulation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Aarti Basant, Amlan Kar, Despoina Paschalidou, et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-tr">Tech Report</span><span class="tag tag-kw">world model</span><span class="tag tag-kw">NVIDIA</span><span class="tag tag-kw">real-time</span></div>
+  <div class="summary-en">NVIDIA presents OmniDreams, a real-time generative world model for closed-loop autonomous-vehicle simulation, mid- and post-trained from the Cosmos diffusion model to autoregressively generate action-conditioned video. It synthesizes hard-to-simulate phenomena such as extreme weather and unpredictable agent behavior, conditioning photorealistic sensor generation on past frames, current simulator state, and immediate driving actions. Integrated with the Alpamayo policy, a world-action variant surpasses the VLA-based Alpamayo 1.5 research policy while using only 1/5 of the parameters.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">NVIDIA 提出 OmniDreams，一种用于闭环自动驾驶仿真的实时生成式世界模型，基于 Cosmos 扩散模型进行中期与后期训练，以自回归方式生成动作条件视频。它能合成传统模拟器难以捕捉的极端天气、不可预测的动态体行为等现象，并以历史帧、当前仿真状态与即时驾驶动作为条件生成逼真传感器数据。与 Alpamayo 策略集成后，其“世界-动作”变体在仅用 1/5 参数的情况下超越了基于 VLA 的 Alpamayo 1.5 研究策略。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03159" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03159" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03264" target="_blank">PaddleOCR-VL-1.6: Expanding the Frontier of Document Parsing with Under-Optimized Region Refinement and Progressive Post-Training</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Zelun Zhang, Hongen Liu, Suyin Liang, Yubo Zhang et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-tr">Tech Report</span><span class="tag tag-kw">document parsing</span><span class="tag tag-kw">OCR</span><span class="tag tag-kw">post-training</span></div>
+  <div class="summary-en">PaddleOCR-VL-1.6 advances document parsing not by simply scaling data but via a region-aware data-optimization framework that locates weak regions of the prior model, applies targeted enhancement, and improves supervision reliability. It adds a progressive post-training recipe combining curated data selection with reinforcement learning for staged optimization. The model reaches 96.33% on OmniDocBench v1.6 and is competitive with leading vision-language models.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PaddleOCR-VL-1.6 推进文档解析，并非简单扩充数据，而是采用区域感知的数据优化框架：定位上一代模型的薄弱区域、做针对性增强并提升监督信号可靠性。其进一步引入渐进式后训练方案，结合精选数据与强化学习进行分阶段优化。该模型在 OmniDocBench v1.6 上达到 96.33%，与领先视觉语言模型相比具有竞争力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03264" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03264" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03748" target="_blank">Ultralytics YOLO26: Unified Real-Time End-to-End Vision Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Glenn Jocher, Jing Qiu, Mengyu Liu, Shuai Lyu et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-tr">Tech Report</span><span class="tag tag-kw">real-time detection</span><span class="tag tag-kw">YOLO</span><span class="tag tag-kw">end-to-end</span></div>
+  <div class="summary-en">Ultralytics YOLO26 is a real-time, end-to-end vision model family with a dual-head design enabling NMS-free inference and removing Distribution Focal Loss for lighter heads, plus an LLM-derived MuSGD optimizer, progressive loss, and STAL label assignment for small objects. It spans five scales (n/s/m/l/x) reaching 40.9-57.5 mAP on COCO at 1.7-11.8 ms T4 TensorRT latency, with a YOLOE-26 variant for open-vocabulary inference. The authors report an improved accuracy-latency frontier over prior real-time detectors.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Ultralytics YOLO26 是一类实时端到端视觉模型，采用双头设计实现免 NMS 推理并去除分布焦点损失以减轻检测头，同时引入源自 LLM 训练的 MuSGD 优化器、渐进式损失与面向小目标的 STAL 标签分配。模型涵盖五个规模（n/s/m/l/x），在 COCO 上达到 40.9-57.5 mAP，T4 TensorRT 延迟 1.7-11.8 ms，并提供支持开放词表推理的 YOLOE-26 变体。作者称其在精度-延迟前沿上优于先前的实时检测器。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03748" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03748" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.00138" target="_blank">A Multi-AI-agent Framework Enabling End-to-end Finite Element Analysis for Solid Mechanics Problems</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Titu Ranjan Sarker, Muhammed Jawaad Zulqernine, Ling Yue, Shaowu Pan et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent framework</span><span class="tag tag-kw">FEA</span></div>
+  <div class="summary-en">AbaqusAgent is a multi-agent framework that turns natural-language instructions into executable finite-element simulations for solid mechanics, coordinating six specialized agents across pre- and post-processing. It targets the steep learning curve of FEA software and the risk of incorrect setups by automating interaction with Abaqus through LLMs. Across fifty solid-mechanics cases it reaches an 86% overall success rate, illustrating how agent teams can lower the barrier to computational mechanics.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AbaqusAgent 是一个多智能体框架，可将自然语言指令转化为可执行的固体力学有限元仿真，由六个专职智能体协同完成前处理与后处理。它通过 LLM 自动化与 Abaqus 软件的交互，缓解 FEA 软件学习曲线陡峭与建模易出错的问题。在五十个固体力学算例上整体成功率达 86%，展示了智能体团队如何降低计算力学的使用门槛。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.00138" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.00138" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01249" target="_blank">Trust Region On-Policy Distillation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xingrun Xing, Haoqing Wang, Boyan Gao, Ziheng Li et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">distillation</span><span class="tag tag-kw">on-policy</span><span class="tag tag-kw">post-training</span></div>
+  <div class="summary-en">TrOPD stabilizes on-policy distillation for LLM post-training, addressing the unreliable policy gradients that arise when teacher and student distributions diverge on student-generated tokens. It combines trust-region on-policy learning that restricts supervision to reliable teacher regions, outlier estimation via gradient clipping/masking and forward-KL, and off-policy guidance where the student imitates teacher prefixes under forward KL. It consistently improves over OPD, EOPD, and REOPOLD across math reasoning, code generation, and general-domain benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">TrOPD 旨在稳定大模型后训练中的在线策略蒸馏，解决当师生分布在学生生成 token 上发生偏移时策略梯度不可靠的问题。它结合三部分：将监督限制在教师可靠区域的信赖域在线策略学习；通过梯度裁剪/掩码与前向 KL 的离群估计；以及让学生在前向 KL 下模仿教师前缀的离线策略引导。在数学推理、代码生成与通用领域基准上，它一致优于 OPD、EOPD 与 REOPOLD。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01249" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01249" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03458" target="_blank">KVarN: Variance-Normalized KV-Cache Quantization Mitigates Error Accumulation in Reasoning Tasks</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Lorenz K. Muller, Philippe Bich, Chiara Boretti, Hyun-Min Chang et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">KV-cache</span><span class="tag tag-kw">quantization</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">KVarN is a calibration-free KV-cache quantization method that curbs the error accumulation which plagues long-horizon decoding, where quantization errors compound over timesteps driven by incorrect token scales. It applies a Hadamard rotation followed by dual-scaling variance normalization across both axes of the K and V matrices to fix outlier token-scale errors. At 2-bit precision it achieves state-of-the-art results on reasoning benchmarks including MATH500, AIME24, and HumanEval.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">KVarN 是一种免校准的 KV 缓存量化方法，用于抑制长程解码中的误差累积——量化误差会随时间步因错误的 token 尺度而不断放大。该方法先做 Hadamard 旋转，再在 K、V 矩阵的两个维度上施加双重缩放的方差归一化，以修正离群 token 的尺度误差。在 2-bit 精度下，它在 MATH500、AIME24、HumanEval 等推理基准上取得了 SOTA 表现。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03458" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03458" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01961" target="_blank">AutoMedBench: Towards Medical AutoResearch with Agentic AI Models</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Junqi Liu, Salena Song, Yuhan Wang, Jiawei Mao et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">agentic</span><span class="tag tag-kw">benchmark</span><span class="tag tag-kw">long-horizon</span></div>
+  <div class="summary-en">AutoMedBench is a workflow-aware benchmark for autonomous medical-AI research agents, structuring execution into five stages (Plan, Setup, Validate, Inference, Submit) over long-horizon tasks averaging 33 turns across five domains. Analysis finds Validate is the weakest stage and Setup the strongest -- agents build executable pipelines but struggle to verify reliability -- while verification and submission failures dominate errors (37.7% and 38.1%) and task-understanding errors are minimal (0.9%). Runs containing errors show substantially degraded performance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AutoMedBench 是面向自主医学研究智能体的“工作流感知”基准，将执行划分为 Plan、Setup、Validate、Inference、Submit 五个阶段，覆盖平均 33 轮的长程任务与五个研究领域。分析显示 Validate 最薄弱、Setup 最强——智能体擅长搭建可执行流水线，却难以验证可靠性；验证与提交类失败主导了错误（分别占 37.7% 与 38.1%），而任务理解错误极少（0.9%）。包含错误的运行性能显著下降。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01961" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01961" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03979" target="_blank">Language Models Need Sleep: Learning to Self-Modify and Consolidate Memories</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ali Behrouz, Farnoosh Hashemi, Vahab Mirrokni · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">memory</span><span class="tag tag-kw">continual learning</span><span class="tag tag-kw">consolidation</span></div>
+  <div class="summary-en">This work proposes a "Sleep" paradigm to let LLMs consolidate temporal in-context knowledge into long-term parameters. It has two stages: Memory Consolidation via "Knowledge Seeding" that distills memories from a smaller model into a larger one (combining on-policy distillation with RL-based imitation), and Dreaming, an unsupervised self-improvement phase where the model uses RL to generate synthetic rehearsal data. Experiments on long-horizon tasks, continual learning, knowledge incorporation, and few-shot generalization show the value of the sleep stage.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出“睡眠（Sleep）”范式，让大模型把临时的上下文内知识固化到长期参数中。其包含两个阶段：通过“知识播种”进行记忆巩固，将小模型的记忆蒸馏进大模型（结合在线策略蒸馏与基于 RL 的模仿学习）；以及“做梦”，一个无监督自我提升阶段，模型用 RL 生成合成复习数据以排练与精炼。在长程任务、持续学习、知识注入与少样本泛化上的实验验证了睡眠阶段的重要性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03979" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03979" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03102" target="_blank">Small RL Controller, Large Language Model: RL-Guided Adaptive Sampling for Test-Time Scaling</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Runpeng Dai, Tong Zheng, Rui Liu, Chengsong Huang et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">adaptive sampling</span><span class="tag tag-kw">test-time scaling</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">This paper formulates adaptive sampling for test-time scaling as an MDP and trains a lightweight RL controller that, each round, decides whether to keep sampling or stop -- balancing answer correctness, latency, and compute. Using only answer statistics, the controller is cheap enough to run on CPU and corresponds to the Lagrangian relaxation of a budget-constrained optimization. It outperforms baselines such as ASC and ESC on the trade-off among accuracy, sampling rounds, and total samples.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将测试时扩展中的自适应采样建模为马尔可夫决策过程，训练一个轻量级强化学习控制器，在每一轮决定继续采样还是停止，以权衡答案正确率、延迟与计算成本。该控制器仅依赖答案统计量，轻量到可在 CPU 上运行，并对应于带预算约束优化的拉格朗日松弛。在正确率、采样轮数与总样本量的权衡上，它优于 ASC、ESC 等基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03102" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03102" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03928" target="_blank">Value-Aware Stochastic KV Cache Eviction for Reasoning Models</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ting-Yun Chang, Harvey Yiyun Fu, Deqing Fu, Chenghao Yang et al. · 2026-06-03</div>
+  <div class="tags"><span class="tag tag-kw">KV-cache</span><span class="tag tag-kw">eviction</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">VaSE is a training-free KV-cache eviction method for reasoning models built on two observations: a few value states have unusually large magnitudes whose removal triggers repetitive loops, and injecting randomness into eviction improves performance via cache diversity. It therefore protects large-magnitude value states while making diverse eviction decisions, achieving higher average accuracy than the SOTA selection method at the same sparsity with 4x compression. It keeps memory static for reasoning and remains compatible with FlashAttention2.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">VaSE 是一种面向推理模型的免训练 KV 缓存驱逐方法，基于两点观察：少数 value 状态幅值异常大，删除它们会引发重复循环；在驱逐中引入随机性可通过缓存多样性提升性能。为此它保护大幅值的 value 状态，同时做出多样化的驱逐决策，在相同稀疏度、4× 压缩下取得高于 SOTA 选择方法的平均精度。该方法使推理时显存保持恒定，并兼容 FlashAttention2。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03928" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03928" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.00683" target="_blank">OCC-RAG: Optimal Cognitive Core for Faithful Question Answering</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.00683" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.00683" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23895" target="_blank">From Activation to Causality: Discovery of Causal Visual Representations in the Human Brain</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23895" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23895" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03985" target="_blank">Humanoid-GPT: Scaling Data and Structure for Zero-Shot Motion Tracking</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03985" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03985" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02398" target="_blank">A Local Perturbation Theory for Cross-Domain Interference and Recovery in Multi-Domain RL</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02398" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02398" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03603" target="_blank">World Models Meet Language Models: On the Complementarity of Concrete and Abstract Reasoning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03603" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03603" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30288" target="_blank">MIRA: Mid-training Rubric Anchoring for Source-Aware Data Selection</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30288" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30288" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01599" target="_blank">TRON: Targeted Rule-Verifiable Online Environments for Visual Reasoning RL</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01599" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01599" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01048" target="_blank">Decoupled Residual Denoising Diffusion Models for Unified and Data Efficient Image-to-Image Translation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01048" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01048" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02754" target="_blank">Ψ-Bench: Evaluating Persona-Sensitive Influencing in Persuasive Dialogues</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02754" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02754" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01788" target="_blank">PlatonicNav: Unveiling Semantic Correspondence in Navigation with Platonic Topological Maps</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01788" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01788" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29288" target="_blank">Diagnosing Harmful Continuation in Answer-Correct Long-CoT Training Traces</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29288" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29288" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27346" target="_blank">MERIT: Learning Disentangled Music Representations for Audio Similarity</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27346" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27346" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03920" target="_blank">Benchmarking Visual State Tracking in Multimodal Video Understanding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03920" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03920" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03911" target="_blank">Bootstrap Your Generator: Unpaired Visual Editing with Flow Matching</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03911" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03911" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01494" target="_blank">ClawHub Security Signals: When VirusTotal, Static Analysis, and SkillSpector Disagree</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01494" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01494" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30039" target="_blank">Domain-Specific Data Synthesis for LLMs via Minimal Sufficient Representation Learning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30039" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30039" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02775" target="_blank">AURA: Action-Gated Memory for Robot Policies at Constant VRAM</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02775" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02775" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.00386" target="_blank">αDepth: Learning Single-Pass Soft Boundary Decomposition for Stereo Conversion</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.00386" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.00386" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30581" target="_blank">Prior Availability in Industrial Visual Sim-to-Real: A Review of CAD-Guided and CAD-Unavailable Regimes</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30581" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30581" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.03287" target="_blank">BA-T: An Iterative Transformer for Two-View Bundle Adjustment</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-03</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.03287" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.03287" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 2 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
