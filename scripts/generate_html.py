@@ -7,7 +7,7 @@ Creates a daily page and updates monthly/main index.
 import argparse
 import json
 import os
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 PAPERS_DIR = Path(__file__).parent.parent / "papers"
@@ -117,14 +117,28 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     tech_reports = [p for p in papers if p["relevance"].get("is_tech_report")]
     fetched_at = data.get("fetched_at", "")
 
+    prev_dt = dt - timedelta(days=1)
+    next_dt = dt + timedelta(days=1)
+
+    def day_href(d):
+        m = d.strftime("%Y-%m")
+        return f"{d.strftime('%Y-%m-%d')}.html" if m == date_str[:7] else f"../{m}/{d.strftime('%Y-%m-%d')}.html"
+
+    prev_href = day_href(prev_dt)
+    next_href = day_href(next_dt)
+    prev_label = prev_dt.strftime("%m-%d")
+    next_label = next_dt.strftime("%m-%d")
+
     html = HTML_HEAD.format(title=f"论文日报 {date_str}")
     html += f"""
 <header>
   <h1>📄 论文日报 · {date_display}</h1>
   <p>Daily Paper Digest · {date_en}</p>
-  <nav style="margin-top:10px">
-    <a href="../index.html">← 主页</a>
-    <a href="index.html">← 本月</a>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="{prev_href}">← {prev_label}</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="{next_href}">{next_label} →</a>
   </nav>
 </header>
 
