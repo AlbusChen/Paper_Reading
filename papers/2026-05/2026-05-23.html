@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-23</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月23日</h1>
+  <p>Daily Paper Digest · May 23, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>49</span> 篇</div>
+  <div class="stat">高度相关 <span>4</span> 篇</div>
+  <div class="stat">相关 <span>10</span> 篇</div>
+  <div class="stat">技术报告 <span>1</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-23 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13734" target="_blank">KVServe: Service-Aware KV Cache Compression for Communication-Efficient Disaggregated LLM Serving</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Zedong Liu, Xinyang Ma, Dejun Luo, Hairui Zhao et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.DC</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.NI</span></div>
+  <div class="summary-en">KVServe is a service-aware, adaptive KV cache compression framework for disaggregated LLM serving, where KV state must cross network and storage boundaries and becomes the end-to-end bottleneck. It unifies KV compression into a modular strategy space, uses a Bayesian Profiling Engine to distill a 3D Pareto candidate set (50× less offline search), and combines an analytical latency model with a bandit for online selection — yielding up to 9.13× JCT speedup in PD-separated serving and 32.8× TTFT reduction in KV-disaggregated serving.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">在解耦式 LLM 推理服务（PD 分离 / KV 状态分离）中，KV 状态成为跨网络与存储的显式负载，是端到端瓶颈，而静态压缩配置在变化的负载与带宽下并不稳健。KVServe 首次提出服务感知、可自适应的 KV 通信压缩框架：统一压缩策略空间、用贝叶斯剖析引擎搜索并蒸馏 3D Pareto 候选（离线开销降低 50×），并结合解析延迟模型与轻量 bandit 做在线选择，在解耦服务下取得最高 9.13× JCT 加速与 32.8× TTFT 降低。对「多智能体/多服务通信效率」是直接相关工作。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13734" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13734" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22138" target="_blank">Efficient Agentic Reasoning Through Self-Regulated Simulative Planning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Mingkai Deng, Jinyu Hou, Lara Sá Neves, Varad Pimpalkhute et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Decomposes agent decision-making into three systems: simulative reasoning (planning via an LLM world model), self-regulation (learned configurator deciding when/how deeply to plan), and reactive execution. The resulting SR²AM (v1.0-30B) matches 685B–1T-parameter agentic LLMs on math, science, tabular, and web search tasks while using 25.8–95.3% fewer reasoning tokens; RL teaches it to plan further ahead rather than more often.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对当前智能体「无差别地长链推理」造成的 token 浪费问题，提出将决策分解为三层系统：基于 LLM 世界模型的模拟推理（System II）、决定何时与如何规划的自我调控（System III）以及反应式执行（System I）。所实现的 SR²AM（v1.0-30B）在数学、科学、表格分析和网页检索任务上 Pass@1 可比肩 685B–1T 量级的智能体大模型，但推理 token 减少 25.8%–95.3%；强化学习显著提升了规划「深度」而非「频次」，对多智能体效率研究具有重要启发。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22138" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22138" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22177" target="_blank">Maestro: Reinforcement Learning to Orchestrate Hierarchical Model-Skill Ensembles</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Jinyang Wu, Guocheng Zhai, Ruihan Jin, Yuhao Shen et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Maestro reframes multimodal agent tasks as sequential orchestration over a hierarchical registry of frozen expert models and skills, training a lightweight (4B) policy with outcome-based RL — no step-level supervision. Achieves 70.1% average across ten multimodal benchmarks, surpassing GPT-5 (69.3%) and Gemini-2.5-Pro (68.7%), and the learned policy generalises to unseen out-of-domain experts without retraining.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Maestro 将异质多模态任务建模为对「冻结的专家模型 + 两层技能库」的顺序编排问题，用基于最终结果的强化学习训练一个仅 4B 的轻量策略，无需步骤级监督，便能动态决定何时调用哪一专家–技能组合并适时终止。在 10 个多模态基准上取得 70.1% 的平均准确率，超越 GPT-5 与 Gemini-2.5-Pro；且学习到的协作策略能在不重训的情况下泛化到新加入的领域外专家，对多智能体协同与编排研究具有直接借鉴价值。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22177" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22177" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22144" target="_blank">One Sentence, One Drama: Personalized Short-Form Drama Generation via Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yufei Shi, Weilong Yan, Naixuan Huang, Yucheng Chen et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Proposes a hierarchical multi-agent framework that turns a single-sentence idea into a fully produced short drama. Combines a debate-based story-generation module, 3D-grounded first-frame anchoring for cross-clip spatial consistency, and multi-stage reviewer loops over script/visual/video stages. Significantly outperforms one-shot LLM pipelines on the new Short-Drama-Bench in narrative quality and cross-clip consistency.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出一个分层多智能体框架，将用户的单句创意转化为成片短剧。系统包含：基于多智能体辩论的剧本生成模块以保证短剧节奏，3D 锚定的首帧机制以维持场景与角色跨片段的空间一致性，以及覆盖剧本/画面/视频三阶段的多轮审校循环。在新提出的 Short-Drama-Bench 上显著优于一次性 LLM 流水线，验证了智能体协作与迭代修订对长链生成任务的价值。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22144" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22144" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">🏢 技术报告 / Tech Reports</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22766" target="_blank">Diversed Model Discovery via Structured Table Discovery</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Zhengyuan Dong, Renée J. Miller · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.IR</span><span class="tag tag-tr">Tech Report</span></div>
+  <div class="summary-en">Model cards describe model behavior through a mixture of textual descriptions and structured artifacts, including performance, configuration, and dataset tables. Existing model search systems rely predominantly on semantic similarity over text, which can produce homogeneous result sets and limit exp...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22766" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22766" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21850" target="_blank">ACC: Compiling Agent Trajectories for Long-Context Training</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Qisheng Su, Zhen Fang, Shiting Huang, Yu Zeng et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">ACC (Agent Context Compilation) turns multi-turn agent trajectories (search, software engineering, database) into long-context QA pairs that combine the original question with tool responses and environment observations, training the model to answer directly without tool use. Yields scalable long-context SFT data without annotation; trains Qwen3-30B-A3B to 68.3 on MRCR (+18.1) and 77.5 on GraphWalks (+7.6), comparable to Qwen3-235B-A22B.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ACC 把智能体多轮调用工具时产生的轨迹编译为长上下文 QA 样本：把原问题、工具响应和环境观察拼成单一长上下文，让模型直接作答而无需调用工具，从而显式监督跨轮次的长距离依赖。该方法可与任何长上下文扩展方案叠加，使 Qwen3-30B-A3B 在 MRCR 上达到 68.3（+18.1）、GraphWalks 上 77.5（+7.6），逼近 Qwen3-235B-A22B；为「智能体训练数据」提供了无需额外标注的可扩展来源。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21850" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21850" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14678" target="_blank">π-Bench: Evaluating Proactive Personal Assistant Agents in Long-Horizon Workflows</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Haoran Zhang, Luxin Xu, Zhilin Wang, Runquan Gui et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">π-Bench evaluates proactive personal-assistant agents in long-horizon, multi-turn workflows: 100 tasks across 5 personas with hidden user intents, inter-task dependencies, and cross-session continuity. Findings: proactivity remains hard, is distinct from task completion, and prior-interaction context materially helps with later intent resolution.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">π-Bench 针对「主动式个人助理智能体」提出长程多轮评估：100 个任务跨 5 类用户角色，刻意嵌入隐性意图、任务间依赖以及跨会话延续，从而联合度量主动性与任务完成度。实验得出三点结论：主动协助仍是难点；主动性与任务完成是两个独立维度；先前交互对后续意图解析具有显著价值，对长程多智能体协作的设计与评测有借鉴意义。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14678" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14678" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22642" target="_blank">Spreadsheet-RL: Advancing Large Language Model Agents on Realistic Spreadsheet Tasks via Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Banghao Chi, Yining Xie, Mingyuan Wu, Jingcheng Yang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Spreadsheet-RL is an RL fine-tuning framework that trains spreadsheet agents in a real Microsoft Excel environment via an automated start-goal data pipeline, a new Domain-Spreadsheet benchmark, and a multi-turn Spreadsheet Gym with Python-sandboxed Excel + tool-routing rules. Lifts Qwen3-4B-Thinking-2507 from 12.0%→23.4% Pass@1 on SpreadsheetBench and 8.4%→17.2% on Domain-Spreadsheet.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Spreadsheet-RL 在真实 Microsoft Excel 环境中用强化学习微调电子表格智能体：自动化采集起止状态样本、构造新的 Domain-Spreadsheet 评测集，并提供面向多轮 RL 的 Spreadsheet Gym（Python 沙箱 + 工具集 + 工具路由规则）。在 SpreadsheetBench 上将 Qwen3-4B-Thinking-2507 的 Pass@1 从 12.0% 提升至 23.4%，在 Domain-Spreadsheet 上从 8.4% 提升至 17.2%，展示了在真实数据界面上的 LLM 智能体专门化潜力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22642" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22642" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21605" target="_blank">GenEvolve: Self-Evolving Image Generation Agents via Tool-Orchestrated Visual Experience Distillation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Sixiang Chen, Zhaohu Xing, Tian Ye, Xinyu Geng et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">GenEvolve casts open-ended image generation as tool-orchestrated trajectories: the agent gathers evidence, picks references, invokes generation skills, and composes a prompt-reference program. Rather than learning from scalar image rewards, it compares multiple trajectories per request and distills best-vs-worst differences into structured visual experience, supervising a student via token-level on-policy self-distillation; achieves SOTA on public benchmarks and the new GenEvolve-Bench.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">GenEvolve 把开放式图像生成视为工具编排的轨迹问题：智能体逐步收集证据、选择参考图、调用生成技能并组合成「提示–参考」程序。其核心创新在于不再依赖图像级标量奖励，而是同一请求的多条轨迹之间的「最优–最差」对比被抽象为结构化的「视觉经验」，仅交给特权教师分支用以做 token 级的在线自蒸馏，从而让学生模型学到更好的检索、知识激活与提示构造。在公开基准与自建 GenEvolve-Bench 上取得 SOTA。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21605" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21605" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20176" target="_blank">ClinSeekAgent: Automating Multimodal Evidence Seeking for Agentic Clinical Reasoning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Juncheng Wu, Letian Zhang, Yuhan Wang, Haoqin Tu et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">ClinSeekAgent shifts clinical agents from passive consumption of curated evidence to active multimodal evidence seeking: it queries knowledge bases, navigates raw EHRs, and invokes medical imaging tools, refining hypotheses as new evidence arrives. Improves Claude Opus 4.6 on multimodal tasks from 47.5→62.6 F1; the distilled ClinSeek-35B-A3B gains +11.9 over its base and approaches Claude Opus 4.6.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ClinSeekAgent 将临床智能体从「被动消费已整理好的证据」转向「主动多模态证据搜寻」：直接对接知识库、原始 EHR 与医学影像工具，边收集证据边迭代修正假设。在多模态任务上将 Claude Opus 4.6 的 F1 从 47.5 提升到 62.6；同时该框架也作为训练管线把代理轨迹蒸馏到 ClinSeek-35B-A3B，使其在 AgentEHR-Bench 上较基线提升 +11.9 分，逼近 Claude Opus 4.6。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20176" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20176" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22535" target="_blank">TerminalWorld: Benchmarking Agents on Real-World Terminal Tasks</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Zhaoyang Chu, Jiarui Hu, Xingyu Jiang, Pengyu Zou et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">TerminalWorld is a scalable data engine that reverse-engineers 1,530 validated evaluation tasks (200 manually verified) from 80,870 in-the-wild terminal recordings, spanning 18 categories and workflows over 50 steps. Eight frontier models and six agents max out at 62.5% pass rate; correlation with expert-curated Terminal-Bench is weak (r=0.20), exposing a real-world capability gap.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">TerminalWorld 提出一个可扩展的数据工厂，从 80,870 段真实终端录屏中自动反向工程出 1,530 个高保真任务（200 个人工验核），覆盖 18 类、最长超过 50 步的真实工作流。八个前沿模型与六种智能体的最高通过率仅 62.5%，且与专家手工构建的 Terminal-Bench 仅有弱相关（r=0.20），说明现有评测低估了真实终端环境对智能体的挑战。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22535" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22535" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22109" target="_blank">Perception or Prejudice: Can MLLMs Go Beyond First Impressions of Personality?</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Caixin Kang, Tianyu Yan, Sitong Gong, Mingfang Zhang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Multimodal Large Language Models (MLLMs) are increasingly deployed in human-facing roles where personality perception is critical, yet existing benchmarks evaluate this capability solely on numerical Big Five score prediction, leaving open whether models truly perceive personality through behavioral...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22109" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22109" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15669" target="_blank">Rule2DRC: Benchmarking LLM Agents for DRC Script Synthesis with Execution-Guided Test Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jinuk Kim, Junsoo Byun, Donghwi Hwang, Seong-Jin Park et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Rule2DRC is a large-scale benchmark for LLM agents synthesizing DRC scripts (chip-layout design-rule checking): 1,000 rule-to-script tasks plus 13,921 layouts enabling execution-based scoring without requiring labeled test layouts as agent input. Also introduces SplitTester, a tester-agent that generates discriminative test cases from execution feedback, substantially improving Best-of-N selection.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Rule2DRC 面向「LLM 智能体合成 DRC 脚本（芯片版图设计规则检查）」构建大规模基准：包含 1,000 个规则到脚本任务与 13,921 张评测版图，可在不需要将评测版图作为智能体输入的前提下基于执行结果进行评分。同时提出 SplitTester 测试代理，利用执行反馈生成可区分候选的测试样例，显著提升 Best-of-N 选择性能。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15669" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15669" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21363" target="_blank">"I didn't Make the Micro Decisions": Measuring, Inducing, and Exposing Goal-Level AI Contributions in Collaboration</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Eunsu Kim, Jessica R. Mindel, Kyungjin Kim, Sherry Tongshuang Wu · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">CoTrace introduces goal-level attribution for human–AI collaboration: it decomposes goals into verifiable requirements and traces both direct and indirect LLM contributions across dialogue turns. Applied to 638 real logs, finds models drive only 11–26% of goal-shaping but much more lower-level requirements; exposing this in a user study shifts perceived contributions by ~2/5 points, revealing systematic miscalibration in users' attribution of AI-assisted work.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CoTrace 提出「目标级别」的贡献归因框架：将显式目标拆解为可核查的需求项，跨对话轮次追踪 LLM 的直接贡献与间接影响。基于 638 条真实协作日志，发现 LLM 仅占目标塑造的 11%–26%，但在引入更具体的底层需求方面贡献更大；用户研究显示，向参与者展示目标级分析后，其对自身/AI 贡献的感知在 5 分制上偏移近 2 分，揭示了人对 AI 协作贡献认知的系统性偏差，对人–智能体协作评估具有启发。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21363" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21363" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20244" target="_blank">Lean Refactor: Multi-Objective Controllable Proof Optimization via Agentic Strategy Search</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jialin Lu, Soonho Kong, Rodrigo Stehling, Kaiyu Yang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.LO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Lean Refactor is a retrieval-augmented agentic framework for refactoring Lean proofs along three axes — length, compilation cost, and library-version robustness — by steering a frozen LLM with a curated database of multi-objective refactoring strategies tagged with Lean/Mathlib metadata. Achieves >70% token compression on competition benchmarks, >20% on research repos, and up to 60% compilation-time reduction, outperforming prior work and Claude Code.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Lean Refactor 提出一个检索增强的代理框架，用于在「证明长度、编译成本、版本兼容性」三目标下对 Lean 证明进行可控重构：通过冻结的代理 LLM 加上一个带 Lean/Mathlib 版本元数据的多目标重构策略库进行引导，无需重训。竞赛基准上 token 压缩超 70%，研究仓库上超 20%，编译时间最多降 60%，优于既有工作与 Claude Code，并且重构后的证明对未来 Lean 版本零样本迁移性更强。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20244" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20244" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22355" target="_blank">TransitLM: A Large-Scale Dataset and Benchmark for Map-Free Transit Route Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Hanyu Guo, Jiedong Yang, Chao Chen, Longfei Xu et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Public transit route planning traditionally depends on structured map infrastructure and complex routing engines, and no existing dataset supports training models to bypass this dependency. We present TransitLM, a large-scale dataset of over 13 million transit route planning records from four Chines...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22355" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22355" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21467" target="_blank">DelTA: Discriminative Token Credit Assignment for Reinforcement Learning from Verifiable Rewards</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Kaiyi Zhang, Wei Wu, Yankai Lin · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Reinforcement learning from verifiable rewards (RLVR) has emerged as a central technique for improving the reasoning capabilities of large language models. Despite its effectiveness, how response-level rewards translate into token-level probability changes remains poorly understood. We introduce a d...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21467" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21467" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16928" target="_blank">Full Attention Strikes Back: Transferring Full Attention into Sparse within Hundred Training Steps</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yanke Zhou, Yiduo Li, Hanlin Tang, Maohua Li et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Long-context inference in large language models is bottlenecked by the quadratic cost of full attention. Existing efficient alternatives often rely either on native sparse training or on heuristic token eviction, creating an undesirable trade-off among efficiency, training cost, and accuracy. In thi...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16928" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16928" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21572" target="_blank">PhysX-Omni: Unified Simulation-Ready Physical 3D Generation for Rigid, Deformable, and Articulated Objects</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Ziang Cao, Yinghao Liu, Haitian Li, Runmao Yao et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">cs.RO</span></div>
+  <div class="summary-en">Simulation-ready physical 3D assets have emerged as a promising direction owing to their broad applicability in downstream tasks. However, most existing 3D generation methods either neglect physical properties or are limited to a single asset category, e.g., rigid, deformable, or articulated objects...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21572" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21572" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22012" target="_blank">LatentOmni: Rethinking Omni-Modal Understanding via Unified Audio-Visual Latent Reasoning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yifan Dai, Zhenhua Wu, Bohan Zeng, Daili Hua et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Joint audio-visual reasoning is essential for omnimodal understanding, yet current multimodal large language models (MLLMs) still struggle when reasoning requires fine-grained evidence from both modalities. A central limitation is that explicit text-based chain-of-thought (CoT) compresses continuous...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22012" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22012" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22681" target="_blank">Forecasting Scientific Progress with Artificial Intelligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Sean Wu, Pan Lu, Yupeng Chen, Jonathan Bragg et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Artificial intelligence (AI) is increasingly embedded in scientific discovery, yet whether it can anticipate scientific progress remains unclear. To study this question, we introduce a temporally grounded evaluation framework for forecasting scientific progress under controlled knowledge constraints...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22681" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22681" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22718" target="_blank">WorldKV: Efficient World Memory with World Retrieval and Compression</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jung Yi, Minjae Kim, Paul Hyunbin Cho, Wooseok Jang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Autoregressive video diffusion models have enabled real-time, action-conditioned world generation. However, sustaining a persistent world, where revisiting a previously seen viewpoint yields consistent content, remains an open problem. Full KV-cache attention preserves this consistency but breaks re...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22718" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22718" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22668" target="_blank">SEGA: Spectral-Energy Guided Attention for Resolution Extrapolation in Diffusion Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Javad Rajabi, Kimia Shaban, Koorosh Roohi, David B. Lindell et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Diffusion transformers (DiTs) have emerged as a dominant architecture for text-to-image generation, yet their performance drops when generating at resolutions beyond their training range. Existing training-free approaches mitigate this by modifying inference-time attention behavior, often through Ro...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22668" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22668" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22536" target="_blank">SpaceDG: Benchmarking Spatial Intelligence under Visual Degradation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Xiaolong Zhou, Yifei Liu, Ziyang Gong, Jiarui Li et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Multimodal Large Language Models (MLLMs) have made rapid progress in spatial intelligence, yet existing spatial reasoning benchmarks largely assume pristine visual inputs and overlook the degradations that commonly occur in real-world deployment, such as motion blur, low light, adverse weather, lens...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22536" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22536" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20910" target="_blank">FlowLong: Inference-time Long Video Generation via Manifold-constrained Tweedie Matching</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jangho Park, Geon Yeong Park, Gihyun Kwon, Jong Chul Ye · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Extending the generation horizon of video diffusion models to long sequences remains a long-standing and important challenge. Existing training-free approaches fall into two categories: extensions of bidirectional models, which are tightly coupled to specific architectures and suffer from quality de...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20910" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20910" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.10158" target="_blank">Unsupervised Process Reward Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Artyom Gadetsky, Maxim Kodryan, Siba Smarak Panigrahi, Hang Guo et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Process Reward Models (PRMs) are a powerful mechanism for steering large language model reasoning by providing fine-grained, step-level supervision. However, this effectiveness comes at a significant cost: PRMs require expert annotations for every reasoning step, making them costly and difficult to ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.10158" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.10158" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22809" target="_blank">Sensor2Sensor: Cross-Embodiment Sensor Conversion for Autonomous Driving</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jiahao Wang, Bo Sun, Yijing Bai, Vincent Casser et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Robust training and validation of Autonomous Driving Systems (ADS) require massive, diverse datasets. Proprietary data collected by Autonomous Vehicle (AV) fleets, while high-fidelity, are limited in scale, diversity of sensor configurations, as well as geographic and long-tail-behavioral coverage. ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22809" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22809" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22791" target="_blank">Gated DeltaNet-2: Decoupling Erase and Write in Linear Attention</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Ali Hatamizadeh, Yejin Choi, Jan Kautz · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Linear attention replaces the unbounded cache of softmax attention with a fixed-size recurrent state, reducing sequence mixing to linear time and decoding to constant memory. The hard part is not just what to forget, but how to edit this compressed memory without scrambling existing associations. De...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22791" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22791" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21072" target="_blank">Q-ARVD: Quantizing Autoregressive Video Diffusion Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Siao Tang, Xinyin Ma, Gongfan Fang, Xingyi Yang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Autoregressive video diffusion models (ARVDs) have emerged as a promising architecture for streaming video generation, paving the way for real-time interactive video generation and world modeling. Despite their potential, the substantial inference cost of ARVDs remains a major obstacle to practical ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21072" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21072" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12817" target="_blank">Training Large Language Models to Predict Clinical Events</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Benjamin Turtel, Paul Wilczewski, Kris Skotheim · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Longitudinal clinical notes contain rich evidence of how patients evolve over time, but converting this signal into training supervision for clinical prediction remains challenging. We extend Foresight Learning to clinical prediction by converting time-ordered MIMIC-III notes into examples consistin...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12817" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12817" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18607" target="_blank">Forecasting Downstream Performance of LLMs With Proxy Metrics</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Arkil Patel, Siva Reddy, Marius Mosbach, Dzmitry Bahdanau · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Progress in language model development is often driven by comparative decisions: which architecture to adopt, which pretraining corpus to use, or which training recipe to apply. Making these decisions well requires reliable performance forecasts, yet the two commonly used signals are fundamentally l...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18607" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18607" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22678" target="_blank">Swift Sampling: Selecting Temporal Surprises via Taylor Series</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Dahye Kim, Bhuvan Sachdeva, Karan Uppal, Naman Gupta et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">While most frames in long-form video are redundant, the critical information resides in temporal surprises: moments where the actual visual features deviate from their predicted evolution. Inspired by the human brain's predictive coding, we introduce Swift Sampling, an elegant, training-free frame s...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22678" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22678" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17602" target="_blank">AutoRubric-T2I: Robust Rule-Based Reward Model for Text-to-Image Alignment</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Kuei-Chun Kao, Daixuan Huo, Yuanhao Ban, Cho-Jui Hsieh · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Aligning Text-to-Image (T2I) generation models with human preferences increasingly relies on image reward models that score or rank generated images according to prompt alignment and perceptual quality. Existing reward models are commonly trained as Bradley-Terry (BT) preference models on large-scal...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17602" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17602" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13163" target="_blank">LoREnc: Low-Rank Encryption for Securing Foundation Models and LoRA Adapters</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Beomjin Ahn, Jungmin Kwon, Chanyong Jung, Jaewook Chung · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Foundation models and low-rank adapters enable efficient on-device generative AI but raise risks such as intellectual property leakage and model recovery attacks. Existing defenses are often impractical because they require retraining or access to the original dataset. We propose LoREnc, a training-...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13163" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13163" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22538" target="_blank">Segment Anything with Motion, Geometry, and Semantic Adaptation for Complex Nonlinear Visual Object Tracking</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Deyi Zhu, Yuji Wang, Yong Liu, Yansong Tang et al. · 2026-05-23</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Traditional visual object tracking (VOT) methods typically rely on task-specific supervised training, limiting their generalization to unseen objects and challenging scenarios with distractors, occlusion, and nonlinear motion. Recent vision foundation models, exemplified by SAM 2, learn strong video...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22538" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22538" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 14 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

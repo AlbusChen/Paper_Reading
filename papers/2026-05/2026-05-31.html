@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-31</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月31日</h1>
+  <p>Daily Paper Digest · May 31, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>59</span> 篇</div>
+  <div class="stat">高度相关 <span>5</span> 篇</div>
+  <div class="stat">相关 <span>6</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-31 17:31 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30102" target="_blank">When Cloud Agents Meet Device Agents: Lessons from Hybrid Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Hybrid multi-agent systems pair cloud-hosted frontier LLMs with cost-efficient on-device SLMs, but their design space—which tightly couples task accuracy, monetary cost, and edge energy—is poorly understood and usually handled ad hoc. The authors adapt two representative MAS architectures to support hybrid inference and map how each design choice shifts the operating point along the power/cost/performance Pareto frontier. They find the optimal architecture is highly task-dependent and that more frontier-level compute does not reliably translate to better performance, though SLMs can benefit substantially from selective LLM assistance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文系统研究了云端大模型(LLM)与端侧小模型(SLM)协同的混合多智能体系统设计空间，该空间将任务精度、金钱成本与边缘能耗紧密耦合，却长期缺乏通用设计原则。作者将两种代表性多智能体架构改造为支持混合推理，刻画了各项设计选择如何在“功耗—成本—性能”帕累托前沿上移动工作点。实验表明最优架构高度依赖具体任务，单纯增加云端算力并不能稳定提升性能，但小模型能从有选择的大模型协助中显著获益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30102" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30102" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29861" target="_blank">Towards Verifiable Multimodal Deep Research: A Multi-Agent Harness for Interleaved Report Generation</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Verifiable multimodal "deep research" is hard because long-form synthesis lacks deterministic ground truth and must interleave textual arguments with visual evidence. PTAH is a multi-agent harness that orchestrates planning, research, and writing stages: specialized agents build visual-aware plans, gather claim-grounded evidence, maintain source-aligned images in a Visual Working Memory, and compose reports via declarative multimodal tool use, while a verifier agent acts as the acceptance function enforcing factual grounding, citation fidelity, and cross-modal consistency. With its companion PTAHEval protocol, it produces more reliable and usable multimodal reports than strong baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">可验证的多模态“深度研究”颇具挑战：长篇综合缺乏确定性标准答案，且需将文字论证与视觉证据交织呈现。本文提出多智能体框架 PTAH，统筹规划、检索与写作三个阶段：由专职智能体构建视觉感知的计划、收集可溯源的证据、在“视觉工作记忆”中维护与来源对齐的图像，并通过声明式多模态工具调用生成报告；同时设置验证器智能体作为验收函数，贯穿全流程地强制事实依据、引用一致性与跨模态一致性。配合提出的 PTAHEval 评测协议，其生成的多模态报告比强基线更可靠、更具可读性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29861" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29861" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27995" target="_blank">AsyncTool: Evaluating the Asynchronous Function Calling Capability under Multi-Task Scenarios</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Existing tool-use benchmarks ignore the temporal dimension—tool response latency and concurrent multi-tasking—so they miss whether an agent can exploit idle time while waiting on tools (asynchronous tool calling). AsyncTool presents multiple heterogeneous tasks simultaneously with simulated realistic latency, built via a hybrid data-evolution strategy, and scores agents at step, sub-task, and task levels with efficiency-oriented coordination metrics. Experiments show delayed feedback substantially degrades current agents, and models that better coordinate task switching, dependency tracking, and state maintenance perform best.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">现有工具调用评测大多忽视时间维度，既不考虑工具响应延迟，也局限于单任务，因而无法衡量智能体能否在等待工具返回时利用空闲时间（即异步工具调用能力）。本文提出 AsyncTool 基准，在交互式多任务环境中同时给出多个异构任务并模拟真实的工具延迟，采用混合数据演化策略构建数据集，并从步骤、子任务、任务三个层面引入面向效率的协调度量。实验显示延迟反馈会明显拉低现有智能体表现，而更擅长任务切换、依赖追踪与状态维护的模型协调效率更高。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27995" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27995" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.24785" target="_blank">PANDO: Efficient Multimodal AI Agents via Online Skill Distillation</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Multimodal web agents increasingly buy performance with extra inference-time compute (rollout search, verifier passes, skill discovery), raising whether an agent can instead grow more efficient with experience. PANDO is a single-rollout online skill-distillation framework with a structured Skill Library, progress reflection, confidence-based skill demotion, hierarchical routing, visual compression, and cache-aware prompting. On all 910 VisualWebArena tasks it reaches 58.3% success while using 58–61% fewer tokens than SGV/WALT baselines, and it introduces three trajectory-level efficiency metrics (action-repetition rate, step-overhead ratio, prompt-cache utilization).</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">多模态网页智能体往往依靠增加推理期算力（回放搜索、验证器、离线技能发现等）来换取性能提升，本文转而追问：智能体能否随经验积累而变得更高效而非更昂贵？作者从 VisualWebArena 轨迹中归纳出重复动作循环、隐性探索开销、提示缓存复用低三类低效来源，提出单次回放的在线技能蒸馏框架 PANDO，融合结构化技能库、进度反思、置信度降级、分层路由、视觉压缩与缓存感知提示。在全部 910 个任务上取得 58.3% 成功率，较 SGV/WALT 基线减少 58%–61% 的 token，并提出三项轨迹级效率指标使效率可被显式度量。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.24785" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.24785" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30003" target="_blank">Discovering Cooperative Pipelines: Autoresearch for Sequential Social Dilemmas</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">The paper studies two-level autoresearch for cooperation: an outer-loop coding agent autonomously redesigns the inner-loop pipeline (system prompts, feedback functions, helper libraries, iteration logic) of an LLM policy-synthesis system for multi-agent Sequential Social Dilemmas. Across two games, two synthesizer LLMs, and two welfare objectives, the researcher agent reliably beats hand-designed baselines, sharply reduces run-to-run variance, and outperforms prompt-only optimization. Notably the discovered pipelines are objective-dependent—an explicit fairness mechanism emerges only under the Rawlsian maximin objective—supporting an information-design reading of what the researcher reveals to a boundedly rational synthesizer.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究面向合作的两层“自动研究”框架：外层编码智能体自主重写内层 LLM 策略合成系统的流水线（系统提示、反馈函数、辅助库与迭代逻辑），以求解多智能体序贯社会困境(SSD)。在两个博弈、两个合成器模型与两种社会福利目标下，研究者智能体稳定超越人工设计基线，大幅收紧运行间方差，并优于仅做提示优化的方法。值得注意的是所发现的流水线依目标而异——只有在 Rawls 最小最大(maximin)目标下才会注入显式公平机制，这支持了一种“信息设计”解读：研究者会依据福利目标决定向有限理性的合成器揭示哪些信息。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30003" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30003" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29559" target="_blank">LiteCoder-Terminal: Scaling Long-Horizon Terminal Environments for Learning Language Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Training terminal-mastering language agents is bottlenecked by reliance on scraped external repositories, limiting domain diversity, environment controllability, and targeted capability training. LiteCoder-Terminal-Gen is a zero-dependency synthesis pipeline that autonomously generates executable, verifiable terminal environments from domain specs, yielding an 11,255-trajectory SFT set and 602 verifiable RL environments. SFT on Qwen models markedly beats base models (a 32B variant reaches 34.0% pass@1 on Terminal Bench Pro), and multi-turn preference optimization adds further gains—showing fully synthetic executable environments give scalable, verifiable supervision.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">训练能驾驭终端环境的语言智能体长期受制于对外部抓取代码库的依赖，导致领域多样性、环境可控性与针对性能力训练均受限。本文提出零依赖合成流水线 LiteCoder-Terminal-Gen，可直接依据领域规格自主生成可执行、可验证的终端训练环境，并构建了含 11,255 条专家轨迹的 SFT 数据集与 602 个可验证 RL 环境。在 Qwen 系列上微调显著超越基座模型（32B 变体在 Terminal Bench Pro 上达 34.0% pass@1），叠加多轮偏好优化进一步提升，表明全合成可执行环境能提供可扩展且可验证的监督信号。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29559" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29559" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28424" target="_blank">Skill0.5: Joint Skill Internalization and Utilization for Out-of-Distribution Generalization in Agentic Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Skill-based RL for agents forces a rigid choice between full skill externalization (heavy context overhead) and full internalization (overfitting and knowledge conflicts). Skill0.5 instead differentiates treatment via a difficulty-aware router: it internalizes general skills through privileged distillation to build a cognitive foundation for hard tasks, while using diagnostic probing on easy tasks to penalize shortcuts and enforce task-specific skill utilization. On ALFWorld and WebShop it beats memory- and skill-based RL baselines in- and out-of-distribution while cutting the context overhead of full externalization.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">面向智能体的技能型强化学习通常被迫在“完全外置技能（上下文开销过大）”与“完全内化技能（易过拟合、知识冲突）”之间二选一。本文提出 Skill0.5，借助难度感知路由器区别对待两类技能：对困难任务通过特权蒸馏内化通用技能以建立认知基础，对简单任务用诊断式探查惩罚走捷径并强制使用任务专用技能。在 ALFWorld 与 WebShop 上，该方法在分布内外均优于基于记忆与基于技能的强化学习基线，同时避免了完全外置带来的上下文开销。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28424" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28424" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29534" target="_blank">UI-KOBE: Knowledge-Oriented Behavior Exploration for Lightweight Graph-Guided GUI Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Effective mobile GUI agents usually rely on large vision-language models, but lightweight on-device agents (cheaper, more private) remain unreliable at end-to-end planning from screenshots alone. UI-KOBE first autonomously explores an app to build an app knowledge graph (nodes = UI states, edges = executable transitions), then at runtime lets a lightweight agent localize the current node and choose among self-loop actions, neighboring transitions, completion, or fallback free actions. This graph guidance reduces the end-to-end planning burden, making small models more effective, interpretable, and privacy-preserving on-device.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">高效的移动端 GUI 智能体通常依赖大型视觉语言模型，而更廉价、更利于隐私的端侧轻量智能体在仅凭截图端到端规划时仍不可靠。本文提出 UI-KOBE：先自主探索应用并构建“应用知识图”（节点为界面状态，边为可执行跳转），运行时让轻量智能体定位当前节点，并在自环动作、邻接跳转、任务完成或兜底自由动作之间选择。借助应用级图谱引导，该方法降低了端到端规划负担，使小模型在端侧更有效、更可解释、更注重隐私。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29534" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29534" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30052" target="_blank">REPOT: Recoverable Program-of-Thought via Checkpoint Repair</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">One-shot Program-of-Thought emits a Python plan whose single invalid action silently invalidates the whole trajectory. RePoT adds a deterministic verified replay that walks the plan to its first invalid transition, then makes one LLM call to resume from the verified prefix—costing at most one extra call on the ~14% of failing problems. It beats PoT by +3 to +11 pp across four closed models (peaking 96.9% vs 86.3% on gpt-5.4-mini) and shows that checkpoint information, not the specific prefix tail, is the load-bearing recovery signal, with an Adaptive RePoT dispatcher routing between suffix repair and a fresh retry.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">一次性的思维程序(PoT)会输出一段 Python 计划，其中任一非法动作都会悄无声息地令整条轨迹失效。本文提出 RePoT：先用确定性的“已验证回放”把计划执行到首个非法跳转处，再以一次 LLM 调用从已验证前缀续写恢复，仅在约 14% 失败问题上至多多花一次调用。在四种闭源模型上较 PoT 提升 3–11 个百分点（在 gpt-5.4-mini 上 96.9% vs 86.3%），并表明真正起作用的恢复信号是“检查点信息”本身而非具体前缀尾部；作者进一步提出依据已验证前缀长度在后缀修复与重试间路由的 Adaptive RePoT。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30052" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30052" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29271" target="_blank">CoHyDE: Iterative Co-Training of LLM Rewriter & Dense Encoder for Tool Retrieval</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">Tool retrieval over large API catalogs bottlenecks LLM agents because colloquial, underspecified queries don't match technical API vocabulary, and the two dominant approaches (contrastive encoder fine-tuning vs. frozen-LLM HyDE query expansion) fail in complementary ways. CoHyDE co-trains the dense encoder and LLM rewriter as one co-evolving system: the encoder is retrained with InfoNCE on catalog-style hypothetical descriptions from the rewriter, and the rewriter is DPO-aligned against the encoder's retrieval scores. On a ~10k-tool ToolBench subset, three rounds improve NDCG@5 by +2.5 pp on standard and +6.3 pp on vague queries (up to +8 pp on the hardest tier), with co-training being the key ingredient.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">在大规模 API 目录上做工具检索是 LLM 智能体的关键瓶颈：用户查询口语化且常欠规范，而目录使用技术性 API 术语，主流的两种方法（对比式编码器微调、冻结 LLM 的 HyDE 查询扩展）在互补的方向上各自失效。本文提出 CoHyDE，将稠密编码器与 LLM 改写器作为一个协同进化系统联合训练：编码器用 InfoNCE 在改写器产生的“目录风格假设描述”上重训，改写器则依据编码器的检索得分用 DPO 进行偏好对齐。在约 1 万工具的 ToolBench 子集上，三轮迭代使标准查询 NDCG@5 提升 2.5 个百分点、模糊查询提升 6.3 个百分点（最难档位最高 +8），消融实验证明协同训练是关键。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29271" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29271" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29486" target="_blank">PhoneWorld: Scaling Phone-Use Agent Environments</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en">A core bottleneck for phone-use agents is that controllable, reproducible environments covering real mobile behavior are hard to build at scale. PhoneWorld is a reusable pipeline that converts real GUI trajectories and screenshots into controllable mock-Android environments, executable tasks, automatic verifiers, and training rollouts, currently spanning 34 apps across 16 domains. Under a fixed training budget, swapping 10K AndroidWorld steps for broad PhoneWorld supervision improves four benchmarks at once (e.g., +14.7 on AndroidWorld), and expanding app coverage yields even larger gains—shifting the focus from one benchmark at a time to scaling the supply of environments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">手机操作智能体的核心瓶颈在于：覆盖真实移动行为、可控且可复现的环境难以大规模构建。本文提出 PhoneWorld，一条可复用的流水线，将真实 GUI 轨迹与截图转化为可控的模拟安卓环境、可执行任务、自动验证器与训练回放，目前覆盖 16 个领域的 34 款应用。在固定训练预算下，用 PhoneWorld 的广泛监督替换 1 万步 AndroidWorld 数据可同时提升四个基准（如 AndroidWorld +14.7 分），且扩大应用覆盖带来的收益更大——研究重心由“逐个构建基准”转向“规模化扩充环境供给”。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29486" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29486" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29801" target="_blank">AgentDoG 1.5: A Lightweight and Scalable Alignment Framework for AI Agent Safety and Security</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29801" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29801" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30280" target="_blank">Qwen-VLA: Unifying Vision-Language-Action Modeling across Tasks, Environments, and Robot Embodiments</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30280" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30280" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29250" target="_blank">OmniRetrieval: Unified Retrieval across Heterogeneous Knowledge Sources</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29250" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29250" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25378" target="_blank">CollectionLoRA: Collecting 50 Effects in 1 LoRA via Multi-Teacher On-Policy Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25378" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25378" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30263" target="_blank">minWM: A Full-Stack Open-Source Framework for Real-Time Interactive Video World Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30263" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30263" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30346" target="_blank">YoCausal: How Far is Video Generation from World Model? A Causality Perspective</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30346" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30346" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30161" target="_blank">Why Far Looks Up: Probing Spatial Representation in Vision-Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30161" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30161" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30248" target="_blank">GenClaw: Code-Driven Agentic Image Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30248" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30248" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30260" target="_blank">How LoRA Remembers? A Parametric Memory Law for LLM Finetuning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30260" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30260" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30010" target="_blank">EarlyTom: Early Token Compression Completes Fast Video Understanding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30010" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30010" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30073" target="_blank">Native Audio-Visual Alignment for Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30073" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30073" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30076" target="_blank">UniSteer: Text-Guided Flow Matching in Activation Space for Versatile LLM Steering</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30076" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30076" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29888" target="_blank">LaRA: Layer-wise Representation Analysis for Detecting Data Contamination in RL Post-Training</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29888" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29888" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30265" target="_blank">LoMo: Local Modality Substitution for Deeper Vision-Language Fusion</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30265" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30265" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30219" target="_blank">When Should Models Change Their Minds? Contextual Belief Management in Large Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30219" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30219" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30332" target="_blank">Colored Noise Diffusion Sampling</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30332" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30332" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29507" target="_blank">Xetrieval: Mechanistically Explaining Dense Retrieval</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29507" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29507" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26029" target="_blank">CausaLab: A Scalable Environment for Interactive Causal Discovery Toward AI Scientists</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26029" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26029" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26578" target="_blank">Is Position Bias in Dense Retrievers Built In-or Learned from Data?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26578" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26578" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26730" target="_blank">PRISM: A Multi-Dimensional Benchmark for Evaluating LLM Peer Reviewers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-31</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26730" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26730" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 28 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

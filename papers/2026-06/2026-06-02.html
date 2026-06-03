@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-06-02</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年06月02日</h1>
+  <p>Daily Paper Digest · June 02, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>68</span> 篇</div>
+  <div class="stat">高度相关 <span>2</span> 篇</div>
+  <div class="stat">相关 <span>4</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-06-02 17:31 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.24202" target="_blank">When Does Multi-Agent RL Improve LLM Workflows? Workflow, Scale, and Policy-Sharing Tradeoffs</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper studies when end-to-end RL training of multi-agent LLM workflows actually beats the base models, contrasting Shared-Policy training (all roles update one policy) with Isolated-Policy training (each role keeps its own parameters) across three workflow topologies, math and code tasks, and three model scales (0.6B-4B). It finds multi-agent RL usually helps, but the gains depend jointly on workflow, task, and scale rather than on policy sharing alone: Isolated-Policy reaches higher peak accuracy yet more often falls off a 'terminal accuracy cliff,' while Shared-Policy merely redistributes failure into different patterns. The authors trace these regimes to role-level gradient dynamics induced by workflow topology and policy routing-e.g., parallel same-role agents amplifying per-role gradients, and the shared policy being captured by a dominant role.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究端到端强化学习训练多智能体LLM工作流何时真正优于基座模型，系统对比了"共享策略"（所有角色共用一套参数）与"独立策略"（每个角色独立参数）两种范式，覆盖三种工作流拓扑、数学与代码任务以及0.6B至4B三种模型规模。研究发现多智能体RL通常能带来提升，但增益取决于工作流、任务与规模的联合作用，而非策略共享与否：独立策略峰值精度更高却更易跌入"终端精度悬崖"，共享策略则只是把失败重新分布为不同形态。作者进一步用工作流拓扑与策略路由诱导的角色级梯度动力学解释了这些现象（如并行同角色智能体放大单角色梯度、共享策略被主导角色"俘获"等）。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.24202" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.24202" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01533" target="_blank">Multi-Agent Computer Use</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Arguing that single serial computer-use agents (CUAs) are suboptimal for complex long-horizon tasks, this paper proposes multi-agent computer use (MACU): a manager model decomposes a task into a directed acyclic graph (DAG) of subgoals, dispatches parallel CUA subagents on the DAG's ready frontier, and continuously revises the DAG (adding, canceling, rewriting nodes) as findings arrive, forwarding observations that downstream agents cannot re-observe. MACU improves over strong single-agent baselines by 3.4-25.5% on OSWorld and several web-navigation benchmarks and shows more favorable test-time scaling. Notably for efficiency, it cuts average wall-clock completion time by about 1.5x on the long-horizon Odysseys benchmark while solving tasks where single agents get stuck.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文指出当前以单个串行智能体部署的计算机使用智能体（CUA）难以胜任复杂长程任务，提出"多智能体计算机使用"（MACU）：由管理者模型将任务分解为有向无环图（DAG），在DAG就绪前沿上并行派发CUA子智能体，并随子智能体返回的新信息持续修订DAG（增删与改写节点），同时把下游难以重新观测的信息通过管理者与DAG结构向前传递。MACU在OSWorld桌面及多个网页导航基准上较强单智能体基线提升3.4%–25.5%，并展现出更优的测试时扩展性。在效率方面尤为突出：它在长程基准Odysseys上将平均完成耗时缩短约1.5倍，并能解决单智能体会卡住的任务。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01533" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01533" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30611" target="_blank">Crafter: A Multi-Agent Harness for Editable Scientific Figure Generation from Diverse Inputs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Publication-quality scientific figures are labor-intensive, yet existing generators each target a single figure type from text-only input and emit non-editable raster output. The authors argue that such structured, component-based layouts need a coordinating 'harness' rather than a stronger backbone, and instantiate Crafter, a multi-agent harness that generalizes across figure types and input conditions without architectural changes (plus CraftEditor for raster-to-editable-SVG conversion and the CraftBench benchmark). Crafter substantially outperforms standalone generators and an agentic baseline, with ablations confirming each agent component contributes independently.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">出版级科研配图制作耗时费力，而现有生成系统通常仅针对单一图表类型、仅支持纯文本输入且输出为不可局部编辑的栅格图。作者认为此类由离散语义组件构成的结构化版面所需的是协同框架（harness）而非更强的骨干模型，据此提出多智能体协同框架Crafter，无需改动架构即可泛化到多种图表类型与输入条件（并配套CraftEditor实现栅格图到可编辑SVG的转换及CraftBench基准）。实验表明Crafter显著优于独立生成器与智能体基线，消融实验证实各智能体组件均有独立贡献。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30611" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30611" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01311" target="_blank">SkillAdaptor: Self-Adapting Skills for LLM Agents from Trajectories</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en">LLM agents increasingly rely on reusable external skills for long-horizon tasks, but existing training-free skill-adaptation pipelines update from full trajectories or session-level feedback, giving coarse failure attribution and unstable, overly broad revisions. SkillAdaptor is a training-free, step-level skill-adaptation framework with explicit failure attribution: given a failed trajectory it identifies the first actionable fault step, links responsibility to candidate skills, and applies targeted updates under explicit acceptance checks while keeping the backbone frozen. Across WebShop, PinchBench, and Claw-Eval with several frontier models it consistently beats no-skill and prior skill-adaptation baselines (e.g., +1.7 on WebShop success rate).</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">LLM智能体在长程交互任务中越来越依赖可复用的外部技能，但现有免训练技能适配流程多基于完整轨迹或会话级反馈进行更新，导致失败归因粗糙、修订不稳定且过于宽泛。SkillAdaptor提出一种带显式失败归因的免训练步级技能适配框架：给定失败轨迹，先定位首个可纠正的错误步，将责任归因到候选技能，再在显式验收检查下进行有针对性的更新，同时冻结骨干模型。在WebShop、PinchBench与Claw-Eval三个基准（搭配多种前沿模型）上，它一致优于无技能与已有技能适配基线（如WebShop成功率+1.7）。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01311" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01311" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02470" target="_blank">MCP-Persona: Benchmarking LLM Agents on Real-World Personal Applications via Environment Simulation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en">The Model Context Protocol (MCP) has become a standard for connecting LLMs to external tools, yet existing benchmarks emphasize generic information-seeking and overlook personalized tools that interact with individual accounts or local databases. MCP-Persona is the first benchmark targeting real-world personalized MCP tools, spanning social platforms (Reddit, Rednote) and enterprise collaboration suites (Lark/Feishu, Slack). Extensive experiments show that state-of-the-art agents struggle significantly with personalized tool use, exposing a practical gap that current evaluations miss.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">模型上下文协议（MCP）已成为连接大模型与外部工具的重要标准并在个人应用中快速普及，但现有基准多聚焦通用信息检索，忽视了涉及个人账户或本地数据库的个性化工具。本文提出MCP-Persona——首个面向真实个性化MCP工具的基准，覆盖社交平台（Reddit、小红书）与企业协作套件（飞书Lark、Slack）。大量实验表明，当前最先进的智能体在个性化工具使用上明显吃力，揭示了现有评测所忽略的实际能力缺口。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02470" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02470" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.00408" target="_blank">Masking Stale Observations Helps Search Agents -- Until It Doesn't: A Regime Map and Its Mechanism</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en">Long-horizon search agents accumulate large amounts of retrieved content across many tool calls, making context-budget efficiency critical; a minimal intervention is to mask stale observations, but when this helps and why has been unclear. Sweeping backbones from 4B to 284B parameters and three retrievers on offline and live-web benchmarks, the authors find the accuracy gain from masking follows an asymmetric inverted-U against the model's no-masking accuracy-a plateau under weak retrievers, a peak when a strong retriever meets a mid-capacity model, and a sharp collapse once the model saturates. Mechanistically, masking is a token-for-turn trade-off: it helps only when the extra turns convert failures into successes, and hurts when it removes evidence the model would otherwise have used.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">长程检索智能体会在多次工具调用中累积大量检索内容，使上下文预算效率变得关键；一个最小化干预是随轨迹推进屏蔽过时观测，但其何时有效、为何有效一直不清晰。作者在4B至284B参数的多种骨干模型、三种检索器以及离线与实时网页基准上系统扫描，发现屏蔽带来的精度增益相对于"无上下文管理时的精度"呈非对称倒U形：弱检索器下趋于平台、强检索器配中等能力模型时达到峰值、模型能力饱和后急剧崩塌。机理上，屏蔽是一种"以轮次换token"的权衡：仅当额外轮次能把失败转为成功时才有益，而当它删去模型本可利用的证据时则有害。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.00408" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.00408" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30723" target="_blank">Skill is Not One-Size-Fits-All: Model-Aware Skill Alignment for LLM Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30723" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30723" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02388" target="_blank">Policy and World Modeling Co-Training for Language Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02388" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02388" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30931" target="_blank">MineExplorer: Evaluating Open-World Exploration of MLLM Agents in Minecraft</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30931" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30931" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02437" target="_blank">On the Scaling of PEFT: Towards Million Personal Models of Trillion Parameters</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02437" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02437" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28556" target="_blank">A Matter of TASTE: Improving Coverage and Difficulty of Agent Benchmarks</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28556" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28556" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02404" target="_blank">K-BrowseComp: A Web Browsing Agent Benchmark Grounded in Korean Contexts</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02404" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02404" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29707" target="_blank">Domino: Decoupling Causal Modeling from Autoregressive Drafting in Speculative Decoding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29707" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29707" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29343" target="_blank">Draft-OPD: On-Policy Distillation for Speculative Draft Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29343" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29343" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30501" target="_blank">Linear Ensembles Wash Away Watermarks: On the Fragility of Distributional Perturbations in LLMs</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30501" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30501" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02564" target="_blank">VLMs are Good Teachers for Video Reasoning via Adaptive Test-Time Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02564" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02564" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.24956" target="_blank">NITP: Next Implicit Token Prediction for LLM Pre-training</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.24956" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.24956" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02482" target="_blank">X-Stream: Exploring MLLMs as Multiplexers for Multi-Stream Understanding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02482" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02482" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30351" target="_blank">VideoMLA: Low-Rank Latent KV Cache for Minute-Scale Autoregressive Video Diffusion</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30351" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30351" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01247" target="_blank">Where to Look: Can Foundation Models Reach a Target Viewpoint Through Active Exploration?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01247" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01247" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28132" target="_blank">Which Pretraining Paradigm Better Serves Spatial Intelligence? An Empirical Comparison of Vision-Language and Video Generation Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28132" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28132" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29860" target="_blank">ESPO: Early-Stopping Proximal Policy Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29860" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29860" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31057" target="_blank">LVSA: Training-Free Sparse Attention for Long Video Diffusion</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31057" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31057" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01528" target="_blank">Joint Agent Memory and Exploration Learning via Novelty Signals</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01528" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01528" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02553" target="_blank">LongLive-RAG: A General Retrieval-Augmented Framework for Long Video Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02553" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02553" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29588" target="_blank">Brain-IT-VQA: From Brain Signals to Answers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-02</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29588" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29588" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 42 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

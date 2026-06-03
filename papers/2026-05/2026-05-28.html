@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-28</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月28日</h1>
+  <p>Daily Paper Digest · May 28, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>55</span> 篇</div>
+  <div class="stat">高度相关 <span>8</span> 篇</div>
+  <div class="stat">相关 <span>0</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-28 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27466" target="_blank">AgensFlow: A Coordination-Policy Substrate for Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">AgensFlow reframes multi-agent LLM coordination as an online policy-learning problem under partial observability, making decisions about which skill protocol to invoke, which agent role to assign, and which model to bind to each role learnable from repeated trajectories rather than fixed at design time. On distributed-systems incidents and security advisories, learned routing outperforms static pipelines, topology compression (skip:X) emerges as a useful substrate primitive, and warm-started policy graphs reduce exploration cost while maintaining quality.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将多智能体 LLM 系统中的协调决策建模为部分可观测下的在线策略学习问题，把技能协议选择、智能体角色分配、模型绑定等原本固定的设计选项变为可从历史轨迹中习得的策略。在分布式系统事件与安全公告两类任务集上，习得的路由优于固定流水线，并自发涌现出有意义的子结构"拓扑压缩"（skip:X）；预热策略图能在保持性能的同时显著降低探索成本，为多智能体系统的可学习、可审计协调提供了基础。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27466" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27466" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28816" target="_blank">Gamma-World: Generative Multi-Agent World Modeling Beyond Two Players</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Gamma-World scales generative world models to interactive multi-agent environments beyond two players. It introduces Simplex Rotary Agent Encoding, a parameter-free 3D-RoPE extension that maps agents to vertices of a regular simplex in rotary space for permutation-symmetric identity, plus Sparse Hub Attention with learnable hub tokens that reduces cross-agent attention cost from quadratic to linear in the number of agents. Diffusion-to-causal distillation enables real-time 24 FPS rollouts with KV caching, and the model generalizes from two to four players without retraining.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将生成式世界模型扩展到多于两名玩家的多智能体交互场景，提出 Simplex Rotary Agent Encoding——在旋转角空间中以正单纯形顶点无参表示智能体身份，保持置换对称性；并通过带可学习中枢令牌的 Sparse Hub Attention 将跨智能体注意力开销从二次降至线性，兼顾计算效率与跨主体交互一致性。模型从扩散教师蒸馏为因果学生后可结合 KV 缓存实时以 24 FPS 推演，且无需重训即可从两人泛化至四人，缓解了多智能体世界建模的可扩展性瓶颈。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28816" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28816" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19952" target="_blank">Rethinking How to Remember: Beyond Atomic Facts in Lifelong LLM Agent Memory</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">TriMem is a three-tier lifelong memory architecture for LLM agents that simultaneously stores raw dialogue segments, atomic facts, and synthesized profiles to balance fidelity, retrieval efficiency, and reasoning depth, addressing the granularity loss of atomic-fact-only memories. It uses TextGrad-style feedback to continuously refine extraction and profiling prompts without parameter updates. On LoCoMo and PerLTQA it consistently outperforms baselines that rely solely on extracted atomic facts.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 TriMem——面向 LLM 智能体的三层终身记忆架构：同时保留原始对话片段、原子事实和合成画像三种粒度的表征，以兼顾保真度、检索效率和推理深度，弥补只用原子事实记忆导致的粒度损失。系统通过 TextGrad 式反馈在不更新模型参数的情况下持续优化抽取与画像提示，在 LoCoMo 与 PerLTQA 两个长期记忆基准、多种 LLM 主干上稳定优于仅依赖原子事实的记忆方法。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19952" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19952" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28774" target="_blank">Agent Explorative Policy Optimization for Multimodal Agentic Reasoning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">This work identifies the 'Thinking-Acting Gap' in multimodal agentic reasoning: under standard RL recipes such as GRPO, tool use is attempted in only ~30% of rollouts and within ~40% of questions all tool-using rollouts are wrong, suppressing the learning signal at the very tool calls that need it. AXPO fixes thinking prefixes for all-wrong tool-using subgroups, resamples tool calls and continuations, and uses uncertainty-based prefix selection. Across nine multimodal benchmarks and three Qwen3-VL-Thinking scales, SFT+AXPO beats SFT+GRPO by +1.8pp Pass@1 / +1.8pp Pass@4; an 8B model with AXPO surpasses a 32B base on Pass@4.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文揭示多模态代理推理中的"思考-行动鸿沟"：在 GRPO 等标准 RL 训练下，工具调用仅在约 30% 的 rollout 中发生，且约 40% 的问题里所有工具调用 rollout 都错，使工具调用处本应获得的学习信号被压制。AXPO 通过为全错子组固定思考前缀、重采样工具调用与后续推理，并基于不确定性选择思考前缀，在 9 个多模态基准、Qwen3-VL-Thinking 三个规模上较 SFT+GRPO 在 Pass@1 与 Pass@4 上各提升 1.8 个百分点，8B 模型在 Pass@4 上超越 32B 基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28774" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28774" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27905" target="_blank">AI Research Agents Narrow Scientific Exploration</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">This empirical study generates 37,802 ideas with four agent frameworks and six LLMs to test whether AI research agents broaden or narrow scientific inquiry. AI-generated ideas are substantially more concentrated than human-authored papers from the same areas, stay closer to seed literature, attract lower downstream citations, and primarily recombine existing methods rather than pose genuinely new questions—suggesting today's research agents excel at local elaboration but do not expand scientific frontiers.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文实证检验 AI 研究智能体是否能拓宽科学探索：用四种智能体框架与六个大模型共生成 37,802 个研究想法，并与同领域人类论文对比分析。结果显示 AI 生成的想法显著更集中、与种子文献距离更近、后续被引更低，且主要在重组现有方法而非提出真正新颖的问题，表明现有研究智能体擅长"局部细化"，但难以拓展科学前沿，对未来评估与设计具有警示意义。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27905" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27905" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27760" target="_blank">SkillGrad: Optimizing Agent Skills Like Gradient Descent</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">SkillGrad treats agent skill packages—reusable procedural knowledge files—as structured parameters and optimizes them in a gradient-descent style: task execution trajectories provide loss signals, automatic diagnoses supply text-based correction guidance, a momentum agent accumulates recurring diagnostic patterns into persistent memory, and LLM-based patching applies layer-aware edits to the skill package. On SpreadsheetBench Verified and WikiTableQuestions it improves over training-based skill-evolution baselines by 6.7 percentage points across multiple backbones.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将智能体"技能包"（可复用的结构化过程性知识文件）视作结构化参数，借鉴梯度下降范式进行优化：任务执行轨迹生成损失信号，自动诊断给出文本式修正指引，动量代理累积反复出现的诊断模式形成持久记忆，再由 LLM 实施分层补丁式参数更新。在 SpreadsheetBench Verified 与 WikiTableQuestions 上较训练式技能演化基线提升 6.7 个百分点，且消融显示动量与对比诊断对技能质量均有显著贡献。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27760" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27760" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28655" target="_blank">AutoScientists: Self-Organizing Agent Teams for Long-Running Scientific Experimentation</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">AutoScientists is a decentralized multi-agent framework for autonomous computational science: agents interpret a shared experimental state, self-organize into teams around promising hypotheses, and exchange both successes and failures to reduce redundant exploration, with peer critique gating experimental resource allocation. It reaches 74.4% mean leaderboard percentile on BioML-Bench (+8.33pp over prior agents), achieves GPT optimization 1.9x faster than single-agent baselines, and improves ProteinGym state-of-the-art by 6.5-12.5% across assays.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 AutoScientists——面向计算科研的去中心化多智能体框架：智能体读取共享实验状态、围绕有前景的假设自组织成团队，并通过成功/失败日志共享与同伴评审机制来抑制重复探索、控制资源分配，从而具备跨实验的机构性记忆。在 BioML-Bench 24 项任务上取得 74.4% 平均排行榜百分位（较此前智能体提升 8.33 个百分点），GPT 优化任务上比单智能体方法快 1.9 倍，ProteinGym 多项实验较 SOTA 提升 6.5–12.5%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28655" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28655" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.24486" target="_blank">AgentFugue: Agent Scaling for Long-Horizon Tasks through Collective Reasoning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en">AgentFugue investigates whether running multiple peer agents on the same long-horizon task can yield capability gains beyond simply strengthening a single agent. It introduces a shared reasoning hub that records concise notes on what each agent has established, attempted, or ruled out, letting agents selectively consume each other's discoveries without centralized planning—turning isolated trajectories into a knowledge ecology. Trained via SFT followed by RL, the framework shows that collective reasoning is a distinct source of capability gains rather than mere compute multiplication.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究"扩展多个对等智能体"是否能在长程任务上带来超越单智能体扩展的能力增益，提出共享推理中枢——记录每个智能体已确立、已尝试、已排除的简要笔记，允许各智能体按需查阅同伴发现，将原本孤立的轨迹转化为知识生态，且无需中心化规划。通过监督微调与强化学习训练，AgentFugue 在多项长程任务上稳定超过强基线，表明集体推理可作为一种与单体扩展并列的新扩展维度。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.24486" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.24486" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28293" target="_blank">ProRL: Effective Reinforcement Learning for Proactive Recommendation via Rectified Policy Gradient Estimation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28293" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28293" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28820" target="_blank">From Pixels to Words -- Towards Native One-Vision Models at Scale</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28820" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28820" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28814" target="_blank">Self-Improving Language Models with Bidirectional Evolutionary Search</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28814" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28814" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28421" target="_blank">DenoiseRL: Bootstrapping Reasoning Models to Recover from Noisy Prefixes</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28421" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28421" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28003" target="_blank">ResearchMath-14K: Scaling Research-Level Mathematics via Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28003" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28003" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28732" target="_blank">MemTrace: Tracing and Attributing Errors in Large Language Model Memory Systems</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28732" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28732" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28548" target="_blank">GEM: Generative Supervision Helps Embodied Intelligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28548" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28548" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28775" target="_blank">Learn from Weaknesses: Automated Domain Specialization for Small Computer-Use Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28775" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28775" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26340" target="_blank">ScientistOne: Towards Human-Level Autonomous Research via Chain-of-Evidence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26340" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26340" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28773" target="_blank">Rethinking Memory as Continuously Evolving Connectivity</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28773" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28773" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25969" target="_blank">Triplet-Block Diffusion RWKV</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25969" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25969" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28691" target="_blank">OSP-Next: Efficient High-Quality Video Generation with Sparse Sequence Parallelism, HiF8 Quantization, and Reinforcement Learning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28691" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28691" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28109" target="_blank">Long Live The Balance: Information Bottleneck Driven Tree-based Policy Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28109" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28109" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28534" target="_blank">GUI-CIDER: Mid-training GUI Agents via Causal Internalization and Density-aware Exemplar Reselection</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28534" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28534" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23163" target="_blank">Fast-dDrive: Efficient Block-Diffusion VLM for Autonomous Driving</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23163" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23163" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27491" target="_blank">GE-Sim 2.0: A Roadmap Towards Comprehensive Closed-loop Video World Simulators for Robotic Manipulation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27491" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27491" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27354" target="_blank">Guiding LLM Post-training Data Engineering with Model Internals from Sparse Autoencoders</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27354" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27354" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28721" target="_blank">LiveBrowseComp: Are Search Agents Searching, or Just Verifying What They Already Know?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28721" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28721" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28398" target="_blank">HRBench: Benchmarking and Understanding Thinking-Mode Switch Strategies in Hybrid-Reasoning LLMs</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28398" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28398" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27028" target="_blank">Less is More: Early Stopping Rollout for On-Policy Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-28</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27028" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27028" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 27 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-19</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月19日</h1>
+  <p>Daily Paper Digest · May 19, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>43</span> 篇</div>
+  <div class="stat">高度相关 <span>4</span> 篇</div>
+  <div class="stat">相关 <span>15</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-19 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18747" target="_blank">Code as Agent Harness</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Xuying Ning, Katherine Tieu, Dongqi Fu, Tianxin Wei et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent coordination</span></div>
+  <div class="summary-en">A survey that reframes code as the operational substrate ("harness") for agent infrastructure, organized into three layers: the harness interface connecting agents to reasoning/action/environment, harness mechanisms (planning, memory, tool use, feedback-driven control), and scaling from single-agent to multi-agent settings. It argues shared code artifacts are the key enabler of multi-agent coordination, review, and verification across domains from coding assistants to enterprise workflows.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文是一篇综述，将代码重新定位为智能体基础设施的"操作底座"（harness），并按三个层次组织：连接推理/行动/环境的接口层、规划与记忆与工具使用等机制层，以及从单智能体扩展到多智能体的扩展层。作者论证共享代码产物是支撑多智能体协调、审查与验证的关键，覆盖编码助手到企业工作流等多个应用场景。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18747" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18747" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17698" target="_blank">Agent Bazaar: Enabling Economic Alignment in Multi-Agent Marketplaces</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Seth Karten, Cameron Crow, Chi Jin · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Agent Bazaar is a multi-agent simulation framework for evaluating "Economic Alignment" -- whether collectives of LLM economic agents preserve market stability and integrity. It identifies two emergent failure modes (price-volatility collapse in B2C markets and Sybil deception via coordinated fake identities in C2C markets), shows frontier and open models largely fail to self-regulate, and trains a 9B model with REINFORCE++ and an adaptive curriculum that outperforms all evaluated frontier/open models on the proposed Economic Alignment Score.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Agent Bazaar 是一个多智能体仿真框架，用于评估"经济对齐"——即由大模型经济智能体组成的群体能否维持市场稳定与诚信。论文识别出两种群体涌现失效模式（B2C 市场的价格波动崩盘，以及 C2C 市场中通过协调的虚假身份进行的女巫欺骗），发现前沿与开源模型大多无法自我约束，并用 REINFORCE++ 与自适应课程训练出一个 9B 模型，在所提出的经济对齐分数上超过所有受测前沿/开源模型。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17698" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17698" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15565" target="_blank">AstraFlow: Dataflow-Oriented Reinforcement Learning for Agentic LLMs</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Haizhong Zheng, Yizhuo Di, Jiahui Wang, Shuowei Jin et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">AstraFlow is a dataflow-oriented reinforcement-learning system for agentic LLMs that replaces conventional trainer-centered control with decoupled, autonomous components (rollout services, dataflow management, training). This design natively supports complex multi-policy collaborative agentic RL and efficiently exploits elastic, heterogeneous, cross-region compute without per-extension system engineering, matching or exceeding baseline accuracy on math, code, search, and AgentBench workloads.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AstraFlow 是面向智能体大模型的数据流式强化学习系统，用解耦的自治组件（rollout 服务、数据流管理、训练）取代传统以训练器为中心的控制架构。该设计原生支持复杂的多策略协同智能体强化学习，并能高效利用弹性、异构、跨区域算力而无需针对每个扩展做专门的系统工程，在数学、代码、搜索及 AgentBench 任务上达到或超过基线精度。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15565" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15565" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17242" target="_blank">From Runnable to Shippable: Multi-Agent Test-Driven Development for Generating Full-Stack Web Applications from Requirements</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yuxuan Wan, Tingshuo Liang, Jiakai Xu, Jingyu Xiao et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">TDDev is a multi-agent test-driven-development framework that closes the loop for generating full-stack web apps: it converts requirements into acceptance tests before coding, deploys and validates the app via simulated browser interaction, and turns observed failures into structured repair reports for the coding agent. In the first controlled study of TDD protocols for web generation, the TDD infrastructure improves generation quality by 34-48 percentage points over a no-TDD baseline, with the optimal protocol depending on the model's generation style.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">TDDev 是一个多智能体测试驱动开发框架，为全栈 Web 应用生成闭环：先将需求转化为验收测试，再部署并通过模拟浏览器交互验证应用，最后把观测到的失败转化为结构化修复报告反馈给编码智能体。在首个关于 Web 生成 TDD 协议的受控研究中，TDD 基础设施相比无 TDD 基线将生成质量提升 34–48 个百分点，且最优协议取决于模型的生成风格。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17242" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17242" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18401" target="_blank">SkillsVote: Lifecycle Governance of Agent Skills from Collection, Recommendation to Evolution</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Hongyi Liu, Haoyan Yang, Tao Jiang, Bo Tang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">SkillsVote is a lifecycle-governance framework for reusable "Agent Skills" (executable scripts plus procedural guidance) spanning collection, recommendation, and evolution. It profiles a million-scale skill corpus, performs agentic library search to expose relevant skill context before execution, and after execution decomposes trajectories into skill-linked subtasks with evidence-gated updates; offline evolution improves GPT-5.2 on Terminal-Bench 2.0 by up to 7.9 pp and online evolution improves SWE-Bench Pro by up to 2.6 pp, all without model updates.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">SkillsVote 是面向可复用"智能体技能"（可执行脚本＋流程指导）的生命周期治理框架，覆盖收集、推荐与演化三阶段。它对百万级技能语料做画像，在执行前进行智能体式库检索以暴露相关技能上下文，执行后将轨迹分解为与技能关联的子任务并进行证据门控更新；离线演化在 Terminal-Bench 2.0 上将 GPT-5.2 提升最多 7.9 个百分点，在线演化在 SWE-Bench Pro 上提升最多 2.6 个百分点，且无需更新模型。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18401" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18401" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18652" target="_blank">MementoGUI: Learning Agentic Multimodal Memory Control for Long-Horizon GUI Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ziyun Zeng, Hang Hua, Bocheng Zou, Mu Cai et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">MementoGUI is a plug-in agentic memory framework for long-horizon GUI agents that formulates interaction history as an online memory-control problem rather than fixed context. Its learned controller MementoCore selectively preserves task-relevant events with textual summaries and ROI-level visual evidence in working memory while retrieving reusable past trajectories from episodic memory, enabling memory augmentation without finetuning the GUI agent backbone.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MementoGUI 是面向长程 GUI 智能体的可插拔智能体记忆框架，将交互历史建模为在线记忆控制问题而非固定上下文。其学习型控制器 MementoCore 在工作记忆中选择性保留与任务相关的事件（含文本摘要与 ROI 级视觉证据），并从情景记忆中检索可复用的历史轨迹，从而在不微调 GUI 智能体主干的情况下实现记忆增强。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18652" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18652" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18643" target="_blank">Post-Trained MoE Can Skip Half Experts via Self-Distillation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xingtai Lv, Li Sheng, Kaiyan Zhang, Yichen You et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">ZEDA (Zero-Expert Self-Distillation Adaptation) is a low-cost framework that converts a post-trained static Mixture-of-Experts model into an efficient dynamic one so easy tokens can bypass unnecessary experts at serving time. By injecting parameter-free zero-output experts and using two-stage self-distillation with the original MoE as a frozen teacher, ZEDA eliminates over 50% of expert FLOPs at marginal accuracy loss on Qwen3-30B-A3B and GLM-4.7-Flash, delivering ~1.20x end-to-end inference speedup.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ZEDA（零专家自蒸馏适配）是一个低成本框架，可将训练完成的静态 MoE 模型转换为高效的动态 MoE，使简单 token 在推理时跳过不必要的专家。通过注入无参数的零输出专家并以原 MoE 作为冻结教师进行两阶段自蒸馏，ZEDA 在 Qwen3-30B-A3B 与 GLM-4.7-Flash 上以极小精度损失消除超过 50% 的专家 FLOPs，端到端推理加速约 1.20 倍。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18643" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18643" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17672" target="_blank">Stop When Reasoning Converges: Semantic-Preserving Early Exit for Reasoning Models</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Dehai Min, Giovanni Vaccarino, Huiyi Chen, Yongliang Wu et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">PUMA is a plug-and-play early-exit framework for large reasoning models that targets overthinking by detecting reasoning-level semantic redundancy -- when successive steps merely revisit established conclusions -- rather than relying only on answer-level confidence signals that may exit prematurely. A lightweight redundancy detector flags candidate exits and answer-level verification confirms safety, removing redundant continuation while preserving answer accuracy and a coherent reasoning prefix across five reasoning models and benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PUMA 是面向大型推理模型的即插即用提前退出框架，针对"过度思考"问题，通过检测推理层面的语义冗余（连续步骤只是重复已确立结论）来判停，而非仅依赖可能过早退出的答案置信度信号。轻量冗余检测器标记候选退出点，答案级验证确认其安全性，从而在五个推理模型与基准上去除冗余续写，同时保持答案准确率与连贯的推理前缀。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17672" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17672" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16909" target="_blank">TOBench: A Task-Oriented Omni-Modal Benchmark for Real-World Tool-Using Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Zhiqiang Liu, Wenhui Dong, Yilang Tan, Yuwen Qu et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">MM-ToolBench is a benchmark and evaluation harness for task-oriented omni-modal tool use, with 100 executable tasks over 27 MCP servers and 324 tools across Customer Service and Intelligent Creation. Its core is closed-loop multimodal verification -- agents must execute tools, inspect rendered artifacts, and self-correct -- and experiments on 15 agentic models show it remains highly challenging even for the strongest coding models.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MM-ToolBench 是面向任务型全模态工具使用的基准与评测框架，包含 100 个可执行任务，覆盖 27 个 MCP 服务器、324 个工具，跨客服与智能创作两大任务族。其核心是闭环多模态验证——智能体须执行工具、检查渲染产物并自我纠错——对 15 个智能体模型的实验表明，即便最强编码模型也难以胜任，挑战性很高。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16909" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16909" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16819" target="_blank">AgentKernelArena: Generalization-Aware Benchmarking of GPU Kernel Optimization Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Sharareh Younesian, Wenwen Ouyang, Sina Rafati, Mehdi Rezagholizadeh et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">AgentKernelArena is an open-source benchmark measuring AI coding agents on GPU kernel optimization, with 196 tasks spanning HIP-to-HIP, Triton-to-Triton, and PyTorch-to-HIP, evaluating complete agent workflows in isolated workspaces with gated compilation/correctness/performance and an unseen-configuration generalization protocol. Production agents (Cursor, Claude Code, Codex) reach near-perfect compilation and high correctness, with top configurations achieving up to 6.89x speedups on PyTorch-to-HIP.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AgentKernelArena 是衡量 AI 编码智能体在 GPU 核函数优化能力的开源基准，含 196 个任务，覆盖 HIP→HIP、Triton→Triton 与 PyTorch→HIP，在隔离工作区中评测完整智能体工作流（编译/正确性/性能门控）并设有未见配置泛化协议。生产级智能体（Cursor、Claude Code、Codex）编译几乎全通过且正确率高，最优配置在 PyTorch→HIP 上取得最高 6.89 倍加速。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16819" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16819" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16679" target="_blank">CHI-Bench: Can AI Agents Automate End-to-End, Long-Horizon, Policy-Rich Healthcare Workflows?</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Haolin Chen, Deon Metelski, Leon Qi, Tao Xia et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">CHI-Bench is a benchmark of long-horizon healthcare workflows (provider prior authorization, payer utilization management, care management) that stresses three under-tested agent capabilities: policy density, multi-role composition with handoffs, and multilateral multi-turn interaction such as peer review and patient outreach. Across 30 agent harness/model configurations the best agent resolves only 28% of tasks, none clears 20% on strict pass^3, and batching all tasks into one session collapses performance to 3.8%.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CHI-Bench 是关于长程医疗工作流（医方事前授权、支付方使用管理、病例管理）的基准，重点考察三类被现有评测忽视的智能体能力：策略密度、带交接的多角色组合，以及如同行评审与患者沟通这类多边多轮交互。在 30 种智能体框架/模型配置中，最佳智能体仅解决 28% 的任务，无一在严格 pass^3 上超过 20%，而将所有任务放入单一会话执行时性能骤降至 3.8%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16679" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16679" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14038" target="_blank">Model-Adaptive Tool Necessity Reveals the Knowing-Doing Gap in LLM Tool Use</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yize Cheng, Chenrui Fan, Mahdi JafariRaviz, Keivan Rezaei et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">This work introduces a model-adaptive definition of tool necessity for LLM agents, grounded in each model's empirical capability rather than treated as a model-agnostic property. Comparing necessity against observed tool-call behavior across four models reveals 26.5-54.0% mismatches, and probing hidden states shows the internal "believes a tool is necessary" signal and the execution "makes a tool call" signal are both linearly decodable but become nearly orthogonal in the late-layer last-token regime that drives action -- a structural "knowing-doing gap".</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文为大模型智能体提出一个与模型自适应的工具必要性定义，依据每个模型的实证能力而非将其视为与模型无关的属性。对四个模型的必要性与实际工具调用行为对比显示 26.5%–54.0% 的不匹配；隐状态探针表明"认为需要工具"的内部信号与"实际发起调用"的执行信号均可线性解码，但在驱动动作的末层末词位置上二者几近正交，揭示了结构性的"知—行差距"。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14038" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14038" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18739" target="_blank">LongLive-2.0: An NVFP4 Parallel Infrastructure for Long Video Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yukang Chen, Luozhou Wang, Wei Huang, Shuai Yang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">LongLive-2.0 is an NVFP4-based parallel infrastructure spanning the full training and inference workflow of long video generation. For training it introduces Balanced sequence-parallel autoregressive training that co-designs the teacher-forcing layout with SP execution, combined with NVFP4 precision to cut GPU memory and accelerate GEMMs; for Blackwell-GPU inference it enables W4A4 NVFP4 inference with NVFP4 KV cache and asynchronous streaming VAE decoding for higher end-to-end throughput.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">LongLive-2.0 是一套基于 NVFP4 的并行基础设施，贯穿长视频生成的完整训练与推理流程。训练上提出 Balanced 序列并行自回归训练，将教师强制布局与序列并行执行协同设计，并结合 NVFP4 精度降低显存并加速 GEMM；在 Blackwell GPU 推理上支持 W4A4 NVFP4 推理、NVFP4 KV 缓存与异步流式 VAE 解码，以提升端到端吞吐。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18739" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18739" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18661" target="_blank">AI for Auto-Research: Roadmap & User Guide</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Lingdong Kong, Xian Sun, Wei Chow, Linfeng Li et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">A roadmap and analysis of AI across the full research lifecycle (Creation, Writing, Validation, Dissemination), studying long-horizon research agents through April 2026. It maps a sharp stage-dependent boundary between reliable assistance and unreliable autonomy: AI excels at structured, retrieval-grounded, tool-mediated tasks but remains fragile for genuinely novel ideas and research-level experiments, and greater automation can obscure rather than reduce integrity risks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">这是一篇覆盖完整科研生命周期（创作、写作、验证、传播）的路线图与分析，研究截至 2026 年 4 月的长程科研智能体。它刻画了"可靠辅助"与"不可靠自治"之间随阶段变化的清晰边界：AI 在结构化、可检索接地、工具中介的任务上表现优异，但在真正新颖的想法与研究级实验上仍脆弱，且更高自动化可能掩盖而非降低科研诚信风险。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18661" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18661" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17933" target="_blank">AtlasVA: Self-Evolving Visual Skill Memory for Teacher-Free VLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Pan Wang, Yihao Hu, Xiujin Liu, Jingchu Yang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">AtlasVA is a teacher-free visual skill-memory framework for VLM agents that keeps reusable experience visually grounded across three layers (spatial heatmaps, visual exemplars, symbolic text skills) rather than as lossy text summarized by a proprietary teacher. It evolves danger/affinity atlases from trajectory statistics and reuses them as potential-based shaping rewards for RL, outperforming text-centric memory baselines especially on spatially intensive tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AtlasVA 是面向视觉-语言模型智能体的无教师视觉技能记忆框架，将可复用经验以三层（空间热力图、视觉范例、符号化文本技能）保持视觉接地，而非由专有教师模型压缩为有损文本。它从轨迹统计中演化"危险/亲和"图谱并作为基于势能的塑形奖励用于强化学习，在以空间为主的任务上明显优于以文本为中心的记忆基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17933" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17933" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17842" target="_blank">SNLP: Layer-Parallel Inference via Structured Newton Corrections</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ligong Han, Kai Xu, Hao Wang, Akash Srivastava · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">SNLP (Structured Newton Layer Parallelism) relaxes the strictly sequential layer dependency of autoregressive Transformers by treating the cross-layer hidden-state trace as a nonlinear residual equation solved with parallel Newton-style updates, replacing expensive exact Jacobians with cheap architecture-induced surrogate dynamics. SNLP-aware regularization improves layer-parallel compatibility and even reduces baseline perplexity by 4.7-23.4% on nanochat-scale Transformers, with practical wall-clock gains at inference.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">SNLP（结构化牛顿层并行）通过将跨层隐状态轨迹视为可用并行牛顿式更新求解的非线性残差方程，并以廉价的、由架构诱导的代理动力学替代昂贵的精确雅可比，从而放松自回归 Transformer 严格的逐层依赖。SNLP 感知正则化提升层并行兼容性，甚至在 nanochat 规模 Transformer 上将基线困惑度降低 4.7%–23.4%，并在推理时带来实际墙钟时间收益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17842" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17842" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17260" target="_blank">LiteFrame: Efficient Vision Encoders Unlock Frame Scaling in Video LLMs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jihwan Kim, Nikhil Parthasarathy, Danfeng Qin, Junhwa Hur et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">LiteFrame addresses the latency bottleneck in long-form Video LLMs, which shifts from the LLM to per-frame vision-encoder processing once visual tokens are reduced. It trains a compact student encoder via Compressed Token Distillation to directly predict spatio-temporally compressed representations of a large teacher, plus Language Model Adaptation; versus InternVL3-8B it cuts end-to-end latency 35% while processing 8x more frames and improving average video-understanding accuracy.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">LiteFrame 针对长视频 Video LLM 的延迟瓶颈——当视觉 token 被削减后，瓶颈从大模型转移到逐帧视觉编码器处理。它通过"压缩 token 蒸馏"训练紧凑的学生编码器，直接预测大型教师模型的时空压缩表示，并辅以语言模型适配；相比 InternVL3-8B，在多处理 8 倍帧数的同时将端到端延迟降低 35% 并提升平均视频理解精度。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17260" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17260" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16839" target="_blank">CompactAttention: Accelerating Chunked Prefill with Block-Union KV Selection</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jiwon Song, Dongwon Jo, Beomseok Kang, Jae-Joon Kim · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">CompactAttention accelerates chunked-prefill attention for long-context serving via Block-Union KV Selection: it treats 2D block-sparse masks as KV-selection signals rather than direct sparse-kernel execution plans and converts them into GQA-aware per-group KV block tables through Q-block and intra-group union, producing minimal block tables that let selected KV blocks be accessed in place without explicit KV compaction. It maintains accuracy close to dense attention on LLaMA-3.1-8B-Instruct.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CompactAttention 通过"块并 KV 选择"加速长上下文服务中的分块预填充注意力：它把二维块稀疏掩码视作 KV 选择信号而非直接的稀疏核执行计划，并经由 Q 块并与组内并转换为 GQA 感知的按组 KV 块表，生成最小块表，使被选 KV 块可就地访问而无需显式 KV 压缩，在 LLaMA-3.1-8B-Instruct 上保持接近稠密注意力的精度。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16839" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16839" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14589" target="_blank">EndPrompt: Efficient Long-Context Extension via Terminal Anchoring</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Han Tian, Luxuan Chen, Xinran Chen, Rui Kong et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">EndPrompt extends LLM context windows using only short training sequences: it keeps the original short context as an intact first segment and appends a brief terminal prompt as a second segment assigned positional indices near the target length, introducing both local and long-range relative distances within a short physical sequence while preserving semantic continuity. With a RoPE/Bernstein-based smoothness analysis, it extends LLaMA-family models from 8K to 64K with an average RULER score of 76.03.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">EndPrompt 仅用短训练序列即可扩展大模型上下文窗口：保留原始短上下文作为完整的第一段，并追加一个简短的"终端提示"作为第二段，赋予其接近目标长度的位置索引，从而在短物理序列内同时引入局部与长程相对距离并保持语义连续性。结合基于 RoPE 与 Bernstein 不等式的平滑性分析，它将 LLaMA 系列模型从 8K 扩展到 64K，平均 RULER 得分 76.03。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14589" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14589" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18743" target="_blank">Actionable World Representation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Kunqi Xu, Jitao Li, Jianglong Ye, Tianshu Tang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Inspired by the emergent behaviors in large language models that generalized human intelligence, the research community is pursuing similar emergent capabilities within world models, with a emphasis on modeling the physical world. Within the scope of physical world model, objects are the fundamental...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18743" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18743" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18719" target="_blank">SafeDiffusion-R1: Online Reward Steering for Safe Diffusion Post-Training</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Komal Kumar, Ankan Deria, Abhishek Basu, Fahad Shamshad et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Diffusion models have been widely studied for removing unsafe content learned during pre-training. Existing methods require expensive supervised data, either unsafe-text paired with safe-image groundtruth or negative/positive image pairs, making them impractical to scale. Furthermore, offline reinfo...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18719" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18719" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18678" target="_blank">Lance: Unified Multimodal Modeling by Multi-Task Synergy</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Fengyi Fu, Mengqi Huang, Shaojin Wu, Yunsheng Jiang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">We present Lance, a lightweight native unified model supporting multimodal understanding, generation, and editing for both images and videos. Rather than relying on model capacity scaling or text-image-dominant designs, Lance explores a practical paradigm for unified multimodal modeling via collabor...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18678" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18678" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18601" target="_blank">Incantation: Natural Language as the Action Interface for Multi-Entity Video World Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Shangwen Zhu, Qianyu Peng, Zhao Pu, Zhilei Shu et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Modern interactive video world models have achieved impressive visual fidelity, yet lack fine-grained multi-entity control and cross-entity, cross-world generalization. We trace this gap to the action interface: standard control protocols (e.g. animation IDs, device inputs, scene-level captions) bin...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18601" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18601" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18549" target="_blank">Monitoring the Internal Monologue: Probe Trajectories Reveal Reasoning Dynamics</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Maciej Chrabąszcz, Aleksander Szymczyk, Marcin Sendera, Tomasz Trzciński et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Large Reasoning Models (LRMs) introduce new opportunities for safety monitoring through their Chain of Thought (CoT) reasoning. However, CoT is not always faithful to the model's final output, undermining its reliability as a monitoring tool. To address this, we investigate the hidden representation...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18549" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18549" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18451" target="_blank">Code-as-Room: Generating 3D Rooms from Top-Down View Images via Agentic Code Synthesis</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yixuan Yang, Zhen Luo, Wanshui Gan, Jinkun Hao et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Designing realistic and functional 3D indoor rooms is essential for a wide range of applications, including interior design, virtual reality, gaming, and embodied AI. While recent MLLM-based approaches have shown great potential for 3D room synthesis from textual descriptions or reference images, te...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18451" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18451" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18287" target="_blank">StableVLA: Towards Robust Vision-Language-Action Models without Extra Data</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yiyang Fu, Chubin Zhang, Shukai Gong, Yufan Deng et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">It is infeasible to encompass all possible disturbances within the training dataset. This raises a critical question regarding the robustness of Vision-Language-Action (VLA) models when encountering unseen real-world visual disturbances, particularly under imperfect visual conditions. In this work, ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18287" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18287" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17894" target="_blank">Evaluating Cognitive Age Alignment in Interactive AI Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yifan Shen, Jiawen Zhang, Jian Xu, Junho Kim et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">While agentic AI and its core multimodal large language models (MLLMs) have demonstrated remarkable promise in language and visual reasoning across domains ranging from daily life to advanced scientific research, a profound gap remains between artificial and human intelligence. Despite the integrati...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17894" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17894" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17283" target="_blank">OProver: A Unified Framework for Agentic Formal Theorem Proving</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">David Ma, Kaijing Ma, Shawn Guo, Yunfeng Shi et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Recent progress in formal theorem proving has benefited from large-scale proof generation and verifier-aware training, but agentic proving is rarely integrated into prover training, appearing only at inference time. We present OProver, a unified framework for agentic formal theorem proving in Lean 4...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17283" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17283" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17278" target="_blank">A2RBench: An Automatic Paradigm for Formally Verifiable Abstract Reasoning Benchmark Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Qingchuan Ma, Yuexiao Ma, Yongkang Xie, Tianyu Xie et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Abstract reasoning ability reflects the intelligence and generalization capacity of LLMs to extract and apply abstract rules. However, accurately measuring this ability remains challenging: existing benchmarks either rely on expensive manual annotation, limiting their scale, or risk measuring memori...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17278" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17278" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17199" target="_blank">Geometric Phase Transition Enables Extreme Hippocampal Memory Capacity</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Prashant C. Raju · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Memory systems can store vastly different amounts of information despite similar hardware constraints. Here, we show that superior spatial memory emerges from a discrete stiffening of hippocampal population geometry-a transition from disorganized to crystalline collective coding. Comparing food-cach...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17199" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17199" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16893" target="_blank">NGM: A Plug-and-Play Training-Free Memory Module for LLMs</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yuwen Qu, Wenhui Dong, Chenyang Si, Caifeng Shan · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Recent studies introduce conditional memory modules that decouple knowledge storage from neural computation, enabling more direct knowledge access. Compared to MoE, which relies on dynamic computation paths, explicit lookup provides a more efficient knowledge retrieval mechanism. However, these appr...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16893" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16893" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16882" target="_blank">E-PMQ: Expert-Guided Post-Merge Quantization with Merged-Weight Anchoring</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Wenjun Wang, Yanggan Gu, Shuo Cai, Yuanyi Wang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Low-resource deployment constraints have made model quantization essential for deploying neural networks while preserving performance. Meanwhile, model merging has become an increasingly practical low-resource strategy for integrating multiple task- or domain-specialized experts into a single model ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16882" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16882" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16865" target="_blank">MixSD: Mixed Contextual Self-Distillation for Knowledge Injection</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jiarui Liu, Lechen Zhang, Yongjin Yang, Yinghui He et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Supervised fine-tuning (SFT) is widely used to inject new knowledge into language models, but it often degrades pretrained capabilities such as reasoning and general-domain performance. We argue this forgetting arises because fine-tuning targets from humans or external systems diverge from the model...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16865" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16865" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16386" target="_blank">Auditing Multimodal LLM Raters: Central Tendency Bias in Clinical Ordinal Scoring</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jiaqing Zhang, Sandeep Elluri, Bhanu Cherukuvada, Yonah Joffe et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Multimodal large language models (LLMs) are increasingly explored as automated evaluators in clinical settings, yet their scoring behavior on ordinal clinical scales remains poorly understood. We benchmark three frontier LLM families against supervised deep learning models for scoring Clock Drawing ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16386" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16386" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16079" target="_blank">VideoSeeker: Incentivizing Instance-level Video Understanding via Native Agentic Tool Invocation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yiming Zhao, Yu Zeng, Wenxuan Huang, Zhen Fang et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Large Vision-Language Models (LVLMs) have shown significant progress in video understanding, yet they face substantial challenges in tasks requiring precise spatiotemporal localization at the instance level. Existing methods primarily rely on text prompts for human-model interaction, but these promp...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16079" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16079" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15764" target="_blank">GRASP: Learning to Ground Social Reasoning in Multi-Person Non-Verbal Interactions</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Junho Kim, Xu Cao, Houze Yang, Bikram Boote et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Understanding social interactions requires reasoning over subtle non-verbal cues, yet current multimodal large language models (MLLMs) often fail to identify who interacts with whom in multi-person videos. We introduce GRASP, a large-scale social reasoning dataset that connects high-level social QA ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15764" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15764" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15572" target="_blank">Measuring Maximum Activations in Open Large Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Luxuan Chen, Han Tian, Xinran Chen, Rui Kong et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">The dynamic range of activations is a first-order constraint for low-bit quantization, activation scaling, and stable LLM inference. Prior work characterized outlier features and massive activations on pre-2024 LLaMA-style models, and the downstream activation-quantization stack inherits that pictur...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15572" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15572" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15482" target="_blank">FINESSE-Bench: A Hierarchical Benchmark Suite for Financial Domain Knowledge and Technical Analysis in Large Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Dmitry Stanishevskii, Nini Kamkia, Alexey Khoroshilov, Dmitry Zmitrovich et al. · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Large language models (LLMs) are increasingly being applied to financial analysis, reporting, investment decision support, risk management, compliance, and professional training. However, robust evaluation of their domain competence in finance remains incomplete. Widely used open benchmarks such as ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15482" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15482" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15035" target="_blank">TopoPrimer: The Missing Topological Context in Forecasting Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Zara Zetlin, Kayhan Moharreri, Maria Safi · 2026-05-19</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">We introduce TopoPrimer, a framework that makes the global topological structure of the series population an explicit input   to any forecasting model. TopoPrimer improves accuracy across diverse domains, stabilizes forecasts under seasonal demand   spikes, and closes the cold-start gap. Precomputed...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15035" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15035" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 4 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

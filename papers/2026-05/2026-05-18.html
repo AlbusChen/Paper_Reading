@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-18</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月18日</h1>
+  <p>Daily Paper Digest · May 18, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>39</span> 篇</div>
+  <div class="stat">高度相关 <span>2</span> 篇</div>
+  <div class="stat">相关 <span>6</span> 篇</div>
+  <div class="stat">技术报告 <span>1</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-18 17:31 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15301" target="_blank">Solvita: Enhancing Large Language Models for Competitive Programming via Agentic Evolution</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent coordination</span><span class="tag tag-kw">agent framework</span></div>
+  <div class="summary-en">Solvita is an agentic evolution framework for hard competitive programming that overcomes the stateless nature of prior multi-agent pipelines by pairing four specialized agents (Planner, Solver, Oracle, Hacker) with trainable graph-structured knowledge networks. Outcome signals (pass/fail verdicts, test certification quality, discovered vulnerabilities) are recast as RL updates that let agents dynamically route future queries from accumulated experience, without updating LLM weights. It sets a new SOTA across CodeContests, APPS, AetherCode, and live Codeforces rounds, nearly doubling single-pass accuracy.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Solvita 提出面向高难度竞赛编程的智能体进化框架，针对现有多智能体流水线“无状态”、丢弃历史经验的问题，为 Planner、Solver、Oracle、Hacker 四个专用智能体各配备可训练的图结构知识网络。系统将通过/失败判定、测试认证质量、Hacker 发现的对抗漏洞等结果信号转化为强化学习更新，使智能体能基于历史成败动态路由后续查询，且无需更新底层 LLM 权重。在 CodeContests、APPS、AetherCode 及 Codeforces 实时比赛上刷新代码生成智能体 SOTA，单次通过准确率几乎翻倍。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15301" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15301" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15871" target="_blank">Agentic Discovery of Neural Architectures: AIRA-Compose and AIRA-Design</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent framework</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">From Meta FAIR, this work shows LLM agents can autonomously discover foundation-model architectures beyond Transformers via two multi-agent frameworks: AIRA-Compose (11 agents searching computational primitives under a 24-hour budget) and AIRA-Design (20 agents writing novel attention mechanisms and training scripts). The discovered AIRAformer/AIRAhybrid families, pretrained at 1B scale, outperform Llama 3.2 by 2.4-3.8% on downstream tasks and scale 54-71% faster, presenting a concrete step toward recursive self-improvement.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文（来自 Meta FAIR）展示了 LLM 智能体可自主发现超越标准 Transformer 的基础模型架构，提出两个多智能体框架：AIRA-Compose（11 个智能体在 24 小时预算内搜索计算原语）与 AIRA-Design（20 个智能体编写新型注意力机制与训练脚本）。所发现的 AIRAformer/AIRAhybrid 系列在 1B 规模预训练后，下游任务准确率较 Llama 3.2 提升 2.4-3.8%，扩展速度快 54-71%，是迈向递归自我改进的实质性一步。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15871" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15871" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">🏢 技术报告 / Tech Reports</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15298" target="_blank">PhysBrain 1.0 Technical Report</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-tr">Tech Report</span></div>
+  <div class="summary-en">PhysBrain 1.0 is a technical report on building physical-commonsense priors for vision-language-action (VLA) robot models by converting large-scale human egocentric video into structured QA supervision (scene elements, spatial dynamics, action execution, depth-aware relations), then transferring these priors to VLA policies via a capability-preserving, language-sensitive adaptation. It achieves SOTA across multimodal QA and embodied control benchmarks (ERQA, PhysBench, SimplerEnv-WidowX, LIBERO, RoboCasa) with strong out-of-domain results. Relevance to multi-agent efficiency/communication is weak; included as a technical report.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PhysBrain 1.0 技术报告研究为视觉-语言-动作（VLA）机器人模型构建物理常识先验：将大规模人类第一视角视频转化为结构化问答监督（场景要素、空间动态、动作执行、深度关系），再通过保能力、对语言敏感的适配方法迁移到 VLA 策略。在 ERQA、PhysBench、SimplerEnv-WidowX、LIBERO、RoboCasa 等多模态问答与具身控制基准上取得 SOTA，并展现较强域外泛化。注：与多智能体效率/通信主题相关性较弱，作为技术报告收录。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15298" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15298" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16143" target="_blank">Look Before You Leap: Autonomous Exploration for LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">llm agent</span><span class="tag tag-kw">exploration</span></div>
+  <div class="summary-en">This paper identifies autonomous exploration as a critical missing capability for LLM agents, which tend to prematurely exploit prior knowledge in unfamiliar environments. It introduces Exploration Checkpoint Coverage as a verifiable metric and a training strategy that interleaves task-execution and exploration rollouts with separate verifiable rewards, yielding the 'Explore-then-Act' paradigm that decouples information gathering from task execution. Results show systematic exploration improves generalization for real-world-ready agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文指出自主探索是 LLM 智能体被忽视的关键能力——智能体在陌生环境中往往过早利用先验知识。作者提出可验证指标 Exploration Checkpoint Coverage，并设计交替进行任务执行与探索 rollout、分别用可验证奖励优化的训练策略，由此提出“先探索后行动”（Explore-then-Act）范式，将信息收集与任务执行解耦。实验表明系统化探索能显著提升智能体的泛化与真实环境适应能力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16143" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16143" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13527" target="_blank">MMSkills: Towards Multimodal Skills for General Visual Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">agent framework</span><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">MMSkills introduces a framework for representing, generating, and using reusable multimodal procedural knowledge for visual agents, where each skill couples a textual procedure with runtime state cards and multi-view keyframes. An agentic trajectory-to-skill generator converts public interaction traces into skills, and a branch-loaded agent consults visual evidence in a temporary branch to avoid excessive image context. Experiments on GUI and game benchmarks show consistent gains for both frontier and smaller multimodal agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MMSkills 提出面向视觉智能体的多模态过程性知识表示、生成与使用框架：每个技能将文本流程与运行时状态卡片、多视角关键帧耦合。其智能体式“轨迹到技能”生成器将公开交互轨迹转化为可复用技能，并通过分支加载式智能体在临时分支中查阅视觉证据，避免过多图像上下文开销。在 GUI 与游戏类基准上，对前沿及小型多模态智能体均取得稳定提升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13527" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13527" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.02290" target="_blank">Distilling Long-CoT Reasoning through Collaborative Step-wise Multi-Teacher Decoding</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">collaborative decoding</span><span class="tag tag-kw">multi-teacher</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">CoRD is a collaborative multi-teacher decoding framework for distilling Long-CoT reasoning, addressing the redundant sampling and missed complementarity of post-hoc trace curation. It performs step-wise reasoning synthesis guided by predictive perplexity scoring and beam search, letting heterogeneous large reasoning models jointly construct coherent trajectories. CoRD yields higher-quality reasoning data and near teacher-level student performance with fewer supervision signals and little efficiency overhead, generalizing to out-of-domain settings.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CoRD 提出用于蒸馏 Long-CoT 推理的协作式多教师解码框架，针对事后筛选完整推理轨迹导致的冗余采样与互补性缺失问题。它以预测困惑度打分与束搜索为引导进行逐步推理合成，使异构大型推理模型协同构建连贯推理轨迹。CoRD 生成更高质量推理数据，以更少结构化监督信号实现接近教师水平的学生性能，效率开销很小，并能很好泛化到域外场景。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.02290" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.02290" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15963" target="_blank">PAGER: Bridging the Semantic-Execution Gap in Point-Precise Geometric GUI Control</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">gui agent</span></div>
+  <div class="summary-en">PAGER targets precision-sensitive GUI tasks where actions must land on exact points in continuous canvas space and local coordinate errors cascade into topological failures. It introduces PAGE Bench (4,906 problems, 224K pixel-level actions) and a topology-aware agent that decomposes construction into dependency-structured planning and pixel-level execution, combining pixel-grounded supervised tuning with precision-aligned RL. PAGER delivers 4.1x higher task success than the strongest general baseline and raises step success from below 9% to over 62% for GUI-specialized agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PAGER 针对“精度敏感”的 GUI 任务——动作须精确落在连续画布空间中的点，局部坐标误差会级联引发拓扑失败。论文提出 PAGE Bench（4,906 个问题、22.4 万像素级动作）以及一个拓扑感知智能体，将几何构造分解为依赖结构化规划与像素级执行，结合像素对齐的监督微调与精度对齐的强化学习。PAGER 的任务成功率较最强通用基线提升 4.1 倍，并将 GUI 专用智能体的单步成功率从不足 9% 提升至 62% 以上。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15963" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15963" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15250" target="_blank">GQLA: Group-Query Latent Attention for Hardware-Adaptive Large Language Model Decoding</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">llm efficiency</span><span class="tag tag-kw">kv cache</span><span class="tag tag-kw">inference</span></div>
+  <div class="summary-en">GQLA (Group-Query Latent Attention) is a minimal modification of DeepSeek's Multi-head Latent Attention whose trained weights expose two algebraically equivalent decoding paths over the same parameters: an MQA-absorb path (H100-optimal) and a GQA path with per-group expanded cache (commodity-GPU and MTP-friendly), selectable at runtime without retraining or custom kernels. A TransGQLA conversion turns pretrained GQA checkpoints into GQLA models, compressing LLaMA-3-8B per-token KV cache to 28.125% of the GQA baseline while supporting up to 8-way tensor parallelism.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">GQLA（分组查询潜在注意力）是对 DeepSeek 多头潜在注意力（MLA）的最小化改造：同一套训练权重暴露两条代数等价的解码路径——MQA-absorb 路径（适配 H100）与按组扩展缓存的 GQA 路径（适配商用 GPU 与多 token 预测），运行时按硬件选择，无需重训练或定制算子。配套 TransGQLA 可将预训练 GQA 检查点转换为 GQLA 模型，在 LLaMA-3-8B 上将每 token KV 缓存压缩至 GQA 基线的 28.125%，并支持最高 8 路张量并行。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15250" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15250" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14786" target="_blank">Known By Their Actions: Fingerprinting LLM Browser Agents via UI Traces</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"><span class="tag tag-kw">llm agent</span><span class="tag tag-kw">browser agent</span><span class="tag tag-kw">security</span></div>
+  <div class="summary-en">This security study shows that websites can passively fingerprint which LLM powers a browsing agent: across 14 frontier LLMs and four web environments, a passive JavaScript tracker capturing agent actions and interaction timings identifies the underlying model with up to 96% F1. Classifiers generalize across model sizes and families, need few traces, and infer identity early in an episode; randomized timing delays degrade but do not robustly prevent the attack, since classifiers retrained on delayed traces largely recover.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">这项安全研究表明，网站可被动指纹识别驱动浏览智能体的底层 LLM：在 14 个前沿 LLM 与四类 Web 环境中，仅靠被动 JavaScript 追踪器记录的智能体动作与交互时序，即可以高达 96% F1 识别底层模型。分类器可跨模型规模与系列泛化，仅需少量轨迹，并能在交互早期推断身份；注入随机时序延迟虽降低识别率，但无法稳健防御——在延迟轨迹上重训练的分类器可大体恢复性能。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14786" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14786" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12882" target="_blank">CiteVQA: Benchmarking Evidence Attribution for Trustworthy Document Intelligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12882" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12882" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15824" target="_blank">FashionChameleon: Towards Real-Time and Interactive Human-Garment Video Customization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15824" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15824" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.11739" target="_blank">Learning to Foresee: Unveiling the Unlocking Efficiency of On-Policy Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11739" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.11739" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16257" target="_blank">DexJoCo: A Benchmark and Toolkit for Task-Oriented Dexterous Manipulation on MuJoCo</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16257" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16257" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14333" target="_blank">InsightTok: Improving Text and Face Fidelity in Discrete Tokenization for Autoregressive Image Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14333" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14333" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15980" target="_blank">Flash-GRPO: Efficient Alignment for Video Diffusion via One-Step Policy Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15980" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15980" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15726" target="_blank">Nudging Beyond the Comfort Zone: Efficient Strategy-Guided Exploration for RLVR</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15726" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15726" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15256" target="_blank">ReactiveGWM: Steering NPC in Reactive Game World Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15256" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15256" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12058" target="_blank">Hölder Policy Optimisation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12058" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12058" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15181" target="_blank">From Plans to Pixels: Learning to Plan and Orchestrate for Open-Ended Image Editing</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15181" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15181" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15597" target="_blank">CM-EVS: Sparse Panoramic RGB-D-Pose Data for Complete Scene Coverage</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15597" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15597" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15876" target="_blank">Unlocking Dense Metric Depth Estimation in VLMs</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15876" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15876" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2604.09839" target="_blank">Steered LLM Activations are Non-Surjective</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.09839" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2604.09839" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15961" target="_blank">Sparse Autoencoders enable Robust and Interpretable Fine-tuning of CLIP models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15961" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15961" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15320" target="_blank">FFAvatar: Few-Shot, Feed-Forward, and Generalizable Avatar Reconstruction</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15320" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15320" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.08614" target="_blank">DiagnosticIQ: A Benchmark for LLM-Based Industrial Maintenance Action Recommendation from Symbolic Rules</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.08614" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.08614" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.05945" target="_blank">MobileEgo Anywhere: Open Infrastructure for long horizon egocentric data on commodity hardware</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.05945" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.05945" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15843" target="_blank">WorldAct: Activating Monolithic 3D Worlds into Interactive-Ready Object-Centric Scenes</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15843" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15843" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14539" target="_blank">Learning from Failures: Correction-Oriented Policy Optimization with Verifiable Rewards</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14539" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14539" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15592" target="_blank">Efficient Image Synthesis with Sphere Latent Encoder</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-18</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15592" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15592" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 10 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

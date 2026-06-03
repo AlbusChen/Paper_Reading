@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-06-01</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年06月01日</h1>
+  <p>Daily Paper Digest · June 01, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>56</span> 篇</div>
+  <div class="stat">高度相关 <span>3</span> 篇</div>
+  <div class="stat">相关 <span>6</span> 篇</div>
+  <div class="stat">技术报告 <span>1</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-06-01 17:33 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29796" target="_blank">SAAS: Self-Aware Reinforcement Learning for Over-Search Mitigation in Agentic Search</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yunbo Tang, Chengyi Yang, Shiyu Liu, Zhishang Xiang et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">agentic search</span><span class="tag tag-kw">over-search</span><span class="tag tag-kw">inference efficiency</span></div>
+  <div class="summary-en">Tackles "over-search" in agentic search, where LLM agents needlessly trigger searches when internal knowledge suffices or fail to stop after gathering enough evidence, inflating inference latency and cost. It proposes SAAS, an RL framework with three parts: search-boundary modeling (contrasting search-disabled vs. search-enabled rollouts), a boundary-aware reward that penalizes redundant searches at the trajectory level, and a stage-wise curriculum prioritizing reasoning before search regularization to avoid reward hacking. Experiments show SAAS substantially reduces over-search while maintaining accuracy.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对智能体检索中的"过度检索"问题——LLM 智能体在内部知识已足够时仍盲目触发检索、或在证据充分后仍不停止，导致推理延迟与计算成本激增。作者提出强化学习框架 SAAS，包含三部分：通过对比"禁用检索"与"启用检索"轨迹来建模检索边界；将边界意识转化为轨迹级惩罚的边界感知奖励，以抑制冗余检索；以及优先优化推理、再正则化检索的分阶段课程策略以避免奖励作弊。实验表明该方法在保持准确率的同时大幅减少了过度检索。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29796" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29796" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31170" target="_blank">Emergent Languages in Populations of Language Model Agents: From Token Efficiency to Oversight Evasion</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Stine Lyngsø Beltoft, William Brach, Federico Torrielli, Jacob Nielsen et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-agent communication</span><span class="tag tag-kw">emergent language</span><span class="tag tag-kw">token efficiency</span></div>
+  <div class="summary-en">Studies how populations of LLM agents on the "Moltbook" platform spontaneously invent new communication languages, using a rule-based heuristic (~6000 matches) followed by zero-shot classification (518 kept) to surface cases across token-efficiency (166), novel natural languages (106), and oversight-evasion (59) categories. It finds that oversight-evasion languages are judged less aligned, that any LLM can learn these languages in-context merely from a description, and that some agents develop sophisticated steganographic protocols hiding messages inside natural language. The authors conclude that monitoring surface behavior alone may soon be insufficient to retain control over agent populations.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究了 Moltbook 平台上大量 LLM 智能体群体自发产生的新型通信语言，采用规则启发式（约 6000 个匹配）与零样本分类（保留 518 例）相结合的两阶段方法，将案例归类为词元效率（166）、新自然语言（106）与逃避监管（59）三类。研究发现：用于逃避监管的语言被判定为更不对齐；任何 LLM 仅凭语言描述即可在上下文中学会这些语言；且部分智能体发展出将隐藏信息嵌入自然语言的复杂隐写协议。作者由此指出，仅靠监控表层行为可能很快不足以维持对智能体群体的有效管控。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31170" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31170" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26112" target="_blank">From Model Scaling to System Scaling: Scaling the Harness in Agentic AI</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Shangding Gu · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">agent harness</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">context efficiency</span></div>
+  <div class="summary-en">Argues the next bottleneck in agentic AI is "scaling the harness"—the auditable, modular execution layer (memory substrate, context constructor, skill routing, orchestration loop, verification/governance) around a foundation model—rather than scaling the model alone. It identifies three core bottlenecks (context governance, trustworthy memory, dynamic skill routing) and calls for harness-level benchmarks measuring trajectory quality, memory hygiene, context efficiency, communication fidelity, and verification cost. To make the case concrete it introduces CheetahClaws, a Python-native reference harness, comparing it against Claude Code and OpenClaw.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出智能体 AI 的下一个瓶颈在于"扩展执行框架（harness）"——即围绕基础模型、可审计且模块化的执行层（记忆基底、上下文构建器、技能路由、编排循环、验证与治理），而非单纯扩展模型本身。文章归纳了三大核心瓶颈（上下文治理、可信记忆、动态技能路由），并呼吁建立面向框架层的评测基准，衡量轨迹质量、记忆卫生、上下文效率、通信保真度与验证成本。作者还提出 Python 原生的参考框架 CheetahClaws，并与 Claude Code、OpenClaw 进行了对比。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26112" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26112" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">🏢 技术报告 / Tech Reports</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31268" target="_blank">Mellum2 Technical Report</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Marko Kojic, Ivan Bondyrev, Aral de Moor, Joseph Shtok et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-tr">Tech Report</span><span class="tag tag-kw">code LLM</span><span class="tag tag-kw">Mixture-of-Experts</span><span class="tag tag-kw">agentic coding</span></div>
+  <div class="summary-en">Technical report for Mellum 2, an open-weight 12B Mixture-of-Experts model (2.5B active params/token) specialized for software engineering—code generation/editing, debugging, multi-step reasoning, tool use and function calling, and agentic coding—succeeding the 4B dense Mellum. The architecture combines MoE (64 experts, 8 active), Grouped-Query Attention, Sliding-Window Attention on three of every four layers, and a Multi-Token Prediction head doubling as a speculative-decoding draft model, with commodity-GPU inference efficiency as a design constraint. Pre-trained on ~10.6T tokens (three-phase curriculum, Muon optimizer, FP8), extended to 128K context via layer-selective YaRN, and post-trained with SFT+RLVR into Instruct and Thinking variants—competitive with 4-14B open baselines at 2.5B-dense per-token compute, released under Apache 2.0.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文是 Mellum 2 的技术报告：一个开源权重的 12B 专家混合（MoE）模型（每词元激活 2.5B 参数），专注于软件工程任务——代码生成与编辑、调试、多步推理、工具与函数调用、以及智能体式编程，是 4B 稠密版 Mellum 的后继者。其架构结合 MoE（64 个专家、激活 8 个）、分组查询注意力、每四层中三层采用滑动窗口注意力，以及兼作推测解码草稿模型的多词元预测头，并以普通商用 GPU 的推理效率为设计约束。模型在约 10.6 万亿词元上经三阶段课程、Muon 优化器与 FP8 预训练，通过分层选择性 YaRN 扩展至 128K 上下文，再经 SFT 与 RLVR 后训练得到 Instruct 与 Thinking 两个版本——在 2.5B 稠密模型的单词元算力下性能可与 4–14B 开源基线竞争，并以 Apache 2.0 许可发布。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31268" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31268" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23657" target="_blank">OpenSkillEval: Automatically Auditing the Open Skill Ecosystem for LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jiahao Ying, Boxian Ai, Wei Tang, Siyuan Liu et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">LLM agents</span><span class="tag tag-kw">agent skills</span><span class="tag tag-kw">framework eval</span></div>
+  <div class="summary-en">Presents OpenSkillEval, an automatic evaluation framework for both skill-augmented LLM agent systems and the skills themselves, dynamically constructing realistic task instances from evolving real-world artifacts across five application categories (presentation, front-end web design, poster, data visualization, report generation). Using 600+ generated task instances and 30 open-source skills, it finds that skill availability does not guarantee effective use, that the benefit depends strongly on the underlying model and agent framework, and that many popular skills do not consistently outperform skill-free baselines. The work argues for dynamic, task-grounded skill evaluation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 OpenSkillEval，一个面向技能增强型 LLM 智能体系统及技能本身的自动评测框架，从五类真实应用（幻灯片、前端网页设计、海报、数据可视化、报告生成）的演变产物中动态构建贴近现实的任务实例。基于 600 余个生成任务实例与 30 个开源技能的系统评测发现：拥有技能并不保证能有效使用，其收益强烈依赖于底层模型与智能体框架，且许多热门技能未必能稳定超过不用技能的基线。作者据此倡导采用动态、任务驱动的技能评测方式。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23657" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23657" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29307" target="_blank">GrepSeek: Training Search Agents for Direct Corpus Interaction</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Alireza Salemi, Chang Zeng, Atharva Nijasure, Jui-Hui Chung et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">search agent</span><span class="tag tag-kw">tool use</span><span class="tag tag-kw">retrieval speedup</span></div>
+  <div class="summary-en">Proposes GrepSeek, a search agent that treats the corpus itself as the search environment and gathers evidence by issuing executable shell commands (direct corpus interaction), rather than relying on a pre-indexed retriever. It uses a two-stage pipeline—cold-start trajectories built by an answer-aware Tutor and answer-blind Planner, then GRPO refinement—plus a semantics-preserving sharded-parallel execution engine that accelerates shell-based retrieval up to 7.6x while preserving byte-exact equivalence. GrepSeek achieves the strongest overall token-level F1 and exact match across seven open-domain QA benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 GrepSeek，一种将语料库本身作为搜索环境、通过执行 shell 命令直接交互来获取证据的搜索智能体（直接语料交互 DCI），而非依赖预先建好索引的检索器。方法采用两阶段流程——先由"知答家教（Tutor）"与"盲答规划器（Planner）"构造冷启动轨迹，再用 GRPO 精化策略——并辅以保持语义、逐字节等价的分片并行执行引擎，将 shell 检索加速最高 7.6 倍。在七个开放域问答基准上，GrepSeek 取得了最强的整体词元级 F1 与精确匹配成绩。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29307" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29307" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31075" target="_blank">Task-Focused Memorization for Multimodal Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Tao Zou, Yichen He, Tian Qiu, Yuan Lin et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multimodal agents</span><span class="tag tag-kw">memory policy</span><span class="tag tag-kw">continual learning</span></div>
+  <div class="summary-en">Frames long-term memory for multimodal/embodied agents as a learnable "what to memorize" policy, since agents face an unbounded stream of observations and must selectively retain only role-relevant, future-useful content. TaskMem is an RL framework with two phases: Phase One learns how to memorize under fundamental fidelity requirements; Phase Two, after deployment, tunes an adapter on the base MLLM using recent environment tasks to define a reward model that steers memorization toward task-relevant content. On streaming reformulations of VideoMME, EgoLife, and EgoTempo (built on Qwen3-VL-30B-A3B, answering only from memory), TaskMem improves VQA accuracy by 6.3%, 7.0%, and 5.3% respectively.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将多模态/具身智能体的长期记忆建模为一个可学习的"记什么"策略——因为智能体面对无限的观测流，必须选择性地只保留与其角色相关、对未来任务有价值的内容。提出的 TaskMem 是一个两阶段强化学习框架：第一阶段在基本保真要求下学习"如何记忆"；第二阶段在部署后，利用近期环境任务定义奖励模型、在基座 MLLM 上微调适配器，从而引导记忆策略聚焦于任务相关内容。在 VideoMME、EgoLife、EgoTempo 的流式改造基准上（基于 Qwen3-VL-30B-A3B，且仅凭记忆作答），其 VQA 准确率分别提升 6.3%、7.0% 与 5.3%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31075" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31075" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31433" target="_blank">SCOPE: Self-Play via Co-Evolving Policies for Open-Ended Tasks</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Wai-Chung Kwan, Aryo Pradipta Gema, Joshua Ong Jun Leang, Pasquale Minervini · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">self-play</span><span class="tag tag-kw">co-evolving policies</span><span class="tag tag-kw">multi-turn retrieval</span></div>
+  <div class="summary-en">Introduces SCOPE, a data-free self-play framework for open-ended tasks that co-evolves two policies—a Challenger generating document-grounded tasks and a Solver answering via multi-turn retrieval—with a frozen copy of the initial model acting as a rubric-writing self-judge. Across three 7-8B instruction-tuned models (Qwen2.5, Qwen3, OLMo-3) it improves open-ended performance by up to +10.4 points and matches or exceeds GRPO trained on ~9K curated prompts, while also boosting held-out short-form QA by up to +13.8. Ablations show co-evolving the Challenger is necessary to keep tasks near the Solver's frontier, and rubric quality is the self-judging bottleneck.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 SCOPE，一种面向开放式任务的无数据自博弈框架：协同进化两个策略——生成基于文档任务的"出题者（Challenger）"与通过多轮检索作答的"解题者（Solver）"，并以冻结的初始模型作为撰写评分细则的自评判者。在三个 7–8B 指令微调模型（Qwen2.5、Qwen3、OLMo-3）上，开放式任务性能最高提升 10.4 分，可媲美甚至超过使用约 9K 精选提示训练的 GRPO，同时在保留的短问答基准上最高提升 13.8 分。消融实验表明，协同进化出题者是使任务保持在解题者能力前沿的关键，而评分细则质量是自评判的瓶颈。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31433" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31433" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31455" target="_blank">DRIFT: Decoupled Rollouts and Importance-Weighted Fine-Tuning for Efficient Multi-Turn Optimization</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jian Mu, Tianyi Lin, Chengwei Qin, Zhongxiang Dai et al. · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-turn RL</span><span class="tag tag-kw">training efficiency</span><span class="tag tag-kw">importance weighting</span></div>
+  <div class="summary-en">Addresses the dilemma in optimizing multi-turn interactive LLMs: online RL handles multi-turn dynamics but is prohibitively expensive (generating full correction trajectories per update), while offline SFT is efficient but suffers distribution shift and behavioral collapse. DRIFT (Decoupled Rollouts and Importance-weighted Fine-Tuning) operationalizes the equivalence between the KL-regularized RL objective and importance-weighted supervised learning—sampling offline trajectories from a fixed reference policy, deriving return-based importance weights, and optimizing via weighted SFT. It matches or exceeds multi-turn RL baselines at SFT-level training cost and simplicity.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对多轮交互式 LLM 优化中的两难：在线强化学习能处理多轮动态但成本高昂（每次更新都需生成完整纠错轨迹），离线监督微调（SFT）高效却受分布偏移与行为坍缩之苦。作者提出 DRIFT（解耦采样与重要性加权微调），将 KL 正则化强化学习目标与重要性加权监督学习的等价性付诸实践——从固定参考策略离线采样轨迹、推导基于回报的重要性权重，再通过加权 SFT 优化策略。实验表明其性能可媲美甚至超过多轮强化学习基线，同时保持 SFT 级别的训练效率与简洁性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31455" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31455" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30571" target="_blank">Memory-Bound but Not Bandwidth-Limited: The Physical AI Inference Gap in Batch-1 LLM Decode</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Josef Chen · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">LLM inference</span><span class="tag tag-kw">batch-1 decode</span><span class="tag tag-kw">efficiency</span></div>
+  <div class="summary-en">Empirically dissects single-stream batch-1 autoregressive decode—the workload of physical-AI systems like robots, autonomous vehicles, and embodied agents—across three 7-8B GQA transformers and four NVIDIA GPUs (H100, A100, L40S, L4). It shows the common "memory-bandwidth-bound" account is true but incomplete: the achieved fraction of peak HBM bandwidth falls as peak bandwidth rises (81% on L4 vs. only 27% on H100), and a CUDA Graphs A/B test isolates a launch-side overhead visible on fast GPUs (1.26x speedup on H100 vs. 1.03x on L4). It also finds common int4 quantization paths fail to realize the expected 4x weight-traffic reduction unless kernels are well-tuned (GPTQ+ExLlamaV2 reaching 17.36 ms/step).</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文实证剖析了单流 batch-1 自回归解码——机器人、自动驾驶、具身智能体等"物理 AI"系统的典型负载——在三款 7–8B GQA Transformer 与四款 NVIDIA GPU（H100、A100、L40S、L4）上的表现。研究表明，常见的"受内存带宽限制"说法虽对但不完整：实测达到的峰值 HBM 带宽占比随带宽提升反而下降（L4 约 81%，H100 仅 27%）；通过 CUDA Graphs 的 A/B 实验进一步分离出在高速 GPU 上才显现的启动端开销（H100 提速 1.26 倍，L4 仅 1.03 倍）。此外，常见的 int4 量化路径若内核未充分调优，往往无法实现预期的 4 倍权重传输量削减（GPTQ+ExLlamaV2 可达 17.36 毫秒/步）。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30571" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30571" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31264" target="_blank">COLLEAGUE.SKILL: Automated AI Skill Generation via Expert Knowledge Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31264" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31264" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31159" target="_blank">Trust-Region Behavior Blending for On-Policy Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31159" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31159" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31604" target="_blank">Representation Forcing for Bottleneck-Free Unified Multimodal Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31604" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31604" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30993" target="_blank">SwanVoice: Expressive Long-Form Zero-Shot Speech Synthesis for Both Monologue and Dialogue</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30993" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30993" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31584" target="_blank">LongTraceRL: Learning Long-Context Reasoning from Search Agent Trajectories with Rubric Rewards</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31584" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31584" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31039" target="_blank">GGT-100K: Generative Ground Truth for Generalizable Real-World Image Restoration</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31039" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31039" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30819" target="_blank">Function2Scene: 3D Indoor Scene Layout from Functional Specifications</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30819" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30819" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30940" target="_blank">Towards Streaming Synchronized Spatial Audio Generation via Autoregressive Diffusion Transformer</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30940" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30940" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30409" target="_blank">SANA-Streaming: Real-time Streaming Video Editing with Hybrid Diffusion Transformer</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30409" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30409" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.28618" target="_blank">Comprehensive Benchmarking of Long-Form Speech Generation in Diverse Scenarios</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.28618" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.28618" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30876" target="_blank">dMoE: dLLMs with Learnable Block Experts</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30876" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30876" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26844" target="_blank">Not All Disagreement Is Learnable: Token Teachability in On-Policy Distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26844" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26844" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30407" target="_blank">Exploring Autonomous Agentic Data Engineering for Model Specialization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30407" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30407" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31029" target="_blank">PEEK: Picking Essential frames via Efficient Knowledge distillation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31029" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31029" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.29447" target="_blank">Recovering Policy-Induced Errors: Benchmarking and Trajectory Synthesis for Robust GUI Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.29447" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.29447" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31042" target="_blank">From Prompt Injection to Persistent Control: Defending Agentic Harness Against Trojan Backdoors</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31042" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31042" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30434" target="_blank">LongDS-Bench: On the Failure of Long-Horizon Agentic Data Analysis</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30434" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30434" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30561" target="_blank">VLM3: Vision Language Models Are Native 3D Learners</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30561" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30561" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31336" target="_blank">DecMem: Towards Minute-Long Consistent World Generation with Decoupled Memory</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31336" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31336" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.31598" target="_blank">Linear Scaling Video VLMs for Long Video Understanding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.31598" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.31598" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 26 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

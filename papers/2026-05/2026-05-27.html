@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-27</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月27日</h1>
+  <p>Daily Paper Digest · May 27, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>38</span> 篇</div>
+  <div class="stat">高度相关 <span>1</span> 篇</div>
+  <div class="stat">相关 <span>2</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-27 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17423" target="_blank">Soap2Soap: Long Cinematic Video Remaking via Multi-Agent Collaboration</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent collaboration</span></div>
+  <div class="summary-en">Introduces Soap2Soap, a multi-agent framework for long-form cinematic video remaking (full-episode stylization or actor replacement) that maintains identity and narrative consistency via a Dual-Bridge Consistency mechanism (JSON screenplay + dynamic visual anchors) plus batch keyframe generation and a closed-loop verification agent. On SoapBench it significantly outperforms commercial video-generation APIs on long-term consistency.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 Soap2Soap，面向长片级别（整集/整片）影视翻拍的多智能体框架。其核心是双桥一致性机制——以场景级 JSON 剧本作为语义脊柱，并动态分配场景级与镜头级的视觉参考锚点——结合批量关键帧联合生成与闭环验证 Agent，显著缓解了身份漂移、背景突变和大幅运镜下的语义瓦解。SoapBench 上长时一致性和叙事忠实度均明显优于商业视频生成 API。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17423" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17423" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.24219" target="_blank">Beyond Final Answers: Auditing Trajectory-Level Hallucinations in Multi-Agent Industrial Workflows</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Presents Trajel, a framework that audits multi-agent industrial workflows by detecting hallucinations within intermediate Thought-Action-Observation steps across five categories (factual, referential, logical, procedural, scope). Finds that nearly half of problematic trajectories contain multiple hallucination types and trajectory-level inspection substantially outperforms final-answer-only verification.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 Trajel 框架，针对多智能体工业工作流中只看最终输出的传统幻觉评测短板，对 Thought-Action-Observation 链路上的事实/指代/逻辑/流程/范围五类幻觉进行细粒度审计。研究发现近半问题轨迹同时包含多种幻觉类型，且基于完整轨迹的检测显著优于仅做事后答案验证，为工业级 Agent 可靠性评估提供了新基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.24219" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.24219" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25188" target="_blank">DarkForest: Less Talk, Higher Accuracy for Multi-Agent LLMs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Proposes DarkForest, a multi-agent LLM coordination framework that keeps agents independent (no inter-agent chatter) and uses a coordinator with calibrated belief estimation over clustered candidate answers. Across six reasoning benchmarks, it improves the strongest baseline by up to 30.7% while cutting token consumption by up to 6.5x versus communication-heavy baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 DarkForest，一种受控通信的多智能体协作框架：智能体先独立作答，再由协调器基于结构化候选聚类和可靠性加权的置信分布做最终判断，从根本上避免错误推理在通信中传播放大。在六个推理基准上，DarkForest 相对最强基线提升至多 30.7%，同时通信 token 消耗最多降低 6.5 倍，是多智能体效率方向的重要工作。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25188" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25188" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22608" target="_blank">Agentic CLEAR: Automating Multi-Level Evaluation of LLM Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22608" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22608" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27365" target="_blank">LocateAnything: Fast and High-Quality Vision-Language Grounding with Parallel Box Decoding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27365" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27365" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23271" target="_blank">EvalVerse: Pipeline-Aware and Expert-Calibrated Benchmarking for Professional Cinematic Video Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23271" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23271" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27367" target="_blank">SpatialBench: Is Your Spatial Foundation Model an All-Round Player?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27367" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27367" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26114" target="_blank">MobileGym: A Verifiable and Highly Parallel Simulation Platform for Mobile GUI Agent Research</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26114" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26114" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26230" target="_blank">Geometry-Aware Representation Denoising for Robust Multi-view 3D Reconstruction</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26230" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26230" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26244" target="_blank">LongAV-Compass: Towards Unified Evaluation of Minute-Scale Audio-Visual Generation Across T2AV, I2AV, and V2AV</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26244" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26244" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25893" target="_blank">D^2-Monitor: Dynamic Safety Monitoring for Diffusion LLMs via Hesitation-Aware Routing</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25893" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25893" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26494" target="_blank">The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en">Tech report on MiniMax-M2, a 229.9B-parameter Mixture-of-Experts model that activates only 9.8B per token. The release includes three pillars: agent-driven verifiable trajectory data pipelines, a scalable RL framework (Forge) for long agent trajectories with prefix-tree merging, and a self-evolving M2.7 checkpoint capable of autonomous debugging - achieving frontier performance on agentic coding, deep search, and reasoning benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MiniMax 发布的技术报告，介绍 M2 系列稀疏激活 MoE 大模型：旗舰 M2 总参数 229.9B、每 token 仅激活 9.8B。系统由三部分构成——基于可执行工作区与奖励对齐的 Agent 化可验证轨迹数据流水线；面向长 Agent 轨迹的可扩展 RL 框架 Forge（含调度优化、前缀树合并、白盒/黑盒 Agent 推理优化）；以及具备自主调试和训练脚手架自改写能力的自演化检查点 M2.7。在 Agent 编码、深度搜索、办公任务和推理基准上达到前沿水平。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26494" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26494" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27030" target="_blank">Share More, Search Less: Collaborative Parallel Thinking for Efficient Test-Time Scaling</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en">Proposes Collaborative Parallel Thinking (CPT), a training-free inference framework that breaks information isolation between parallel reasoning branches by maintaining a deduplicated query-level information pool broadcast across branches via context. On HMMT and AIME, CPT establishes a stronger accuracy-latency Pareto frontier than strong parallel TTS baselines across budgets and model scales.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出协同并行思考 CPT，一种无需训练的推理时框架，解决并行 Test-Time Scaling 中各分支信息隔离、重复探索的问题：从各分支抽取紧凑中间信息维护一个去重的查询级信息池，并通过上下文广播给后续步骤的所有分支共享复用。在 HMMT、AIME 上 CPT 相对强基线在多种 rollout 预算与模型规模上都建立了更优的准确率-延迟 Pareto 前沿，是高效并行推理与协作方向的关键工作。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27030" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27030" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25979" target="_blank">LLaVA-OneVision-2: Towards Next-Generation Perceptual Intelligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en">Open-source tech report on LLaVA-OneVision-2, an 8B vision-language model featuring codec-stream tokenization that treats compressed video as a bit-cost stream to adaptively allocate temporal/spatial tokens to event-bearing content. With a shared 3D RoPE and ~8M re-captioned video pretraining samples, the 8B model surpasses Qwen3-VL-8B by +44.8 mAP on the new JumpScore temporal-localization benchmark and consistently leads on video/spatial/tracking tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">开源社区发布的视觉-语言模型技术报告：LLaVA-OneVision-2 在 OneVision-Encoder 基础上引入 Windowed Attention 以高效保持原始分辨率，并提出编解码流式 tokenization——将压缩视频视为连续比特代价流，由比特代价动态决定时间分组，由运动残差挑选关键空间证据，从而把有限 token 预算集中在事件相关内容上。8B 模型在新提出的 JumpScore 时序定位基准上比 Qwen3-VL-8B 高出 44.8 mAP，在视频、空间、跟踪任务上全面领先。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25979" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25979" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27102" target="_blank">JLT: Clean-Latent Prediction in Latent Diffusion Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27102" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27102" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27141" target="_blank">VitaBench 2.0: Evaluating Personalized and Proactive Agents in Long-Term User Interactions</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27141" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27141" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25437" target="_blank">Does Seeing More Mean Knowing More? Mono-Anchored Advantage Normalization for Multi-Source Visual Reasoning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25437" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25437" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26952" target="_blank">Efficient Agentic Reinforcement Learning with On-Policy Intrinsic Knowledge Boundary Enhancement</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en">Proposes AKBE (Agentic Knowledge Boundary Enhancement), addressing redundant tool calls and blurred intrinsic-knowledge boundaries induced by agentic RL training. Using dual-path rollouts that compare tool-augmented vs. internal-knowledge trajectories, it generates targeted signals that improve task accuracy by 1.85 pts, reduce tool calls by 18%, and lift tool productivity by 25%, generalizable across RL algorithms.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 AKBE（Agent 知识边界增强），针对 Agentic RL 训练导致的冗余工具调用和模型内置知识边界模糊问题，采用双路径 rollout 同时探索调用外部工具与依赖内部知识两条轨迹，并据此生成针对性训练信号以鼓励仅在必要时调用工具。实验显示任务准确率平均提升 1.85 个点，工具调用量降低 18%，工具产出率提升 25%，方法与具体 RL 算法解耦。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26952" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26952" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26895" target="_blank">Negligible in Size, Significant in Effect: On Scale Vectors in Large Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26895" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26895" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27068" target="_blank">QUACK: Questioning, Understanding, and Auditing Communicated Knowledge in Multimodal Social Deduction Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en">Introduces QUACK, an open-source evaluation environment for multimodal social-deduction LLM agents that audits language grounding at three levels (outcomes, behavioral trajectories, and utterance consistency). Its Statement Verification Pipeline checks every discussion claim against engine-derived ground truth, finding that even strong VLMs hallucinate 15.1% of verifiable spatial claims and make over half of accusations without grounded evidence.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 QUACK，一个面向多模态社交推理 Agent 的开源审计环境与评估框架，从结果、行为轨迹和语句一致性三个层级评估智能体语言是否真正基于其感知与行动。其核心 Statement Verification Pipeline 从引擎日志重建每个 Agent 的真值轨迹，自动检测空间幻觉、无依据指控、欺骗崩塌和语言-动作不一致。实验发现即便最强 VLM 仍有 15.1% 的可验证空间陈述出现幻觉，过半指控缺乏事实依据。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27068" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27068" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.26045" target="_blank">Confidence and Calibration of Activation Oracles for Reliable Interpretation of Language Model Internals</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.26045" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.26045" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.25802" target="_blank">Rethinking VLM Representation for VLA Initialization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.25802" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.25802" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.27366" target="_blank">MUSE-Autoskill: Self-Evolving Agents via Skill Creation, Memory, Management, and Evaluation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-27</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.27366" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.27366" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 15 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

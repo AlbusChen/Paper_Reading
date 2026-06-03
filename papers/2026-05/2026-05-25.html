@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-25</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月25日</h1>
+  <p>Daily Paper Digest · May 25, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>23</span> 篇</div>
+  <div class="stat">高度相关 <span>3</span> 篇</div>
+  <div class="stat">相关 <span>4</span> 篇</div>
+  <div class="stat">技术报告 <span>1</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-25 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23904" target="_blank">SkillOpt: Executive Strategy for Self-Evolving Agent Skills</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yifan Yang, Ziyang Gong, Weiquan Huang, Qihao Yang et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent skills</span><span class="tag tag-kw">self-evolving agents</span><span class="tag tag-kw">skill optimization</span></div>
+  <div class="summary-en">SkillOpt is a text-space optimizer for agent skills that converts scored rollouts into bounded edits on skill documents, only accepting edits that improve validation scores. Across six benchmarks and seven target models, the method delivers consistent gains (+23.5 points on GPT-5.5 direct chat) and transfers across model scales and execution environments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出SkillOpt——首个可控的文本空间智能体技能优化器，将带分数的轨迹转化为对技能文档的有界编辑，仅当编辑能提升验证分数时才接受。在六个基准、七个目标模型上均取得改进（在GPT-5.5直接对话模式中提升23.5分），且在不同模型规模和执行环境间具有可迁移性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23904" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23904" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23899" target="_blank">From Raw Experience to Skill Consumption: A Systematic Study of Model-Generated Agent Skills</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Zisu Huang, Jingwen Xu, Yifan Yang, Ziyang Gong et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent skills</span><span class="tag tag-kw">skill lifecycle</span><span class="tag tag-kw">language agents</span></div>
+  <div class="summary-en">This paper systematically studies the full lifecycle of model-generated agent skills — generation, extraction, and consumption — across five task domains. The authors find skills can degrade performance and that models extract skills well but use them poorly; their proposed meta-skill approach targets utility-linked features and consistently reduces negative transfer.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文系统研究了模型生成的智能体技能在生成、抽取、消费三阶段的完整生命周期，覆盖五个任务领域。研究发现技能有时会造成性能下降，且模型擅长抽取技能却不擅长使用；作者提出的meta-skill方法通过聚焦与可衡量效用相关的特征，持续降低了负迁移现象。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23899" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23899" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17873" target="_blank">HINT-SD: Targeted Hindsight Self-Distillation for Long-Horizon Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Woongyeng Yeo, Yumin Choi, Taekyung Ki, Sung Ju Hwang · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">long-horizon agents</span><span class="tag tag-kw">LLM agents</span><span class="tag tag-kw">training efficiency</span></div>
+  <div class="summary-en">HINT-SD addresses the credit-assignment problem in long-horizon LLM agent RL by using full-trajectory hindsight to select only failure-relevant action spans for corrective self-distillation, rather than distilling every turn. On BFCL v3 and AppWorld, it improves over dense per-turn feedback by up to 18.80% while running 2.26× faster per training step.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对长程LLM智能体强化学习中的信用分配难题，提出HINT-SD：利用整条轨迹的后见之明仅挑选与失败相关的动作片段进行纠正性自蒸馏，而非对每一步都进行蒸馏。在BFCL v3和AppWorld上比稠密逐步反馈基线提升最多18.80%，同时每训练步耗时降低2.26倍，兼顾效果与效率。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17873" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17873" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">🏢 技术报告 / Tech Reports</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23463" target="_blank">StepAudio 2.5 Technical Report</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Bin Lin, Daxin Jiang, Xiangyu Zhang, Yibo Zhu · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-tr">Tech Report</span><span class="tag tag-kw">audio-language model</span><span class="tag tag-kw">RLHF</span><span class="tag tag-kw">tech report</span></div>
+  <div class="summary-en">StepAudio 2.5 is a unified audio-language foundation model from StepFun that matches specialized systems on ASR, TTS, and real-time spoken dialogue using a shared multimodal backbone. Task-specific regimes are induced via RLHF, including verifiable multi-token decoding for ASR efficiency, preference-based RLHF for expressive TTS, and generative reward modeling for low-latency dialogue.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">StepAudio 2.5是阶跃星辰推出的统一音频-语言基础模型技术报告，使用共享的多模态主干在ASR、TTS与实时语音对话三项任务上达到与专用系统相当的水平。通过RLHF为不同任务定制操作机制：ASR采用可验证多token解码以提升效率，TTS使用偏好驱动的RLHF以增强表达力，对话使用生成式奖励建模以实现低延迟。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23463" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23463" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22878" target="_blank">SciAtlas: A Large-Scale Knowledge Graph for Automated Scientific Research</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Shuofei Qiao, Yunxiang Wei, Jiazheng Fan, Bin Wu et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">scientific research</span><span class="tag tag-kw">knowledge graph</span><span class="tag tag-kw">agentic alternative</span></div>
+  <div class="summary-en">SciAtlas is a 43M-paper, 26-discipline knowledge graph with 157M entities and 3B triplets, designed as a cognitive map for automated scientific research. Its neuro-symbolic retrieval algorithm — tri-path collaborative recall plus graph reranking — substitutes for fully agentic pipelines, reducing inference cost and the logical hallucinations typical of those approaches.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文构建SciAtlas——一个覆盖26个学科、4300万篇论文、1.57亿实体与30亿三元组的大规模学术知识图谱，用作自动化科研的认知地图。提出三路径协同召回加图重排的神经符号检索算法，作为传统多智能体科研流程的替代方案，显著降低推理成本并减少这类流程常见的逻辑幻觉。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22878" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22878" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23771" target="_blank">PhotoFlow: Agentic 3D Virtual Photography Missions</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jiarui Guo, Haojia Wei, Yiming Zhang, Yifei Liu et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent system</span><span class="tag tag-kw">agent coordination</span><span class="tag tag-kw">3D photography</span></div>
+  <div class="summary-en">PhotoFlow is a multi-component agent system for virtual photography in 3D scenes, comprising a Director (proposes camera positions), a Reviewer (aesthetic/technical checks), and a Reflector (learns from failure). On the VPhotoBench benchmark (47 Blender scenes, 141 missions), this Director–Reviewer–Reflector coordination outperforms single-chain reflection and random search.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PhotoFlow是面向3D场景虚拟摄影的多组件智能体系统，包含Director（提议相机位置）、Reviewer（美学与技术审查）和Reflector（从失败中学习）三个角色协作。在新提出的VPhotoBench基准（47个Blender场景，141个摄影任务）上，这种多角色协调方式优于单链反思与随机搜索。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23771" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23771" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23901" target="_blank">LLMs as Noisy Channels: A Shannon Perspective on Model Capacity and Scaling Laws</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xu Ouyang, Deyi Liu, Yuhang Cai, Jing Liu et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">scaling laws</span><span class="tag tag-kw">information theory</span><span class="tag tag-kw">Shannon channel</span></div>
+  <div class="summary-en">The Shannon Scaling Law models LLM training as information transmission over a noisy channel, mapping parameters to channel bandwidth and training tokens to signal power. This framework predicts a transition from monotonic to U-shaped performance under insufficient signal-to-noise scaling, validated on Pythia and OLMo2 with quantization and fine-tuning perturbations.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文从香农通信理论视角提出Shannon Scaling Law，将LLM训练建模为带噪信道上的信息传输，把模型参数映射为信道带宽、训练token映射为信号功率。该框架揭示了在未维持足够信噪比时，扩展行为会从单调提升退化为U型下降，并在Pythia与OLMo2模型的量化和微调扰动下得到验证，可由小模型外推预测更大配置。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23901" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23901" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21856" target="_blank">The Illusion of Reasoning: Exposing Evasive Data Contamination in LLMs via Zero-CoT Truncation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yifan Lan, Yuanpu Cao, Hanyu Wang, Lu Lin et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">LLM reasoning</span><span class="tag tag-kw">data contamination</span><span class="tag tag-kw">evaluation</span></div>
+  <div class="summary-en">The Zero-CoT Probe detects hidden data contamination in LLM reasoning benchmarks by truncating chain-of-thought steps and comparing performance against modified reference datasets to separate memorization from genuine reasoning. A new Contamination Confidence metric quantifies the likelihood beyond binary detection.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出Zero-CoT探针（ZCP），通过截断思维链推理步骤揭示LLM中的隐性记忆模式，将模型在原始基准与改造后参考数据集上的表现进行对比，以区分记忆与真实推理。新提出的Contamination Confidence指标可在二分类之外量化数据污染可能性，成功识别直接和间接污染策略。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21856" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21856" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20708" target="_blank">Rethinking Cross-Layer Information Routing in Diffusion Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20708" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20708" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21573" target="_blank">Lens: Rethinking Training Efficiency for Foundational Text-to-Image Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21573" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21573" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18018" target="_blank">See What I Mean: Aligning Vision and Language Representations for Video Fine-grained Object Understanding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18018" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18018" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.22570" target="_blank">VGenST-Bench: A Benchmark for Spatio-Temporal Reasoning via Active Video Synthesis</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.22570" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.22570" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23902" target="_blank">PiD: Fast and High-Resolution Latent Decoding with Pixel Diffusion</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23902" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23902" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.21195" target="_blank">RankE: End-to-End Post-Training for Discrete Text-to-Image Generation with Decoder Co-Evolution</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.21195" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.21195" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23897" target="_blank">ETCHR: Editing To Clarify and Harness Reasoning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Beichen Zhang, Yuhong Liu, Jinsong Li, Yuhang Zang et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multimodal reasoning</span><span class="tag tag-kw">image editing</span></div>
+  <div class="summary-en">ETCHR decouples a question-conditioned image editor from a downstream understanding MLLM, training the editor in two stages (SFT on edit trajectories, then RL with MLLM-derived rewards). The decoupled system improves visual reasoning accuracy by 4.61–5.47% across five task categories and multiple base MLLMs.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ETCHR将面向问题的图像编辑器与下游多模态理解模型解耦，并提出两阶段训练：先在编辑轨迹上做监督微调，再用多模态模型派生的奖励做强化学习。该解耦系统在五类视觉推理任务上为多个多模态基座带来4.61%–5.47%的精度提升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23897" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23897" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23345" target="_blank">SCOPE: Simulating Cross-game Operations in Playable Environments for FPS World Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23345" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23345" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23903" target="_blank">Geo-Align: Video Generation Alignment via Metric Geometry Reward</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23903" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23903" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20177" target="_blank">From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Juncheng Wu, Hardy Chen, Haoqin Tu, Xianfeng Tang et al. · 2026-05-25</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">VLM post-training</span><span class="tag tag-kw">perception vs reasoning</span></div>
+  <div class="summary-en">This paper shows VLM weakness on visual tasks stems from perception, not reasoning, and proposes a three-stage post-training pipeline (visual perception → visual reasoning → textual reasoning) that outperforms merged training with shorter reasoning traces. The approach achieves +5.2% on WeMath and +3.7% on RealWorldQA.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文发现VLM在视觉任务上的瓶颈主要来自感知而非推理本身，并提出将后训练解耦为视觉感知、视觉推理、文本推理三阶段的流水线。该分阶段训练在使用更短推理轨迹的同时优于合并训练，在WeMath和RealWorldQA上分别提升5.2%和3.7%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20177" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20177" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19282" target="_blank">Rethinking Muon Beyond Pretraining: Spectral Failures and High-Pass Remedies for VLA and RLVR</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19282" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19282" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17766" target="_blank">LatentUMM: Dual Latent Alignment for Unified Multimodal Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17766" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17766" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23892" target="_blank">Good Token Hunting: A Hitchhiker's Guide to Token Selection for Visual Geometry Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23892" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23892" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.23888" target="_blank">GenRecon: Bridging Generative Priors for Multi-View 3D Scene Reconstruction</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.23888" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.23888" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2604.20665" target="_blank">The Expense of Seeing: Attaining Trustworthy Multimodal Reasoning Within the Monolithic Paradigm</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-25</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2604.20665" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2604.20665" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

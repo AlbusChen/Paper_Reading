@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-20</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月20日</h1>
+  <p>Daily Paper Digest · May 20, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>40</span> 篇</div>
+  <div class="stat">高度相关 <span>2</span> 篇</div>
+  <div class="stat">相关 <span>6</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-20 17:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19932" target="_blank">PEEK: Context Map as an Orientation Cache for Long-Context LLM Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Zhuohan Gu, Qizheng Zhang, Omar Khattab, Samuel Madden · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent efficiency</span><span class="tag tag-kw">context cache</span><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">PEEK caches an LLM agent's understanding of recurring external context as a structured "orientation map" embedded in the prompt, maintained by a Distiller, Cartographer, and Evictor that holds a fixed token budget. Across reasoning, aggregation, and context-learning tasks it beats strong baselines by 6.3-34% while using 93-145 fewer agent iterations and incurring 1.7-5.8x lower cost than the SOTA ACE framework.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PEEK 为长上下文 LLM 智能体引入“方向感缓存”：用 Distiller、Cartographer、Evictor 三个组件提炼可迁移知识、生成结构化更新、并维持固定 token 预算，把上下文理解以结构化地图形式嵌入提示。在推理与聚合任务上比强基线提升 6.3-34%，迭代轮次减少 93-145，且较 SOTA 提示学习方法 ACE 成本降低 1.7-5.8 倍，对智能体通信与上下文开销优化具有直接价值。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19932" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19932" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20025" target="_blank">AutoResearchClaw: Self-Reinforcing Autonomous Research with Human-AI Collaboration</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Jiaqi Liu, Shi Qiu, Mairui Li, Bingzhou Li et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent debate</span><span class="tag tag-kw">agent collaboration</span><span class="tag tag-kw">human-in-the-loop</span></div>
+  <div class="summary-en">AutoResearchClaw frames autonomous research as iterative by combining multi-agent debate for hypothesis generation, a self-healing executor that converts failures into information, verifiable result reporting, seven human-in-the-loop intervention modes, and cross-run evolution that turns past mistakes into safeguards. It reports a 54.7% gain over a comparable system and finds targeted collaboration at key decision points outperforms both full autonomy and exhaustive oversight.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AutoResearchClaw 将自主科研建模为迭代过程，集成五大机制：多智能体辩论生成假设、可自愈执行器把失败转化为信息、可验证结果汇报杜绝数据造假、提供七种人机协同干预模式、以及跨实验进化把以往错误固化为安全护栏。系统较同类方法提升 54.7%，并发现“关键决策点定向协作”优于完全自动化或全程审查，对多智能体协同效率研究有借鉴价值。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20025" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20025" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.17734" target="_blank">Harnessing LLM Agents with Skill Programs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Hongjun Liu, Yifei Ming, Shafiq Joty, Chen Zhao · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm agent</span><span class="tag tag-kw">skill library</span></div>
+  <div class="summary-en">HASP upgrades reusable skills for LLM agents from passive textual advice into executable Program Functions (PFs) that act as guardrails — activating on failure-prone states to modify the next action or inject corrective context. Applied at inference time, post-training, or in self-improving evolution, HASP improves ReAct-style web search by 25% and Search-R1 by 30.4% on agentic tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 HASP 框架，将 LLM 智能体从历史经验中提炼的技能升级为可执行的程序函数（PFs），充当主动护栏：在易失败状态触发并修改下一步动作或注入纠错上下文，弥补了传统纯文本经验只能被动建议的不足。HASP 可用于推理时干预、后训练监督或自我进化，在网页搜索任务上较 ReAct 多轮基线提升 25%，相比 Search-R1 在后训练+受控演化下提升 30.4%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.17734" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.17734" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19769" target="_blank">OpenComputer: Verifiable Software Worlds for Computer-Use Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jinbiao Wei, Qianran Ma, Yilun Zhao, Xiao Zhou et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">computer-use agent</span></div>
+  <div class="summary-en">OpenComputer builds a verifier-grounded environment for computer-use agents, combining hard-coded application state verifiers, a self-improving verification layer, automated task generation, and an evaluation harness across 33 desktop apps and 1,000 tasks. The authors show hard-coded verifiers align with human adjudication better than LLM-as-judge, and that even strong agents (and especially open-source ones) struggle with end-to-end task completion.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">OpenComputer 为计算机使用类智能体搭建“可验证的软件世界”：通过应用级硬编码状态验证器、自改进验证层、任务自动生成流水线及评测框架，覆盖 33 款桌面应用与 1000 项任务。实验表明硬编码验证器比 LLM-as-judge 更贴近人工裁决；当前先进智能体在端到端完成上仍困难重重，开源模型差距尤其明显，揭示了真实计算机自动化的稳健性挑战。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19769" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19769" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18703" target="_blank">EnvFactory: Scaling Tool-Use Agents via Executable Environments Synthesis and Robust RL</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Minrui Xu, Zilin Wang, Mengyi Deng, Zhiwei Li et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-kw">tool-use agent</span><span class="tag tag-kw">agentic rl</span></div>
+  <div class="summary-en">EnvFactory automates both halves of agentic-RL data: it discovers and verifies stateful executable tool environments from authentic resources, and synthesizes natural multi-turn trajectories with implicit user intents via topology-aware sampling. Using only 85 environments across 7 domains and 2,575 trajectories, it lifts Qwen3 by up to +15% on BFCLv3 and +8.6% on MCP-Atlas — outperforming prior work that uses ~5x more environments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">EnvFactory 针对智能体强化学习的两大瓶颈（缺乏可扩展的可执行环境、缺乏蕴含隐式人类意图的真实训练数据）提出全自动方案：从真实资源中自主探索并验证有状态的工具环境，并通过拓扑感知采样与校准式精炼合成自然的多轮交互轨迹。仅用 7 个领域 85 个环境合成 2575 条轨迹，便将 Qwen3 在 BFCLv3 提升最多 15%、MCP-Atlas 提升 8.6%，效率超过使用 5 倍环境的同类方法。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18703" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18703" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18748" target="_blank">Aurora: Unified Video Editing with a Tool-Using Agent</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yongsheng Yu, Ziyun Zeng, Zhiyuan Xiao, Zhenghong Zhou et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">tool-using agent</span></div>
+  <div class="summary-en">Aurora pairs a tool-augmented VLM agent with a unified video-diffusion transformer: the agent converts ambiguous user requests into structured edit plans and reference selections that match what the diffusion model expects. Trained with SFT for planning plus preference pairs for tool use, it outperforms text-only baselines and transfers to other frozen video editors; the authors release AgentEdit-Bench for underspecified editing.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Aurora 在统一视频扩散 Transformer 之前接入一个工具增强型 VLM 智能体：该智能体将含混的用户请求转化为结构化编辑计划与参考选择，提前消解文本与视觉歧义。通过 SFT 训练编辑规划与参考选择、用偏好数据训练工具调用与指令润色，Aurora 优于纯文本基线，并能迁移到其他冻结的视频编辑模型；作者还发布了用于评估欠规约编辑的 AgentEdit-Bench。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18748" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18748" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18758" target="_blank">OmniGUI: Benchmarking GUI Agents in Omni-Modal Smartphone Environments</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Felix Henry, Xiaochen Lin, Jiangyou Zhu, Yangfan et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-kw">cs.HC</span><span class="tag tag-kw">gui agent</span></div>
+  <div class="summary-en">OmniGUI is a smartphone GUI-agent benchmark of 709 expert episodes / 2,579 action steps across 29 apps that adds synchronized audio and video clips to the usual static screenshots. Evaluation shows that current GUI agents falter on temporal and auditory signals, especially when task-irrelevant environmental sounds are present.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">OmniGUI 针对当前 GUI 智能体基准多依赖静态截图的缺陷，构建了 709 段专家演示、2579 步操作、覆盖 29 款应用的多模态基准，融合同步音频与视频片段。实验表明现有模型在处理时序与听觉信号时表现明显下降，尤其当存在与任务无关的环境噪声时鲁棒性更差。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18758" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18758" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20075" target="_blank">CopT: Contrastive On-Policy Thinking with Continuous Spaces for General and Agentic Reasoning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Dachuan Shi, Hanlin Zhu, Xiangchi Yuan, Wanjia Zhao et al. · 2026-05-20</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-kw">agentic reasoning</span><span class="tag tag-kw">token efficiency</span></div>
+  <div class="summary-en">CopT reverses the standard CoT order: it produces a draft answer first, then runs on-policy thinking conditioned on it, gating extra deliberation via a contrastive KL estimator that compares the model's support for tokens under discrete vs continuous-embedding inputs. Without extra training, it lifts peak accuracy by up to 23% and cuts token usage by up to 57% on math, coding, and agentic reasoning benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CopT 颠覆传统“先思考后回答”的链式推理范式：先产生草稿答案，再以草稿为条件进行同策略反思；并通过对比离散 token 与连续嵌入输入下模型支持度的 KL 估计器作为可靠性验证器，决定是否需要进一步思考。无需额外训练即可在数学、代码及智能体推理任务上将峰值准确率提升 23%、token 用量降低 57%，对降低推理代币开销具有重要意义。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20075" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20075" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.16403" target="_blank">When Vision Speaks for Sound</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.16403" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.16403" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.11609" target="_blank">Anti-Self-Distillation for Reasoning RL via Pointwise Mutual Information</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11609" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.11609" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19577" target="_blank">GoLongRL: Capability-Oriented Long Context Reinforcement Learning with Multitask Alignment</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19577" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19577" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.14236" target="_blank">Active Learners as Efficient PRP Rerankers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.14236" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.14236" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15529" target="_blank">Process Rewards with Learned Reliability</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15529" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15529" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19995" target="_blank">CogOmniControl: Reasoning-Driven Controllable Video Generation via Creative Intent Cognition</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19995" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19995" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18984" target="_blank">Artifact-Bench: Evaluating MLLMs on Detecting and Assessing the Artifacts of AI-Generated Videos</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18984" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18984" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19436" target="_blank">CEPO: RLVR Self-Distillation using Contrastive Evidence Policy Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19436" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19436" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20183" target="_blank">MSAVBench: Towards Comprehensive and Reliable Evaluation of Multi-Shot Audio-Video Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20183" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20183" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20147" target="_blank">PixVerve: Advancing Native UHR Image Generation to 100MP with a Large-Scale High-Quality Dataset</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20147" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20147" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.15458" target="_blank">Video Models Can Reason with Verifiable Rewards</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.15458" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.15458" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18714" target="_blank">Semantic Generative Tuning for Unified Multimodal Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18714" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18714" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.09640" target="_blank">Overcoming Catastrophic Forgetting in Visual Continual Learning with Reinforcement Fine-Tuning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.09640" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.09640" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18855" target="_blank">Delta Attention Residuals</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18855" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18855" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20104" target="_blank">Draft Less, Retrieve More: Hybrid Tree Construction for Speculative Decoding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20104" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20104" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18226" target="_blank">Context Memorization for Efficient Long Context Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18226" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18226" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18746" target="_blank">ESI-Bench: Towards Embodied Spatial Intelligence that Closes the Perception-Action Loop</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18746" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18746" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.18827" target="_blank">Code-Guided Reasoning for Small Language Models: Evaluating Executable MCQA Scaffolds</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.18827" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.18827" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.19786" target="_blank">Fast 4D Mesh Generation by Spatio-Temporal Attention Chains</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.19786" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.19786" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.20150" target="_blank">TideGS: Scalable Training of Over One Billion 3D Gaussian Splatting Primitives via Out-of-Core Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-20</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.20150" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.20150" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 12 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>

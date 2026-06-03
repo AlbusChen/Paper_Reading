@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-05-13</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年05月13日</h1>
+  <p>Daily Paper Digest · May 13, 2026</p>
+  <nav style="margin-top:10px">
+    <a href="../index.html">← 主页</a>
+    <a href="index.html">← 本月</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>254</span> 篇</div>
+  <div class="stat">高度相关 <span>7</span> 篇</div>
+  <div class="stat">相关 <span>3</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-05-14 04:31 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13172v1" target="_blank">When Does Hierarchy Help? Benchmarking Agent Coordination in Event-Driven Industrial Scheduling</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Ziqi Wang, Yuhao Yang, Zhiwei Ling, Wenzhuo Qian et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent coordination</span></div>
+  <div class="summary-en">DESBench benchmarks four agent coordination paradigms—centralized, hierarchical, heterarchical, and holonic—on discrete-event industrial scheduling with shared, dynamically evolving constraints. Key finding: centralized is robust but unscalable; hierarchical decomposes efficiently but suffers cross-level misalignment; heterarchical is flexible at high communication cost; holonic satisfies constraints at the cost of global robustness. Coordination architecture fundamentally determines system behavior.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">提出DESBench基准，在离散事件工业调度场景中系统评测四种多智能体协调范式——集中式、层次式、异质式和全息式。核心发现：集中式鲁棒但不可扩展；层次式通过分解提升效率但存在跨层错位；异质式灵活但通信成本高；全息式满足约束但牺牲全局鲁棒性。协调架构的选择从根本上决定了系统行为，为多智能体系统设计提供了重要参考。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13172v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13172v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13170v1" target="_blank">Finding the Weakest Link: Adversarial Attack against Multi-Agent Communications</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Maxwell Standen, Junae Kim, Claudia Szabo · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent communication</span></div>
+  <div class="summary-en">Studies adversarial attacks targeting multi-agent communication in MARL systems. Uses Jacobian-based gradient information to identify which messages, agents, and timesteps are most vulnerable. Proposes two adversarial loss functions trading off attack success vs. impact. Demonstrates that targeted victim/message selection outperforms random selection in half of 30 tested scenarios, revealing critical communication security vulnerabilities in MAS.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">针对多智能体强化学习（MARL）系统的通信通道研究对抗攻击。利用Jacobian梯度信息识别最易受攻击的消息、智能体和时间步，提出两种在攻击成功率与攻击影响之间权衡的对抗损失函数。在导航、捕食者-猎物和交通路口三个环境中验证，揭示了多智能体通信的关键安全漏洞，对通信协议设计有重要安全启示。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13170v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13170v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.09539" target="_blank">TacoMAS: Test-Time Co-Evolution of Topology and Capability in LLM-based Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">TacoMAS co-evolves both topology and capability in LLM-based MAS during inference, on different timescales: capabilities update fast (trajectory-level feedback) while topology evolves slowly (meta-LLM-driven agent birth/death operations). Shows theoretically and empirically that joint adaptation of both axes is necessary for effective test-time evolution. Outperforms 20 multi-agent baselines by 13.3% average on four benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">TacoMAS在推理时同步协同进化多智能体系统的拓扑结构和能力，采用双速更新：能力快速更新（轨迹级反馈），拓扑缓慢演化（元LLM驱动的智能体增删和边修改）。理论和实验均证明两轴联合适应的必要性。在四个基准上平均超越20个多智能体基线13.3%，为动态MAS通信拓扑优化提供了新框架。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.09539" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.09539" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12920v1" target="_blank">Embodied Multi-Agent Coordination by Aligning World Models Through Dialogue</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Vardhan Dongre, Dilek Hakkani-Tür · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent coordination</span></div>
+  <div class="summary-en">Extends the PARTNR household robotics benchmark with natural-language dialogue for two embodied agents with limited observability. Introduces metrics for genuine world-model alignment: observation convergence, information novelty, and belief-sensitive messaging. Paradoxical finding: dialogue reduces action conflicts but decreases task success vs. silent coordination, exposing a gap between superficial coordination and true world-model alignment in current LLMs.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">在PARTNR家庭机器人基准上扩展自然语言对话，研究视野受限的具身双智能体如何通过通信协调。提出三个衡量真实世界模型对齐的指标：观察收敛性、信息新颖性和信念敏感消息传递。悖论发现：对话减少了动作冲突，却反而降低了任务成功率——揭示当前LLM在表面协调与真正世界模型对齐之间的本质差距。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12920v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12920v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13295v1" target="_blank">CANTANTE: Optimizing Agentic Systems via Contrastive Credit Attribution</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Tom Zehle · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">CANTANTE frames multi-agent LLM system optimization as a credit-assignment problem: system-level scores must be decomposed into per-agent update signals. Uses contrastive rollouts of multiple joint configurations on the same query to attribute credit. Applied to prompt optimization, outperforms GEPA and MIPROv2 by +18.9pp on MBPP and +12.5pp on GSM8K with lower inference cost.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CANTANTE将多智能体LLM系统优化定义为信用分配问题：系统级奖励需要分解为各智能体的更新信号。通过对比同一查询上多个联合配置的执行轨迹来归因信用，应用于提示优化任务。在MBPP上超越最强基线18.9个百分点，GSM8K上超越12.5个百分点，同时推理成本更低，信用相关性分析确认了分配信号的有效性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13295v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13295v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.11136" target="_blank">EVOCHAMBER: Test-Time Co-evolution of Multi-Agent System at Individual, Team, and Population Scales</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">EVOCHAMBER enables multi-agent co-evolution at three scales: individual, team, and population. The CODREAM mechanism triggers cross-agent collaborative reflection when teams fail or disagree, routing insights asymmetrically from strong to weak agents while preserving specialization. Population-level operators manage agent lifecycles. Emergent finding: 4-5 stable niche specialists spontaneously emerge from identically initialized agents, demonstrating qualitatively new coordination phenomena.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">EVOCHAMBER实现个体、团队、种群三层次的多智能体协同进化。核心机制CODREAM在团队失败或分歧时触发跨智能体协作反思，将知识从强到弱不对称路由，同时保持专业化分工。种群级算子管理智能体生命周期。涌现现象：从完全相同的初始化出发，4-5个稳定的专业化智能体自发形成，展示了单智能体进化不可能产生的协调现象。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.11136" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.11136" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13296v1" target="_blank">Discrete Diffusion for Complex and Congested Multi-Agent Path Finding with Sparse Social Attention</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yuanzhe Wang, Tian Zhi, Zihang Wei, Hongguang Wang et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">DiffLNS combines discrete denoising diffusion (D3PM) with LNS2 repair for MAPF in dense environments. The diffusion model with sparse social attention generates diverse warm-start joint plans from expert demonstrations; LNS2 resolves remaining conflicts. Despite training on ≤96 agents, generalizes to 312 agents at inference. Achieves 95.8% average success rate across 20 complex settings, outperforming the best baseline by 9.6pp.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">DiffLNS将离散去噪扩散模型（D3PM）与LNS2修复求解器结合用于密集环境下的多智能体路径规划。扩散模型带稀疏社会注意力，从专家演示中生成多样化的热启动联合规划，LNS2解决剩余冲突。训练时最多96个智能体，推理时泛化至312个。在20个复杂拥挤场景中平均成功率95.8%，超越最强基线9.6个百分点。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13296v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13296v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13618v1" target="_blank">OpenAaaS: An Open Agent-as-a-Service Framework for Distributed Materials-Informatics Research</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Peng Kang, Bixuan Li, Xiaoya Huang, Shuo Shi et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cond-mat.mtrl-sci</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent collaboration</span></div>
+  <div class="summary-en">OpenAaaS is an open-source hierarchical distributed agent framework for materials science where a Master Agent coordinates complex research tasks while Sub-agents operate near local data ('code flows, data stays'). Enables secure cross-institutional collaboration without sharing raw data. Validated on literature analysis (4.66/5.0 analytical score) and high-entropy alloy database tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">OpenAaaS是材料信息学领域的开源层次化分布式智能体框架，遵循'代码流动、数据驻留'原则：主智能体协调复杂任务，子智能体在本地数据旁执行计算，无需共享原始数据即可实现跨机构安全协作。在文献分析（分析题得分4.66/5.0）和高熵合金描述符数据库服务中得到验证。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13618v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13618v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12857v1" target="_blank">ChipMATE: Multi-Agent Training via Reinforcement Learning for Enhanced RTL Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Zhongkai Yu, Yichen Lin, Chenyang Zhou, Yuwei Zhang et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.AR</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">ChipMATE pairs Verilog and Python reference-model agents for mutual verification in RTL code generation, removing the need for golden testbenches. Uses backtrack-based inference and two-stage RL training on proprietary data. Achieves 75.0%/80.1% pass@1 on VerilogEval V2 with 4B/9B models, surpassing both self-trained alternatives and larger proprietary models.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ChipMATE为RTL代码生成构建Verilog-Python双智能体互验证框架，无需黄金测试台即可自我验证。采用回溯推理工作流和两阶段强化学习训练，支持在厂商私有代码库上训练。4B/9B模型在VerilogEval V2上分别达到75.0%/80.1%的pass@1，超越现有自训练方案和更大的专有模型。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12857v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12857v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13496v1" target="_blank">MARLIN: Multi-Agent Game-Theoretic Reinforcement Learning for Sustainable LLM Inference in Cloud Datacenters</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">H. Moore, S. Qi, D. Milojicic, C. Bash et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.DC</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">MARLIN applies multi-agent game-theoretic RL to optimize LLM inference serving in cloud datacenters simultaneously across four sustainability metrics: TTFT, carbon emissions, water usage, and energy cost. Achieves 18%+ improvement in TTFT, 33% in carbon, 43% in water, 11% in energy vs. leading baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MARLIN将多智能体博弈论强化学习应用于云数据中心LLM推理服务的可持续性优化，同时优化首token延迟（TTFT）、碳排放、用水量和能源成本四个指标。与现有最佳方案相比，TTFT改善18%以上，碳排放降低33%，用水量降低43%，能源成本降低11%。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13496v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13496v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13345v1" target="_blank">Multi-Agent Systems in Emergency Departments: Validation Study on a ED Digital Twin</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Markus Wenzel, Tobias Strapatsas, Jessika Kress, Dorothea Sauer et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Emergency departments (ED) face challenges in patient care and resource management. We propose to explore optimization strategies in a realistic and flexible model and develop a hybrid Discrete Event Simulation (DES) and Agent-Based Model (ABM) simulating highly configurable ED environments. We spec...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13345v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13345v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13311v1" target="_blank">IdeaForge: A Knowledge Graph-Grounded Multi-Agent Framework for Cross-Methodology Innovation Analysis and Patent Claim Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Joy Bose · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.IR</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Current AI-assisted innovation systems typically apply a single ideation methodology (such as TRIZ or Design Thinking) using sequential prompt-based workflows that do not preserve intermediate reasoning structure. As a result, insights generated across methodologies remain fragmented, limiting trace...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13311v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13311v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13110v1" target="_blank">A Multi-Agent Orchestration Framework for Venture Capital Due Diligence</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Grigorios Alexandrou, Katerina Pramatari · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.IR</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">We present a fully automated multi-agent framework for corporate due diligence and market analysis in venture capital. The system runs on an event-driven orchestration architecture, combining Large Language Models (LLMs) with real-time web retrieval to synthesize unstructured data into structured in...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13110v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13110v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13077v1" target="_blank">Counterfactual Reasoning for Causal Responsibility Attribution in Probabilistic Multi-Agent Systems</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Chunyan Mu, Muhammad Najib · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Responsibility allocation -- determining the extent to which agents are accountable for outcomes -- is a fundamental challenge in the design and analysis of multi-agent systems. In this work, we model such systems as concurrent stochastic multi-player games and introduce a notion of retrospective (b...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13077v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13077v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13185v1" target="_blank">Decoupled Planning for Multiple Omega-Regular Objectives</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Guy Avni, Thomas A. Henzinger, Kaushik Mallik, Suman Sadhukhan et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.FL</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">We study the problem of generating paths on a graph that satisfy a collection of ω-regular objectives. We propose a decoupled framework in which each objective is assigned to an independent agent that selects a local policy, while a scheduler -- oblivious to the graph and objective -- dynamically co...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13185v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13185v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13725v1" target="_blank">ScioMind: Cognitively Grounded Multi-Agent Social Simulation with Anchoring-Based Belief Dynamics and Dynamic Profiles</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yitian Yang, Yiqun Duan, Linghan Huang, Yiqi Zhu et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.SI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Large language model (LLM)-based multi-agent simulation offers a powerful testbed for studying social opinion dynamics. Yet current approaches often adopt two contrasting methods: either relying on fixed update rules with limited cognitive grounding or delegating belief change largely to unconstrain...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13725v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13725v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13554v1" target="_blank">Self-Supervised On-Policy Reinforcement Learning via Contrastive Proximal Policy Optimisation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Asim Osman, Sasha Abramowitz, Mark Bergh, Ulrich Armel Mbou Sob et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Contrastive reinforcement learning (CRL) learns goal-conditioned Q-values through a contrastive objective over state-action and goal representations, removing the need for hand-crafted reward functions. Despite impressive success in achieving viable self-supervised learning in RL, all existing CRL a...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13554v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13554v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13276v1" target="_blank">D-VLA: A High-Concurrency Distributed Asynchronous Reinforcement Learning Framework for Vision-Language-Action Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yucheng Guo, Yongjian Guo, Zhong Guan, Wen Huang et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">communication efficiency</span></div>
+  <div class="summary-en">The rapid evolution of Embodied AI has enabled Vision-Language-Action (VLA) models to excel in multimodal perception and task execution. However, applying Reinforcement Learning (RL) to these massive models in large-scale distributed environments faces severe systemic bottlenecks, primarily due to t...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13276v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13276v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13716v1" target="_blank">SkillOps: Managing LLM Agent Skill Libraries as Self-Maintaining Software Ecosystems</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Hongji Pu, Xinyuan Song, Liang Zhao · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">Large language model agents increasingly rely on skill libraries for multi-step tasks, yet these libraries can accumulate persistent defects as skills are added, reused, patched, and linked to changing dependencies. We call this failure mode skill technical debt: library-level defects that may not b...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13716v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13716v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13542v1" target="_blank">RealICU: Do LLM Agents Understand Long-Context ICU Data? A Benchmark Beyond Behavior Imitation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Chengzhi Shen, Weixiang Shen, Tobias Susetzky, Chen et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Intensive care units (ICU) generate long, dense and evolving streams of clinical information, where physicians must repeatedly reassess patient states under time pressure, underscoring a clear need for reliable AI decision support. Existing ICU benchmarks typically treat historical clinician actions...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13542v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13542v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.12916v1" target="_blank">SHM-Agents: A Generalist-Specialist Integrated Agent System for Structural Health Monitoring</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yuequan Bao, Xing Li, Huabin Sun, Dawei Liu et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Artificial intelligence is increasingly used to simplify complex tasks. In engineering applications of structural health monitoring (SHM), existing specialized algorithms, while effective, often face high implementation barriers, limited interoperability and complex training procedures. To overcome ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.12916v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.12916v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.09252" target="_blank">LLM Agents Already Know When to Call Tools -- Even Without Reasoning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-05-13</div>
+  <div class="tags"></div>
+  <div class="summary-en"></div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.09252" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.09252" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13035v1" target="_blank">Conveyor Parcel Routing with Order-Contiguous Arrivals</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Takuro Kato, Keisuke Okumura · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">In warehouse logistics, parcels released from the outfeed of an automated storage system must be routed through conveyor networks to workstations. Beyond collision avoidance, practical operations impose an additional requirement of order-contiguous arrivals: at each delivery point, parcels belonging...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13035v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13035v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13762v1" target="_blank">EconAI: Dynamic Persona Evolution and Memory-Aware Agents in Evolving Economic Environments</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Annie Liu, Zane Cao, Lang Chen, Zongxin Xu et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">The integration of large language models (LLMs) in economic simulations has significantly enhanced agent-based modeling, yet existing frameworks struggle to capture the interplay between short-term optimization and long-term strategic planning. Conventional approaches rely on static data-driven pred...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13762v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13762v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13601v1" target="_blank">Unweighted ranking for value-based decision making with uncertainty</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Aarón López García, Natalia Criado, Jose Such · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">As intelligent systems are increasingly implemented in our society to make autonomous decisions, their commitment to human values raises serious concerns. Their alignment with human values remains a critical challenge because it can jeopardise the integrity and security of citizens. For this reason,...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13601v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13601v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13362v1" target="_blank">Constitutional Governance in Metric Spaces</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Ehud Shapiro, Nimrod Talmon · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.DC</span></div>
+  <div class="summary-en">Computational social choice and algorithmic decision theory offer rich aggregation theory but no end-to-end, polynomial-time process for egalitarian self-governance: prior work treats aggregation, deliberation, amendment, and consensus in isolation, and key metric-space aggregators are NP-hard. We p...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13362v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13362v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13006v1" target="_blank">Occlusion-Based Object Transportation Around Obstacles With a Swarm of Miniature Robots</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Breno Cunha Queiroz, Daniel MacRae · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">Swarm robotics utilises decentralised self-organising systems to form complex collective behaviours built from the bottom-up using individuals that have limited capabilities. Previous work has shown that simple occlusion-based strategies can be effective in using swarm robotics for the task of trans...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13006v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13006v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13846v1" target="_blank">WARDEN: Endangered Indigenous Language Transcription and Translation with 6 Hours of Training Data</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Ziheng Zhang, Yunzhong Hou, Naijing Liu, Liang Zheng · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">This paper introduces WARDEN, an early language model system capable of transcribing and translating Wardaman, an endangered Australian indigenous language into English. The significant challenge we face is the lack of large-scale training data: in fact, we only have 6 hours of annotated audio. Ther...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13846v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13846v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13841v1" target="_blank">EVA-Bench: A New End-to-end Framework for Evaluating Voice Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Tara Bogavelli, Gabrielle Gauthier Melançon, Katrina Stankiewicz, Oluwanifemi Bamgbose et al. · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.SD</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Voice agents, artificial intelligence systems that conduct spoken conversations to complete tasks, are increasingly deployed across enterprise applications. However, no existing benchmark jointly addresses two core evaluation challenges: generating realistic simulated conversations, and measuring qu...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13841v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13841v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.13834v1" target="_blank">Topology-Preserving Neural Operator Learning via Hodge Decomposition</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Dongzhe Zheng, Tao Zhong, Christine Allen-Blanchette · 2026-05-13</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CG</span></div>
+  <div class="summary-en">In this paper, we study solution operators of physical field equations on geometric meshes from a function-space perspective. We reveal that Hodge orthogonality fundamentally resolves spectral interference by isolating unlearnable topological degrees of freedom from learnable geometric dynamics, ena...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.13834v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.13834v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 224 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Claude · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
