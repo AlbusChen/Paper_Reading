@@ -112,7 +112,8 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     date_en = dt.strftime("%B %d, %Y")
 
     high = [p for p in papers if p["relevance"]["score"] >= 6]
-    med = [p for p in papers if 3 <= p["relevance"]["score"] < 6]
+    med = [p for p in papers if 3 <= p["relevance"]["score"] < 6
+           and not p["relevance"].get("is_tech_report")]
     tech_reports = [p for p in papers if p["relevance"].get("is_tech_report")]
     fetched_at = data.get("fetched_at", "")
 
@@ -200,7 +201,8 @@ def generate_daily_html(data: dict, date_str: str) -> str:
             html += render_paper(p)
 
     # Section: Others (low score, for reference)
-    low = [p for p in papers if p["relevance"]["score"] < 3]
+    low = [p for p in papers if p["relevance"]["score"] < 3
+           and not p["relevance"].get("is_tech_report")]
     if low:
         html += '<div class="section-title" style="color:var(--muted)">· 其他 / Others</div>\n'
         for p in low[:20]:  # cap at 20
