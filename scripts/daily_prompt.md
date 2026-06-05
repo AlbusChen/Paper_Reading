@@ -31,7 +31,7 @@ Focus on papers about:
 
 ## Step 3: For each relevant paper, fetch the abstract page
 
-Use WebFetch on the arxiv abstract URL (https://arxiv.org/abs/PAPER_ID) to:
+Use live web search or direct network fetches on the arxiv abstract URL (https://arxiv.org/abs/PAPER_ID) to:
 - Read the full abstract
 - Note key contributions and methods
 - Assess relevance to multi-agent efficiency/communication

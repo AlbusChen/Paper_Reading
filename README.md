@@ -27,7 +27,7 @@ Paper_Reading/
 │   ├── fetch_papers.py       # Fetch paper metadata from arxiv + HuggingFace
 │   ├── generate_html.py      # Generate bilingual HTML digest from JSON
 │   ├── run_daily.sh          # Cron entry point: fetch → summarize → HTML → push
-│   ├── daily_prompt.md       # Instructions for the daily Claude agent session
+│   ├── daily_prompt.md       # Instructions for the daily Codex agent session
 │   └── requirements.txt
 ├── papers/                   # Generated HTML files (tracked in git → GitHub Pages)
 │   ├── index.html            # Main landing page
@@ -48,7 +48,7 @@ Cron runs at **01:30 UTC (09:30 CST)** every day, covering the **previous day's*
 
 ```
 crontab entry:
-30 1 * * * mkdir -p /raid/longhorn/huangchen/Paper_Reading/papers/logs && \
+30 9 * * * mkdir -p /raid/longhorn/huangchen/Paper_Reading/papers/logs && \
            /raid/longhorn/huangchen/Paper_Reading/scripts/run_daily.sh
 ```
 
@@ -64,9 +64,9 @@ Each paper is scored by keyword matching (primary keywords score ×3, secondary 
 
 > **Note**: The arxiv API occasionally rejects connections from this server. If all three arxiv categories fail, fall back to WebFetch: search `https://arxiv.org/search/?searchtype=all&query=multi-agent&order=-announced_date_first` and manually identify papers submitted on the target date.
 
-**Step 2 — Read and evaluate each paper** (Claude agent, via `daily_prompt.md`)
+**Step 2 — Read and evaluate each paper** (Codex agent, via `daily_prompt.md`)
 
-The daily Claude session (`claude --dangerously-skip-permissions -p "$(cat scripts/daily_prompt.md)"`) reads the candidate list and:
+The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox --search - < scripts/daily_prompt.md`) reads the candidate list and:
 
 1. For papers with `relevance.score >= 3`: fetches the full arxiv abstract page via `WebFetch` (`https://arxiv.org/abs/PAPER_ID`)
 2. Reads the abstract carefully and re-scores based on actual content (keyword scoring produces false positives)
@@ -97,7 +97,7 @@ Papers are grouped into sections: ⭐ Highly Relevant (score ≥ 6) → 🏢 Tec
 
 ```bash
 git add papers/*.html papers/*/*.html index.html
-git commit -m "Daily digest YYYY-MM-DD" --author="Claude Bot <noreply@anthropic.com>"
+git commit -m "Daily digest YYYY-MM-DD" --author="Codex Bot <noreply@openai.com>"
 git push origin main
 ```
 
@@ -126,7 +126,7 @@ git add papers/ index.html && git commit -m "Manual digest YYYY-MM-DD" && git pu
 
 - **Server**: `/raid/longhorn/huangchen/Paper_Reading`
 - **Python**: `/raid/longhorn/huangchen/anaconda3/bin/python3`
-- **Claude CLI**: `/raid/longhorn/huangchen/anaconda3/bin/claude`
+- **Codex CLI**: `/raid/longhorn/huangchen/anaconda3/bin/codex`
 - **Git remote**: `git@github.com:AlbusChen/Paper_Reading.git` (SSH)
 - **Dependencies**: `pip install feedparser requests beautifulsoup4`
 
