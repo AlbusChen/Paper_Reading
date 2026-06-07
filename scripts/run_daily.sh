@@ -12,6 +12,9 @@ LOG_DIR="${REPO_DIR}/papers/logs"
 DATE=$(date -d "yesterday" +%Y-%m-%d)
 LOGFILE="${LOG_DIR}/${DATE}.log"
 FALLBACK_JSON="/tmp/papers_${DATE}.json"
+# Cron runs with a minimal environment. Codex is a node-based CLI, so make the
+# repo's Anaconda node visible before invoking it.
+export PATH="/raid/longhorn/huangchen/anaconda3/bin:/usr/bin:/bin:${PATH:-}"
 
 mkdir -p "${LOG_DIR}"
 

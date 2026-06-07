@@ -117,6 +117,66 @@ def fetch_arxiv(date: datetime) -> list:
     return unique
 
 
+def fetch_arxiv_by_ids(ids: list[str]) -> dict:
+    """Fetch arxiv metadata for explicit IDs, returning a mapping by ID."""
+    if not ids:
+        return {}
+
+    papers = {}
+    for start in range(0, len(ids), 50):
+        batch = ids[start:start + 50]
+        params = {"id_list": ",".join(batch), "max_results": len(batch)}
+        try:
+            resp = requests.get(ARXIV_API, params=params, timeout=30)
+            feed = feedparser.parse(resp.text)
+            for entry in feed.entries:
+                arxiv_id = entry.id.split("/abs/")[-1]
+                paper = {
+                    "id": arxiv_id,
+                    "title": entry.title.replace("\n", " ").strip(),
+                    "authors": [a.name for a in entry.authors[:5]],
+                    "abstract": entry.summary.replace("\n", " ").strip(),
+                    "url": entry.link,
+                    "pdf_url": entry.link.replace("/abs/", "/pdf/"),
+                    "published": entry.published,
+                    "categories": [t.term for t in entry.tags],
+                    "source": "arxiv",
+                    "primary_category": entry.tags[0].term if entry.tags else "arxiv",
+                }
+                paper["relevance"] = score_paper(paper["title"], paper["abstract"])
+                papers[arxiv_id] = paper
+        except Exception as e:
+            print(f"[warn] arxiv id lookup failed for {','.join(batch)}: {e}", file=sys.stderr)
+        time.sleep(1)
+    return papers
+
+
+def fetch_huggingface_detail(arxiv_id: str) -> dict:
+    """Fetch title and abstract from a HuggingFace paper detail page."""
+    url = f"https://huggingface.co/papers/{arxiv_id}"
+    try:
+        resp = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+        from bs4 import BeautifulSoup
+        soup = BeautifulSoup(resp.text, "html.parser")
+        title_el = soup.find("h1")
+        abstract = ""
+        abstract_header = soup.find(lambda tag: tag.name in {"h2", "h3"} and tag.get_text(strip=True) == "Abstract")
+        if abstract_header:
+            abstract_el = abstract_header.find_next("p")
+            if abstract_el:
+                abstract = abstract_el.get_text(" ", strip=True)
+        if not abstract:
+            paragraphs = [p.get_text(" ", strip=True) for p in soup.find_all("p")]
+            abstract = max(paragraphs, key=len, default="")
+        return {
+            "title": title_el.get_text(" ", strip=True) if title_el else "",
+            "abstract": abstract,
+        }
+    except Exception as e:
+        print(f"[warn] HuggingFace detail fetch failed for {arxiv_id}: {e}", file=sys.stderr)
+        return {}
+
+
 def fetch_huggingface(date: datetime) -> list:
     """Fetch HuggingFace Daily Papers for the given date."""
     date_str = date.strftime("%Y-%m-%d")
@@ -157,6 +217,39 @@ def fetch_huggingface(date: datetime) -> list:
                 papers.append(paper)
     except Exception as e:
         print(f"[warn] HuggingFace fetch failed: {e}", file=sys.stderr)
+
+    # The HF listing often omits abstracts. Enrich from HF detail pages first so
+    # fallback pages still have useful text and relevance scores when Codex fails.
+    for paper in papers:
+        if paper.get("abstract"):
+            continue
+        detail = fetch_huggingface_detail(paper["id"])
+        if not detail:
+            continue
+        paper["title"] = detail.get("title") or paper["title"]
+        paper["abstract"] = detail.get("abstract", "")
+        paper["relevance"] = score_paper(paper["title"], paper["abstract"])
+        time.sleep(0.2)
+
+    # Use arxiv as a secondary metadata source for any entries still missing
+    # abstracts, and for richer author/category metadata when available.
+    metadata = fetch_arxiv_by_ids([p["id"] for p in papers if not p.get("abstract")])
+    for paper in papers:
+        enriched = metadata.get(paper["id"])
+        if not enriched:
+            continue
+        paper.update({
+            "title": enriched["title"] or paper["title"],
+            "authors": enriched["authors"],
+            "abstract": enriched["abstract"],
+            "url": enriched["url"],
+            "pdf_url": enriched["pdf_url"],
+            "published": enriched["published"],
+            "categories": enriched["categories"],
+            "primary_category": enriched["primary_category"],
+            "hf_daily": True,
+        })
+        paper["relevance"] = score_paper(paper["title"], paper["abstract"])
     return papers
 
 
