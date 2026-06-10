@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-06-09</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年06月09日</h1>
+  <p>Daily Paper Digest · June 09, 2026</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="2026-06-08.html">← 06-08</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="2026-06-10.html">06-10 →</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>222</span> 篇</div>
+  <div class="stat">高度相关 <span>1</span> 篇</div>
+  <div class="stat">相关 <span>10</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-06-10 01:30 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10662v1" target="_blank">Decentralized Multi-Agent Systems with Shared Context</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yuzhen Mao, Azalia Mirhoseini · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">Multi-agent systems (MAS) can scale large language model reasoning at test time by decomposing complex problems into parallel subtasks. However, most existing MAS rely on centralized orchestration, where a main agent assigns work, collects outputs, and merges results. As the number of subtasks grows...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10662v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10662v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.07299" target="_blank">DuMate-DeepResearch: An Auditable Multi-Agent System with Recursive Search and Rubric-Grounded Reasoning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">A multi-agent framework for deep research tasks that addresses planning, evidence acquisition, and report synthesis through decoupled components and dynamic optimization mechanisms.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.07299" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.07299" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10322v1" target="_blank">Game-Theoretic Multi-Agent Control for Robust Contextual Reasoning in LLMs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Saeid Jamshidi, Amin Nikanjam, Arghavan Moradi Dakhel, Kawser Wazed Nafi et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Large Language Models (LLMs) in multi-turn interactions maintain evolving context rather than generating isolated responses, making them vulnerable to prompt-injection and context-poisoning attacks in which locally plausible adversarial fragments gradually distort reasoning trajectories. Existing de...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10322v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10322v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10749v1" target="_blank">Toward Secure LLM Agents: Threat Surfaces, Attacks, Defenses, and Evaluation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yuchen Ling, Shengcheng Yu, Zhenyu Chen, Chunrong Fang · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Large language model (LLM) agents are rapidly moving from conversational interfaces to software components that plan, invoke tools, maintain memory, and act on external environments. This transition changes the nature of security risk. In agentic settings, failures are no longer limited to unsafe te...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10749v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10749v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10747v1" target="_blank">The Arbiter Agent: Continually Monitoring Multi-Agent Conversations to Detect Emergent Misalignment</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Filippo Tonini, Federico Torrielli, Anton Danholt Lautrup, Peter Schneider-Kamp et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">As AI systems built from multiple language-model agents become more common, they are increasingly used to make decisions together: discussing, negotiating, and acting on shared tasks. While individual agents may appear well-aligned when tested on their own, problems can arise from how they interact ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10747v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10747v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10684v1" target="_blank">Divide and Cooperate: Role-Decomposed Multi-Agent LLM Training with Cross-Agent Learning Signals</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jaewan Park, Solbee Cho, Jay-Yoon Lee · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Modern language agents which perform multi-step reasoning have shown strong performance in knowledge-intensive question answering. However, existing approaches typically couple evidence acquisition and answer generation within a single policy. This forces a single model to play multiple potentially ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10684v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10684v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10475v1" target="_blank">Decoupling Thought from Speech: Knowledge-Grounded Counterfactual Reasoning for Resilient Multi-Agent Argumentation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jakub Masłowski, Jarosław A. Chudziak · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Multi-agent debate frameworks have been shown to improve large language model performance in convergent tasks, but they are currently optimized in a way that heavily favors final output accuracy rather than stability of the process. During long-horizon exchanges reactive systems under sustained pert...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10475v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10475v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10658v1" target="_blank">Post-Quantum Secure Federated DeFi for Inclusive Banking</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Swati Sachan, Dale Fickett, Richard Buchinger, Theo Miller · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CE</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">Recent advances in error-corrected qubits have accelerated the timeline for practical quantum computing. It poses a threat to cryptographic primitives used to secure financial systems, government infrastructure, communication networks, and DeFi (Decentralized Finance) ecosystems. This paper introduc...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10658v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10658v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10601v1" target="_blank">Dmsh: A Multi-Agent Reinforcement Learning Framework for All-Quad Mesh Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Anirudh Kalyan, Cosmin Anitescu, Xiaoying Zhuang, Timon Rabczuk et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">math.NA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Generating high-quality meshes for arbitrary geometries remains a fundamental bottleneck in computational engineering, often demanding heuristic tuning and semi-manual workflows. In this paper, we introduce Dmsh, a first fully automated reinforcement learning pipeline that unifies geometric decompos...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10601v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10601v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10780v1" target="_blank">Secure Aggregation with Top-K Sparsification in Decentralized Federated Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Hengxuan Tang, Jinbao Zhu, Xiaohu Tang · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.IT</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">Secure aggregation is a vital component for mitigating gradient leakage in federated learning, but its communication cost conventionally scales with the gradient dimension. This becomes prohibitive for large models and even more pronounced in decentralized federated learning with limited bandwidth a...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10780v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10780v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10774v1" target="_blank">Inverse Probability Weighting and Age-of-Information Aggregation for Decentralized Federated Learning under Partial Reception</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Chanuka A. S. Hewa Kaluannakkage, Rajkumar Buyya · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.DC</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">Decentralized Federated Learning (DFL) over lossy wireless networks faces two key challenges: selection bias, where updates from poor-quality links are systematically underrepresented due to partial model reception, and update staleness, where asynchronous nodes contribute outdated information. We s...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10774v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10774v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10742v1" target="_blank">MemVenom: Triggered Poisoning of Multimodal Memories in Web Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yv Zhang, Hao Sun, Hao Fang, Kuofeng Gao et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">External memory has become a core component of modern web agents, enabling long-horizon reasoning through the retrieval of past experiences. However, this paradigm introduces a critical vulnerability: malicious content injected into memory can be persistently recalled and repeatedly influence agent ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10742v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10742v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.06087" target="_blank">LatentSkill: From In-Context Textual Skills to In-Weight Latent Skills for LLM Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-09</div>
+  <div class="tags"></div>
+  <div class="summary-en">LatentSkill enables efficient deployment of textual skills in agent systems by converting them into LoRA adapters stored in weight space, reducing context overhead while maintaining modularity and composability.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.06087" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.06087" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10546v1" target="_blank">SkillAxe: Sharpening LLM-Authored Agent Skills Through Evaluation-Guided Self-Refinement</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Srishti Gautam, Arjun Radhakrishna, Sumit Gulwani · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">Skill documents, structured natural-language instructions that guide Large Language Model (LLM) agents, are critical to modern agent frameworks, yet LLMs struggle to write skills that actually work. On SkillsBench, human-authored skills improve pass rates by 16.2 percentage points, while LLM-authore...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10546v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10546v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10917v1" target="_blank">Role-Agent: Bootstrapping LLM Agents via Dual-Role Evolution</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Xucong Wang, Ziyu Ma, Shidong Yang, Tongwen Huang et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Although Large Language Model (LLM) agents have demonstrated strong performance on complex tasks, their learning is often limited by inefficient interaction feedback and static training environments, which hinder broader generalization. To address these limitations, this paper introduces Role-Agent,...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10917v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10917v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10803v1" target="_blank">Beyond APIs: Probing the Limits of MLLMs in Physical Tool Use</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Zhixin Ma, Yutong Zhou, Yongqi Li, Chong-Wah Ngo et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CV</span></div>
+  <div class="summary-en">Multimodal Large Language Models (MLLMs) excel at utilizing digital APIs and increasingly serve as the "brain" of embodied AI, instructing robots to interact with the physical world. In such embodied settings, a central capability is the use of physical tools, which underpins MLLMs' ability to assis...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10803v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10803v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10677v1" target="_blank">Infini Memory: Maintainable Topic Documents for Long-Term LLM Agent Memory</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Suozhao Ji, Baodong Wu, Zehao Wang, Lei Xia et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span></div>
+  <div class="summary-en">Long-term LLM agents need persistent memory that can track changing facts and provide relevant evidence across sessions. Existing memory systems often store observations as isolated records, summaries, or indexed fragments, which makes evidence aggregation, fact revision, and memory maintenance diff...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10677v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10677v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10616v1" target="_blank">Learning What to Remember: Observability-Safe Memory Retention via Constrained Optimization for Long-Horizon Language Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Qingcan Kang, Liu Mingyang, Shixiong Kai, Kaichao Liang et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Long-horizon language agents accumulate observations, reasoning traces, and retrieved facts that exceed their finite context windows, making memory retention a fundamental resource-allocation problem. Existing memory systems improve management through heuristic scoring, retrieval optimization, or le...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10616v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10616v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10582v1" target="_blank">Drawing with Strangers: Population Scaling Drives Zero-Shot Mutual Intelligibility in Emergent Sketching</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jooyeon Kim · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Generalization in emergent communication has largely focused on novel inputs or linguistic structures, yet the capacity for agents to communicate with strangers from strictly disjoint communities remains relatively unexplored. In this work, we formalize this capability as \textit{zero-shot mutual in...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10582v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10582v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10525v1" target="_blank">Assessing Automated Prompt Injection Attacks in Agentic Environments</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">David Hofer, Edoardo Debenedetti, Florian Tramèr · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Indirect prompt injection poses a critical threat to LLM agents that interact with untrusted external data, yet automated attack methods--proven effective for jailbreaking--remain underexplored in realistic agentic settings. We present a comprehensive empirical evaluation of automated prompt injecti...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10525v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10525v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10507v1" target="_blank">HIPIF: Hierarchical Planning and Information Folding for Long-Horizon LLM Agent Learning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Juncheng Diao, Zhicong Lu, Peiguang Li, Yongwei Zhou et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">While Large Language Models (LLMs) have demonstrated strong capabilities as autonomous agents across a wide range of tasks, their performance often degrades in multi-turn long-horizon agentic tasks. Existing methods have made progress through fine-grained credit assignment to alleviate long-horizon ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10507v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10507v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10460v1" target="_blank">LakeQA: An Exploratory QA Benchmark over a Million-Scale Data Lake</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Haonan Wang, Jiaxiang Liu, Yurong Liu, Austin Senna Wijaya et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CL</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Recent large language models (LLMs) have shown rapid progress in reading-based question answering (QA), where evidence is explicitly provided or can be trivially retrieved. In contrast, real-world questions are often not paired with accurate evidence documents. The useful evidence resides in massive...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10460v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10460v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10614v1" target="_blank">Dexterous Point Policy: Learning Point-based Dexterous Hand Policies from Human Demonstrations</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Beomjun Kim, Seong Hyeon Park, Seunghoon Sim, Seungjun Moon et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Robotic foundation models pre-trained on human demonstration videos have shown promise, but a significant embodiment gap remains when the resulting policies are deployed on real robots. A common remedy is to fine-tune these models on robot-specific demonstrations. However, robot data collection can ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10614v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10614v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.08348" target="_blank">Bayesian-Agent: Posterior-Guided Skill Evolution for LLM Agent Harnesses</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-09</div>
+  <div class="tags"></div>
+  <div class="summary-en">Bayesian-Agent presents a framework that treats reusable skills and SOPs as hypotheses for model success, using Bayesian inference to guide agent behavior and improve task performance through posterior-guided harness optimization.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.08348" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.08348" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.08960" target="_blank">Hardening Agent Benchmarks with Adversarial Hacker-Fixer Loops</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-09</div>
+  <div class="tags"></div>
+  <div class="summary-en">Researchers identify widespread vulnerabilities in agent benchmark verification systems and develop an automated iterative process using LLM agents to create robust verifiers that resist exploitation while maintaining legitimate task performance.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.08960" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.08960" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10299v1" target="_blank">What Spatial Memory Must Store: Occlusion as the Test for Language-Agent Memory</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Doeon Kwon, Junho Bang · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-ma">cs.MA</span></div>
+  <div class="summary-en">Language-agent "memory palace" systems anchor each memory to a world coordinate, on the intuition that geometry adds something text cannot. We make that intuition testable and report three results. First, the memory-palace default of folding spatial proximity into a linear blend beside recency and i...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10299v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10299v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10949v1" target="_blank">Recalling Too Well: Sycophancy Evaluation and Mitigation in Memory-Augmented Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Shelly Bensal, Axel Magnuson, Aparna Balagopalan, Daniel M. Bikel · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Persistent memory systems promise to make LLMs more helpful by storing user beliefs over time. We show they also make models less correct by systematically amplifying sycophancy, wherein models prioritize agreement with users over accuracy. We conduct the first systematic evaluation of this effect, ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10949v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10949v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10942v1" target="_blank">Generative Explainability for Next-Generation Networks: LLM-Augmented XAI with Mutual Feature Interactions</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Kiarash Rezaei, Omran Ayoub, Sebastian Troia, Francesco Lelli et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.NI</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">As artificial intelligence and machine learning (AI/ML) models become integral to network operations, their lack of transparency poses a significant barrier to operator trust. Existing explainable artificial intelligence (XAI) techniques often fail to bridge this gap for non-specialists, producing t...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10942v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10942v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10940v1" target="_blank">Democratising Camera Trap AI: An Open-Source Model for Detecting UK Mammals</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Paul Fergus, Philip Stephens, Russell A. Hill, Lee Oliver et al. · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span></div>
+  <div class="summary-en">Camera traps have become a cornerstone of biodiversity monitoring, but the artificial intelligence that turns vast quantities of images into usable ecological data is often locked behind commercial platforms or trained on fauna that does not match that of the British Isles. In an attempt to remove b...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10940v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10940v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10937v1" target="_blank">Provenance Tracking in AI Compilers through the Lens of Coalgebra</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Zilu Tian, Liying Liu · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.DB</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">AI compilers aggressively rewrite computation graphs through normalization, lowering, and optimization, making it difficult to track the provenance of tensors and operators across compilation. Reliable provenance is essential for attaching platform-specific postprocessing, debugging compiler behavio...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10937v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10937v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10935v1" target="_blank">CLP: Collocation-Length Prediction for Zero-Loss Adaptive Multi-Token Inference</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Xuezhen Xie, Zhiqiang Zhou · 2026-06-09</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span></div>
+  <div class="summary-en">Large language model inference is bottlenecked by autoregressive decoding, where each token requires a full forward pass. Multi-token prediction (MTP) offers a promising acceleration path, but existing approaches suffer from a fundamental architectural flaw: the MTP head for the first token competes...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10935v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10935v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 191 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
