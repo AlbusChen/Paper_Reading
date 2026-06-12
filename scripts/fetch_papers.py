@@ -12,17 +12,24 @@ from datetime import datetime, timedelta, timezone
 import requests
 import feedparser
 
-ARXIV_CATEGORIES = ["cs.MA", "cs.AI", "cs.LG"]
+ARXIV_CATEGORIES = ["cs.MA", "cs.AI", "cs.LG", "cs.CL"]
 ARXIV_API = "http://export.arxiv.org/api/query"
 
-# Keywords for multi-agent efficiency/communication focus
+# Keywords for the current research focus:
+# 1. Single-agent vs multi-agent comparisons and heterogeneous settings.
+# 2. Agent-agent communication forms, channels, and outcomes.
 PRIMARY_KEYWORDS = [
     "multi-agent", "multiagent", "multi agent",
-    "agent communication", "agent coordination",
-    "communication efficiency", "multi-agent efficiency",
-    "cooperative agent", "agent collaboration",
-    "decentralized", "swarm intelligence",
+    "single-agent", "single agent",
+    "single-agent vs multi-agent", "single agent vs multi agent",
+    "single-agent versus multi-agent", "single agent versus multi agent",
+    "agent communication", "agent-agent communication",
+    "inter-agent communication", "agent coordination",
+    "communication protocol", "communication efficiency",
+    "cooperative agent",
+    "agent collaboration", "decentralized", "swarm intelligence",
     "message passing between agents", "inter-agent communication",
+    "heterogeneous agents", "heterogeneous multi-agent",
 ]
 
 SECONDARY_KEYWORDS = [
@@ -31,6 +38,43 @@ SECONDARY_KEYWORDS = [
     "scalable agent", "distributed agent",
     "emergent communication", "collective intelligence",
     "agent network", "agent graph",
+    "multi-agent debate", "multi-agent discussion",
+    "deliberation", "role specialization", "division of labor",
+    "communication bandwidth", "natural language communication",
+    "multimodal communication", "symbolic communication",
+    "non-verbal communication", "blackboard", "shared memory",
+    "message passing", "agent conversation", "agent dialogue",
+]
+
+FOCUS_TRACK_KEYWORDS = {
+    "single_vs_multi": [
+        "single-agent vs multi-agent", "single agent vs multi agent",
+        "single-agent versus multi-agent", "single agent versus multi agent",
+        "single-agent", "single agent", "multi-agent comparison",
+        "heterogeneous agents", "heterogeneous multi-agent",
+        "homogeneous agents", "role specialization", "division of labor",
+    ],
+    "agent_communication": [
+        "agent-agent communication", "agent communication",
+        "inter-agent communication", "communication protocol",
+        "message passing", "emergent communication",
+        "natural language communication", "multimodal communication",
+        "symbolic communication", "non-verbal communication",
+        "shared memory", "blackboard", "agent dialogue",
+    ],
+}
+
+FOCUS_2026_QUERIES = [
+    ("single_vs_multi", 'all:"single agent" AND all:"multi agent"'),
+    ("single_vs_multi", 'all:"single-agent" AND all:"multi-agent"'),
+    ("single_vs_multi", 'all:"heterogeneous agents" AND all:"multi-agent"'),
+    ("single_vs_multi", 'all:"role specialization" AND all:"multi-agent"'),
+    ("agent_communication", 'all:"agent communication"'),
+    ("agent_communication", 'all:"agent-agent communication"'),
+    ("agent_communication", 'all:"inter-agent communication"'),
+    ("agent_communication", 'all:"communication protocol" AND all:"agent"'),
+    ("agent_communication", 'all:"emergent communication" AND all:"agents"'),
+    ("agent_communication", 'all:"message passing" AND all:"multi-agent"'),
 ]
 
 # Tech report keywords (big labs)
@@ -52,11 +96,17 @@ def score_paper(title: str, abstract: str) -> dict:
     text = (title + " " + abstract).lower()
     matched_primary = [kw for kw in PRIMARY_KEYWORDS if kw in text]
     matched_secondary = [kw for kw in SECONDARY_KEYWORDS if kw in text]
+    track_matches = {
+        track: [kw for kw in keywords if kw in text]
+        for track, keywords in FOCUS_TRACK_KEYWORDS.items()
+    }
 
     is_tech_report = any(kw in text for kw in TECH_REPORT_KEYWORDS)
     from_major_org = any(org in text for org in TECH_REPORT_ORGS)
 
     score = len(matched_primary) * 3 + len(matched_secondary) * 1
+    if all(track_matches.get(track) for track in ("single_vs_multi", "agent_communication")):
+        score += 3
     if is_tech_report and from_major_org:
         score += 5
 
@@ -64,8 +114,30 @@ def score_paper(title: str, abstract: str) -> dict:
         "score": score,
         "primary_matches": matched_primary,
         "secondary_matches": matched_secondary,
+        "track_matches": track_matches,
         "is_tech_report": is_tech_report and from_major_org,
     }
+
+
+def paper_from_arxiv_entry(entry, source: str, primary_category: str | None = None, focus_track: str | None = None) -> dict:
+    """Normalize one arxiv feed entry to the local paper schema."""
+    arxiv_id = entry.id.split("/abs/")[-1]
+    paper = {
+        "id": arxiv_id,
+        "title": entry.title.replace("\n", " ").strip(),
+        "authors": [a.name for a in entry.authors[:5]],
+        "abstract": entry.summary.replace("\n", " ").strip(),
+        "url": entry.link,
+        "pdf_url": entry.link.replace("/abs/", "/pdf/"),
+        "published": entry.published,
+        "categories": [t.term for t in entry.tags],
+        "source": source,
+        "primary_category": primary_category or (entry.tags[0].term if entry.tags else "arxiv"),
+    }
+    if focus_track:
+        paper["focus_track"] = focus_track
+    paper["relevance"] = score_paper(paper["title"], paper["abstract"])
+    return paper
 
 
 def fetch_arxiv(date: datetime) -> list:
@@ -87,21 +159,7 @@ def fetch_arxiv(date: datetime) -> list:
             resp = requests.get(ARXIV_API, params=params, timeout=30)
             feed = feedparser.parse(resp.text)
             for entry in feed.entries:
-                arxiv_id = entry.id.split("/abs/")[-1]
-                paper = {
-                    "id": arxiv_id,
-                    "title": entry.title.replace("\n", " ").strip(),
-                    "authors": [a.name for a in entry.authors[:5]],
-                    "abstract": entry.summary.replace("\n", " ").strip(),
-                    "url": entry.link,
-                    "pdf_url": entry.link.replace("/abs/", "/pdf/"),
-                    "published": entry.published,
-                    "categories": [t.term for t in entry.tags],
-                    "source": "arxiv",
-                    "primary_category": category,
-                }
-                relevance = score_paper(paper["title"], paper["abstract"])
-                paper["relevance"] = relevance
+                paper = paper_from_arxiv_entry(entry, source="arxiv", primary_category=category)
                 papers.append(paper)
         except Exception as e:
             print(f"[warn] arxiv {category} fetch failed: {e}", file=sys.stderr)
@@ -131,24 +189,55 @@ def fetch_arxiv_by_ids(ids: list[str]) -> dict:
             feed = feedparser.parse(resp.text)
             for entry in feed.entries:
                 arxiv_id = entry.id.split("/abs/")[-1]
-                paper = {
-                    "id": arxiv_id,
-                    "title": entry.title.replace("\n", " ").strip(),
-                    "authors": [a.name for a in entry.authors[:5]],
-                    "abstract": entry.summary.replace("\n", " ").strip(),
-                    "url": entry.link,
-                    "pdf_url": entry.link.replace("/abs/", "/pdf/"),
-                    "published": entry.published,
-                    "categories": [t.term for t in entry.tags],
-                    "source": "arxiv",
-                    "primary_category": entry.tags[0].term if entry.tags else "arxiv",
-                }
-                paper["relevance"] = score_paper(paper["title"], paper["abstract"])
+                paper = paper_from_arxiv_entry(entry, source="arxiv")
                 papers[arxiv_id] = paper
         except Exception as e:
             print(f"[warn] arxiv id lookup failed for {','.join(batch)}: {e}", file=sys.stderr)
         time.sleep(1)
     return papers
+
+
+def fetch_arxiv_focus_2026(max_results: int = 80) -> list:
+    """Fetch recent 2026 papers matching the current two-track focus."""
+    papers = {}
+    today = datetime.now(timezone.utc).strftime("%Y%m%d")
+    per_query = max(10, min(30, max_results // max(1, len(FOCUS_2026_QUERIES)) + 1))
+
+    for focus_track, focus_query in FOCUS_2026_QUERIES:
+        query = f"({focus_query}) AND submittedDate:[202601010000 TO {today}2359]"
+        params = {
+            "search_query": query,
+            "start": 0,
+            "max_results": per_query,
+            "sortBy": "submittedDate",
+            "sortOrder": "descending",
+        }
+        try:
+            resp = requests.get(ARXIV_API, params=params, timeout=30)
+            feed = feedparser.parse(resp.text)
+            for entry in feed.entries:
+                arxiv_id = entry.id.split("/abs/")[-1]
+                paper = paper_from_arxiv_entry(
+                    entry,
+                    source="arxiv_focus_2026",
+                    focus_track=focus_track,
+                )
+                paper["focus_query"] = focus_query
+                existing = papers.get(arxiv_id)
+                if existing:
+                    existing_tracks = set(existing.get("focus_tracks", []))
+                    existing_tracks.add(focus_track)
+                    existing["focus_tracks"] = sorted(existing_tracks)
+                    continue
+                paper["focus_tracks"] = [focus_track]
+                papers[arxiv_id] = paper
+        except Exception as e:
+            print(f"[warn] arxiv 2026 focus fetch failed for {focus_query}: {e}", file=sys.stderr)
+        time.sleep(1)
+
+    results = list(papers.values())
+    results.sort(key=lambda p: (p["relevance"]["score"], p.get("published", "")), reverse=True)
+    return results[:max_results]
 
 
 def fetch_huggingface_detail(arxiv_id: str) -> dict:
@@ -271,6 +360,17 @@ def main():
         default=None,
         help="Output JSON file (default: stdout)",
     )
+    parser.add_argument(
+        "--include-2026-focus",
+        action="store_true",
+        help="Also include recent 2026 arxiv papers for the current focus topics",
+    )
+    parser.add_argument(
+        "--max-focus-results",
+        type=int,
+        default=80,
+        help="Maximum number of 2026 focus papers to merge when --include-2026-focus is used",
+    )
     args = parser.parse_args()
 
     if args.date:
@@ -286,6 +386,10 @@ def main():
 
     hf_papers = fetch_huggingface(target_date)
     print(f"[info] HuggingFace: {len(hf_papers)} papers", file=sys.stderr)
+    focus_papers = []
+    if args.include_2026_focus:
+        focus_papers = fetch_arxiv_focus_2026(args.max_focus_results)
+        print(f"[info] arxiv 2026 focus: {len(focus_papers)} papers", file=sys.stderr)
 
     # Merge: prefer arxiv metadata if same ID appears in both
     all_ids = {p["id"]: p for p in arxiv_papers}
@@ -295,6 +399,14 @@ def main():
         else:
             # Mark as also featured on HF Daily
             all_ids[p["id"]]["hf_daily"] = True
+    for p in focus_papers:
+        if p["id"] not in all_ids:
+            all_ids[p["id"]] = p
+        else:
+            all_ids[p["id"]]["focus_2026"] = True
+            all_ids[p["id"]]["focus_tracks"] = sorted(set(
+                all_ids[p["id"]].get("focus_tracks", []) + p.get("focus_tracks", [])
+            ))
 
     papers = list(all_ids.values())
     papers.sort(key=lambda p: p["relevance"]["score"], reverse=True)
@@ -304,7 +416,7 @@ def main():
 
     result = {
         "date": target_date.strftime("%Y-%m-%d"),
-        "fetched_at": datetime.utcnow().isoformat() + "Z",
+        "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "total": len(papers),
         "papers": papers,
     }

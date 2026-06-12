@@ -1,21 +1,26 @@
 # Paper Reading Collection
 
-Daily paper digest focused on **multi-agent system efficiency and communication**.  
+Daily paper digest focused on **single-agent vs multi-agent systems** and **agent-agent communication**.  
 Hosted on GitHub Pages: **https://AlbusChen.github.io/Paper_Reading**
 
 ---
 
 ## Topics of Interest
 
-**Primary (must collect):**
-- Multi-agent system efficiency
-- Agent communication protocols and overhead reduction
-- Communication topology design, emergent communication
+**Primary track A: single-agent vs multi-agent**
+- Comparisons of single-agent and multi-agent systems
+- When one setting is stronger or weaker
+- Heterogeneous vs homogeneous agent settings, role specialization, division of labor
+- Methods that reduce the gap between single-agent and multi-agent setups
+
+**Primary track B: agent-agent communication**
+- Natural-language, structured-text, shared-memory, blackboard, message-passing, tool-mediated, multimodal, symbolic, or non-text communication
+- Communication protocols, bandwidth/cost constraints, and emergent communication
+- How communication form affects performance, robustness, coordination, and cost
 
 **Also collect:**
-- Cooperative/coordination mechanisms, zero-shot coordination
-- Scalability of LLM-based multi-agent systems
-- AI/LLM technical reports from major labs (OpenAI, DeepMind, Meta AI, Anthropic, Microsoft Research, NVIDIA, and top universities: MIT, CMU, Stanford, Berkeley, Oxford)
+- LLM-based agents, agent orchestration, tool use, agent frameworks, multi-agent debate/discussion
+- AI/LLM technical reports from major labs when they include agent, orchestration, communication, or multi-agent evaluation content
 
 ---
 
@@ -57,30 +62,32 @@ crontab entry:
 **Step 1 — Fetch paper metadata** (`fetch_papers.py`)
 
 Pulls paper titles, authors, abstracts, and URLs from:
-- **arxiv API**: categories `cs.MA`, `cs.AI`, `cs.LG`, filtered for papers submitted on the target date
+- **arxiv API**: categories `cs.MA`, `cs.AI`, `cs.LG`, `cs.CL`, filtered for papers submitted on the target date
 - **HuggingFace Daily Papers**: scrapes `https://huggingface.co/papers?date=YYYY-MM-DD`
+- **2026 focus search**: optional arxiv search over 2026 papers matching the current two research tracks
 
-Each paper is scored by keyword matching (primary keywords score ×3, secondary ×1). Output is a JSON file at `/tmp/papers_YYYY-MM-DD.json`.
+Each paper is scored by keyword matching (primary keywords score ×3, secondary ×1, with a bonus for papers touching both tracks). Output is a JSON file at `/tmp/papers_YYYY-MM-DD.json`.
 
 > **Note**: The arxiv API occasionally rejects connections from this server. If all three arxiv categories fail, fall back to WebFetch: search `https://arxiv.org/search/?searchtype=all&query=multi-agent&order=-announced_date_first` and manually identify papers submitted on the target date.
 
 **Step 2 — Read and evaluate each paper** (Codex agent, via `daily_prompt.md`)
 
-The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox --search - < scripts/daily_prompt.md`) reads the candidate list and:
+The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox - < scripts/daily_prompt.md`) reads the candidate list and:
 
 1. For papers with `relevance.score >= 3`: fetches the full arxiv abstract page via `WebFetch` (`https://arxiv.org/abs/PAPER_ID`)
 2. Reads the abstract carefully and re-scores based on actual content (keyword scoring produces false positives)
 3. Writes two fields into the JSON for each relevant paper:
-   - `summary_en`: 2–3 sentence English summary — what problem, what method, key result
+   - `summary_en`: 2–3 sentence English summary — what problem, what method, key result, and relevance to the two tracks
    - `summary_zh`: 2–3 sentence Chinese summary (中文学术风格，可补充背景)
+   - Optional `topic_keywords`: 2–4 compact labels for page/index discovery
 4. Adjusts `relevance.score` to reflect true relevance (override keyword score)
 
 **Relevance scoring guide:**
 | Score | Meaning |
 |-------|---------|
-| 7–9 | Directly about multi-agent communication efficiency or coordination |
-| 5–6 | Related to MAS design, MARL, or agent architecture |
-| 3–4 | Tangentially related; application-domain multi-agent work |
+| 7–9 | Directly about single-vs-multi comparison or agent-agent communication |
+| 5–6 | Related to heterogeneous agents, communication protocols, orchestration, or agent architecture |
+| 3–4 | Tangentially related agent or multi-agent work |
 | 1–2 | False positive or very loosely related |
 | 0 | Drop entirely |
 
@@ -110,8 +117,8 @@ GitHub Pages auto-deploys within ~1 minute of push.
 ```bash
 cd /raid/longhorn/huangchen/Paper_Reading
 
-# Fetch metadata for a specific date
-python3 scripts/fetch_papers.py --date 2026-05-13 --output /tmp/papers.json
+# Fetch metadata for a specific date plus current 2026 focus papers
+python3 scripts/fetch_papers.py --date 2026-05-13 --include-2026-focus --output /tmp/papers.json
 
 # After manually adding summary_en / summary_zh fields to the JSON:
 python3 scripts/generate_html.py /tmp/papers.json

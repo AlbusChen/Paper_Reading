@@ -7,6 +7,7 @@ Creates a daily page and updates monthly/main index.
 import argparse
 import json
 import os
+import re
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -105,11 +106,120 @@ def category_tag(cat: str) -> str:
     return f'<span class="tag {cls}">{label}</span>'
 
 
+KEYWORD_LABELS = [
+    ("single_vs_multi", "single-vs-multi"),
+    ("agent_communication", "agent communication"),
+    ("single-agent vs multi-agent", "single-vs-multi"),
+    ("single agent vs multi agent", "single-vs-multi"),
+    ("single-agent versus multi-agent", "single-vs-multi"),
+    ("single agent versus multi agent", "single-vs-multi"),
+    ("single-agent", "single-agent"),
+    ("single agent", "single-agent"),
+    ("heterogeneous agents", "heterogeneous agents"),
+    ("heterogeneous multi-agent", "heterogeneous agents"),
+    ("homogeneous agents", "homogeneous agents"),
+    ("role specialization", "role specialization"),
+    ("division of labor", "division of labor"),
+    ("agent-agent communication", "agent-agent communication"),
+    ("inter-agent communication", "inter-agent communication"),
+    ("agent communication", "agent communication"),
+    ("communication protocol", "communication protocol"),
+    ("communication efficiency", "communication cost"),
+    ("communication bandwidth", "communication cost"),
+    ("message passing", "message passing"),
+    ("emergent communication", "emergent communication"),
+    ("natural language communication", "language communication"),
+    ("agent dialogue", "language communication"),
+    ("agent conversation", "language communication"),
+    ("multimodal communication", "multimodal communication"),
+    ("symbolic communication", "symbolic communication"),
+    ("non-verbal communication", "non-text communication"),
+    ("shared memory", "shared memory"),
+    ("blackboard", "shared memory"),
+    ("multi-agent debate", "multi-agent debate"),
+    ("multi-agent discussion", "multi-agent discussion"),
+]
+
+
+def clean_keywords(keywords: list[str], limit: int) -> list[str]:
+    """Normalize and de-duplicate short display keywords."""
+    seen = set()
+    cleaned = []
+    for keyword in keywords:
+        label = keyword.strip().lower()
+        if not label or label in seen:
+            continue
+        seen.add(label)
+        cleaned.append(label)
+        if len(cleaned) >= limit:
+            break
+    return cleaned
+
+
+def paper_keywords(paper: dict, limit: int = 4) -> list[str]:
+    """Derive compact topic labels for one paper."""
+    labels = []
+    labels.extend(paper.get("topic_keywords", []))
+    labels.extend(paper.get("focus_tracks", []))
+    if paper.get("focus_track"):
+        labels.append(paper["focus_track"])
+
+    relevance = paper.get("relevance", {})
+    track_matches = relevance.get("track_matches", {})
+    for track, matches in track_matches.items():
+        if matches:
+            labels.append(track)
+            labels.extend(matches)
+    labels.extend(relevance.get("primary_matches", []))
+    labels.extend(relevance.get("secondary_matches", []))
+
+    display = []
+    for label in labels:
+        normalized = label.strip().lower()
+        mapped = next((display for key, display in KEYWORD_LABELS if key == normalized), normalized)
+        display.append(mapped)
+    return clean_keywords(display, limit)
+
+
+def digest_keywords(papers: list[dict], limit: int = 3) -> list[str]:
+    """Pick the most representative labels for a daily digest."""
+    weights = {}
+    priority = []
+    for paper in papers:
+        score = paper.get("relevance", {}).get("score", 0)
+        weight = 3 if score >= 6 else 2 if score >= 3 else 1
+        keywords = paper_keywords(paper, limit=4)
+        for track_keyword in ("single-vs-multi", "agent communication"):
+            if track_keyword in keywords and track_keyword not in priority:
+                priority.append(track_keyword)
+        for keyword in keywords:
+            weights[keyword] = weights.get(keyword, 0) + weight
+    ranked = sorted(weights.items(), key=lambda item: (-item[1], item[0]))
+    labels = priority + [keyword for keyword, _ in ranked if keyword not in priority]
+    return labels[:limit]
+
+
+def extract_title_keywords(html_file: Path) -> list[str]:
+    """Read keywords from a generated daily page title when building indexes."""
+    try:
+        text = html_file.read_text(encoding="utf-8")
+    except OSError:
+        return []
+    match = re.search(r"<h1>.*?·\s*\d{4}年\d{2}月\d{2}日(?:\s*·\s*(.*?))?</h1>", text, re.S)
+    if not match or not match.group(1):
+        return []
+    raw = re.sub(r"<.*?>", "", match.group(1)).strip()
+    return clean_keywords([part.strip() for part in raw.split(" / ")], 3)
+
+
 def generate_daily_html(data: dict, date_str: str) -> str:
     papers = data.get("papers", [])
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     date_display = dt.strftime("%Y年%m月%d日")
     date_en = dt.strftime("%B %d, %Y")
+    keywords = digest_keywords(papers)
+    keyword_text = " / ".join(keywords)
+    keyword_suffix = f" · {keyword_text}" if keyword_text else ""
 
     high = [p for p in papers if p["relevance"]["score"] >= 6]
     med = [p for p in papers if 3 <= p["relevance"]["score"] < 6
@@ -129,11 +239,11 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     prev_label = prev_dt.strftime("%m-%d")
     next_label = next_dt.strftime("%m-%d")
 
-    html = HTML_HEAD.format(title=f"论文日报 {date_str}")
+    html = HTML_HEAD.format(title=f"论文日报 {date_str}{keyword_suffix}")
     html += f"""
 <header>
-  <h1>📄 论文日报 · {date_display}</h1>
-  <p>Daily Paper Digest · {date_en}</p>
+  <h1>📄 论文日报 · {date_display}{keyword_suffix}</h1>
+  <p>Daily Paper Digest · {date_en} · single-vs-multi agents &amp; agent-agent communication</p>
   <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <a href="{prev_href}">← {prev_label}</a>
     <a href="../index.html">主页</a>
@@ -162,9 +272,12 @@ def generate_daily_html(data: dict, date_str: str) -> str:
             tag_html += category_tag("HF Daily")
         if p["relevance"].get("is_tech_report"):
             tag_html += '<span class="tag tag-tr">Tech Report</span>'
+        for keyword in paper_keywords(p):
+            tag_html += f'<span class="tag tag-kw">{keyword}</span>'
         kws = p["relevance"]["primary_matches"][:3]
         for kw in kws:
-            tag_html += f'<span class="tag tag-kw">{kw}</span>'
+            if kw not in paper_keywords(p):
+                tag_html += f'<span class="tag tag-kw">{kw}</span>'
 
         summary_en = p.get("summary_en", "")
         summary_zh = p.get("summary_zh", "")
@@ -231,7 +344,7 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     return html
 
 
-def update_monthly_index(month_dir: Path, date_str: str, paper_count: int, high_count: int):
+def update_monthly_index(month_dir: Path, date_str: str, paper_count: int, high_count: int, keywords: list[str]):
     """Add or update a date entry in the monthly index."""
     entries = []
     index_path = month_dir / "index.html"
@@ -243,9 +356,9 @@ def update_monthly_index(month_dir: Path, date_str: str, paper_count: int, high_
     for html_file in sorted(month_dir.glob("????-??-??.html"), reverse=True):
         d = html_file.stem
         if d == date_str:
-            entries.append((d, paper_count, high_count))
+            entries.append((d, paper_count, high_count, keywords))
         else:
-            entries.append((d, None, None))
+            entries.append((d, None, None, extract_title_keywords(html_file)))
 
     html = HTML_HEAD.format(title=f"{month_display} 论文索引")
     html += f"""
@@ -255,11 +368,12 @@ def update_monthly_index(month_dir: Path, date_str: str, paper_count: int, high_
 </header>
 <div style="display:flex;flex-direction:column;gap:8px;margin-top:16px">
 """
-    for d, cnt, hcnt in entries:
+    for d, cnt, hcnt, kws in entries:
         dt2 = datetime.strptime(d, "%Y-%m-%d")
         label = dt2.strftime("%m月%d日 (%a)")
         cnt_str = f" · {cnt}篇 · {hcnt}高相关" if cnt is not None else ""
-        html += f'  <a href="{d}.html" style="padding:10px 14px;background:#fff;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--text)">{label}{cnt_str}</a>\n'
+        kw_str = f" · {' / '.join(kws)}" if kws else ""
+        html += f'  <a href="{d}.html" style="padding:10px 14px;background:#fff;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--text)">{label}{kw_str}{cnt_str}</a>\n'
 
     html += "</div>\n" + HTML_FOOT
     index_path.write_text(html, encoding="utf-8")
@@ -275,7 +389,7 @@ def update_main_index():
     html += """
 <header>
   <h1>📚 Multi-Agent 论文日报</h1>
-  <p>专注于多智能体系统的效率与通信研究 · Daily paper digest on multi-agent efficiency &amp; communication</p>
+  <p>聚焦 single-vs-multi agents 与 agent-agent communication · Daily paper digest on agent settings, heterogeneity, and communication forms</p>
 </header>
 """
     # Show recent daily entries (last 14)
@@ -294,7 +408,9 @@ def update_main_index():
         for d, month, f in recent:
             dt2 = datetime.strptime(d, "%Y-%m-%d")
             label = dt2.strftime("%Y年%m月%d日 (%a)")
-            html += f'  <a href="{month}/{d}.html" style="padding:10px 14px;background:#fff;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--text)">{label}</a>\n'
+            kws = extract_title_keywords(f)
+            kw_str = f" · {' / '.join(kws)}" if kws else ""
+            html += f'  <a href="{month}/{d}.html" style="padding:10px 14px;background:#fff;border:1px solid var(--border);border-radius:6px;text-decoration:none;color:var(--text)">{label}{kw_str}</a>\n'
         html += "</div>\n"
 
     if months:
@@ -331,7 +447,7 @@ def main():
     print(f"[info] Written: {out_path}")
 
     high_count = len([p for p in data["papers"] if p["relevance"]["score"] >= 6])
-    update_monthly_index(month_dir, date_str, len(data["papers"]), high_count)
+    update_monthly_index(month_dir, date_str, len(data["papers"]), high_count, digest_keywords(data["papers"]))
     update_main_index()
     print(f"[info] Indexes updated")
 

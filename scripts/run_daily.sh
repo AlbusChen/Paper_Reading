@@ -27,12 +27,11 @@ cd "${REPO_DIR}"
 if "${CODEX}" exec \
     --cd "${REPO_DIR}" \
     --dangerously-bypass-approvals-and-sandbox \
-    --search \
     - < scripts/daily_prompt.md >> "${LOGFILE}" 2>&1; then
   echo "[$(date)] Codex summary workflow completed." | tee -a "${LOGFILE}"
 else
   echo "[$(date)] Warning: Codex summary workflow failed; generating metadata-only digest." | tee -a "${LOGFILE}"
-  "${PYTHON}" scripts/fetch_papers.py --date "${DATE}" --output "${FALLBACK_JSON}" >> "${LOGFILE}" 2>&1
+  "${PYTHON}" scripts/fetch_papers.py --date "${DATE}" --include-2026-focus --output "${FALLBACK_JSON}" >> "${LOGFILE}" 2>&1
   "${PYTHON}" scripts/generate_html.py "${FALLBACK_JSON}" >> "${LOGFILE}" 2>&1
 fi
 
