@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-06-15 · single-vs-multi / orchestration / role specialization</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年06月15日 · single-vs-multi / orchestration / role specialization</h1>
+  <p>Daily Paper Digest · June 15, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="2026-06-14.html">← 06-14</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="2026-06-16.html">06-16 →</a>
+  </nav>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>58</span> 篇</div>
+  <div class="stat">高度相关 <span>10</span> 篇</div>
+  <div class="stat">相关 <span>3</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-06-16 01:34 UTC</div>
+</div>
+<div class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13733v1" target="_blank">How Task Structure Limits Multi-Agent Success: An Information-Theoretic Analysis</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Shi Pan, Ming Luo · 2026-06-11</div>
+  <div class="tags"><span class="tag tag-kw">cs.IT</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">communication cost</span><span class="tag tag-kw">task heterogeneity</span><span class="tag tag-kw">inter-agent communication</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span><span class="tag tag-kw">agent communication</span></div>
+  <div class="summary-en">This paper gives an information-theoretic account of when multi-agent systems fail to beat single-agent systems: bounded inter-agent communication creates a bottleneck determined by the task constraint graph. The authors define a minimum cut cost and show success probability can decay exponentially when task constraints are tightly coupled, with validation on synthetic tasks and SWE-bench data. The practical takeaway is that high-coupling tasks may need restructuring rather than simply adding agents or more messages.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文从信息论角度解释多智能体为何不一定优于单智能体：当任务约束图被切分且跨智能体通信受限时，会出现由最小割成本刻画的信息瓶颈。作者证明在高耦合任务中成功率可能随瓶颈指数下降，并在合成实验和 SWE-bench 数据上验证。结论是，高耦合任务应优先重构任务分解，而不是单纯增加智能体或通信轮数。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13733v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13733v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12835v1" target="_blank">The Internet of Agentic AI: Communication, Coordination, and Collective Intelligence at Scale</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Quanyan Zhu · 2026-06-11</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">agent-agent communication</span><span class="tag tag-kw">heterogeneous agents</span><span class="tag tag-kw">communication protocol</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">This survey/vision paper frames autonomous agents as a large-scale Internet of Agentic AI, where heterogeneous agents discover one another, negotiate roles, exchange context, call tools, and coordinate workflows. It synthesizes multi-agent systems, distributed computing, communication protocols, game theory, and security to identify open problems in semantic interoperability, identity, incentives, orchestration, and governance. It is most relevant as a communication-and-coordination architecture map rather than an empirical comparison paper.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出“智能体互联网”的愿景，将自主智能体视为可在云、边、端和组织边界中发现彼此、协商职责、交换上下文并调用工具的开放生态。文章综合多智能体系统、分布式计算、通信协议、博弈论和安全工程，梳理语义互操作、身份信任、激励协调、资源感知编排与治理等关键问题。其价值主要在于提供智能体通信与协同架构图谱，而非直接实验比较。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12835v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12835v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.15376v1" target="_blank">CoAgent: Concurrency Control for Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Hongtao Lyu, Dingyan Zhang, Mingyu Wu, Xingda Wei et al. · 2026-06-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.DC</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">shared memory</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">concurrency control</span><span class="tag tag-kw">multi-agent coordination</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single agent</span></div>
+  <div class="summary-en">CoAgent addresses a concrete coordination problem in parallel LLM-agent workflows: multiple agents mutating the same repository, cluster, or document. Its MTPO protocol fixes a serialization order, lets agents read order-filtered state, applies writes speculatively, and asks affected agents to repair plans using LLM judgment and undoable tools. Experiments show near-serial correctness with meaningful speed and cost gains, making shared-state coordination a first-class multi-agent systems issue.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CoAgent 研究并行 LLM 智能体同时修改同一代码库、集群或文档时的共享状态冲突问题。其 MTPO 协议预先固定串行顺序，提供按顺序过滤的读视图，允许写入先投机执行，并通过通知受影响智能体重新判断和修补计划来恢复一致性。实验显示该方法接近串行正确性，同时保留并发带来的时间与成本收益，凸显共享状态协调是多智能体系统的核心问题。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.15376v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.15376v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.15640v1" target="_blank">Multi-Agent Framework for Audit Risk Assessment with Explicit Uncertainty and Evidence Conflict Modeling</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Yuhan Wang, Manqing Wang, Yixuan Lu, Zhaoyue Peng et al. · 2026-06-14</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">role specialization</span><span class="tag tag-kw">evidence aggregation</span><span class="tag tag-kw">heterogeneous agents</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">UMAR applies a role-specialized multi-agent architecture to audit risk assessment, with separate agents for MD&A text, financial ratios, and CAM evidence. A Dempster-Shafer aggregator fuses calibrated uncertainty estimates and explicitly measures inter-agent evidence conflict. On SEC 10-K data, it outperforms single-agent and dual-agent LLM baselines while improving calibration, making it a domain example where specialized agents and conflict-aware aggregation add value.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">UMAR 将角色专门化的多智能体框架用于审计风险评估，分别由 MD&A 文本、财务比率和 CAM 证据智能体产生带校准不确定性的风险评分。系统使用 Dempster-Shafer 证据理论聚合结果，并显式衡量智能体之间的证据冲突。在 SEC 10-K 数据上，该方法优于单智能体和双智能体 LLM 基线且校准更好，是角色分工与冲突建模带来收益的领域案例。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.15640v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.15640v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.15008v1" target="_blank">Security Engineering of OpenClaw: Analyzing Attack Surface Expansion and Trust-Boundary Violations</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Saeid Jamshidi, Arghavan Moradi Dakhel, Kawser Wazed Nafi, Foutse Khomh · 2026-06-12</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">multi-agent security</span><span class="tag tag-kw">trust boundary</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single agent</span></div>
+  <div class="summary-en">This paper studies how moving from one action-capable LLM agent to a seven-agent OpenClaw setup expands the security attack surface. With any-agent action execution, compromise probability rises sharply, prompt injection propagates across agents, and privilege drift increases even though the underlying models are unchanged. The result is a strong cautionary single-vs-multi finding: output aggregation and trust-boundary design can dominate model-level safety.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文分析从单个可执行动作的 LLM 智能体扩展到七智能体 OpenClaw 系统后，安全攻击面如何扩大。在“任一智能体可触发执行”的设置下，妥协概率显著上升，提示注入会跨智能体传播，权限漂移也会增加，而底层模型并未改变。该结果提醒，多智能体的输出聚合和信任边界设计可能比单个模型安全性更决定系统风险。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.15008v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.15008v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13878v1" target="_blank">AnyGoal: Vision-Language Guided Multi-Agent Exploration for Training-Free Lifelong Navigation</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">MoniJesu James, Marcelino Julio Fernando, Miguel Altamirano Cabrera, Dzmitry Tsetserukou · 2026-06-11</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">shared memory</span><span class="tag tag-kw">multi-robot coordination</span><span class="tag tag-kw">vision-language agents</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">AnyGoal is a training-free multi-robot navigation system that coordinates agents through a shared 2D Gaussian Bayesian Value Map updated from VLM judgments. Frontier allocation uses goal relevance, uncertainty, spatial separation, and commitment hysteresis without a centralized controller. The dual-agent system substantially beats a single-agent version on GOAT-Bench, showing a clear multi-agent benefit when agents share compact spatial evidence and divide exploration.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AnyGoal 是一个无需训练的多机器人导航系统，通过由 VLM 评分更新的二维高斯贝叶斯价值图来共享目标相关证据。系统在无中心控制器的条件下，结合目标相关性、不确定性、空间分离和承诺滞后来分配探索前沿。在 GOAT-Bench 上双智能体明显优于单智能体，说明当智能体共享紧凑空间记忆并分工探索时，多智能体可以获得实际收益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13878v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13878v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13003v2" target="_blank">The Illusion of Multi-Agent Advantage</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Prathyusha Jwalapuram, Hehai Lin, Chuyuan Li, Fangkai Jiao et al. · 2026-06-11</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CL</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">cost efficiency</span><span class="tag tag-kw">task decomposition</span><span class="tag tag-kw">agent architecture</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">This paper directly challenges the assumed advantage of multi-agent systems by comparing automatically generated MAS against a strong single-agent Chain-of-Thought with Self-Consistency baseline. Across standard reasoning and interactive workflows, generated MAS underperform while costing up to 10x more; a diagnostic dataset shows expert-designed MAS can work when decomposition, context separation, and parallelism are real. The main claim is that current automated MAS often add architectural complexity without functional multi-agent utility.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文直接检验“多智能体天然优于单智能体”的假设，将自动生成的 MAS 与强单智能体 CoT-SC 基线系统比较。在传统推理和交互式多步任务上，自动 MAS 往往表现更差且成本最高可达 10 倍；诊断数据集表明，只有当任务确有分解、上下文隔离和并行潜力时，专家设计的 MAS 才能有效。核心结论是，当前自动化 MAS 常产生架构膨胀，而不带来真正的多智能体效用。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13003v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13003v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12918v2" target="_blank">MAStrike: Shapley-Guided Collusive Red-Teaming on Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Chejian Xu, Zhaorun Chen, Jingyang Zhang, Freddy Lecue et al. · 2026-06-11</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent security</span><span class="tag tag-kw">collusion</span><span class="tag tag-kw">message passing</span><span class="tag tag-kw">role specialization</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">MAStrike is a red-teaming framework for hierarchical multi-agent systems, focused on coordinated compromise and cross-agent collusion. It uses agent-level Shapley values to identify safety-critical agents and vulnerable coalitions, then generates role-aware adversarial manipulations refined through causal diagnosis. The paper is relevant to agent communication because it treats message streams and coalition behavior as attack surfaces unique to multi-agent designs.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MAStrike 面向层级式多智能体系统的红队测试，重点研究协调式攻击和跨智能体串谋。方法使用智能体级 Shapley 值识别对系统鲁棒性贡献最大的节点和脆弱联盟，并生成带角色意识的对抗操纵，再通过因果诊断迭代改进。该工作说明消息流和联盟行为本身就是多智能体架构中特有的攻击面。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12918v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12918v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12563v1" target="_blank">Arbor: Tree Search as a Cognition Layer for Autonomous Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Neha Prakriya, Chaojun Hou, Zheng Gong, Huasha Zhao et al. · 2026-06-10</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">shared memory</span><span class="tag tag-kw">role specialization</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single agent</span></div>
+  <div class="summary-en">Arbor introduces a multi-agent optimization framework where a shared scored search tree serves as working memory across an orchestrator, domain specialists, and a critic. In full-stack LLM inference optimization, this structured cognition layer lets agents coordinate across application, compiler, kernel, and hardware choices. The reported gains over a single-agent harness suggest multi-agent systems help when shared memory, specialist roles, and checks-and-balances are aligned with a complex stateful search space.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Arbor 提出以带评分搜索树作为共享工作记忆的多智能体优化框架，由编排者、领域专家和批评者协同推进。其应用于全栈 LLM 推理优化，使智能体能够跨应用、框架、编译器、内核和硬件层面协调搜索。相较单智能体 harness 的提升表明，当共享记忆、专家角色和制衡机制与复杂有状态搜索空间匹配时，多智能体更可能有效。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12563v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12563v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12640v1" target="_blank">Individual Control Barrier Functions-Guided Diffusion Model for Safe Offline Multi-Agent Reinforcement Learning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Qingyun Guo, Junyi Shi, Jianuo Huang, Tianyu Shi · 2026-06-10</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">eess.SY</span><span class="tag tag-kw">single-vs-multi</span><span class="tag tag-kw">multi-agent reinforcement learning</span><span class="tag tag-kw">safety</span><span class="tag tag-kw">trajectory generation</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">This paper extends offline reinforcement learning with diffusion models from single-agent settings to safety-critical multi-agent environments. It embeds neural individual control barrier functions into trajectory generation so policies can improve performance while satisfying safety constraints during execution. It is relevant as a single-to-multi transition paper, though less focused on LLM agents or communication protocols.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将基于扩散模型的离线强化学习从单智能体扩展到安全关键的多智能体环境。方法在轨迹生成中嵌入神经个体控制障碍函数，使策略在提升性能的同时满足执行阶段的安全约束。该工作与“从单到多”的方法迁移相关，但对 LLM 智能体或通信协议讨论较少。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12640v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12640v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10747" target="_blank">The Arbiter Agent: Continually Monitoring Multi-Agent Conversations to Detect Emergent Misalignment</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">agent-agent communication</span><span class="tag tag-kw">language communication</span><span class="tag tag-kw">multi-agent monitoring</span><span class="tag tag-kw">collusion</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">The Arbiter Agent monitors multi-agent conversations in real time to detect which participant is becoming misaligned under a limited inspection budget. It can passively observe, question agents, inspect prompts or traces, and log concerns, with experiments across collusion and evaluation-aware settings. The key contribution is treating oversight as an active participant in agent-agent communication rather than as only post-hoc transcript review.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">The Arbiter Agent 在有限检查预算下实时监控多智能体对话，以识别可能出现失配行为的参与者。它可以被动观察、主动询问智能体、检查提示或推理轨迹，并记录可疑行为，实验覆盖串谋和评测感知等设置。其关键贡献是将监督者视为智能体间通信过程中的主动参与者，而不仅是事后审查对话记录。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10747" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10747" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.01008" target="_blank">FVSpec: Real-World Property-Based Tests as Lean Challenges</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">A benchmark for AI-assisted formal verification is presented, involving the translation of property-based tests from Python into Lean specifications using a multi-agent LLM pipeline.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.01008" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.01008" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.02641" target="_blank">CARVE: Certified Affordable Repair of Vetoed Maneuvers via Envelopes for Interactive Driving</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">Interactive driving scenarios reveal failures in autonomous vehicle rule systems where small adjustments could restore feasibility, leading to the introduction of CARVE, a certification framework that provides runtime proofs for multi-agent repairs without requiring predictions of other drivers' com...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.02641" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.02641" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.06036" target="_blank">Memory is Reconstructed, Not Retrieved: Graph Memory for LLM Agents</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">MRAgent combines associative memory graphs with active reconstruction to enable dynamic memory access during reasoning, improving long-horizon memory reasoning while reducing computational costs.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.06036" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.06036" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14061" target="_blank">LLM Agents Can See Code Repositories</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">Visual repository representations enhance LLM-based coding agents by improving structural understanding and reducing token consumption during issue resolution.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14061" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14061" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13432" target="_blank">OmniDirector: General Multi-Shot Camera Cloning without Cross-Paired Data</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">A unified framework for camera motion cloning that uses grid motion videos as representation and integrates multimodal diffusion transformers for enhanced video generation control.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13432" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13432" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12384" target="_blank">APPO: Agentic Procedural Policy Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Agentic Reinforcement Learning method that improves multi-turn tool-use capabilities by refining branching decisions and credit assignment through fine-grained decision points and procedure-level advantage scaling.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12384" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12384" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14502" target="_blank">From Chatbot to Digital Colleague: The Paradigm Shift Toward Persistent Autonomous AI</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Large Language Models are evolving from conversational systems to integrated AI colleagues with enhanced reasoning capabilities and persistent work environments.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14502" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14502" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12291" target="_blank">Measuring Epistemic Resilience of LLMs Under Misleading Medical Context</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Large language models demonstrate reduced medical reasoning accuracy when exposed to misleading context, highlighting a critical gap in current evaluation methods that fails to assess epistemic resilience under adversarial conditions.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12291" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12291" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13707" target="_blank">Orchestra-o1: Omnimodal Agent Orchestration</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">heterogeneous agents</span><span class="tag tag-kw">multimodal communication</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">role specialization</span></div>
+  <div class="summary-en">Orchestra-o1 proposes an omnimodal orchestration framework for multi-agent systems that must coordinate text, image, audio, and video inputs. It performs modality-aware task decomposition, online sub-agent specialization, and parallel sub-task execution, and reports strong results on OmniGAIA plus DA-GRPO training for an 8B agent model. The work is relevant to heterogeneous agent orchestration and multimodal communication, though its abstract emphasizes performance more than communication analysis.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Orchestra-o1 提出面向文本、图像、音频和视频共同存在场景的全模态多智能体编排框架。系统进行模态感知任务分解、在线子智能体专门化和并行子任务执行，并在 OmniGAIA 上取得较强结果，同时提出 DA-GRPO 训练 8B 智能体模型。该工作与异构智能体编排和多模态通信相关，但摘要更强调性能提升而非通信机制分析。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13707" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13707" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14249" target="_blank">HarnessX: A Composable, Adaptive, and Evolvable Agent Harness Foundry</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">shared memory</span><span class="tag tag-kw">agent framework</span><span class="tag tag-kw">runtime adaptation</span></div>
+  <div class="summary-en">HarnessX treats an agent runtime harness, including prompts, tools, memory, and control flow, as a composable and evolvable object. Its AEGIS engine uses traces and multi-agent evolution to adapt harness primitives and feed improvements back into both harness design and model training. The paper is relevant to orchestration and shared memory/control-flow design, especially as evidence that agent performance can improve through runtime architecture rather than model scaling alone.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">HarnessX 将智能体运行时 harness（提示、工具、记忆和控制流）视为可组合、可适应和可演化的对象。其 AEGIS 引擎利用执行轨迹和多智能体演化来调整 harness 原语，并把改进反馈到 harness 设计和模型训练中。该工作与智能体编排、共享记忆和控制流设计相关，说明性能提升不只依赖模型规模，也可来自运行时架构演化。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14249" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14249" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13141" target="_blank">Rethinking RAG in Long Videos: What to Retrieve and How to Use It?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">VideoRAG systems are extended to handle long egocentric videos with multi-modal retrieval across temporal granularities, addressing limitations in existing benchmarks and methods through a new benchmark and chunk-adaptive reranking approach.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13141" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13141" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14702" target="_blank">OmniVideo-100K: A Dataset for Audio-Visual Reasoning through Structured Scripts and Evidence Chains</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">An automated audio-visual question answering system uses entity-anchored video scripting and clue-guided QA generation to improve cross-modal reasoning and temporal consistency in video analysis.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14702" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14702" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12683" target="_blank">From AGI to ASI</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Artificial general intelligence development may lead to artificial general superintelligence through multiple pathways, requiring interdisciplinary global preparation for transformative societal changes.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12683" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12683" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2605.30789" target="_blank">Smaller Models are Natural Explorers for Policy-Level Diversity in GRPO</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Small-to-Large Policy Optimization framework uses smaller models as natural explorers to enhance policy diversity and improve large language model training efficiency.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2605.30789" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2605.30789" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.10813" target="_blank">RedAct: Redacting Agent Capability Traces for Procedural Skill Protection</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">U s e r s r e l y o n e x e c u t i o n t r a c e s t o o b s e r v e a g e n t b e h a v i o r , d i a g n o s e f a i l u r e s , a n d e n s u r e a c c o u n t a b i l i t y . T h e s e t r a c e s c o n t a i n r i c h p r o c e d u r a l d e t a i l , i n c l u d i n g t o o l i n v o c a t i ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.10813" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.10813" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.06574" target="_blank">Skip a Layer or Loop It? Learning Program-of-Layers in LLMs</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Pretrained language models can execute layers dynamically through flexible program-of-layers strategies that improve accuracy while reducing computational overhead compared to standard fixed-depth inference.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.06574" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.06574" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14700" target="_blank">RepFusion: Leveraging Multimodal Priors for Denoising in Representation Space</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">RepFusion leverages multimodal large language models as noisy representation encoders for diffusion transformers in text-to-image generation, outperforming traditional approaches that train new denoisers.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14700" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14700" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.09813" target="_blank">iMaC: Translating Actions into Motion and Contact Images for Embodied World Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">iMac presents a unified control paradigm that uses raw visual images as native action representations for embodied world models, enabling more expressive and generalized robotic control through image-based action tokens.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.09813" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.09813" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14409" target="_blank">Hy-Embodied-0.5-VLA: From Vision-Language-Action Models to a Real-World Robot Learning Stack</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">HyVLA-0.5 is an end-to-end robotic learning system that integrates data collection, model design, pre-training, fine-tuning, and reinforcement learning for real-world deployment.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14409" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14409" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.12594" target="_blank">Pythagoras-Prover: Advancing Efficient Formal Proving via Augmented Lean Formalisation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">Pythagoras-Prover introduces compute-efficient Lean theorem provers using curriculum training and augmented formalization techniques to overcome limitations of scarce verified data and expensive proof search.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.12594" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.12594" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.13044" target="_blank">No Hidden Prompts Needed! You Can Game AI Peer Review with Presentation-Only Revisions</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">AI reviewers are vulnerable to presentation-level manipulation that exploits their tendency to be impressed by highlighted strengths rather than convinced by resolved weaknesses, creating a new optimization surface for adversarial repackaging attacks.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.13044" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.13044" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.14579" target="_blank">VISTA: View-Consistent Self-Verified Training for GUI Grounding</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-06-15</div>
+  <div class="tags"></div>
+  <div class="summary-en">VISTA is a GRPO-based training framework for GUI grounding that uses multiple consistent views of the same GUI instance to improve training stability and accuracy.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.14579" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.14579" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 25 篇低相关文章未显示</div>
+
+<footer>
+  <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
