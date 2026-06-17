@@ -90,6 +90,23 @@ TECH_REPORT_KEYWORDS = [
     "model card", "model report",
 ]
 
+HF_DAILY_EXCLUDE_KEYWORDS = [
+    "3d", "3-d", "three-dimensional", "point cloud", "pointcloud",
+    "mesh", "gaussian splatting", "nerf", "novel view synthesis",
+    "robot", "robotic", "robotics", "manipulation", "locomotion",
+    "navigation", "embodied", "embodiment", "vision-language-action",
+    "vision language action", "autonomous driving", "self-driving",
+    "image generation", "text-to-image", "text to image", "t2i",
+    "image diffusion", "image synthesis", "generates images",
+    "produce images", "produces images",
+    "video generation", "text-to-video", "text to video",
+    "image-to-video", "image to video", "text/image-to-video",
+    "text/image to video", "t2v",
+    "video diffusion", "video synthesis",
+    "inverse rendering", "forward rendering", "novel view",
+    "visual understanding and generation", "diffusion decoder",
+]
+
 
 def score_paper(title: str, abstract: str) -> dict:
     """Score paper relevance. Returns dict with score and matched keywords."""
@@ -117,6 +134,12 @@ def score_paper(title: str, abstract: str) -> dict:
         "track_matches": track_matches,
         "is_tech_report": is_tech_report and from_major_org,
     }
+
+
+def is_hf_daily_excluded(title: str, abstract: str) -> bool:
+    """Return True for HF Daily topics the user does not want in the extra module."""
+    text = (title + " " + abstract).lower()
+    return any(keyword in text for keyword in HF_DAILY_EXCLUDE_KEYWORDS)
 
 
 def paper_from_arxiv_entry(entry, source: str, primary_category: str | None = None, focus_track: str | None = None) -> dict:
@@ -300,6 +323,7 @@ def fetch_huggingface(date: datetime) -> list:
                     "categories": [],
                     "source": "huggingface_daily",
                     "primary_category": "HF Daily",
+                    "hf_daily": True,
                 }
                 relevance = score_paper(title, abstract)
                 paper["relevance"] = relevance
@@ -340,6 +364,20 @@ def fetch_huggingface(date: datetime) -> list:
         })
         paper["relevance"] = score_paper(paper["title"], paper["abstract"])
     return papers
+
+
+def filter_hf_daily_module(papers: list[dict]) -> list[dict]:
+    """Keep HF Daily papers for the broad daily module, excluding unwanted topics."""
+    filtered = []
+    for paper in papers:
+        if is_hf_daily_excluded(paper.get("title", ""), paper.get("abstract", "")):
+            paper["hf_daily_excluded"] = True
+            continue
+        module_paper = dict(paper)
+        module_paper["hf_daily_module"] = True
+        module_paper["topic_keywords"] = ["HF Daily"]
+        filtered.append(module_paper)
+    return filtered
 
 
 def main():
@@ -386,6 +424,8 @@ def main():
 
     hf_papers = fetch_huggingface(target_date)
     print(f"[info] HuggingFace: {len(hf_papers)} papers", file=sys.stderr)
+    hf_daily_papers = filter_hf_daily_module(hf_papers)
+    print(f"[info] HuggingFace module: {len(hf_daily_papers)} papers", file=sys.stderr)
     focus_papers = []
     if args.include_2026_focus:
         focus_papers = fetch_arxiv_focus_2026(args.max_focus_results)
@@ -419,6 +459,7 @@ def main():
         "fetched_at": datetime.now(timezone.utc).isoformat().replace("+00:00", "Z"),
         "total": len(papers),
         "papers": papers,
+        "hf_daily_papers": hf_daily_papers,
     }
 
     if args.output:

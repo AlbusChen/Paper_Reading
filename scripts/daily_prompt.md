@@ -5,7 +5,8 @@ You are running as a scheduled daily paper collection agent. Your task is to:
 1. **Fetch paper metadata** for yesterday's date
 2. **Read and evaluate each paper** from the candidate list
 3. **Write bilingual summaries** (English + Chinese) for relevant papers
-4. **Generate the HTML digest** for the day
+4. **Write bilingual summaries for the Hugging Face Daily module**
+5. **Generate the HTML digest** for the day
 
 ## Step 1: Set date and fetch
 
@@ -22,6 +23,7 @@ Load the JSON and identify:
 - Papers with score >= 3 (relevant, read abstract carefully)
 - Papers with score >= 6 (highly relevant, read full abstract + possibly skim introduction)
 - Tech reports from major labs when they contain agent, orchestration, communication, or multi-agent evaluation content
+- Papers in `hf_daily_papers` (Hugging Face Daily module): summarize them even when they are not related to the two main research tracks, as long as they are not about 3D, robotics, image generation, or video generation. Hugging Face Daily may be empty on weekends; that is fine.
 
 Focus on two research tracks:
 - **Track A: single-agent vs multi-agent**. Prioritize papers that compare single-agent and multi-agent systems, identify when one setting is stronger or weaker, study task/context heterogeneity, or propose mechanisms to close the gap between the two settings.
@@ -46,6 +48,8 @@ For each paper you've read, add to the JSON:
 
 Format for summary_zh: Concise Chinese academic style. Example:
 "本文比较了单智能体与多智能体在长程规划任务中的表现，发现多智能体在需要角色分工和并行探索时更强，但在信息整合成本高的场景下会被通信开销抵消。作者进一步提出结构化消息协议来降低跨智能体冗余交流，实验显示该协议在保持成功率的同时减少了通信轮数。"
+
+For each paper in `hf_daily_papers`, also add `summary_en` and `summary_zh`. These summaries should be general paper summaries: problem, method, and key result or claim. Do not force them into the single-vs-multi or agent-agent communication framing unless the paper naturally fits.
 
 ## Step 5: Update JSON and generate HTML
 
@@ -78,4 +82,5 @@ After completion, report:
 - Total papers processed
 - High relevance count
 - Papers with full summaries written
+- Hugging Face Daily module papers summarized
 - HTML file path generated

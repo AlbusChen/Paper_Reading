@@ -100,6 +100,7 @@ def category_tag(cat: str) -> str:
         "cs.MA": ("tag-ma", "cs.MA"),
         "cs.AI": ("tag-ai", "cs.AI"),
         "cs.LG": ("tag-lg", "cs.LG"),
+        "cs.CL": ("tag-ai", "cs.CL"),
         "HF Daily": ("tag-hf", "HF精选"),
     }
     cls, label = mapping.get(cat, ("tag-kw", cat))
@@ -214,6 +215,8 @@ def extract_title_keywords(html_file: Path) -> list[str]:
 
 def generate_daily_html(data: dict, date_str: str) -> str:
     papers = data.get("papers", [])
+    hf_daily_papers = data.get("hf_daily_papers", [])
+    hf_daily_ids = {p.get("id") for p in hf_daily_papers}
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     date_display = dt.strftime("%Y年%m月%d日")
     date_en = dt.strftime("%B %d, %Y")
@@ -256,15 +259,17 @@ def generate_daily_html(data: dict, date_str: str) -> str:
   <div class="stat">总计 <span>{len(papers)}</span> 篇</div>
   <div class="stat">高度相关 <span>{len(high)}</span> 篇</div>
   <div class="stat">相关 <span>{len(med)}</span> 篇</div>
+  <div class="stat">HF Daily <span>{len(hf_daily_papers)}</span> 篇</div>
   <div class="stat">技术报告 <span>{len(tech_reports)}</span> 篇</div>
   <div class="stat" style="color:var(--muted)">更新于 {fetched_at[:16].replace("T"," ")} UTC</div>
 </div>
 """
 
-    def render_paper(p: dict) -> str:
+    def render_paper(p: dict, show_relevance: bool = True) -> str:
         rel_cls, rel_label = relevance_label(p["relevance"]["score"])
-        authors = ", ".join(p["authors"][:4])
-        if len(p["authors"]) > 4:
+        authors_list = p.get("authors", [])
+        authors = ", ".join(authors_list[:4])
+        if len(authors_list) > 4:
             authors += " et al."
         cats = p.get("categories", [p.get("primary_category", "")])
         tag_html = "".join(category_tag(c) for c in cats[:3] if c)
@@ -286,8 +291,12 @@ def generate_daily_html(data: dict, date_str: str) -> str:
 <div class="paper-card">
   <div class="paper-title">
     <a href="{p['url']}" target="_blank">{p['title']}</a>
-    <span class="relevance rel-{rel_cls}">{rel_label}</span>
-  </div>
+"""
+        if show_relevance:
+            card += f'    <span class="relevance rel-{rel_cls}">{rel_label}</span>\n'
+        elif p.get("hf_daily_module"):
+            card += '    <span class="relevance rel-med">HF Daily</span>\n'
+        card += f"""  </div>
   <div class="paper-meta">{authors} · {p.get('published','')[:10]}</div>
   <div class="tags">{tag_html}</div>
 """
@@ -307,6 +316,12 @@ def generate_daily_html(data: dict, date_str: str) -> str:
   </div>
 </div>"""
         return card
+
+    # Section: Hugging Face Daily broad picks
+    if hf_daily_papers:
+        html += '<div class="section-title">🤗 Hugging Face Daily / Broad Picks</div>\n'
+        for p in hf_daily_papers:
+            html += render_paper(p, show_relevance=False)
 
     # Section: High relevance
     if high:
@@ -329,7 +344,8 @@ def generate_daily_html(data: dict, date_str: str) -> str:
 
     # Section: Others (low score, for reference)
     low = [p for p in papers if p["relevance"]["score"] < 3
-           and not p["relevance"].get("is_tech_report")]
+           and not p["relevance"].get("is_tech_report")
+           and p.get("id") not in hf_daily_ids]
     if low:
         html += '<div class="section-title" style="color:var(--muted)">· 其他 / Others</div>\n'
         for p in low[:20]:  # cap at 20

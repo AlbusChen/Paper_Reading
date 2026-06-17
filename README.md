@@ -21,6 +21,7 @@ Hosted on GitHub Pages: **https://AlbusChen.github.io/Paper_Reading**
 **Also collect:**
 - LLM-based agents, agent orchestration, tool use, agent frameworks, multi-agent debate/discussion
 - AI/LLM technical reports from major labs when they include agent, orchestration, communication, or multi-agent evaluation content
+- Hugging Face Daily Papers as a separate broad module, excluding 3D, robotics, image generation, and video generation topics
 
 ---
 
@@ -66,7 +67,7 @@ Pulls paper titles, authors, abstracts, and URLs from:
 - **HuggingFace Daily Papers**: scrapes `https://huggingface.co/papers?date=YYYY-MM-DD`
 - **2026 focus search**: optional arxiv search over 2026 papers matching the current two research tracks
 
-Each paper is scored by keyword matching (primary keywords score ×3, secondary ×1, with a bonus for papers touching both tracks). Output is a JSON file at `/tmp/papers_YYYY-MM-DD.json`.
+Each paper is scored by keyword matching (primary keywords score ×3, secondary ×1, with a bonus for papers touching both tracks). Output is a JSON file at `/tmp/papers_YYYY-MM-DD.json`. The JSON also includes `hf_daily_papers`, a separate Hugging Face Daily module filtered only to remove 3D, robotics, image-generation, and video-generation topics.
 
 > **Note**: The arxiv API occasionally rejects connections from this server. If all three arxiv categories fail, fall back to WebFetch: search `https://arxiv.org/search/?searchtype=all&query=multi-agent&order=-announced_date_first` and manually identify papers submitted on the target date.
 
@@ -80,7 +81,8 @@ The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-appro
    - `summary_en`: 2–3 sentence English summary — what problem, what method, key result, and relevance to the two tracks
    - `summary_zh`: 2–3 sentence Chinese summary (中文学术风格，可补充背景)
    - Optional `topic_keywords`: 2–4 compact labels for page/index discovery
-4. Adjusts `relevance.score` to reflect true relevance (override keyword score)
+4. Writes bilingual summaries for `hf_daily_papers` using a broader paper-summary lens, without forcing them into the two-track research framing
+5. Adjusts `relevance.score` to reflect true relevance (override keyword score)
 
 **Relevance scoring guide:**
 | Score | Meaning |
@@ -99,6 +101,7 @@ Reads the updated JSON and writes:
 - `papers/index.html` — main index showing last 14 days (updated)
 
 Papers are grouped into sections: ⭐ Highly Relevant (score ≥ 6) → 🏢 Tech Reports → ◆ Relevant (3–5) → · Others.
+When available, the page also includes a separate 🤗 Hugging Face Daily / Broad Picks module before the research-focused sections.
 
 **Step 4 — Push to GitHub**
 
