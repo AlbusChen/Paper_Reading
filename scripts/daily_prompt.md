@@ -23,7 +23,7 @@ Load the JSON and identify:
 - Papers with score >= 3 (relevant, read abstract carefully)
 - Papers with score >= 6 (highly relevant, read full abstract + possibly skim introduction)
 - Tech reports from major labs when they contain agent, orchestration, communication, or multi-agent evaluation content
-- Papers in `hf_daily_papers` (Hugging Face Daily module): summarize them even when they are not related to the two main research tracks, as long as they are not about 3D, robotics, image generation, or video generation. Hugging Face Daily may be empty on weekends; that is fine.
+- Papers in `hf_daily_papers` (Hugging Face Daily module): summarize them even when they are not related to the two main research tracks, as long as they are not about 3D, robotics, image generation, video generation, or music generation. Hugging Face Daily may be empty on weekends; that is fine.
 
 Focus on two research tracks:
 - **Track A: single-agent vs multi-agent**. Prioritize papers that compare single-agent and multi-agent systems, identify when one setting is stronger or weaker, study task/context heterogeneity, or propose mechanisms to close the gap between the two settings.

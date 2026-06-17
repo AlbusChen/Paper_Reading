@@ -105,6 +105,8 @@ HF_DAILY_EXCLUDE_KEYWORDS = [
     "video diffusion", "video synthesis",
     "inverse rendering", "forward rendering", "novel view",
     "visual understanding and generation", "diffusion decoder",
+    "music generation", "text-to-music", "text to music",
+    "music-generation", "audio generation",
 ]
 
 

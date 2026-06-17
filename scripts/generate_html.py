@@ -35,6 +35,12 @@ HTML_HEAD = """<!DOCTYPE html>
   header h1 {{ font-size: 1.5rem; }}
   header p {{ color: var(--muted); font-size: 0.9rem; margin-top: 4px; }}
   nav a {{ color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }}
+  .quick-nav {{ display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }}
+  .quick-nav a {{ display: inline-flex; align-items: center; justify-content: center;
+                  min-height: 34px; padding: 6px 12px; border: 1px solid var(--border);
+                  border-radius: 6px; background: var(--card); color: var(--accent);
+                  text-decoration: none; font-size: 0.86rem; font-weight: 600; }}
+  .quick-nav a:hover {{ border-color: var(--accent); background: #f1f7ff; }}
   .stats {{ display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }}
   .stat {{ background: var(--card); border: 1px solid var(--border); border-radius: 6px;
            padding: 8px 16px; font-size: 0.85rem; }}
@@ -68,12 +74,18 @@ HTML_HEAD = """<!DOCTYPE html>
   .paper-links {{ margin-top: 10px; font-size: 0.8rem; }}
   .paper-links a {{ color: var(--accent); text-decoration: none; margin-right: 12px; }}
   .no-paper {{ color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }}
+  .back-top {{ position: fixed; right: 18px; bottom: 18px; display: inline-flex;
+               align-items: center; justify-content: center; min-width: 42px; min-height: 42px;
+               padding: 8px 10px; border-radius: 6px; background: var(--accent);
+               color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.18); }}
+  .back-top:hover {{ background: #024f9d; }}
   footer {{ margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
             font-size: 0.8rem; color: var(--muted); text-align: center; }}
 </style>
 </head>
 <body>
-<div class="container">
+<div id="top" class="container">
 """
 
 HTML_FOOT = """
@@ -253,6 +265,10 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     <a href="index.html">本月</a>
     <a href="{next_href}">{next_label} →</a>
   </nav>
+  <div class="quick-nav">
+    <a href="#related-papers">相关 Papers</a>
+    <a href="#hf-daily">HF Daily</a>
+  </div>
 </header>
 
 <div class="stats">
@@ -319,13 +335,13 @@ def generate_daily_html(data: dict, date_str: str) -> str:
 
     # Section: Hugging Face Daily broad picks
     if hf_daily_papers:
-        html += '<div class="section-title">🤗 Hugging Face Daily / Broad Picks</div>\n'
+        html += '<div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>\n'
         for p in hf_daily_papers:
             html += render_paper(p, show_relevance=False)
 
     # Section: High relevance
     if high:
-        html += '<div class="section-title">⭐ 高度相关 / Highly Relevant</div>\n'
+        html += '<div id="related-papers" class="section-title">⭐ 高度相关 / Highly Relevant</div>\n'
         for p in high:
             html += render_paper(p)
 
@@ -338,7 +354,8 @@ def generate_daily_html(data: dict, date_str: str) -> str:
 
     # Section: Medium relevance
     if med:
-        html += '<div class="section-title">◆ 相关 / Relevant</div>\n'
+        title_id = "" if high else ' id="related-papers"'
+        html += f'<div{title_id} class="section-title">◆ 相关 / Relevant</div>\n'
         for p in med:
             html += render_paper(p)
 
@@ -356,6 +373,7 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     if not papers:
         html += '<div class="no-paper">该日期暂无收录文章</div>\n'
 
+    html += '<a class="back-top" href="#top">顶部</a>\n'
     html += HTML_FOOT
     return html
 
