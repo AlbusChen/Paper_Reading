@@ -54,6 +54,8 @@ HTML_HEAD = """<!DOCTYPE html>
   .paper-title a {{ color: var(--text); text-decoration: none; }}
   .paper-title a:hover {{ color: var(--accent); }}
   .paper-meta {{ font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }}
+  .paper-institutions {{ font-size: 0.8rem; color: #4f5b66; margin: -4px 0 8px; }}
+  .paper-institutions span {{ color: var(--muted); font-weight: 600; }}
   .tags {{ display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }}
   .tag {{ font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }}
   .tag-ma {{ background: var(--tag-ma); }}
@@ -117,6 +119,20 @@ def category_tag(cat: str) -> str:
     }
     cls, label = mapping.get(cat, ("tag-kw", cat))
     return f'<span class="tag {cls}">{label}</span>'
+
+
+def format_institutions(paper: dict) -> str:
+    """Return a compact institution string if the paper has affiliation data."""
+    institutions = paper.get("institutions") or paper.get("institution") or []
+    if isinstance(institutions, str):
+        institutions = [part.strip() for part in institutions.split(";") if part.strip()]
+    institutions = [inst for inst in institutions if inst and inst.lower() not in {"unknown", "n/a"}]
+    if not institutions:
+        return ""
+    compact = institutions[:5]
+    if len(institutions) > 5:
+        compact.append("et al.")
+    return ", ".join(compact)
 
 
 KEYWORD_LABELS = [
@@ -302,6 +318,7 @@ def generate_daily_html(data: dict, date_str: str) -> str:
 
         summary_en = p.get("summary_en", "")
         summary_zh = p.get("summary_zh", "")
+        institutions = format_institutions(p)
 
         card = f"""
 <div class="paper-card">
@@ -314,8 +331,10 @@ def generate_daily_html(data: dict, date_str: str) -> str:
             card += '    <span class="relevance rel-med">HF Daily</span>\n'
         card += f"""  </div>
   <div class="paper-meta">{authors} · {p.get('published','')[:10]}</div>
-  <div class="tags">{tag_html}</div>
 """
+        if institutions:
+            card += f'  <div class="paper-institutions"><span>机构:</span> {institutions}</div>\n'
+        card += f"  <div class=\"tags\">{tag_html}</div>\n"
         if summary_en:
             card += f'  <div class="summary-en">{summary_en}</div>\n'
         else:

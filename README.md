@@ -80,8 +80,9 @@ The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-appro
 3. Writes two fields into the JSON for each relevant paper:
    - `summary_en`: 2–3 sentence English summary — what problem, what method, key result, and relevance to the two tracks
    - `summary_zh`: 2–3 sentence Chinese summary (中文学术风格，可补充背景)
+   - `institutions`: main author affiliations or organizations, when visible from arxiv/Hugging Face/PDF metadata
    - Optional `topic_keywords`: 2–4 compact labels for page/index discovery
-4. Writes bilingual summaries for `hf_daily_papers` using a broader paper-summary lens, without forcing them into the two-track research framing
+4. Writes bilingual summaries and institutions for `hf_daily_papers` using a broader paper-summary lens, without forcing them into the two-track research framing
 5. Adjusts `relevance.score` to reflect true relevance (override keyword score)
 
 **Relevance scoring guide:**
@@ -102,6 +103,7 @@ Reads the updated JSON and writes:
 
 Papers are grouped into sections: ⭐ Highly Relevant (score ≥ 6) → 🏢 Tech Reports → ◆ Relevant (3–5) → · Others.
 When available, the page also includes a separate 🤗 Hugging Face Daily / Broad Picks module before the research-focused sections.
+Paper cards show institutions when the daily reading step identifies them.
 
 **Step 4 — Push to GitHub**
 

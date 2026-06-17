@@ -44,12 +44,13 @@ Use live web search or direct network fetches on the arxiv abstract URL (https:/
 For each paper you've read, add to the JSON:
 - `summary_en`: 2-3 sentence English summary focusing on: what problem, what method, key result, and what it says about single-vs-multi or agent-agent communication.
 - `summary_zh`: 2-3 sentence Chinese summary (同一内容的中文表达，可适当补充背景)
+- `institutions`: list of the main author affiliations or organizations, e.g. `["Stanford University", "Google DeepMind"]`. Use the arxiv page, paper PDF, Hugging Face page, or visible author affiliation metadata. Do not guess; if affiliations are not visible, use an empty list.
 - If useful, add `topic_keywords`: 2-4 short labels such as `single-vs-multi`, `heterogeneous agents`, `language communication`, `shared memory`, `message passing`, `multimodal communication`, or `communication cost`.
 
 Format for summary_zh: Concise Chinese academic style. Example:
 "本文比较了单智能体与多智能体在长程规划任务中的表现，发现多智能体在需要角色分工和并行探索时更强，但在信息整合成本高的场景下会被通信开销抵消。作者进一步提出结构化消息协议来降低跨智能体冗余交流，实验显示该协议在保持成功率的同时减少了通信轮数。"
 
-For each paper in `hf_daily_papers`, also add `summary_en` and `summary_zh`. These summaries should be general paper summaries: problem, method, and key result or claim. Do not force them into the single-vs-multi or agent-agent communication framing unless the paper naturally fits.
+For each paper in `hf_daily_papers`, also add `summary_en`, `summary_zh`, and `institutions`. These summaries should be general paper summaries: problem, method, and key result or claim. Do not force them into the single-vs-multi or agent-agent communication framing unless the paper naturally fits.
 
 ## Step 5: Update JSON and generate HTML
 
@@ -83,4 +84,5 @@ After completion, report:
 - High relevance count
 - Papers with full summaries written
 - Hugging Face Daily module papers summarized
+- Papers with institutions identified
 - HTML file path generated
