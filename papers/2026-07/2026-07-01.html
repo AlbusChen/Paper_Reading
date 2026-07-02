@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-07-01 · llm agent / agent framework / multi-agent</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .quick-nav a { display: inline-flex; align-items: center; justify-content: center;
+                  min-height: 34px; padding: 6px 12px; border: 1px solid var(--border);
+                  border-radius: 6px; background: var(--card); color: var(--accent);
+                  text-decoration: none; font-size: 0.86rem; font-weight: 600; }
+  .quick-nav a:hover { border-color: var(--accent); background: #f1f7ff; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .paper-institutions { font-size: 0.8rem; color: #4f5b66; margin: -4px 0 8px; }
+  .paper-institutions span { color: var(--muted); font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  .back-top { position: fixed; right: 18px; bottom: 18px; display: inline-flex;
+               align-items: center; justify-content: center; min-width: 42px; min-height: 42px;
+               padding: 8px 10px; border-radius: 6px; background: var(--accent);
+               color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+  .back-top:hover { background: #024f9d; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div id="top" class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年07月01日 · llm agent / agent framework / multi-agent</h1>
+  <p>Daily Paper Digest · July 01, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="../2026-06/2026-06-30.html">← 06-30</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="2026-07-02.html">07-02 →</a>
+  </nav>
+  <div class="quick-nav">
+    <a href="#related-papers">相关 Papers</a>
+    <a href="#hf-daily">HF Daily</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>38</span> 篇</div>
+  <div class="stat">高度相关 <span>0</span> 篇</div>
+  <div class="stat">相关 <span>1</span> 篇</div>
+  <div class="stat">HF Daily <span>29</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-07-02 01:35 UTC</div>
+</div>
+<div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30534" target="_blank">Orca: The World is in Your Mind</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Orca establishes a unified world latent space through next-state-prediction modeling using multimodal data and demonstrates superior performance in downstream tasks compared to specialized baselines.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30534" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30534" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.28436" target="_blank">Dockerless: Environment-Free Program Verifier for Coding Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">A Dockerless environment-free agentic patch verifier improves code patch evaluation accuracy and enables effective post-training without execution-based verification costs.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.28436" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.28436" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30626" target="_blank">DOPD: Dual On-policy Distillation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">DOPD addresses privilege illusion in on-policy distillation by dynamically routing token-level supervision between teacher and student policies based on advantage gaps and probabilities, improving capability transfer in large and vision-language models.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30626" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30626" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31315" target="_blank">BlockPilot: Instance-Adaptive Policy Learning for Diffusion-based Speculative Decoding</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Speculative decoding with adaptive block size selection improves inference efficiency by predicting optimal block sizes from prefilling representations, achieving significant speedup with minimal overhead.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31315" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31315" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29082" target="_blank">Evolution Fine-Tuning: Learning to Discover Across 371 Optimization Tasks</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Evolutionary fine-tuning enables large language models to develop cross-task problem-solving capabilities by learning from search trajectories, demonstrating improved performance on mathematical conjectures and optimization tasks.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29082" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29082" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29215" target="_blank">Multi-Block Diffusion Language Models</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Multi-Block Diffusion Language Models extend single-block diffusion to concurrent block decoding with improved training strategies and optimized decoding algorithms.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29215" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29215" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.08671" target="_blank">SkillHone: A Harness for Continual Agent Skill Evolution Through Persistent Decision History</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">SkillHone enables continuous evolution of agent skills by maintaining persistent decision histories and incorporating practice feedback for improved performance across research and tool-mediated analysis tasks.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.08671" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.08671" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31734" target="_blank">MemLearner: Learning to Query Context memory for Video World Models</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">MemLearner improves video world models by using learning-based adaptive context querying with query tokens to enhance scene consistency and memory in long video sequences with occlusions and dynamic objects.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31734" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31734" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.23127" target="_blank">Managing Procedural Memory in LLM Agents: Control, Adaptation, and Evaluation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">Procedural memory enhances LLM agents on workplace tasks through skill transfer across roles and models, with varying generalization capabilities affecting deployment strategies.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.23127" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.23127" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.32032" target="_blank">Reinforcement Learning with Metacognitive Feedback Elicits Faithful Uncertainty Expression in LLMs</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Reinforcement learning with metacognitive feedback and metacognitive data selection improve large language model calibration by enabling accurate self-assessment of performance and uncertainty.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.32032" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.32032" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30968" target="_blank">PhotoQuilt: Training-Free Arbitrary-Resolution Photomosaics via Bootstrapped Tiled Denoising</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">PhotoQuilt is a training-free framework that generates high-resolution photomosaics by combining global layout composition with separate tile generation in latent space, overcoming limitations of diffusion models in balancing local detail and global structure.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30968" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30968" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29985" target="_blank">Are We Measuring Strategy or Phrasing? The Gap Between Surface- and Approach-Level Diversity in LLM Math Reasoning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Approach-level diversity in LLM mathematical reasoning captures strategic variation in problem-solving methods, revealing limitations of surface-level diversity metrics and highlighting challenges in directly optimizing diverse reasoning approaches.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29985" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29985" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.26968" target="_blank">RedVox: Safety and Fairness Gaps in Speech Models Across Languages</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Multilingual safety and fairness benchmark for speech models reveals persistent vulnerabilities across languages and naturalistic conditions.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.26968" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.26968" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30062" target="_blank">Little Brains, Big Feats: Exploring Compact Language Models</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Small language models can effectively perform retrieval-augmented generation tasks directly on-device without GPU acceleration.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30062" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30062" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.32034" target="_blank">QVal: Cheaply Evaluating Dense Supervision Signals for Long-Horizon LLM Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">A testbed called QVal is introduced for evaluating dense supervision signals in long-horizon LLM agent tasks by measuring how well method scores align with Q-values, enabling fair comparison of different supervision approaches without training.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.32034" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.32034" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31410" target="_blank">Xiaomi-GUI-0 Technical Report</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">A native multimodal GUI agent trained in real-device environments demonstrates superior performance and stability compared to traditional benchmark-based approaches.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31410" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31410" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29667" target="_blank">Unlocking the Visual Record of Materials Science: A Large-Scale Multimodal Dataset from Scientific Literature</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">A novel pipeline called MatMMExtract is introduced that processes compound scientific figures into individual panels and generates structured annotations using large language models, creating a comprehensive dataset for vision-language learning in materials science.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29667" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29667" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.32017" target="_blank">TRIAGE: Role-Typed Credit Assignment for Agentic Reinforcement Learning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">TRIAGE introduces a role-typed credit assignment framework that enhances agentic reinforcement learning by providing more nuanced credit assignment than standard GRPO methods.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.32017" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.32017" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30319" target="_blank">BrainJanus: A Unified Model for Understanding and Generation across Brain, Vision, and Language</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">BrainJanus represents the first unified brain model integrating brain, vision, and language through a shared Omni space, enabling bidirectional mapping between neural activity and sensory stimuli via a tokenized representation and autoregressive architecture.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30319" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30319" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.00446" target="_blank">VideoSearch-R1: Iterative Video Retrieval and Reasoning via Soft Query Refinement</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">VideoSearch-R1 is an agentic framework that iteratively retrieves videos and refines search queries using continuous latent space refinement and policy optimization for improved video moment retrieval and temporal grounding.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.00446" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.00446" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30406" target="_blank">MOPD: Multi-Teacher On-Policy Distillation for Capability Integration in LLM Post-Training</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Multi-teacher On-Policy Distillation (MOPD) enables efficient integration of multiple domain capabilities in large language models through specialized reinforcement learning teachers and on-policy distillation, achieving superior performance over existing methods.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30406" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30406" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31811" target="_blank">MuSViT: A Foundation Vision Model for Sheet Music Representation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">MuSViT is a vision transformer-based foundation model pre-trained on millions of sheet music pages that demonstrates superior performance in music score recognition and symbol detection tasks through both linear probing and fine-tuning approaches.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31811" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31811" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30573" target="_blank">SWE-INTERACT: Reimagining SWE Benchmarks as User-Driven Long-Horizon Coding Sessions</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">SWE-Interact presents a testbed that evaluates coding agents in realistic multi-turn, user-driven software engineering scenarios, revealing significant gaps between single-turn performance and interactive task completion.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30573" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30573" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30697" target="_blank">LUMOS: A Semantic Operating-System Layer for Accessibility-Grounded AI Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">LUMOS provides a semantic interaction layer that converts operating system metadata into machine-readable formats, enabling AI agents to interact more efficiently with computer interfaces than through traditional visual methods.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30697" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30697" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.01213" target="_blank">RepoRescue: An Empirical Study of LLM Agents on Whole-Repository Compatibility Rescue</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span><span class="tag tag-kw">llm agent</span></div>
+  <div class="summary-en">LLM agents can successfully adapt legacy software repositories to modern environments through compatibility rescue, with collaborative approaches achieving higher success rates than individual systems.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.01213" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.01213" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.32033" target="_blank">SpheRoPE: Zero-Shot Optimization-Free 360 Panorama Generation with Spherical RoPE</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">A novel zero-shot framework injects spherical priors into pre-trained diffusion transformers for 360 panoramic generation, using spherical RoPE and semantic distortion guidance to overcome topological constraints without training or optimization.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.32033" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.32033" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29315" target="_blank">Hierarchical Experimentalist Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">HExA enables large language models to improve through active experimentation and skill learning in novel domains without requiring training or external supervision.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29315" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29315" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.22207" target="_blank">Lexical Consensus: Grounded Word Learning and Shared Meaning in Artificial Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Grounded word learning experiments using visual embeddings and lexical learners reveal that perceptual distance, rather than semantic relatedness, determines acquisition success, with distinct patterns in naming and retrieval performance.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.22207" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.22207" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31247" target="_blank">FlexiSLM: A Dynamic and Controllable Frame Rate Spoken Language Model</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">Flexible Spoken Language Model (FlexiSLM) introduces dynamic frame rate capabilities for speech input and output, achieving superior performance over fixed-frame-rate models while enabling controllable inference speed.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31247" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31247" target="_blank">📥 PDF</a>
+  </div>
+</div><div id="related-papers" class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31537" target="_blank">DataEvolver: Self-Evolving Multi-Agent Data Construction for Text-Rich Image Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">agent framework</span></div>
+  <div class="summary-en">DataEvolver is a self-evolving multi-agent framework that improves text-rich image generation by leveraging feedback from rejected samples to iteratively enhance data quality.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31537" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31537" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.19297" target="_blank">Does VLA Even Know the Basics? Measuring Commonsense and World Knowledge Retention in Vision-Language-Action Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">Act2Answer protocol evaluates embodied vision-language-action models by having agents answer questions through physical actions, revealing knowledge retention and generalization patterns across different semantic categories.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.19297" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.19297" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29513" target="_blank">Scenes as Objects, Not Primitives: Instance-Structured 3D Tokenization from Unposed Views</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">A feed-forward framework decomposes 3D scenes into instance-structured token groups from multi-view images, enabling direct object-level reconstruction, segmentation, and manipulation without 3D annotations.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29513" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29513" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.32039" target="_blank">GEAR: Guided End-to-End AutoRegression for Image Synthesis</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">GEAR trains a vector-quantized tokenizer and autoregressive generator jointly end-to-end using representation alignment, overcoming non-differentiability issues through a dual read-out approach that improves convergence speed and feature quality.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.32039" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.32039" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.26428" target="_blank">Play2Perfect: What Matters in Dexterous Play Pretraining for Precise Assembly?</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">A reinforcement learning framework called Play2Perfect enables sample-efficient robotic assembly tasks by first learning general manipulation skills through playful interaction with diverse objects, then adapting these skills for precise assembly through fine-tuning.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.26428" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.26428" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30673" target="_blank">PolyFlow: Continuous Topology Embedding Flow Matching for Artist-style Mesh Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">PolyFlow introduces a continuous mesh representation using a topology embedder and applies flow-matching with Transformers for parallel mesh generation, achieving faster inference and precise resolution control compared to autoregressive methods.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30673" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30673" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30811" target="_blank">AVTok: 1D Unified Tokenization for Holistic Audio-Video Generation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">AVTok is a unified tokenizer for audio-video generation that uses a dual-stream transformer architecture with shared encoder-decoder and modal-specific queries to create compact one-dimensional latent representations.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30811" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30811" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.31029" target="_blank">TerraDiT-Ω: Unified Spatial Control for Satellite Image Synthesis with Any Geospatial Primitive</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">TerraDiT-Ω generates satellite imagery from native geospatial primitives using Geometry-Aware Local Attention, enabling flexible conditioning and improved downstream geospatial tasks.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.31029" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.31029" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.30599" target="_blank">Goku: A Million-Scale Universal Dataset and Benchmark for Instruction-Based Video Editing</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-01</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">A large-scale video editing dataset and model are introduced that support multi-task and structural manipulations through advanced data synthesis and network architectures.</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.30599" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.30599" target="_blank">📥 PDF</a>
+  </div>
+</div><a class="back-top" href="#top">顶部</a>
+
+<footer>
+  <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
