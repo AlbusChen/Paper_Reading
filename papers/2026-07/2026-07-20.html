@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-07-20</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .quick-nav a { display: inline-flex; align-items: center; justify-content: center;
+                  min-height: 34px; padding: 6px 12px; border: 1px solid var(--border);
+                  border-radius: 6px; background: var(--card); color: var(--accent);
+                  text-decoration: none; font-size: 0.86rem; font-weight: 600; }
+  .quick-nav a:hover { border-color: var(--accent); background: #f1f7ff; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .paper-institutions { font-size: 0.8rem; color: #4f5b66; margin: -4px 0 8px; }
+  .paper-institutions span { color: var(--muted); font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  .back-top { position: fixed; right: 18px; bottom: 18px; display: inline-flex;
+               align-items: center; justify-content: center; min-width: 42px; min-height: 42px;
+               padding: 8px 10px; border-radius: 6px; background: var(--accent);
+               color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+  .back-top:hover { background: #024f9d; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div id="top" class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年07月20日</h1>
+  <p>Daily Paper Digest · July 20, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="2026-07-19.html">← 07-19</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="2026-07-21.html">07-21 →</a>
+  </nav>
+  <div class="quick-nav">
+    <a href="#related-papers">相关 Papers</a>
+    <a href="#hf-daily">HF Daily</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>26</span> 篇</div>
+  <div class="stat">高度相关 <span>0</span> 篇</div>
+  <div class="stat">相关 <span>0</span> 篇</div>
+  <div class="stat">HF Daily <span>24</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-07-21 01:42 UTC</div>
+</div>
+<div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2606.29538" target="_blank">RESOURCE2SKILL: Distilling Executable Agent Skills from Human-Created Multimodal Resources</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">S k i l l s a r e a u s e f u l a b s t r a c t i o n f o r s o f t w a r e a g e n t s , t u r n i n g h u m a n a n d a g e n t e x p e r i e n c e i n t o r e u s a b l e p r o c e d u r a l k n o w l e d g e . Y e t e x i s t i n g s k i l l l i b r a r i e s a r e m o s t l y h a n d - w r i t ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2606.29538" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2606.29538" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.11683" target="_blank">RAGU: A Multi-Step GraphRAG Engine with a Compact Domain-Adapted LLM</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">G r a p h r e t r i e v a l - a u g m e n t e d g e n e r a t i o n ( G r a p h R A G ) e n h a n c e s l a r g e l a n g u a g e m o d e l s w i t h s t r u c t u r e d k n o w l e d g e , y e t e x i s t i n g s y s t e m s c o n s t r u c t k n o w l e d g e g r a p h s i n a s i n g l e e x t r ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.11683" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11683" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.16051" target="_blank">Loop the Loopies!</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">W e p r e s e n t L o o p i e , t h e m o s t p o w e r f u l l o o p e d T r a n s f o r m e r t o d a t e . T h e L o o p i e s e r i e s c o n s i s t s o f t w o M i x t u r e - o f - E x p e r t s ( M o E ) m o d e l s : a 2 0 B - p a r a m e t e r m o d e l w i t h 2 B a c t i v e p a r a m e ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.16051" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16051" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14530" target="_blank">xHC: Expanded Hyper-Connections</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">H y p e r - C o n n e c t i o n s ( H C ) e x p a n d t h e r e s i d u a l s t r e a m o f T r a n s f o r m e r s i n t o N p a r a l l e l s t r e a m s , p r o v i d i n g a f o r m o f m e m o r y s c a l i n g b e y o n d m o d e l w i d t h a n d d e p t h . M a n i f o l d - C o n s t r a i ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14530" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14530" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15314" target="_blank">Cura 1T: Specialized Model for Agentic Healthcare</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">H e a l t h c a r e s p a n s h i g h - s t a k e s c o m m u n i c a t i o n , e x p e r t r e a s o n i n g , a n d w o r k f l o w e x e c u t i o n , y e t s p e c i a l i z e d L L M s t h a t c o v e r t h e s e u s e c a s e s t o g e t h e r r e m a i n l i m i t e d . A h e a l t h c a r e ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15314" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15314" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15161" target="_blank">On-Policy Delta Distillation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">O n - p o l i c y d i s t i l l a t i o n i s a n a l t e r n a t i v e p o s t - t r a i n i n g m e t h o d i n r e i n f o r c e m e n t l e a r n i n g t h a t a l l e v i a t e s t h e c o n s t r a i n t s i m p o s e d b y r e w a r d m o d e l s b y p r o v i d i n g t o k e n - l e v e l s ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15161" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15161" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15591" target="_blank">RecGPT-V3 Technical Report</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">L a r g e l a n g u a g e m o d e l s ( L L M s ) a r e t r a n s f o r m i n g r e c o m m e n d e r s y s t e m s f r o m m a t c h i n g c o - o c c u r r e n c e p a t t e r n s i n h i s t o r i c a l b e h a v i o r t o w a r d r e a s o n i n g a b o u t t h e i n t e n t t h a t d r i v e s ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15591" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15591" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13196" target="_blank">From Human-Centric to Agentic Code Review: The Impact of Different Generations of Generative AI Technology on Review Quality</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">C o d e r e v i e w h e l p s m a i n t a i n s o f t w a r e q u a l i t y b e f o r e c o d e i n t e g r a t i o n , b u t i t a l s o i m p o s e s a s u b s t a n t i a l w o r k l o a d o n h u m a n r e v i e w e r s . A s g e n e r a t i v e a r t i f i c i a l i n t e l l i g e n c e b e c ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13196" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13196" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.16097" target="_blank">Understanding Reasoning from Pretraining to Post-Training</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">R e i n f o r c e m e n t l e a r n i n g ( R L ) h a s b e c o m e c e n t r a l t o i m p r o v i n g l a r g e l a n g u a g e m o d e l s ( L L M s ) o n c o m p l e x r e a s o n i n g t a s k s , y e t R L p o s t - t r a i n i n g i s l a r g e l y s t u d i e d i n i s o l a t i o n f r o m ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.16097" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16097" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.11699" target="_blank">Qwen-Music Technical Report</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">I n t h i s r e p o r t , w e i n t r o d u c e Q w e n - M u s i c , a p o w e r f u l m u s i c g e n e r a t i o n m o d e l c a p a b l e o f p r o d u c i n g h i g h l y m u s i c a l a n d h i g h - f i d e l i t y s o n g s w i t h c o m p l e t e v o c a l s i n g i n g . Q w e n - M u s i ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.11699" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11699" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15524" target="_blank">Recursive Harness Self-Improvement</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">U n d e r m o d e l - - h a r n e s s c o - e v o l u t i o n , h a r n e s s e s a r e n o t m e r e l y i n f e r e n c e - t i m e s c a f f o l d s b u t d a t a - g e n e r a t i n g c o m p o n e n t s w h o s e e x e c u t i o n t r a c e s c a n s h a p e f u t u r e f o u n d a t i o n m o ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15524" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15524" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.16169" target="_blank">When Does Muon Help Agentic Reinforcement Learning?</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">M u o n i s c o m p e t i t i v e w i t h A d a m W i n l a r g e - s c a l e p r e - t r a i n i n g , b u t i t s v a l u e f o r r e i n f o r c e m e n t - l e a r n i n g ( R L ) p o s t - t r a i n i n g r e m a i n s u n c l e a r . W e s t u d y v a n i l l a M u o n i n s p a r s e - r e w ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.16169" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16169" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15686" target="_blank">S1-Omni: A Unified Multimodal Reasoning Model for Scientific Understanding, Prediction, and Generation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">W e p r e s e n t S 1 - O m n i , a u n i f i e d m u l t i m o d a l r e a s o n i n g m o d e l f o r s c i e n t i f i c u n d e r s t a n d i n g , p r e d i c t i o n , a n d g e n e r a t i o n . A I f o r S c i e n c e ( A I 4 S ) h a s a d v a n c e d s i g n i f i c a n t l y t h r o u g h ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15686" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15686" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14614" target="_blank">Beyond Entropy: Correctness-Aware Advantage Shaping via Contrastive Policy Optimization</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">R e i n f o r c e m e n t l e a r n i n g w i t h v e r i f i a b l e r e w a r d s ( R L V R ) c o m m o n l y u s e s e n t r o p y f o r a d v a n t a g e s h a p i n g . H o w e v e r , e n t r o p y c a n n o t d i s t i n g u i s h u s e f u l u n c e r t a i n t y f r o m d e t r i m e n t a ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14614" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14614" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14088" target="_blank">VideoRAE: Taming Video Foundation Models for Generative Modeling via Representation Autoencoders</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">V i d e o g e n e r a t i v e m o d e l s c o m m o n l y r e l y o n l a t e n t s p a c e s l e a r n e d b y 3 D V a r i a t i o n a l A u t o e n c o d e r s ( 3 D - V A E s ) . H o w e v e r , c o n v e n t i o n a l 3 D - V A E s a r e m a i n l y o p t i m i z e d f o r p i x e l - l e v e l ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14088" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14088" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15901" target="_blank">DSWorld: A Data Science World Model for Efficient Autonomous Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">D e s p i t e s t r o n g c a p a b i l i t i e s i n d a t a u n d e r s t a n d i n g a n d d e c i s i o n - m a k i n g , a u t o n o m o u s d a t a s c i e n c e a g e n t s s t i l l h e a v i l y r e l y o n t r i a l - a n d - e r r o r w o r k f l o w s t h a t i n v o l v e e x p e n s i ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15901" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15901" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.16107" target="_blank">Audio-Visual Flamingo: Open Audio-Visual Intelligence for Long and Complex Videos</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">W e p r e s e n t A u d i o - V i s u a l F l a m i n g o ( A V - F l a m i n g o ) , a f u l l y o p e n s t a t e - o f - t h e - a r t a u d i o - v i s u a l l a r g e l a n g u a g e m o d e l ( A V - L L M ) f o r j o i n t u n d e r s t a n d i n g a n d r e a s o n i n g o v e r a u d i o , ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.16107" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16107" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.09082" target="_blank">REBASE: Reference-Background Subspace Elimination for Training-Free In-Context Segmentation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">T r a i n i n g - f r e e i n - c o n t e x t s e g m e n t a t i o n e n a b l e s n e w o b j e c t c a t e g o r i e s t o b e i n t r o d u c e d a t i n f e r e n c e t i m e f r o m a s i n g l e a n n o t a t e d r e f e r e n c e i m a g e , e l i m i n a t i n g t h e r e t r a i n i n g a ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.09082" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.09082" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.07690" target="_blank">Agon: Competitive Cross-Model RL with Implicit Rival Grading of Reasoning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">R e i n f o r c e m e n t l e a r n i n g f r o m v e r i f i a b l e r e w a r d s ( e . g . G R P O ) i s t h e e n g i n e b e h i n d t o d a y ' s r e a s o n i n g m o d e l s , y e t i t g r a d e s o n l y t h e f i n a l a n s w e r . O n h a r d p r o b l e m s t h i s t r a i n s m o d e ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.07690" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.07690" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.06815" target="_blank">Behavioral Privacy Leakage in Agentic Negotiation: Formalizing and Mitigating Inference Attacks via Randomized Policies</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">A u t o n o m o u s n e g o t i a t i o n a g e n t s a r e i n c r e a s i n g l y d e p l o y e d i n h i g h - s t a k e s s e t t i n g s s u c h a s i n s u r a n c e a n d p r o c u r e m e n t . W h i l e c r y p t o g r a p h i c t e c h n i q u e s p r o t e c t e x p l i c i t l y d i s c ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.06815" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.06815" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15263" target="_blank">Beyond Success Rate: Cost-Aware Evaluation of Offensive and Defensive Security Agents</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">S e c u r i t y - a g e n t e v a l u a t i o n s c o m m o n l y m e a s u r e p e a k o f f e n s i v e c a p a b i l i t y u n d e r g e n e r o u s i n f e r e n c e b u d g e t s , e m p h a s i z i n g v u l n e r a b i l i t y d i s c o v e r y , e x p l o i t d e v e l o p m e n t , p e n e ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15263" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15263" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.10966" target="_blank">SVR-R1: Bootstrapping Multi-modal Reasoning with Self-verification in Reinforcement Learning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">W e i n t r o d u c e S e l f - V e r i f i e d R e a s o n e r ( S V R - R 1 ) , a m u l t i - t u r n R L f r a m e w o r k t h a t t u r n s a m o d e l ' s o w n v e r i f i c a t i o n i n t o a l e a r n i n g s i g n a l f o r m u l t i m o d a l r e a s o n i n g . F o r e a c h q u e r y , ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.10966" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.10966" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13918" target="_blank">Partially Correlated Verifier Cascades in LLM Harnesses: Concave Log-Odds, Polynomial Reliability, and Blind-Spot Ceilings</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">S e r i a l v e r i f i c a t i o n g a t e s a r e a c o r e r e l i a b i l i t y p r i m i t i v e i n L L M h a r n e s s e s : a c a n d i d a t e a n s w e r i s r e t u r n e d o n l y i f k v e r i f i e r c a l l s a l l a c c e p t i t . U n d e r c o n d i t i o n a l l y i n d e p e n d ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13918" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13918" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.11915" target="_blank">Benchmarking Sensor Robustness in Plasma Diagnostic Models: A Systematic Evaluation on TokaMark</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
+  <div class="summary-en">P l a s m a d i a g n o s t i c m o d e l s f o r t o k a m a k f u s i o n d e v i c e s a r e a l m o s t u n i v e r s a l l y e v a l u a t e d o n c l e a n , c o m p l e t e s e n s o r d a t a . I n p r a c t i c e , f u s i o n d i a g n o s t i c s f a i l r e g u l a r l y : a c q u i s i ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.11915" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11915" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15330" target="_blank">Xiaomi-Robotics-1: Scaling Vision-Language-Action Models with over 100K Hours of Real-World Trajectories</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">W e p r e s e n t X i a o m i - R o b o t i c s - 1 , a f o u n d a t i o n a l v i s i o n - l a n g u a g e - a c t i o n ( V L A ) m o d e l c a p a b l e o f ( 1 ) f o l l o w i n g d i v e r s e l a n g u a g e i n s t r u c t i o n s t o p e r f o r m a w i d e r a n g e o f m o b i l e m a n ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15330" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15330" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.11498" target="_blank">See like a Robot: Robot-Centric Pointmaps for Vision-Language-Action Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta"> · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
+  <div class="summary-en">V i s i o n - l a n g u a g e - a c t i o n ( V L A ) m o d e l s p r e d i c t r o b o t a c t i o n s f r o m v i s u a l o b s e r v a t i o n s a n d l a n g u a g e i n s t r u c t i o n s . T h e s e a c t i o n s a r e d e f i n e d i n t h e r o b o t ' s o w n 3 D c o o r d i n a t e f r a ...</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.11498" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11498" target="_blank">📥 PDF</a>
+  </div>
+</div><a class="back-top" href="#top">顶部</a>
+
+<footer>
+  <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
