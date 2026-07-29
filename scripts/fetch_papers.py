@@ -6,6 +6,7 @@ Outputs a JSON file with paper list for the given date.
 
 import argparse
 import json
+import re
 import sys
 import time
 from datetime import datetime, timedelta, timezone
@@ -13,7 +14,7 @@ import requests
 import feedparser
 
 ARXIV_CATEGORIES = ["cs.MA", "cs.AI", "cs.LG", "cs.CL"]
-ARXIV_API = "http://export.arxiv.org/api/query"
+ARXIV_API = "https://export.arxiv.org/api/query"
 
 # Keywords for the current research focus:
 # 1. Single-agent vs multi-agent comparisons and heterogeneous settings.
@@ -110,6 +111,18 @@ HF_DAILY_EXCLUDE_KEYWORDS = [
 ]
 
 
+def canonical_arxiv_id(arxiv_id: str) -> str:
+    """Return an arXiv identifier without a version suffix."""
+    return re.sub(r"v\d+$", "", arxiv_id.strip())
+
+
+def visible_text(element) -> str:
+    """Preserve source whitespace when HF renders text one character per node."""
+    if element is None:
+        return ""
+    return " ".join("".join(element.strings).split())
+
+
 def score_paper(title: str, abstract: str) -> dict:
     """Score paper relevance. Returns dict with score and matched keywords."""
     text = (title + " " + abstract).lower()
@@ -146,7 +159,7 @@ def is_hf_daily_excluded(title: str, abstract: str) -> bool:
 
 def paper_from_arxiv_entry(entry, source: str, primary_category: str | None = None, focus_track: str | None = None) -> dict:
     """Normalize one arxiv feed entry to the local paper schema."""
-    arxiv_id = entry.id.split("/abs/")[-1]
+    arxiv_id = canonical_arxiv_id(entry.id.split("/abs/")[-1])
     paper = {
         "id": arxiv_id,
         "title": entry.title.replace("\n", " ").strip(),
@@ -194,8 +207,9 @@ def fetch_arxiv(date: datetime) -> list:
     seen = set()
     unique = []
     for p in papers:
-        if p["id"] not in seen:
-            seen.add(p["id"])
+        paper_id = canonical_arxiv_id(p["id"])
+        if paper_id not in seen:
+            seen.add(paper_id)
             unique.append(p)
     return unique
 
@@ -205,17 +219,18 @@ def fetch_arxiv_by_ids(ids: list[str]) -> dict:
     if not ids:
         return {}
 
+    normalized_ids = list(dict.fromkeys(canonical_arxiv_id(paper_id) for paper_id in ids))
     papers = {}
-    for start in range(0, len(ids), 50):
-        batch = ids[start:start + 50]
+    for start in range(0, len(normalized_ids), 50):
+        batch = normalized_ids[start:start + 50]
         params = {"id_list": ",".join(batch), "max_results": len(batch)}
         try:
             resp = requests.get(ARXIV_API, params=params, timeout=30)
+            resp.raise_for_status()
             feed = feedparser.parse(resp.text)
             for entry in feed.entries:
-                arxiv_id = entry.id.split("/abs/")[-1]
                 paper = paper_from_arxiv_entry(entry, source="arxiv")
-                papers[arxiv_id] = paper
+                papers[paper["id"]] = paper
         except Exception as e:
             print(f"[warn] arxiv id lookup failed for {','.join(batch)}: {e}", file=sys.stderr)
         time.sleep(1)
@@ -239,14 +254,15 @@ def fetch_arxiv_focus_2026(max_results: int = 80) -> list:
         }
         try:
             resp = requests.get(ARXIV_API, params=params, timeout=30)
+            resp.raise_for_status()
             feed = feedparser.parse(resp.text)
             for entry in feed.entries:
-                arxiv_id = entry.id.split("/abs/")[-1]
                 paper = paper_from_arxiv_entry(
                     entry,
                     source="arxiv_focus_2026",
                     focus_track=focus_track,
                 )
+                arxiv_id = paper["id"]
                 paper["focus_query"] = focus_query
                 existing = papers.get(arxiv_id)
                 if existing:
@@ -278,12 +294,12 @@ def fetch_huggingface_detail(arxiv_id: str) -> dict:
         if abstract_header:
             abstract_el = abstract_header.find_next("p")
             if abstract_el:
-                abstract = abstract_el.get_text(" ", strip=True)
+                abstract = visible_text(abstract_el)
         if not abstract:
-            paragraphs = [p.get_text(" ", strip=True) for p in soup.find_all("p")]
+            paragraphs = [visible_text(p) for p in soup.find_all("p")]
             abstract = max(paragraphs, key=len, default="")
         return {
-            "title": title_el.get_text(" ", strip=True) if title_el else "",
+            "title": visible_text(title_el),
             "abstract": abstract,
         }
     except Exception as e:
@@ -309,11 +325,11 @@ def fetch_huggingface(date: datetime) -> list:
             abstract_el = article.find("p")
             if not title_el or not link_el:
                 continue
-            title = title_el.get_text(strip=True)
+            title = visible_text(title_el)
             href = link_el["href"]
             if href.startswith("/papers/"):
-                arxiv_id = href.replace("/papers/", "").strip()
-                abstract = abstract_el.get_text(strip=True) if abstract_el else ""
+                arxiv_id = canonical_arxiv_id(href.replace("/papers/", ""))
+                abstract = visible_text(abstract_el)
                 paper = {
                     "id": arxiv_id,
                     "title": title,
@@ -346,11 +362,12 @@ def fetch_huggingface(date: datetime) -> list:
         paper["relevance"] = score_paper(paper["title"], paper["abstract"])
         time.sleep(0.2)
 
-    # Use arxiv as a secondary metadata source for any entries still missing
-    # abstracts, and for richer author/category metadata when available.
-    metadata = fetch_arxiv_by_ids([p["id"] for p in papers if not p.get("abstract")])
+    # Always use arXiv as the authoritative metadata source. HF's current page
+    # can expose a non-empty abstract while still omitting authors/categories,
+    # so enriching only empty abstracts leaves every HF card incomplete.
+    metadata = fetch_arxiv_by_ids([p["id"] for p in papers])
     for paper in papers:
-        enriched = metadata.get(paper["id"])
+        enriched = metadata.get(canonical_arxiv_id(paper["id"]))
         if not enriched:
             continue
         paper.update({
@@ -434,20 +451,22 @@ def main():
         print(f"[info] arxiv 2026 focus: {len(focus_papers)} papers", file=sys.stderr)
 
     # Merge: prefer arxiv metadata if same ID appears in both
-    all_ids = {p["id"]: p for p in arxiv_papers}
+    all_ids = {canonical_arxiv_id(p["id"]): p for p in arxiv_papers}
     for p in hf_papers:
-        if p["id"] not in all_ids:
-            all_ids[p["id"]] = p
+        paper_id = canonical_arxiv_id(p["id"])
+        if paper_id not in all_ids:
+            all_ids[paper_id] = p
         else:
             # Mark as also featured on HF Daily
-            all_ids[p["id"]]["hf_daily"] = True
+            all_ids[paper_id]["hf_daily"] = True
     for p in focus_papers:
-        if p["id"] not in all_ids:
-            all_ids[p["id"]] = p
+        paper_id = canonical_arxiv_id(p["id"])
+        if paper_id not in all_ids:
+            all_ids[paper_id] = p
         else:
-            all_ids[p["id"]]["focus_2026"] = True
-            all_ids[p["id"]]["focus_tracks"] = sorted(set(
-                all_ids[p["id"]].get("focus_tracks", []) + p.get("focus_tracks", [])
+            all_ids[paper_id]["focus_2026"] = True
+            all_ids[paper_id]["focus_tracks"] = sorted(set(
+                all_ids[paper_id].get("focus_tracks", []) + p.get("focus_tracks", [])
             ))
 
     papers = list(all_ids.values())

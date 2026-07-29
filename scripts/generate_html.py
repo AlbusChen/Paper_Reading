@@ -8,6 +8,7 @@ import argparse
 import json
 import os
 import re
+from html import escape
 from datetime import datetime, timedelta
 from pathlib import Path
 
@@ -118,7 +119,7 @@ def category_tag(cat: str) -> str:
         "HF Daily": ("tag-hf", "HF精选"),
     }
     cls, label = mapping.get(cat, ("tag-kw", cat))
-    return f'<span class="tag {cls}">{label}</span>'
+    return f'<span class="tag {escape(cls)}">{escape(label)}</span>'
 
 
 def format_institutions(paper: dict) -> str:
@@ -244,7 +245,11 @@ def extract_title_keywords(html_file: Path) -> list[str]:
 def generate_daily_html(data: dict, date_str: str) -> str:
     papers = data.get("papers", [])
     hf_daily_papers = data.get("hf_daily_papers", [])
-    hf_daily_ids = {p.get("id") for p in hf_daily_papers}
+    hf_daily_ids = {re.sub(r"v\d+$", "", p.get("id", "")) for p in hf_daily_papers}
+    research_papers = [
+        p for p in papers
+        if re.sub(r"v\d+$", "", p.get("id", "")) not in hf_daily_ids
+    ]
     dt = datetime.strptime(date_str, "%Y-%m-%d")
     date_display = dt.strftime("%Y年%m月%d日")
     date_en = dt.strftime("%B %d, %Y")
@@ -252,10 +257,10 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     keyword_text = " / ".join(keywords)
     keyword_suffix = f" · {keyword_text}" if keyword_text else ""
 
-    high = [p for p in papers if p["relevance"]["score"] >= 6]
-    med = [p for p in papers if 3 <= p["relevance"]["score"] < 6
+    high = [p for p in research_papers if p["relevance"]["score"] >= 6]
+    med = [p for p in research_papers if 3 <= p["relevance"]["score"] < 6
            and not p["relevance"].get("is_tech_report")]
-    tech_reports = [p for p in papers if p["relevance"].get("is_tech_report")]
+    tech_reports = [p for p in research_papers if p["relevance"].get("is_tech_report")]
     fetched_at = data.get("fetched_at", "")
 
     prev_dt = dt - timedelta(days=1)
@@ -300,7 +305,7 @@ def generate_daily_html(data: dict, date_str: str) -> str:
     def render_paper(p: dict, show_relevance: bool = True) -> str:
         rel_cls, rel_label = relevance_label(p["relevance"]["score"])
         authors_list = p.get("authors", [])
-        authors = ", ".join(authors_list[:4])
+        authors = ", ".join(escape(author) for author in authors_list[:4])
         if len(authors_list) > 4:
             authors += " et al."
         cats = p.get("categories", [p.get("primary_category", "")])
@@ -310,27 +315,31 @@ def generate_daily_html(data: dict, date_str: str) -> str:
         if p["relevance"].get("is_tech_report"):
             tag_html += '<span class="tag tag-tr">Tech Report</span>'
         for keyword in paper_keywords(p):
-            tag_html += f'<span class="tag tag-kw">{keyword}</span>'
+            tag_html += f'<span class="tag tag-kw">{escape(keyword)}</span>'
         kws = p["relevance"]["primary_matches"][:3]
         for kw in kws:
             if kw not in paper_keywords(p):
-                tag_html += f'<span class="tag tag-kw">{kw}</span>'
+                tag_html += f'<span class="tag tag-kw">{escape(kw)}</span>'
 
-        summary_en = p.get("summary_en", "")
-        summary_zh = p.get("summary_zh", "")
-        institutions = format_institutions(p)
+        summary_en = escape(p.get("summary_en", ""))
+        summary_zh = escape(p.get("summary_zh", ""))
+        institutions = escape(format_institutions(p))
+        paper_url = escape(p["url"], quote=True)
+        pdf_url = escape(p["pdf_url"], quote=True)
+        paper_title = escape(p["title"])
+        published = escape(p.get("published", "")[:10])
 
         card = f"""
 <div class="paper-card">
   <div class="paper-title">
-    <a href="{p['url']}" target="_blank">{p['title']}</a>
+    <a href="{paper_url}" target="_blank">{paper_title}</a>
 """
         if show_relevance:
             card += f'    <span class="relevance rel-{rel_cls}">{rel_label}</span>\n'
         elif p.get("hf_daily_module"):
             card += '    <span class="relevance rel-med">HF Daily</span>\n'
         card += f"""  </div>
-  <div class="paper-meta">{authors} · {p.get('published','')[:10]}</div>
+  <div class="paper-meta">{authors} · {published}</div>
 """
         if institutions:
             card += f'  <div class="paper-institutions"><span>机构:</span> {institutions}</div>\n'
@@ -339,15 +348,15 @@ def generate_daily_html(data: dict, date_str: str) -> str:
             card += f'  <div class="summary-en">{summary_en}</div>\n'
         else:
             abstract_short = p["abstract"][:300] + ("..." if len(p["abstract"]) > 300 else "")
-            card += f'  <div class="summary-en">{abstract_short}</div>\n'
+            card += f'  <div class="summary-en">{escape(abstract_short)}</div>\n'
 
         if summary_zh:
             card += f'  <div class="summary-zh-label">中文摘要</div>\n'
             card += f'  <div class="summary-zh">{summary_zh}</div>\n'
 
         card += f"""  <div class="paper-links">
-    <a href="{p['url']}" target="_blank">📄 Abstract</a>
-    <a href="{p['pdf_url']}" target="_blank">📥 PDF</a>
+    <a href="{paper_url}" target="_blank">📄 Abstract</a>
+    <a href="{pdf_url}" target="_blank">📥 PDF</a>
   </div>
 </div>"""
         return card
@@ -379,9 +388,8 @@ def generate_daily_html(data: dict, date_str: str) -> str:
             html += render_paper(p)
 
     # Section: Others (low score, for reference)
-    low = [p for p in papers if p["relevance"]["score"] < 3
-           and not p["relevance"].get("is_tech_report")
-           and p.get("id") not in hf_daily_ids]
+    low = [p for p in research_papers if p["relevance"]["score"] < 3
+           and not p["relevance"].get("is_tech_report")]
     if low:
         html += '<div class="section-title" style="color:var(--muted)">· 其他 / Others</div>\n'
         for p in low[:20]:  # cap at 20

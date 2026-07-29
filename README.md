@@ -73,17 +73,25 @@ Each paper is scored by keyword matching (primary keywords score ×3, secondary 
 
 **Step 2 — Read and evaluate each paper** (Codex agent, via `daily_prompt.md`)
 
-The daily Codex session (`codex exec --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox - < scripts/daily_prompt.md`) reads the candidate list and:
+After applying `papers/summary_cache.json`, the daily Codex session
+(`codex exec --ephemeral --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox - < scripts/daily_prompt.md`)
+reads the remaining unsummarized candidates and:
 
-1. For papers with `relevance.score >= 3`: fetches the full arxiv abstract page via `WebFetch` (`https://arxiv.org/abs/PAPER_ID`)
+1. Uses every paper's complete fetched abstract as the primary evidence; for
+   highly relevant or ambiguous papers it may also fetch the arXiv page
 2. Reads the abstract carefully and re-scores based on actual content (keyword scoring produces false positives)
-3. Writes two fields into the JSON for each relevant paper:
+3. Writes summary fields into the JSON for every fetched paper:
    - `summary_en`: 2–3 sentence English summary — what problem, what method, key result, and relevance to the two tracks
    - `summary_zh`: 2–3 sentence Chinese summary (中文学术风格，可补充背景)
    - `institutions`: main author affiliations or organizations, when visible from arxiv/Hugging Face/PDF metadata
    - Optional `topic_keywords`: 2–4 compact labels for page/index discovery
 4. Writes bilingual summaries and institutions for `hf_daily_papers` using a broader paper-summary lens, without forcing them into the two-track research framing
 5. Adjusts `relevance.score` to reflect true relevance (override keyword score)
+
+The workflow is fail-closed: if any paper record lacks a substantive Chinese
+summary, validation fails and that day's HTML is not committed or pushed.
+Summaries are cached by canonical arXiv ID plus abstract fingerprint so repeated
+2026 focus papers are not needlessly summarized again.
 
 **Relevance scoring guide:**
 | Score | Meaning |
@@ -109,6 +117,7 @@ Paper cards show institutions when the daily reading step identifies them.
 
 ```bash
 git add papers/*.html papers/*/*.html index.html
+git add papers/summary_cache.json
 git commit -m "Daily digest YYYY-MM-DD" --author="Codex Bot <noreply@openai.com>"
 git push origin main
 ```
@@ -125,11 +134,15 @@ cd /raid/longhorn/huangchen/Paper_Reading
 # Fetch metadata for a specific date plus current 2026 focus papers
 python3 scripts/fetch_papers.py --date 2026-05-13 --include-2026-focus --output /tmp/papers.json
 
-# After manually adding summary_en / summary_zh fields to the JSON:
-python3 scripts/generate_html.py /tmp/papers.json
+# Preferred: run the same fail-closed production workflow for a date.
+PAPER_DATE=2026-05-13 scripts/run_daily.sh
 
-# Push
-git add papers/ index.html && git commit -m "Manual digest YYYY-MM-DD" && git push
+# Low-level manual stages are also available:
+python3 scripts/summary_cache.py apply /tmp/papers.json
+# Add summary_en / summary_zh to every record, then:
+python3 scripts/validate_digest.py /tmp/papers.json
+python3 scripts/summary_cache.py update /tmp/papers.json
+python3 scripts/generate_html.py /tmp/papers.json
 ```
 
 ---
@@ -138,7 +151,9 @@ git add papers/ index.html && git commit -m "Manual digest YYYY-MM-DD" && git pu
 
 - **Server**: `/raid/longhorn/huangchen/Paper_Reading`
 - **Python**: `/raid/longhorn/huangchen/anaconda3/bin/python3`
-- **Codex CLI**: `/raid/longhorn/huangchen/anaconda3/bin/codex`
+- **Codex CLI**: `/raid/longhorn/huangchen/anaconda3/bin/codex` (non-interactive
+  automation authentication; validate with a real `codex exec`, not only
+  `codex login status`)
 - **Git remote**: `git@github.com:AlbusChen/Paper_Reading.git` (SSH)
 - **Dependencies**: `pip install feedparser requests beautifulsoup4`
 
