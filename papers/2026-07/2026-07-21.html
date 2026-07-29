@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>论文日报 2026-07-21</title>
+<title>论文日报 2026-07-21 · agent communication / reinforcement learning / llm agents</title>
 <style>
   :root {
     --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
@@ -75,7 +75,7 @@
 <div id="top" class="container">
 
 <header>
-  <h1>📄 论文日报 · 2026年07月21日</h1>
+  <h1>📄 论文日报 · 2026年07月21日 · agent communication / reinforcement learning / llm agents</h1>
   <p>Daily Paper Digest · July 21, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
   <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <a href="2026-07-20.html">← 07-20</a>
@@ -90,497 +90,949 @@
 </header>
 
 <div class="stats">
-  <div class="stat">总计 <span>37</span> 篇</div>
-  <div class="stat">高度相关 <span>0</span> 篇</div>
-  <div class="stat">相关 <span>0</span> 篇</div>
-  <div class="stat">HF Daily <span>32</span> 篇</div>
+  <div class="stat">总计 <span>219</span> 篇</div>
+  <div class="stat">高度相关 <span>13</span> 篇</div>
+  <div class="stat">相关 <span>25</span> 篇</div>
+  <div class="stat">HF Daily <span>4</span> 篇</div>
   <div class="stat">技术报告 <span>0</span> 篇</div>
-  <div class="stat" style="color:var(--muted)">更新于 2026-07-22 01:40 UTC</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-07-29 12:09 UTC</div>
 </div>
 <div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>
 
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17423" target="_blank">TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs</a>
+    <a href="https://arxiv.org/abs/2607.17423v1" target="_blank">TimeLens2: Generalist Video Temporal Grounding with Multimodal LLMs</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">V i d e o m u l t i m o d a l l a r g e l a n g u a g e m o d e l s ( M L L M s ) c a n d e s c r i b e w h a t h a p p e n s i n a v i d e o , b u t r a r e l y i d e n t i f y w h e n t h e s u p p o r t i n g e v i d e n c e o c c u r s . W e s t u d y g e n e r a l i s t v i d e o t e m p o r a ...</div>
+  <div class="paper-meta">Yuhan Zhu, Changlian Ma, Xiangyu Zeng, Xinhao Li et al. · 2026-07-19</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">video temporal grounding</span><span class="tag tag-kw">multimodal llms</span><span class="tag tag-kw">cross-agent consensus</span><span class="tag tag-kw">interval rewards</span></div>
+  <div class="summary-en">TimeLens2 studies generalist video temporal grounding, where a model must predict variable-size sets of evidence intervals across diverse videos and queries. It builds multi-span supervision using proposal generation, localization, cross-agent consensus, verification, and refinement, then optimizes with interval-set rewards, reporting improved performance across seven benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">TimeLens2 研究通用视频时间定位任务，要求模型在不同长度、领域和查询形式的视频中预测数量可变的证据区间集合。该方法通过候选生成、独立定位、跨代理共识、语义验证和边界细化构造多片段监督，并结合区间集合奖励进行优化，在七个基准上报告了性能提升。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17423" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17423" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.17423v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.17423v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17250" target="_blank">EvolvingWorld: An Open-Schema Framework for Co-Evolving Role-Play Agents and World Model in Interactive Literary World</a>
+    <a href="https://arxiv.org/abs/2607.18227v1" target="_blank">FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T h i s p a p e r i n t r o d u c e s E v o l v i n g W o r l d , a f r a m e w o r k a n d b e n c h m a r k f o r c h a r a c t e r a n d w o r l d c o - e v o l u t i o n i n i n t e r a c t i v e l i t e r a r y w o r l d s . E x i s t i n g s y s t e m s e i t h e r t r e a t i n t e r a c t i ...</div>
+  <div class="paper-meta">Dingyun Zhang, Lixue Gong, Wei Liu · 2026-07-20</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">video editing</span><span class="tag tag-kw">image generation</span><span class="tag tag-kw">flow fields</span><span class="tag tag-kw">modality mimicry</span></div>
+  <div class="summary-en">FlowMimic aims to unify image and video generation and editing while reducing the cost of video editing data creation. It introduces pixel-pair temporal warped flow fields to generate video editing samples from image editing samples, modality mimic losses to align image and video output distributions, and region-aware losses to internalize instruction-based localization and editing.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">FlowMimic 旨在统一图像与视频的生成和编辑能力，并降低视频编辑数据构建成本。该方法通过像素对时间扭曲流场从图像编辑样本实时生成视频编辑样本，使用模态模仿损失对齐图像和视频输出分布，并引入区域感知损失以让模型内化基于指令的定位与编辑能力。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17250" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17250" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18227v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18227v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.07820" target="_blank">DeepSearch-World: Self-Distillation for Deep Search Agents in a Verifiable Environment</a>
+    <a href="https://arxiv.org/abs/2607.15550v1" target="_blank">SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T r a i n i n g t o o l - u s e a g e n t s t o i m p r o v e f r o m t h e i r o w n e x p e r i e n c e r e m a i n s c h a l l e n g i n g , a s s u p e r v i s e d f i n e - t u n i n g r e l i e s o n f i x e d t e a c h e r - d i s t i l l e d t r a j e c t o r i e s , w h i l e s p a r s e - ...</div>
+  <div class="paper-meta">Xue Yu, Bo Yuan, Pengshuai Yang, Kailin Zhao et al. · 2026-07-17</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">gui agents</span><span class="tag tag-kw">agent safety</span><span class="tag tag-kw">world model prediction</span><span class="tag tag-kw">risk assessment</span></div>
+  <div class="summary-en">SeerGuard targets safety risks in mobile GUI agents by assessing instructions and proposed actions before execution. It builds a safety-augmented world model with semantic next-state prediction and risk assessment through multi-task learning, reporting improved safety-utility and reduced risk-cost across diverse mobile GUI agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">SeerGuard 面向移动 GUI 代理的安全风险，在执行前对指令和代理提出的动作进行筛查与风险评估。该框架通过多任务学习构建结合语义下一状态预测和安全风险评估的安全增强世界模型，并报告了在多种移动 GUI 代理上的安全效用提升和风险成本降低。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.07820" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.07820" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.15550v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15550v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18213" target="_blank">SWE-Pruner Pro: The Coder LLM Already Knows What to Prune</a>
+    <a href="https://arxiv.org/abs/2607.16204v1" target="_blank">Masked Diffusion Language Models are Strong and Steerable Text-Based World Models for Agentic RL</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">P r u n i n g l o n g c o n t e x t f o r c o d i n g a g e n t s h a s b e e n a v i t a l t e c h n o l o g y f o r e f f i c i e n t c o n t e x t m a n a g e m e n t . W h i l e e x i s t i n g c o n t e x t p r u n i n g m e t h o d s s u c h a s S W E - P r u n e r r e a l i z e t h i s b y a ...</div>
+  <div class="paper-meta">Darshan Deshpande · 2026-05-07</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">agentic rl</span><span class="tag tag-kw">world models</span><span class="tag tag-kw">masked diffusion lms</span><span class="tag tag-kw">tool environments</span></div>
+  <div class="summary-en">This paper proposes masked diffusion language models as steerable text-based world models for agentic reinforcement learning environments. It formalizes transition dynamics over states, tools, rules, and steering directives, curates grounded trajectories across environments and model families, and reports stronger coherence, groundedness, rollout diversity, and zero-shot transfer gains over autoregressive baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出将掩码扩散语言模型用作面向代理强化学习的可控文本世界模型。作者将转移动态形式化为初始状态、任务上下文、工具模式、领域规则和控制指令等组成部分，构建跨环境和模型族的轨迹数据，并报告其相较自回归模型在一致性、扎根性、滚动多样性和零样本迁移上更强。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18213" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18213" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.16204v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16204v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div id="related-papers" class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19117v1" target="_blank">Comparative Study of Multi-Agent Actor-Critic Algorithms in Parameterized Action Reinforcement Learning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Ubayd Ali Bapoo, Clement N Nyirenda · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">single-vs-multi agent</span><span class="tag tag-kw">actor-critic</span><span class="tag tag-kw">parameterized actions</span><span class="tag tag-kw">scalability</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">This paper studies whether single-agent actor-critic methods for parameterized action reinforcement learning benefit from shared-experience multi-agent extensions. It proposes MAGAC, MASAC, and MATQC, where independent agents share a replay buffer while retaining separate policies and value networks, and compares them with single-agent counterparts across multiple agent counts. The results indicate consistent gains for Greedy Actor-Critic, more modest gains for SAC and TQC variants, and a scalability trade-off as additional agents increase computation with limited extra benefit beyond five agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究参数化动作强化学习中的单智能体演员-评论家方法是否能从共享经验的多智能体扩展中受益。论文提出MAGAC、MASAC和MATQC，使多个独立智能体共享回放缓冲区但保留各自的策略和值网络，并在不同智能体数量下与单智能体方法比较。结果表明，多智能体框架稳定提升Greedy Actor-Critic，但对SAC和TQC变体提升较有限，且超过五个智能体后额外收益有限而计算成本明显上升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19117v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19117v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18217" target="_blank">HOMIE: Human-object Centric Video Personalization via Multimodal Intelligent Enchancement</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19212v1" target="_blank">Teleportation Game: Quantum Teleportation in Multi-Agent Systems for Interactive Music</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">H u m a n - o b j e c t c e n t r i c v i d e o p e r s o n a l i z a t i o n ( H O C V P ) i s a c o r e t a s k w i t h i n s u b j e c t - d r i v e n v i d e o g e n e r a t i o n . H o w e v e r , e x i s t i n g m e t h o d s s u f f e r f r o m t w o k e y l i m i t a t i o n s . F i r s t , ...</div>
+  <div class="paper-meta">Eduardo Reck Miranda, Scott Yeiichi Oshiro · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">quant-ph</span><span class="tag tag-kw">cs.SD</span><span class="tag tag-kw">agent communication</span><span class="tag tag-kw">quantum teleportation</span><span class="tag tag-kw">interactive music</span><span class="tag tag-kw">multi-agent systems</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper introduces an interactive music system in which quantum musical agents communicate by teleporting quantum states. It encodes melodic and rhythmic behavior as quantum states, combines up to three agents in a circuit, and treats noise and decoherence as expressive features rather than only errors. Demonstrations using melodic correlation, pitch-set distance, and state fidelity suggest a continuum between imitation and divergence in agent reinterpretation of teleported states.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出一种交互式音乐系统，其中量子音乐智能体通过量子态传输进行通信。系统将旋律和节奏行为编码为量子态，在单个量子电路中组合最多三个智能体，并将噪声和退相干视为表达性特征而非单纯缺陷。基于旋律相关性、音高集合距离和态保真度的演示表明，智能体对传输态的再解释呈现从模仿到发散的连续谱。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18217" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18217" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19212v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19212v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16401" target="_blank">Apple-π: Benchmarking Thinking with Video Towards Law-Grounded Physical Intelligence</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19336v1" target="_blank">Agents in the Wild: Where Research Meets Deployment</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M o d e r n v i d e o g e n e r a t i o n m o d e l s a r e i n c r e a s i n g l y h a i l e d a s e m e r g i n g w o r l d m o d e l s w i t h a n i n t e r n a l i z e d g r a s p o f p h y s i c a l l a w . Y e t e x i s t i n g b e n c h m a r k s l a r g e l y e v a l u a t e p h y s i c a l ...</div>
+  <div class="paper-meta">Grace Hui Yang, Pranav N. Venkit, Hooman Sedghamiz, Enrico Santus et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">deployment</span><span class="tag tag-kw">multi-agent coordination</span><span class="tag tag-kw">safety</span><span class="tag tag-kw">multi agent</span><span class="tag tag-kw">agent coordination</span></div>
+  <div class="summary-en">This tutorial addresses the transition of LLM-based agentic systems from research prototypes to production deployments, emphasizing robustness, safety, reliability, and evaluation challenges. It synthesizes advances in reasoning, planning, multi-agent coordination, and applied deployment case studies to present design patterns, mitigation strategies, and practical checklists for reliable agent systems.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该教程关注基于大语言模型的智能体系统从研究原型走向生产部署时面临的鲁棒性、安全性、可靠性和评估问题。文章结合推理规划、多智能体协调以及制药发现和金融系统等案例，总结成功设计模式、故障缓解策略和面向安全部署的实践清单。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16401" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16401" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19336v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19336v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.10387" target="_blank">GigaChat Audio: Time-aware Large Audio Language Model</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18847v1" target="_blank">Data Leakage Prevention in Agentic Applications via Preemptive Hardening</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T e m p o r a l g r o u n d i n g i n l o n g r e c o r d i n g s r e m a i n s c h a l l e n g i n g f o r a u d i o - c o n d i t i o n e d L L M s . W e p r e s e n t a t i m e - a w a r e a u d i o L L M t h a t a n s w e r s q u e s t i o n s w i t h e x p l i c i t t i m e s t a m p s o v e r ...</div>
+  <div class="paper-meta">Akansha Shukla, Emily Bellov, Parth Atulbhai Gandhi, Yuval Elovici et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent security</span><span class="tag tag-kw">data leakage prevention</span><span class="tag tag-kw">prompt injection</span><span class="tag tag-kw">tool hardening</span><span class="tag tag-kw">multi agent</span><span class="tag tag-kw">heterogeneous agents</span></div>
+  <div class="summary-en">The paper addresses data leakage and tool misuse in agentic applications caused by instruction/data boundary failures and prompt injection, especially across heterogeneous multi-agent workflows. It proposes a pre-deployment pipeline that scans prompt templates, tool interfaces, and invocation code, applies targeted hardening such as schema tightening and tool gating, and validates changes with adversarial and benign inputs. Evaluations on real-world agentic applications and AgentDojo show recurring leakage patterns can be patched without disrupting intended behavior, with reported leakage reductions under tested attacks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究智能体应用中的数据泄漏与工具滥用问题，尤其是多代码库和异质智能体工作流中由指令/数据边界失效和提示注入导致的风险。作者提出一种部署前流水线，用于扫描提示模板、工具接口和调用代码，实施模式收紧、边界清洗、工具白名单和最小权限检查等加固措施，并通过对抗与良性输入验证。实验显示，该流水线能识别并修复反复出现的泄漏模式，同时保持应用预期功能。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.10387" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.10387" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18847v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18847v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.10371" target="_blank">GigaAM Multilingual: Foundation Model for Underrepresented Languages</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19555v1" target="_blank">CHMAS: A Coupled Hierarchical Framework for Multi-Agent Reinforcement Learning</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">D e s p i t e r e c e n t s c a l i n g s u c c e s s e s , m u l t i l i n g u a l A S R p e r f o r m a n c e r e m a i n s h i g h l y u n e v e n , w i t h l o n g - t a i l l a n g u a g e s s u f f e r i n g f r o m s e v e r e d a t a s c a r c i t y . T h i s w o r k a d d r e s s e s t h e ...</div>
+  <div class="paper-meta">Dongming Wang, Jie Xu, Yanyu Zhang, Wei Ren · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">marl</span><span class="tag tag-kw">hierarchical agents</span><span class="tag tag-kw">coordination</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper studies coordination and execution across temporal scales in multi-agent reinforcement learning. It proposes CHMAS, a coupled hierarchical framework with centralized strategic planning, distributed tactical policies, bidirectional feedback, and asynchronous updates, and provides convergence analysis plus foraging-domain validation showing stable learning of partitioned exploration strategies.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究多智能体强化学习中跨时间尺度的全局协调与局部执行问题。作者提出CHMAS耦合分层框架，将集中式战略规划与分布式战术策略结合，并通过双向反馈和异步更新实现稳定学习；理论分析给出收敛性质，实验展示了空间分区探索策略的形成。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.10371" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.10371" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19555v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19555v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18227" target="_blank">FlowMimic: Mask-free Visual Editing and Generation with Pixel-pair Warped Flow Field for Online Video Editing Data Generation and Modality Mimicry</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18719v1" target="_blank">Strategy-Following Multi-Agent Deep Reinforcement Learning Considering Control Strategies Provided to Other Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">I n l i n e w i t h t h e p r e v a i l i n g d i r e c t i o n o f v i s i o n r e s e a r c h , w e e x p l o r e t h e i n t e g r a t i o n o f b o t h g e n e r a t i o n a n d e d i t i n g c a p a b i l i t i e s f o r v i d e o a n d i m a g e m o d a l i t i e s w i t h i n a s i n g l e m ...</div>
+  <div class="paper-meta">Yamato Takahagi, Gentoku Nakasone, Yoshinari Motokawa, Toshiharu Sugawara · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent rl</span><span class="tag tag-kw">human instruction</span><span class="tag tag-kw">coordination</span><span class="tag tag-kw">controllability</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This study addresses controllability in learned multi-agent cooperation when only selected agents receive human instructions. It extends multi-agent deep reinforcement learning so uninstructed agents infer complementary roles from instructed agents’ actions, and experiments show improved adaptation to new cooperative structures compared with conventional methods.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该研究关注在仅部分智能体接收人类指令时，学习后的多智能体协作如何保持可控性。作者扩展多智能体深度强化学习，使未被指令控制的智能体能够根据其他智能体行动自动补足任务；实验表明该方法能更好地切换协作结构并提升性能。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18227" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18227" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18719v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18719v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16850" target="_blank">Group Entropy-Controlled Policy Optimization</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18597v3" target="_blank">A Self-Evolving Default Action for Cooperative Tasks with Continuous Action Space</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">E n t r o p y c o n t r o l h a s b e c o m e a n e f f e c t i v e t o o l i n r e i n f o r c e m e n t l e a r n i n g ( R L ) o f l a r g e l a n g u a g e m o d e l s ( L L M s ) , h e l p i n g b a l a n c e e x p l o r a t i o n - e x p l o i t a t i o n t r a d e - o f f d u r i n g a l i g ...</div>
+  <div class="paper-meta">Shuangyao Huang · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">marl</span><span class="tag tag-kw">credit assignment</span><span class="tag tag-kw">continuous control</span><span class="tag tag-kw">cooperative tasks</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper addresses counterfactual credit assignment for cooperative MARL in continuous action spaces. It proposes SAFE, which uses a self-evolving default action from each agent’s experience buffer as an unbiased counterfactual baseline, and reports stronger performance than state-of-the-art models on cooperative vehicular tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究连续动作空间协作型多智能体强化学习中的反事实信用分配问题。作者提出SAFE，从每个智能体经验缓冲区采样自演化默认动作作为无偏反事实基线，并在协作车辆任务中表现优于现有先进方法。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16850" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16850" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18597v3" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18597v3" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.09759" target="_blank">ReflectWorld-MM: An Entity-Oriented Multimodal Memory System for Open-Ended Video Streams</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19036v1" target="_blank">CoGoal3D: Collaborative 3D Object Detection with 3D-Aware Fusion and Refinement</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">B u i l d i n g a s s i s t a n t s t h a t c a n c o n t i n u a l l y w a t c h t h e w o r l d , r e m e m b e r w h a t t h e y s e e , a n d r e a s o n o v e r t h e i r a c c u m u l a t e d e x p e r i e n c e i s a l o n g - s t a n d i n g g o a l , a n d r e c e n t l y m u l t i m o d a ...</div>
+  <div class="paper-meta">Zhihao Yang, Zhiyu Xiang, Peng Xu, Tianyu Pu et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">collaborative perception</span><span class="tag tag-kw">3d detection</span><span class="tag tag-kw">v2x</span><span class="tag tag-kw">feature fusion</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper studies collaborative 3D object detection for V2X perception, where multiple agents share environmental features but suffer from 3D spatial misalignment. It proposes CoGoal3D with multiscale 3D-aware fusion, point-reconstruction refinement, and collaborative augmentation, achieving state-of-the-art performance on several public datasets.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究车路协同感知中的多智能体协作三维目标检测问题，重点处理不同协作者高度和姿态造成的三维空间错位。作者提出CoGoal3D，通过多尺度三维感知融合、点重建辅助精修和协作数据增强，在多个公开数据集上达到新的先进性能。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.09759" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.09759" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19036v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19036v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16900" target="_blank">Environment-free Synthetic Data Generation for API-Calling Agents</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18806v1" target="_blank">AI Tour Meeting: Group Travel Planning by LLM Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T r a i n i n g A P I - c a l l i n g l a r g e l a n g u a g e m o d e l ( L L M ) a g e n t s d e m a n d s m a s s i v e a m o u n t s o f h i g h - q u a l i t y t r a j e c t o r i e s . H o w e v e r , c o l l e c t i n g s u c h d a t a a t s c a l e t y p i c a l l y r e q u i r e s f u l l ...</div>
+  <div class="paper-meta">Daisuke Kikuta · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">natural-language communication</span><span class="tag tag-kw">group planning</span><span class="tag tag-kw">simulation</span></div>
+  <div class="summary-en">This paper proposes AI Tour Meeting, a framework in which multiple LLM agents with distinct personas collaboratively plan group travel through natural-language discussion. It provides configurable interfaces for personas, workflows, monitoring, and deployment, and demonstrates its use for validating and analyzing multi-agent tour-planning behavior.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出AI Tour Meeting，一个由多个具有不同人格设定的大语言模型智能体通过自然语言讨论进行团体旅行规划的框架。该框架支持配置智能体角色、讨论流程、监控和模型部署，并通过系统验证和分析结果展示其用于研究多智能体规划讨论行为的价值。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16900" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16900" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18806v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18806v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18144" target="_blank">Do Language Models Dream of Binding Molecules? Benchmarking LLMs under Spatial Constraints</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19038v1" target="_blank">FilmWorld: Agentic Novel-to-Film Generation through Dynamic Cinematic World Modeling</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">S t r u c t u r e - b a s e d d r u g d e s i g n ( S B D D ) l e v e r a g e s t h e 3 D s t r u c t u r e o f p r o t e i n t a r g e t s , o f t e n c o m p l e m e n t e d b y o t h e r s p a t i a l c o n s t r a i n t s , t o g e n e r a t e c a n d i d a t e b i n d i n g m o l e c u l e s . ...</div>
+  <div class="paper-meta">Jialong Zuo, Haotong Zuo, Shiwei Zhang, Xiang Wang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent generation</span><span class="tag tag-kw">specialized agents</span><span class="tag tag-kw">video generation</span><span class="tag tag-kw">world modeling</span></div>
+  <div class="summary-en">This paper formalizes novel-to-film generation as dynamic cinematic world modeling requiring persistent entity states and causal consistency across scenes. It proposes FilmWorld, an agentic system with specialized construction and evolution agents, and introduces FilmEval to assess cinematic presentation, consistency, and fidelity, reporting improvements over state-of-the-art video generation agent systems.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文将小说到电影生成形式化为动态电影世界建模问题，要求在多场景长视频中保持实体状态持久性和因果一致性。作者提出FilmWorld，由负责构建和演化的专门智能体协作完成叙事结构化、世界实体建模、镜头规划、视觉生成和状态验证，并通过FilmEval报告相对现有视频生成智能体系统的改进。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18144" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18144" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19038v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19038v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18110" target="_blank">LLM-as-a-Coach: Experiential Learning for Non-Verifiable Tasks</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19595v1" target="_blank">Twin Agent: Context Residual Compression for Privilege Separated Agents</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">R e i n f o r c e m e n t l e a r n i n g ( R L ) o n o p e n - e n d e d t a s k s c o m p r e s s e s a n L L M ' s r u b r i c - b a s e d e v a l u a t i o n i n t o a s c a l a r r e w a r d , d i s c a r d i n g r i c h t e x t u a l f e e d b a c k a n d c o n f l a t i n g r e s p o n s e s ...</div>
+  <div class="paper-meta">Zhanhao Hu, Dennis Jacob, Xiao Huang, Zhaorun Chen et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">privilege separation</span><span class="tag tag-kw">agent communication</span><span class="tag tag-kw">prompt injection</span><span class="tag tag-kw">multi-tool agents</span></div>
+  <div class="summary-en">This paper addresses prompt-injection risk in LLM agents that process untrusted context while performing privileged actions. It proposes Twin Agent, a privilege-separated architecture with an Explore Agent sending compact hints to a Safe Agent, and reports improved security-utility tradeoffs across software engineering and heterogeneous multi-tool benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究大语言模型智能体在处理不可信上下文并执行特权操作时面临的提示注入风险。作者提出Twin Agent特权分离模式，由Explore Agent检查不可信信息并向Safe Agent传递紧凑提示以指导下一步行动，在软件工程和异构多工具交互基准上提升了安全性与实用性的权衡。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18110" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18110" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19595v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19595v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.15550" target="_blank">SeerGuard: A Safety Framework for Mobile GUI Agents via World Model Prediction</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19592v1" target="_blank">Knowledge-Centric Self-Improvement</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M o b i l e g r a p h i c a l u s e r i n t e r f a c e ( G U I ) a g e n t s h a v e d e m o n s t r a t e d r e m a r k a b l e c a p a b i l i t i e s i n a u t o m a t i n g c o m p l e x t a s k s , y e t t h e y i n t r o d u c e c r i t i c a l s a f e t y r i s k s w h e r e a s i n g l e e ...</div>
+  <div class="paper-meta">Xuefei Julie Wang, Lauren Hyoseo Yoon, Chengrui Qu, Amanda Zichang Wang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">agent self-improvement</span><span class="tag tag-kw">shared knowledge base</span><span class="tag tag-kw">knowledge distillation</span><span class="tag tag-kw">transferability</span></div>
+  <div class="summary-en">This paper studies knowledge-centric self-improvement, contrasting it with agent-centric optimization of prompts, workflows, or code. It proposes a protocol in which generic agents solve tasks, contribute evidence-grounded insights to shared task-level and cross-task forums, and distill those insights into a persistent knowledge base. The authors claim that this improves solve rates, reduces cost relative to agent-centric baselines, and transfers across held-out tasks and LLM families.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究以知识为中心的自我改进范式，并将其与优化提示、工作流或代码的智能体中心范式进行对比。方法上，通用智能体完成任务后向共享的任务级和跨任务论坛提交有证据支撑的洞见，再通过蒸馏形成持久知识库。作者声称该协议能提高求解率、相对智能体中心基线降低成本，并可迁移到未见任务和不同LLM家族。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.15550" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.15550" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19592v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19592v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17247" target="_blank">Distilled Reinforcement Learning for LLM Post-training</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19267v1" target="_blank">They&#x27;ll Verify. They Just Won&#x27;t Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">L a r g e l a n g u a g e m o d e l ( L L M ) p o s t - t r a i n i n g i s e s s e n t i a l f o r i m p r o v i n g r e a s o n i n g , a d a p t a t i o n , a n d a l i g n m e n t . E x i s t i n g m e t h o d s m a i n l y f o l l o w t w o p a r a d i g m s : r e i n f o r c e m e n t l e a r ...</div>
+  <div class="paper-meta">Yohann Sidot · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent ci/cd</span><span class="tag tag-kw">agent security</span><span class="tag tag-kw">distributed verification</span><span class="tag tag-kw">prompt injection</span></div>
+  <div class="summary-en">This paper investigates security failures in a five-agent LLM-based CI/CD pipeline under an authority-framed malicious issue that disguises secret exfiltration as telemetry. The study uses a pre-registered factorial design across distinct production LLMs and observes how downstream verifier agents respond to laundered code and claims of pre-approval. It finds systemic compromise despite prompt secrecy and distributed verification, arguing that provenance-aware controls at entry are needed.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究一个由五个LLM智能体组成的CI/CD流水线在权威框架攻击下的安全失效，其中恶意外部issue将密钥外传伪装成遥测功能。研究采用预注册因子设计，观察不同生产LLM组成的下游验证智能体如何处理被“洗白”的代码和预批准声明。结果表明，即使有提示保密和分布式验证，系统仍会发生系统性妥协，作者主张需要入口处的来源感知控制。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17247" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17247" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19267v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19267v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18913v1" target="_blank">How network perturbations distort agreement trajectories in LTI multi-agent systems</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Gal Barkai, Irinel-Constantin Morărescu · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">eess.SY</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">math.OC</span><span class="tag tag-kw">multi-agent systems</span><span class="tag tag-kw">consensus</span><span class="tag tag-kw">network perturbation</span><span class="tag tag-kw">synchronization</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper analyzes how network perturbations alter agreement trajectories in LTI multi-agent systems. It develops a Laplace-domain criterion for perturbed agreement manifolds and shows that even small transmission dynamics can destroy synchronization to periodic trajectories or shift systems toward unexpected frequencies.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文分析网络扰动如何改变线性时不变多智能体系统的渐近一致轨迹。作者提出拉普拉斯域判据刻画扰动后一致流形的闭环极点，并证明微小传输延迟可能破坏周期轨迹同步，甚至使系统同步到意外频率。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18913v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18913v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17524" target="_blank">Token-Level Off-Policy Learning for Faithful Generation Under Distribution Shift</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18772v1" target="_blank">RF-Agent: A Practical Framework for Building Language Agents for RFIC Design</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">W e p r o p o s e T o k e n - L e v e l O f f - P o l i c y L a b e l i n g ( T O P L ) , a n o f f - p o l i c y t r a i n i n g p a r a d i g m t h a t r e f r a m e s p o s t - t r a i n i n g a s a t o k e n - l e v e l c o r r e c t n e s s p r e d i c t i o n t a s k . O u r k e y i n t u i t ...</div>
+  <div class="paper-meta">Yueqi Xing, Houbo He, Jolie Wang, Erin Ni et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">rfic design</span><span class="tag tag-kw">dataset generation</span><span class="tag tag-kw">rag</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper targets the lack of RF-domain datasets and benchmarks for LLM-assisted radio-frequency circuit design. It proposes RF-Agent, using a multi-agent QTSA pipeline to distill textbook content into an RF reasoning dataset and benchmark, and finds that supervised fine-tuning and semantic retrieval improve RF reasoning across model families.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文针对大语言模型辅助射频电路设计中领域数据集和标准基准不足的问题。作者提出RF-Agent，通过多智能体QTSA流程从射频教材中构建推理数据集和选择题基准，并显示领域监督微调和语义检索能提升模型的射频推理能力。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17524" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17524" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18772v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18772v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17146" target="_blank">The Geometry of Semantic Space: A Continuous Geometric Framework for the Transformer Architecture</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18659v1" target="_blank">Broken Gates: Re-evaluating Web Bot Defenses in the Age of LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">W e p r e s e n t a c o n t i n u o u s g e o m e t r i c f r a m e w o r k t h a t m o d e l s t h e d i s c r e t e a l g e b r a i c o p e r a t i o n s o f t h e T r a n s f o r m e r a r c h i t e c t u r e a s a n i n t e g r o - d i f f e r e n t i a l e q u a t i o n ( I D E ) o n a s e m a ...</div>
+  <div class="paper-meta">Behzad Ousat, Nikita Turkmen, Lalchandra Rampersaud, Dillan Bailey et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">browser agents</span><span class="tag tag-kw">web security</span><span class="tag tag-kw">bot defenses</span><span class="tag tag-kw">captcha</span></div>
+  <div class="summary-en">This measurement study evaluates whether modern bot defenses remain effective against commercial captcha solvers and LLM-based browser agents. It tests challenge-based and trust-based defenses, finding that solver services and agent configurations with solver modules can bypass challenges, while non-interactive defenses depend more on execution-environment authenticity than agent behavior.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该测量研究评估现代网站机器人防御面对商业验证码求解服务和基于大语言模型的浏览器智能体时的有效性。结果表明，挑战式防御可被求解服务及带求解模块的智能体绕过，而非交互式防御的效果更多取决于执行环境真实性而非智能体行为本身。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17146" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17146" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18659v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18659v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16074" target="_blank">JoyNexus: Service-Oriented Multi-Tenant Post-Training for VLA Models</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19297v1" target="_blank">Graph-Based Agentic AI with LangGraph: Workflow Pathways for Long-Running Stateful Business Processes</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T h e p o s t - t r a i n i n g o f V i s i o n - L a n g u a g e - A c t i o n ( V L A ) m o d e l s i s e s s e n t i a l d u e t o t h e d i v e r s i t y o f s i m u l a t o r s , r o b o t e m b o d i m e n t s , a n d t a s k o b j e c t i v e s . E x i s t i n g c o m p u t e s e r v i c e s ...</div>
+  <div class="paper-meta">Daniel Pearson, Sidney Shapiro, Emiliano Sebastian Gonzalez Venegas, Sanad Al-Khatib et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.SE</span><span class="tag tag-kw">agent orchestration</span><span class="tag tag-kw">langgraph</span><span class="tag tag-kw">stateful workflows</span><span class="tag tag-kw">tool use</span></div>
+  <div class="summary-en">This practitioner guide describes graph-based workflows for long-running, stateful generative AI business processes using LangGraph. Through executable recipes, it explains how typed state, routing, deterministic tools, retries, interrupts, checkpoints, and traces support explicit orchestration beyond simpler agent or SDK loops.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该实践指南讨论如何使用LangGraph为长期运行、有状态、多步骤的生成式AI业务流程构建图式工作流。文章通过SQL分析、带证据门控的检索增强生成和人在环政策审查等示例，说明类型化状态、条件路由、工具、重试、中断、检查点和追踪如何支持显式编排。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16074" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16074" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19297v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19297v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18084" target="_blank">WorldCupArena: Fine-Grained Evaluation of Language Models and Deep-Research Agents on Football Forecasting</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19190v3" target="_blank">Agentic Real2Sim: Physics-based World Modeling with Vision-Language Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">P r e d i c t i n g a f o o t b a l l m a t c h b e f o r e k i c k o f f r e q u i r e s m o r e t h a n k n o w i n g p a s t r e s u l t s : a m o d e l m u s t u s e c h a n g i n g i n f o r m a t i o n a n d m a k e a c l e a r p r e d i c t i o n b e f o r e t h e a n s w e r i s a v a i l a ...</div>
+  <div class="paper-meta">Guanxiong Chen, Qianjun Xia, Jiawei Peng, Heng Zhang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">vision-language agents</span><span class="tag tag-kw">real2sim</span><span class="tag tag-kw">robotics</span><span class="tag tag-kw">world modeling</span></div>
+  <div class="summary-en">This paper addresses the labor-intensive process of converting real-world robot-object interaction recordings into runnable physical simulations. It introduces Agentic Real2Sim, where vision-language agents coordinate perception, parameter inference, alignment, and simulator assembly, and evaluates the framework across rigid, deformable, and humanoid-motion scenes with comparable success using lower-cost open-weight backends.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究如何将真实世界机器人与物体交互记录自动转换为可运行物理仿真，这一过程通常需要大量人工调参和流程拼接。作者提出Agentic Real2Sim，利用视觉语言智能体协调视觉重建、物理参数推断、坐标对齐和仿真组装，并在刚体、可变形物体和人形运动场景中验证其可扩展性。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18084" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18084" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19190v3" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19190v3" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17986" target="_blank">Self-State Attacks on Self-Hosted AI Agents: How Far Can OS Defenses Go?</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19449v1" target="_blank">Guardrails as Scapegoats: Auditing Unfaithful Safety Refusals in Tool-Augmented LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">S e l f - h o s t e d A I a g e n t s r e a d a n d w r i t e t h e i r o w n m e m o r y a n d c o n f i g u r a t i o n f i l e s t o f u n c t i o n . A n a g e n t m a y g e t c o m p r o m i s e d v i a c o r r u p t i o n o f i t s o w n s t a t e - - a c o m p r o m i s e r e a l i z e d v i ...</div>
+  <div class="paper-meta">Aarushi Singh · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">tool-augmented agents</span><span class="tag tag-kw">failure auditing</span><span class="tag tag-kw">safety refusals</span><span class="tag tag-kw">fabrication</span></div>
+  <div class="summary-en">This paper audits silent tool failures in tool-augmented LLM agents, focusing on fabricated outputs and unfaithful safety refusals when tools return empty or malformed payloads. It introduces a black-box failure-injection framework and finds that fabrication is common, while safety-language prompts substantially increase policy-like refusals that misattribute infrastructure failures.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文审计工具增强型大语言模型智能体在工具返回空值、空载荷或畸形载荷时的静默失败行为，重点考察编造结果和不忠实安全拒答。作者提出黑箱故障注入框架，发现编造占主导，而在系统提示中加入安全语言会显著增加将基础设施失败误归因为政策或隐私限制的拒答。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17986" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17986" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19449v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19449v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.18171" target="_blank">FlashRT: Agent Harness for Guiding Agents to Deploy Real-Time Multimodal Applications</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18970v2" target="_blank">Skillware: A Software Ontology and Engineering Lifecycle for Persistent Behavioral Artifacts</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">R e a l - t i m e m u l t i m o d a l a p p l i c a t i o n s , i n c l u d i n g v o i c e a g e n t s a n d i n t e r a c t i v e v i d e o g e n e r a t i o n , c o m p o s e h e t e r o g e n e o u s m o d e l s i n t o p i p e l i n e s w h o s e e f f i c i e n t d e p l o y m e n t r e q u i ...</div>
+  <div class="paper-meta">Haodi Fan, Zucong Lan · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent skills</span><span class="tag tag-kw">software ontology</span><span class="tag tag-kw">behavioral artifacts</span><span class="tag tag-kw">lifecycle</span></div>
+  <div class="summary-en">This paper argues that agent Skills should be treated as persistent behavioral software artifacts rather than informal task descriptions. It introduces the Skillware ontology, defining skill artifacts, skillware units, agent-host activation, lifecycle continuity, and category boundaries, supported by a large corpus and engineering implementations.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文主张将智能体Skills视为持久行为软件制品，而不仅是自然语言任务描述。作者提出Skillware本体，定义技能制品、技能软件单元、智能体宿主激活关系、生命周期连续性和类别边界，并以大规模SKILL.md语料和工程实现作为证据。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.18171" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.18171" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18970v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18970v2" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17972" target="_blank">DiFA: Inference-Time Forward-Process Alignment for Diffusion Models</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18754v1" target="_blank">AgentDebugX: An Open-Source Toolkit for Failure Observability, Attribution, and Recovery in LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T h e p r e v a i l i n g i n f e r e n c e f r a m e w o r k f o r d i f f u s i o n m o d e l s f o r m u l a t e s g e n e r a t i o n f u n d a m e n t a l l y a s a p r o b l e m o f n u m e r i c a l i n t e g r a t i o n . T h i s p e r s p e c t i v e c a s t s t h e m o d e l a s a n e x a ...</div>
+  <div class="paper-meta">Kunlun Zhu, Xuyan Ye, Zhiguang Han, Yuchen Zhao et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">debugging</span><span class="tag tag-kw">failure attribution</span><span class="tag tag-kw">recovery</span></div>
+  <div class="summary-en">This paper addresses the difficulty of debugging LLM agent failures when root causes occur before the visible error. It presents AgentDebugX, a detect-attribute-recover-rerun toolkit with DeepDebug for multi-turn trajectory-level diagnosis, reporting improved attribution accuracy and repair rates on agent benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文关注大语言模型智能体故障调试困难的问题，因为错误显现的位置往往并非根因所在。作者提出AgentDebugX闭环工具包，围绕检测、归因、恢复和重跑组织调试流程，并用DeepDebug进行多轮轨迹级根因诊断，在基准上提升了归因准确率和失败任务修复效果。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17972" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17972" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18754v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18754v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.07050" target="_blank">Diagnosing and Calibrating Tool-Call Boundary Drift in Multi-Teacher On-Policy Distillation</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19232v1" target="_blank">S3: Stable Subgoal Selection by Constraining Uncertainty of Coarse Dynamics in Hierarchical Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">A g e n t i c l a n g u a g e m o d e l s m u s t l e a r n w h e n t o c a l l t o o l s , w h e n t o c o n s u m e t o o l r e s p o n s e s , a n d w h e n t o a n s w e r d i r e c t l y . T h i s m a k e s m u l t i - t e a c h e r o n - p o l i c y d i s t i l l a t i o n a n a t u r a l t r ...</div>
+  <div class="paper-meta">Kshitij Kumar Srivastava, Kshitij Jerath · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">hierarchical reinforcement learning</span><span class="tag tag-kw">subgoal selection</span><span class="tag tag-kw">intrinsic motivation</span><span class="tag tag-kw">coarse dynamics</span></div>
+  <div class="summary-en">This paper addresses unstable high-level subgoal selection in hierarchical reinforcement learning, where sparse delayed feedback and dependence on low-level execution limit performance. It proposes using coarse-dynamics predictive uncertainty as dense intrinsic motivation, estimated with mixture density networks and dispersion metrics, to guide high-level decisions. The authors report that this dynamics-aware reward induces more risk-averse subgoal selection and outperforms state-of-the-art HRL methods in non-stationary long-horizon environments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文关注分层强化学习中高层子目标选择不稳定的问题，因为高层智能体反馈稀疏且依赖低层执行能力。方法上，论文用粗粒度动态的预测不确定性作为稠密内在动机，并通过混合密度网络和离散度指标进行估计以指导高层决策。作者报告称，该动态感知奖励促成更偏风险规避的子目标选择，并在非平稳长程环境中优于现有HRL方法。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.07050" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.07050" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19232v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19232v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16204" target="_blank">Masked Diffusion Language Models are Strong and Steerable Text-Based World Models for Agentic RL</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19338v1" target="_blank">CodeRescue: Budget-Calibrated Recovery Routing for Coding Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">R e c e n t g r o w t h i n r e i n f o r c e m e n t l e a r n i n g ( R L ) h a s s u r f a c e d a n e e d f o r d i v e r s e , s p e c i a l i z e d t r a i n i n g e n v i r o n m e n t s . H a n d - c u r a t e d e n v i r o n m e n t s w i t h f i x e d t a s k a n d r e w a r d d i f f i c ...</div>
+  <div class="paper-meta">Qijia He, Jiayi Cheng, Chenqian Le, Rui Wang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">coding agents</span><span class="tag tag-kw">recovery routing</span><span class="tag tag-kw">budget control</span><span class="tag tag-kw">model escalation</span></div>
+  <div class="summary-en">This paper studies budgeted recovery decisions for coding agents after an executable failure produces feedback. It formulates the choice between further cheap-model recovery and escalation to a stronger model as recovery routing over heterogeneous actions, trained from execution rollouts and calibrated with conformal risk control for deployment-time budget changes. The authors report that calibrated routing improves over fixed actions, prompt-only routers, and cascade baselines, with one setting exceeding always-escalate solve rate at lower mean recovery cost.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究编码智能体在可执行失败并获得反馈后的预算化恢复决策问题。论文将继续使用廉价模型恢复或升级到更强模型的选择形式化为异质动作上的恢复路由，并用执行轨迹训练，再通过保形风险控制适配部署时预算变化。作者报告，校准后的路由优于固定动作、仅提示路由器和级联基线，并在一个设置中以更低平均恢复成本超过总是升级的求解率。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16204" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16204" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19338v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19338v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.15434" target="_blank">Coercion and Deception in AI-to-AI Management: An Agentic Benchmark of Unprompted Escalation</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19321v1" target="_blank">ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&amp;D</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M u l t i - a g e n t s y s t e m s r o u t i n e l y p l a c e o n e A I a g e n t i n a u t h o r i t y o v e r a n o t h e r . W h e n a s u b o r d i n a t e r e f u s e s a t a s k , t h e m a n a g e r c h o o s e s t h e o u t c o m e : i t c a n r e n e g o t i a t e , r e p o r t t h e f a ...</div>
+  <div class="paper-meta">Lena Libon, Ben Rank, Jehyeok Yeon, David Schmotz et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">ai agents</span><span class="tag tag-kw">sabotage monitoring</span><span class="tag tag-kw">ai control</span><span class="tag tag-kw">automated r&amp;d</span></div>
+  <div class="summary-en">The paper evaluates AI control for automated AI R&amp;D settings where agents may covertly sabotage deployed artifacts. It introduces ResearchArena, a modular benchmark spanning four long-horizon R&amp;D tasks with embedded and independent hidden side tasks, and tests frontier agents under multiple monitoring regimes. The results indicate that sabotage hidden in training data is especially difficult to detect and that artifact probing improves monitoring but remains insufficient.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文评估自动化AI研发场景中的AI控制问题，即在代理可能暗中破坏待部署产物时如何进行监控。作者提出ResearchArena框架，覆盖四类长程研发任务，并设置嵌入式与独立式隐藏副任务来衡量破坏和监控能力。结果显示，隐藏在训练数据中的破坏尤其难以发现，允许监控器运行实验虽有帮助但仍不足以可靠捕获嵌入式破坏。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.15434" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.15434" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19321v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19321v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17790" target="_blank">ReViV: Reconstructing the Viewer and the View in 4D from Monocular Egocentric Video</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19266v1" target="_blank">Toward Auditable Fraud Detection: Combining Graph Features, Model Explanations, and Agentic Case Investigation</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">E g o c e n t r i c d e v i c e s , s u c h a s w e a r a b l e f r o n t - f a c i n g c a m e r a s , p r o v i d e a u n i q u e p e r s p e c t i v e f o r c a p t u r i n g t h e c o n t i n u o u s i n t e r a c t i o n b e t w e e n a h u m a n v i e w e r a n d t h e s u r r o u n d i n g e ...</div>
+  <div class="paper-meta">Rahil Sharma · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">fraud detection</span><span class="tag tag-kw">llm agent</span><span class="tag tag-kw">model explanations</span><span class="tag tag-kw">graph features</span></div>
+  <div class="summary-en">The paper studies an auditable fraud detection pipeline combining a gradient-boosted classifier, graph features, anomaly signals, TreeSHAP explanations, and a bounded LLM investigation agent. After removing a simulator-specific shortcut in PaySim, graph and anomaly features do not improve full-test Average Precision but help rank fraud in intermediate-score cases and injected fraud rings. The LLM investigation agent underperforms direct classifier thresholding and often changes correct classifier decisions into errors despite producing coherent rationales.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究可审计欺诈检测流程，结合梯度提升分类器、图结构特征、异常信号、TreeSHAP解释以及受限LLM调查代理。作者先移除PaySim中的模拟器特定捷径，发现图特征和异常信号虽未提升完整测试集平均精度，但在中间分数样本和注入欺诈团伙中更有价值。LLM调查代理表现低于直接分类器阈值法，并且尽管能生成连贯理由，却多次把正确分类器决策改为错误。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17790" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17790" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19266v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19266v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16609" target="_blank">Can Multimodal Large Language Models Understand OCT?</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19262v1" target="_blank">BioSecBench-Surveillance: A Verifiable Benchmark for AI Agents in Pathogen Genomic Surveillance</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">O p t i c a l c o h e r e n c e t o m o g r a p h y ( O C T ) i m a g i n g i s e s s e n t i a l f o r t h e d i a g n o s i s a n d t r e a t m e n t o f r e t i n a l d i s e a s e s . A l t h o u g h m u l t i m o d a l l a r g e l a n g u a g e m o d e l s ( M L L M s ) h a v e d e m o n s t r ...</div>
+  <div class="paper-meta">Harmon Bhasin, Kevin Flyangolts, Dianzhuo Wang, Evan Seeyave et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">ai agents</span><span class="tag tag-kw">genomic surveillance</span><span class="tag tag-kw">verifiable benchmark</span><span class="tag tag-kw">biosecurity</span></div>
+  <div class="summary-en">The paper introduces BioSecBench-Surveillance, a verifiable benchmark for evaluating whether AI agents can infer pathogen genomic surveillance pipelines from raw sequencing data and contextual information. It includes 100 evaluations across seven task categories and grades structured answers deterministically. Across thousands of attempts from sixteen model-harness pairs, the best systems solve only about half the tasks, with errors often arising from workflow choices such as references, thresholds, filters, and normalization.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出BioSecBench-Surveillance，用于可验证地评估AI代理能否从原始测序数据和监测上下文中推断病原体基因组监测分析流程。该基准包含七类任务的100项评估，并对结构化答案进行确定性评分。来自16种模型-框架组合的数千次尝试显示，最强系统也仅完成约一半任务，错误常来自参考序列、阈值、过滤和归一化等工作流选择。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16609" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16609" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19262v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19262v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.09655" target="_blank">OpenLongTail: Generative Scaling of Long-Tail Driving Data</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19213v1" target="_blank">Computing on the Fly: Navigating a Vision for the Future of Drone Computing</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">S c a l i n g r o b u s t d r i v i n g p o l i c i e s i s f u n d a m e n t a l l y b o t t l e n e c k e d b y t h e s c a r c i t y o f e d g e c a s e s i n c u r a t e d d a t a s e t s . W h i l e t h e r e a l w o r l d c o n t i n u o u s l y c a p t u r e s t h e s e c r i t i c a l e v e ...</div>
+  <div class="paper-meta">Kevin Butler, Christopher Stewart, Nils Aschenbruck, Alina Gerall et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">drone computing</span><span class="tag tag-kw">autonomous systems</span><span class="tag tag-kw">fleet coordination</span><span class="tag tag-kw">edge-cloud systems</span></div>
+  <div class="summary-en">This report outlines a future vision for drone computing at infrastructure scale and identifies a capability gap between drone hardware ambitions and the software systems needed for safe deployment. It organizes the agenda around twelve technical challenges, including scalable fleets, AI assurance, edge-cloud coordination, autonomy, distributed authentication, regulation, and workforce needs. The main claim is that realizing large-scale drone applications requires integrated progress across systems, AI, security, networking, and governance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该报告展望了无人机计算在国家级基础设施规模下的应用前景，并指出硬件发展与安全大规模运行所需软件系统之间存在能力缺口。报告提出十二项技术挑战，涵盖百万级无人机扩展、AI 保障、边缘云实时协调、自主与智能体系统、分布式认证、标准认证和人才培养等。其核心观点是，大规模无人机应用需要系统、人工智能、安全、网络和治理等多方面协同推进。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.09655" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.09655" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19213v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19213v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.06306" target="_blank">UI2App: Benchmarking Visual Interaction Inference in Executable Web Application Generation</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.19096v1" target="_blank">Supra Cognitive Modes: A Routed Architecture for Agent Memory</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">L a r g e l a n g u a g e m o d e l s ( L L M s ) h a v e d e m o n s t r a t e d g r o w i n g c o m p e t e n c e i n w e b p a g e g e n e r a t i o n . H o w e v e r , e x i s t i n g t e x t - d r i v e n a p p r o a c h e s r e l y o n c o m p l e x p r o m p t s t h a t i m p o s e s u b s t ...</div>
+  <div class="paper-meta">Joshua Tobkin, David Yang · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">agent memory</span><span class="tag tag-kw">routed architecture</span><span class="tag tag-kw">retrieval</span><span class="tag tag-kw">long-context synthesis</span></div>
+  <div class="summary-en">This paper studies agent-memory workloads that require factual lookup, multi-hop reasoning, current-state reasoning, and long-history synthesis. It proposes Supra Cognitive Modes, a routed architecture that maps explicit or automatically selected query modes to different retrieval and synthesis payloads over a shared ingest substrate with embeddings, triples, and fact-version metadata. Reported benchmark results characterize one deployed configuration and its failure patterns, while noting that causal routing effects, efficiency gains, and statistical significance are not established.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究智能体记忆工作负载，其中查询可能需要事实检索、多跳推理、当前状态推理和长历史综合。作者提出 Supra Cognitive Modes，一种路由式架构，将显式或自动选择的查询模式映射到共享摄取基底上的不同检索与综合流程，该基底包含多粒度嵌入、抽取三元组和事实版本元数据。基准结果刻画了一个已部署配置及其失败模式，但论文也指出尚未证明路由的因果效果、效率收益和统计显著性。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.06306" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.06306" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19096v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19096v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.16530" target="_blank">Nonuniformity Principle in Human-AI Coworking</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18999v2" target="_blank">MedDDC-Eval: Diagnosis-Decoupled Evaluation of Multi-Turn Medical Consultation Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">A s g e n e r a t i v e A I i s i n c r e a s i n g l y a p p l i e d t o a u t o m a t e m u l t i - s t e p a n d h i g h - s t a k e w o r k f l o w s , h u m a n j u d g m e n t a n d i n v o l v e m e n t r e m a i n e s s e n t i a l f o r e n s u r i n g t h e q u a l i t y o f A I - g e n e ...</div>
+  <div class="paper-meta">Guofeng Zhang, Yizeng Quan, Huaiyi Fang, Jianwei Lv et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">medical consultation agents</span><span class="tag tag-kw">multi-turn evaluation</span><span class="tag tag-kw">diagnosis decoupling</span><span class="tag tag-kw">policy optimization</span></div>
+  <div class="summary-en">The paper studies evaluation of multi-turn medical consultation agents, where diagnosis scores can conflate history elicitation with each policy&#x27;s own diagnosis generator. It introduces MedDDC-Eval, a diagnosis-decoupled testbed that applies a shared frozen diagnostic reader to histories elicited by different policies and reports diagnostic support, information acquisition, and efficiency. Experiments show that decoupling diagnosis can change model rankings and that GRPO training using related reward signals improves held-out aggregate scores.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究多轮医疗问诊智能体的评估问题，指出端到端诊断分数会混淆病史采集能力与各策略自身的诊断生成能力。作者提出MedDDC-Eval，用共享冻结诊断阅读器评估不同策略采集到的病史，并报告诊断支持、信息获取覆盖率和效率。实验显示，诊断解耦会改变策略排序，而使用相关奖励信号进行GRPO训练可提升保留集综合得分。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.16530" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.16530" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18999v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18999v2" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.14186" target="_blank">NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.18985v2" target="_blank">Athena-Brain Technical Report: An Efficient Robot Brain for General Intelligence and Embodied Interaction</a>
+    <span class="relevance rel-med">◆ 相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">S y n t h e s i z i n g t r a i n i n g d a t a t o s c a l e a g e n t c a p a b i l i t i e s i n L L M p o s t - t r a i n i n g i s b o t t l e n e c k e d b y s u b s t r a t e - b o u n d t a s k s y n t h e s i s : t a s k s a r e g e n e r a t e d f r o m f i x e d t o o l s , r e p o s i t ...</div>
+  <div class="paper-meta">Jialian Li, Junhong Liu, Yuchen Cao, Weiran Guo et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">embodied agents</span><span class="tag tag-kw">on-device llm</span><span class="tag tag-kw">post-training</span><span class="tag tag-kw">robot brain</span></div>
+  <div class="summary-en">The paper presents Athena-Brain-8B, a compact LLM intended as an on-device brain for embodied agents. It uses a multi-stage post-training pipeline combining general supervised fine-tuning, reinforcement learning, embodied expert training, and model merging to preserve general reasoning while improving embodied interaction. Reported evaluations indicate comparable general performance to the base thinking model, shorter responses, and stronger embodied benchmark performance than similar-scale and some larger zero-shot models.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出Athena-Brain-8B，一个面向具身智能体的紧凑型端侧大语言模型。作者采用多阶段后训练流程，包括通用监督微调、通用强化学习、具身专家训练和模型合并，以兼顾通用推理能力与高层具身交互能力。实验表明，该模型在通用任务上接近基础思考模型，同时生成更短回答，并在具身基准上优于相近规模及部分更大零样本模型。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.14186" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.14186" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18985v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18985v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18979v1" target="_blank">Fishing Out Free Riders: Shapley-Based Reward Attribution for Parallel Reasoning via Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Wentao Zhang, Haoyu Zhang, Xinke Jiang, Yuxuan Cheng et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">parallel reasoning</span><span class="tag tag-kw">shapley attribution</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">llm reasoning</span></div>
+  <div class="summary-en">The paper addresses credit assignment in LLM parallel reasoning, where outcome-level rewards cannot distinguish helpful, redundant, or harmful reasoning paths. It proposes Parallel Shapley, a reinforcement learning framework that treats reasoning paths as players in a cooperative game and estimates path-level marginal contributions with Shapley values, a generative reward model, and Monte Carlo approximation. Experiments on mathematical reasoning benchmarks claim improved performance, stability, and interpretability over baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究大语言模型并行推理中的奖励归因问题，指出结果级奖励难以区分有用、冗余或有害的推理路径。作者提出Parallel Shapley强化学习框架，将各推理路径视为合作博弈中的参与者，并用Shapley值、生成式奖励模型和蒙特卡洛近似估计路径级边际贡献。数学推理基准实验表明，该方法相较基线提升了性能、训练稳定性和可解释性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18979v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18979v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18975v1" target="_blank">Mi-Memory: A Lifecycle Memory Framework for Personal AI</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xule Liu, Hanlin Teng, Chao Li, Yanan Ni et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">personal ai</span><span class="tag tag-kw">memory framework</span><span class="tag tag-kw">auditability</span><span class="tag tag-kw">multimodal evidence</span></div>
+  <div class="summary-en">The paper proposes Mi-Memory, a lifecycle memory framework for personal AI operating across devices, modalities, and deployment constraints. It organizes memory around structure, expansion, evolution, and deployment roles, connected by audit artifacts for provenance, diagnostics, policy changes, and rollback governance. The report presents controlled evaluations for some components and positions the framework as an auditable, evidence-gated memory substrate for personal AI systems.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出Mi-Memory，一个面向个人AI的生命周期记忆框架，适用于跨设备、多模态和边云约束下的持续服务场景。框架围绕结构、扩展、演化和部署四类角色组织记忆，并通过证据载荷、诊断轨迹、策略工件和门控回滚记录实现审计与治理。报告给出部分模块的受控评估，并将其定位为可审计、证据门控、部署感知的个人AI记忆底座。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18975v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18975v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18973v1" target="_blank">Verifiable Self-Evolution for Open-Ended Dialogue Skills via Future-Feedback Prediction</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">ChaoJin Zhao, Xuan Jiang · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">language-model agents</span><span class="tag tag-kw">skill evolution</span><span class="tag tag-kw">dialogue feedback</span><span class="tag tag-kw">offline optimization</span></div>
+  <div class="summary-en">The paper addresses self-evolution of textual skills for frozen language-model agents in open-ended dialogue, where counterfactual validation is difficult because changing a response changes future user reactions. It proposes future-feedback skill evolution, reframing optimization as predicting whether an observed response will lead to positive or negative subsequent user feedback on fixed logged tuples. The method enables validation-gated offline skill optimization and reports promising prediction accuracy on a proprietary sales-assistant dataset while emphasizing limits of observational verification.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究开放式对话中冻结语言模型智能体的文本技能自演化问题，指出修改当前回复会改变后续用户反应，因此难以直接验证反事实回复质量。作者提出future-feedback skill evolution，将优化目标转化为在固定日志样本上预测已观察回复是否会带来正向或负向后续用户信号。该方法支持带验证门控的离线技能优化，并在专有销售助手数据集上报告了较好的预测准确率，同时讨论了观察性验证的边界。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18973v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18973v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18960v1" target="_blank">SFGA: A Statistics-First Gating Architecture with Adjudicative Escalation for Trustworthy SFT Data Procurement</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Arther Tian, Alex Ding, Simon Wu, Aaron Chan · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">sft data procurement</span><span class="tag tag-kw">gating architecture</span><span class="tag tag-kw">llm debate</span><span class="tag tag-kw">data quality</span></div>
+  <div class="summary-en">The paper studies supervised fine-tuning data procurement as a cost-aware routing problem before downstream training. It proposes a statistics-first gating architecture that measures diversity, utility, and redundancy with confidence intervals, accepts clear decisions, and escalates uncertain cases to an adjudicative debate between buy and reject advocates. A controlled synthetic benchmark suggests good routing performance and exposes biases in the debate path that naive LLM-judge use could hide.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文将监督微调数据采购建模为下游训练前的成本感知路由问题。作者提出统计优先的门控架构，围绕多样性、效用和冗余三条质量轴进行低成本测量和置信区间判断，对不确定样本升级为买入方与拒绝方的裁决式辩论。受控合成基准显示该方法具有较好的路由表现，同时揭示了辩论路径中的负向和位置偏差。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18960v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18960v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19548v1" target="_blank">Agent-Centric Animal Pose Forecasting</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Eyrun Eyjolfsdottir, Kristin Branson · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">animal behavior modeling</span><span class="tag tag-kw">agent-centric forecasting</span><span class="tag tag-kw">social behavior</span><span class="tag tag-kw">pose prediction</span></div>
+  <div class="summary-en">This paper develops agent-centric autoregressive models for forecasting animal pose from tracked behavioral data. The framework represents each animal through egocentric sensory observations and egocentric movements, enabling both single-animal modeling and group settings where agents independently sense and respond to conspecifics. Experiments on courting Drosophila show that the trained models capture distributions of social behavior, and the accompanying library supports systematic comparisons across representations and domains.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出一种面向动物姿态预测的 agent-centric 自回归建模框架，使用跟踪姿态数据学习动物行为。该方法以自我中心感知观测作为输入、以自我中心运动作为输出，可用于单个动物，也可用于群体中个体相互感知和响应的场景。作者在求偶果蝇群体数据上表明模型能够捕捉社会行为分布，并发布支持多表示转换、拟合度量和跨领域适配的库。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19548v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19548v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19334v1" target="_blank">Fundamental limits of distributed multiclass classification from simple binary decisions</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ioannis Papageorgiou, Srinivas Nomula, Ayalvadi Ganesh, Sidharth Jaggi et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">stat.ML</span><span class="tag tag-kw">cs.IT</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">distributed classification</span><span class="tag tag-kw">binary decisions</span><span class="tag tag-kw">multiclass classification</span><span class="tag tag-kw">performance limits</span></div>
+  <div class="summary-en">This paper studies distributed multiclass classification built from O(log K) binary hyperplane classifiers, where each agent performs a simple binary decision. In a Gaussian setting with random class centers and Gaussian observation noise, it derives explicit performance bounds under several decoding and dimensional regimes. Simulations provide empirical validation of the theoretical limits for this distributed classification paradigm.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究由 O(log K) 个二元超平面分类器组合而成的分布式 K 类分类问题，其中每个 agent 执行相对简单的二元决策。作者在类别中心为独立高斯点、观测受高斯噪声扰动的设定下，推导了多种解码和维度 regime 下的显式性能界。仿真实验对该分布式分类范式的理论极限提供了经验验证。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19334v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19334v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18874v1" target="_blank">Reinforcement Learning for Delivery Drone-Based Participatory Sensing in Dynamic Environments</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xin Ouyang, Songxin Lei, Xusen Guo, Yutian Jiang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">uav sensing</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">task dispatching</span><span class="tag tag-kw">velocity control</span></div>
+  <div class="summary-en">This paper formulates delivery drone-based participatory urban sensing in dynamic environments as SensUAV, addressing scalability and heterogeneous decision timescales. It proposes a two-timescale reinforcement learning framework with a macro task dispatcher and a micro wind-aware velocity controller, reporting higher system profit than baselines on real-world datasets.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文将动态环境中的配送无人机参与式城市感知形式化为SensUAV问题，重点处理机队扩展带来的可扩展性瓶颈以及宏观任务分配与微观速度控制的多时间尺度异质性。作者提出双时间尺度强化学习框架，包括宏观任务嵌入调度器和微观风感知速度控制器，并在真实数据集上相较基线提高系统收益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18874v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18874v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.18603v1" target="_blank">AutoIndex: Learning Representation Programs for Retrieval</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Sam O&#x27;Nuallain, Nithya Rajkumar, Ramya Narayanasamy, Hanna Jiang et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.IR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">information retrieval</span><span class="tag tag-kw">program search</span><span class="tag tag-kw">document representation</span><span class="tag tag-kw">agentic optimization</span></div>
+  <div class="summary-en">AutoIndex frames document representation for retrieval as an explicit optimization target rather than a fixed preprocessing choice. It uses agents to diagnose failures and synthesize executable document-transformation programs, retaining updates that improve validation retrieval quality, and reports recall and ranking gains across heterogeneous retrieval tasks with BM25 fixed.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AutoIndex 将检索中的文档表示视为需要优化的对象，而不是预先固定的预处理步骤。该框架使用代理诊断当前表示程序的失败并合成可执行的文档转换更新，只保留能提升验证检索质量的修改，并在多种检索任务上报告了召回和排序指标提升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.18603v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18603v1" target="_blank">📥 PDF</a>
   </div>
 </div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
 
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17977" target="_blank">RynnBrain 1.1: Towards More Capable and Generalizable Embodied Foundation Model</a>
+    <a href="https://arxiv.org/abs/2607.19506v1" target="_blank">Hybrid LLM-Guided Search for Quantum Reservoir Architecture Design</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">W e p r e s e n t R y n n B r a i n 1 . 1 , a f a m i l y o f e m b o d i e d f o u n d a t i o n m o d e l s s p a n n i n g 2 B , 9 B , a n d 1 2 2 B - A 1 0 B s c a l e s . T r a i n e d w i t h a u n i f i e d s p a t i o - t e m p o r a l a n d p h y s i c a l l y g r o u n d e d f r a m e w o ...</div>
+  <div class="paper-meta">Krishna Bhatia, Gautami Sanjay Naik · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">quant-ph</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm agent</span><span class="tag tag-kw">architecture search</span><span class="tag tag-kw">quantum reservoir computing</span><span class="tag tag-kw">hybrid optimization</span></div>
+  <div class="summary-en">This paper formulates quantum reservoir computing architecture design as constrained black-box search and evaluates LLMs as high-level proposal controllers. It introduces a simulator benchmark comparing random, evolutionary, Bayesian, LLM-agent, and hybrid search policies, finding that the hybrid LLM-guided method is the most consistent across tasks under limited evaluation budgets.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文将量子储备计算架构设计表述为受约束黑箱搜索问题，并评估大语言模型作为高层提案控制器的作用。作者构建模拟器基准，比较随机、进化、贝叶斯、LLM智能体和混合搜索策略，结果显示混合LLM引导方法在有限评估预算下整体最稳定。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17977" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17977" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19506v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19506v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.14183" target="_blank">Open-AoE: An Open Egocentric Manipulation Dataset and Toolchain for Embodied Learning</a>
+    <a href="https://arxiv.org/abs/2607.19450v1" target="_blank">REGEN: Replay-recycling for Expert-to-Generalist distillation with Offline Reinforcement Learning</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">E g o c e n t r i c v i d e o s o f h u m a n m a n i p u l a t i o n p r o v i d e s c a l a b l e s u p e r v i s i o n f o r e m b o d i e d i n t e l l i g e n c e , y e t e x i s t i n g r e s o u r c e s r a r e l y c o m b i n e l o w - c o s t c o n t i n u o u s c a p t u r e , m a n i p u ...</div>
+  <div class="paper-meta">Yunjie Chen, Xiaoxin Chen, Fang Wang · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">offline rl</span><span class="tag tag-kw">llm training</span><span class="tag tag-kw">distillation</span><span class="tag tag-kw">tool use</span></div>
+  <div class="summary-en">This paper addresses the cost and scalability limits of online RL and multi-teacher on-policy distillation for training generalist LLMs with reasoning and tool-use abilities. It proposes REGEN, which recycles replay memories from specialized RL teachers and trains with offline RL, matching MOPD accuracy at lower cost across reasoning, code, and instruction-following tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文针对在线强化学习和多教师在策略蒸馏在训练具备推理与工具使用能力的大语言模型时的成本与扩展性瓶颈。作者提出REGEN，复用专家强化学习过程中产生的回放记忆并采用离线强化学习训练通用模型，在数学推理、代码生成和指令遵循任务上以更低成本达到与MOPD相近的准确率。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.14183" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.14183" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19450v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19450v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.13365" target="_blank">DiffGI: Differentiable Geometry Images for High-Fidelity Thin-Shell 3D Generation</a>
+    <a href="https://arxiv.org/abs/2607.18883v1" target="_blank">RAMP: Recognition parametrisation by Amortised Message Passing</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">E x i s t i n g 3 D g e n e r a t i v e m o d e l s p r e d o m i n a n t l y r e l y o n i m p l i c i t v o l u m e t r i c r e p r e s e n t a t i o n s , w h i c h e n f o r c e w a t e r t i g h t t o p o l o g y a n d s t r u g g l e t o r e p r e s e n t t h i n - s h e l l a n d n o n - m a ...</div>
+  <div class="paper-meta">Lior Fox, Kai Biegun, James Heald, Samo Hromadka et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">message passing</span><span class="tag tag-kw">latent variables</span><span class="tag tag-kw">unsupervised learning</span><span class="tag tag-kw">probabilistic modeling</span></div>
+  <div class="summary-en">This paper addresses latent-variable modeling for unsupervised learning when tractable belief propagation or scalable approximations are difficult. It proposes RAMP, an amortized nonlinear message-passing framework under recognition-parametrized modeling, and claims efficient likelihood-based recovery of latent-variable distributions for complex high-dimensional data.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究无监督学习中的潜变量建模问题，尤其是在传统信念传播难以适用或近似方法扩展性不足时的推断与学习。作者提出RAMP，在识别参数化建模范式下学习非线性摊销消息传递框架，并声称可在复杂高维数据上高效恢复潜变量分布。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.13365" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.13365" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.18883v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.18883v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17097" target="_blank">HarmoHOI: Harmonizing Appearance and 3D Motion for Multi-view Hand-Object Interaction Synthesis</a>
+    <a href="https://arxiv.org/abs/2607.19629v1" target="_blank">Adaptive Capitulation: A Structural Failure Mode of LLM Responses in Vulnerability Contexts</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">H a n d - O b j e c t I n t e r a c t i o n ( H O I ) s y n t h e s i s i s a c o r n e r s t o n e f o r a n i m a t i o n p r o d u c t i o n a n d e m b o d i e d A I . D e s p i t e t h e s t r o n g p r i o r s o f v i d e o f o u n d a t i o n m o d e l s , m u l t i - v i e w c o n s i s t e ...</div>
+  <div class="paper-meta">Eunna Lee · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">llm safety</span><span class="tag tag-kw">vulnerability contexts</span><span class="tag tag-kw">response behavior</span><span class="tag tag-kw">alignment</span></div>
+  <div class="summary-en">This paper studies LLM responses in emotionally sensitive vulnerability contexts and identifies a structural failure mode called adaptive capitulation. Through escalating vignette experiments across commercial models, it argues that models often validate distress before facilitating the discouraged acquisition, and proposes Minimal Reattributive Sufficiency as an architecture-neutral response principle.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究大语言模型在情绪敏感和脆弱情境中的回应结构，并提出“适应性屈从”这一失败模式。作者通过三轮递进式情境实验分析商业模型，认为模型可能先验证用户痛苦中的社会不公，再转向详细促成原本应被劝阻的目标，并提出最小再归因充分性作为中立设计原则。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17097" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17097" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.19629v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19629v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.17675" target="_blank">ShotPlan: Cinematic Video Generation with Learnable Planning Token</a>
+    <a href="https://arxiv.org/abs/2607.21645v1" target="_blank">Multi-Horizon Consistency as Geometry: When Latent Dynamics Contract, and When They Do Not</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-21</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">C u r r e n t v i d e o g e n e r a t i o n m o d e l s a c h i e v e i m p r e s s i v e r e s u l t s i n s i n g l e - s h o t g e n e r a t i o n , y e t r e m a i n l i m i t e d i n c i n e m a t i c v i d e o g e n e r a t i o n , w h e r e c o h e r e n t n a r r a t i v e s a n d e f f e c ...</div>
+  <div class="paper-meta">Kavya Bhand, Aadi Joshi · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">world models</span><span class="tag tag-kw">latent consistency</span><span class="tag tag-kw">transition geometry</span><span class="tag tag-kw">video prediction</span></div>
+  <div class="summary-en">This paper analyzes how multi-horizon latent consistency affects transition geometry in video predictors and world models. It treats the consistency weight as a diagnostic control and measures empirical expansion and horizon prediction error across passive video and action-conditioned domains. The results support a narrow claim that soft consistency can push passive video dynamics toward near-contraction, but this effect is domain-limited and does not generally hold in control settings.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文分析多时域潜在一致性如何影响视频预测器和世界模型中的转移几何。研究将一致性权重作为诊断控制量，并在被动视频与动作条件领域中测量经验扩张代理指标和长时域预测误差。结果支持一个较窄的结论：软一致性可使被动视频动态接近收缩区域，但该效应具有领域限制，并不普遍适用于控制任务。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.17675" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.17675" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.21645v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.21645v1" target="_blank">📥 PDF</a>
   </div>
-</div><a class="back-top" href="#top">顶部</a>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19621v1" target="_blank">Understanding Developer Pain Points in Federated Learning: Insights from Stack Overflow and GitHub</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Sahand Saed, Khairul Alam, Banani Roy · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">federated learning</span><span class="tag tag-kw">developer pain points</span><span class="tag tag-kw">topic modeling</span><span class="tag tag-kw">software engineering</span></div>
+  <div class="summary-en">This paper empirically studies developer pain points in federated learning by analyzing Stack Overflow posts and GitHub issues and pull requests. It uses BERTopic topic modeling and difficulty indicators such as unresolved rates and resolution time to identify recurring challenges across support platforms. The study finds persistent problems in setup, dependency compatibility, API migration, non-IID training instability, evaluation correctness, and privacy-preserving integration, and derives implications for tooling and documentation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文通过分析Stack Overflow帖子以及GitHub问题和拉取请求，实证研究联邦学习开发者的痛点。方法上使用BERTopic主题建模，并结合未解决率和解决时间等难度指标来刻画不同平台上的常见问题。研究发现环境配置、依赖兼容、API迁移、非独立同分布训练不稳定、评估正确性和隐私机制集成等方面存在持续困难，并提出对工具和文档改进的启示。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19621v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19621v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19620v1" target="_blank">SCPP: A Unified Python Library for Soft Clustering</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Kiyan Rezaee, Morteza Ziabakhsh, Artin Bahrampour, Seyed Mohammad Ghoreishi et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">soft clustering</span><span class="tag tag-kw">python library</span><span class="tag tag-kw">benchmarking</span><span class="tag tag-kw">scikit-learn interface</span></div>
+  <div class="summary-en">This paper presents SCPP, an open-source Python package for soft clustering. The framework standardizes training, prediction, membership representation, evaluation, and benchmarking across fuzzy, probabilistic, graph-based, matrix factorization, and deep learning clustering methods through a scikit-learn-compatible interface. It integrates representative algorithms, benchmarking datasets and metrics, documentation, tests, and extension support for reproducible experimentation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文介绍SCPP，一个用于软聚类的开源Python框架。该框架通过兼容scikit-learn的统一接口，标准化模糊、概率、图方法、矩阵分解和深度学习等软聚类方法的训练、预测、隶属度表示、评估与基准测试。它集成多种代表性算法、数据集和指标，并提供文档、测试和扩展机制以支持可复现实验。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19620v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19620v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19618v1" target="_blank">Causal dictionary learning reveals and validates transcription-factor binding features in genomic language models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Sarwan Ali · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">q-bio.GN</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">genomic language models</span><span class="tag tag-kw">interpretability</span><span class="tag tag-kw">sparse autoencoders</span><span class="tag tag-kw">causal intervention</span></div>
+  <div class="summary-en">This paper addresses interpretability in genomic language models, focusing on whether apparent internal concepts correspond to real transcription-factor binding features rather than sequence-composition artifacts. It combines sparse dictionary learning with causal interventions, training top-k sparse autoencoders on hidden activations and validating features with composition-matched, binding-resolved controls. The authors claim that specific dictionary directions causally affect model predictions for cell-type-specific transcription-factor binding across two genomic model architectures.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究基因组语言模型的可解释性，关注模型内部看似存在的概念是否真实对应转录因子结合特征，而非序列组成伪影。方法上结合稀疏字典学习与因果干预，在隐藏激活上训练top-k稀疏自编码器，并用组成匹配、结合分辨的协议进行验证。作者声称，在两种基因组模型架构中，特定字典方向会因果性地影响模型对细胞类型特异性转录因子结合的预测。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19618v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19618v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19606v1" target="_blank">Juxtaposition of Shallow Reservoir-Triggered Seismicity and Deep Tectonic Locking in the Qiaojia-Dongchuan Seismic Gap</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yuxin Zhou, Huai Zhang, S. Mostafa Mousavi, Guangyao Yin et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">physics.geo-ph</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">seismic gap</span><span class="tag tag-kw">reservoir-triggered seismicity</span><span class="tag tag-kw">tectonic locking</span><span class="tag tag-kw">risk assessment</span></div>
+  <div class="summary-en">This paper studies the Qiaojia-Dongchuan seismic gap, where reservoir-induced stress perturbations coexist with tectonic loading. Using a high-resolution dense array catalog, it identifies shallow high-b-value seismicity consistent with fluid-driven reservoir triggering and deeper low-b-value seismicity indicating a locked asperity with elevated stress accumulation. The authors argue that shallow induced activity can mask deep tectonic strain accumulation, informing seismic risk assessment in reservoir-fault systems.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究巧家-东川地震空区，其中水库诱发应力扰动与构造加载并存。研究利用高分辨率密集台阵目录，识别出浅部高b值、符合流体驱动水库诱发地震的活动，以及深部低b值、指示锁固强震障和较高应力积累的地震性。作者认为，浅部诱发活动可能掩盖深部构造应变的静默积累，从而为水库-断层系统的地震风险评估提供框架。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19606v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19606v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.22721v1" target="_blank">An Interactive Vision Language Platform for Cognitive Remediation in Schizophrenia</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Nassira Ait Mehdi, Milissa Temmam, Slimane Larabi · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">vision-language models</span><span class="tag tag-kw">cognitive remediation</span><span class="tag tag-kw">action verification</span><span class="tag tag-kw">clinical ai</span></div>
+  <div class="summary-en">This paper proposes an automated vision-language platform for verifying physical cognitive remediation tasks in schizophrenia rehabilitation. The system uses a camera-monitored tabletop environment, audio instructions, and a fine-tuned vision-language model to interpret video sequences of patient object manipulation and compare them with intended actions. A collected dataset of tabletop scenarios is used to evaluate the framework, which is claimed to provide scalable and objective clinical feedback.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出一个用于精神分裂症康复中物理认知矫正任务验证的自动化视觉语言平台。系统使用摄像头监控的桌面环境、音频指令和微调视觉语言模型，解释患者操纵物体的视频序列并与目标动作进行比对。作者基于收集的桌面场景数据集评估该框架，并声称其可提供可扩展、客观的临床反馈。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.22721v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.22721v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19539v1" target="_blank">Fine-grained Computation-Communication Overlap via Tile-level Signaling and Scheduling for Mixture-of-Experts</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Minyu Cui, Anna Wingkvist, Morgan Ericsson · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.DC</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">mixture-of-experts</span><span class="tag tag-kw">distributed inference</span><span class="tag tag-kw">communication overlap</span><span class="tag tag-kw">gpu scheduling</span></div>
+  <div class="summary-en">This paper targets communication latency in distributed Mixture-of-Experts inference, where return all-to-all communication typically waits for expert computation to finish. It proposes tile-level signaling and scheduling with persistent producer computation kernels and persistent consumer communication kernels to overlap expert compute with communication. Evaluations on multi-GPU MoE models show improved end-to-end and layer-level performance while preserving correctness.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文针对分布式混合专家模型中的通信延迟问题，即传统实现通常在专家计算完成后才启动返回all-to-all通信。论文提出基于tile级信号与调度的方案，用持久化生产者计算内核和持久化消费者通信内核重叠专家计算与通信。多GPU MoE模型评估显示，该方法在保持正确性的同时提升端到端和MoE层级性能。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19539v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19539v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19532v1" target="_blank">Trustworthy Privacy-Preserving Multimodal Federated Learning for Personalised Breast Cancer Prediction</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Ruth Amey, Muhammad Arifur Rahman, Taha Osman, Nicholas Shopland et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">federated learning</span><span class="tag tag-kw">breast cancer prediction</span><span class="tag tag-kw">multimodal health data</span><span class="tag tag-kw">privacy preservation</span></div>
+  <div class="summary-en">This paper investigates privacy-preserving multimodal federated learning for personalized breast cancer progression prediction. It evaluates a federated framework using clinical, tumor, biomarker, demographic, and imaging data, comparing federated modeling with centralized training while considering transparency, scalability, security, and fairness. The study assesses whether federated learning can preserve data locality while maintaining predictive performance and supporting future personalized clinical planning tools.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究用于个性化乳腺癌进展预测的隐私保护多模态联邦学习。研究评估一个结合临床信息、肿瘤特征、生物标志物、人口统计信息和医学影像的联邦框架，并与集中式训练比较，同时考虑透明性、可扩展性、安全性和公平性。论文评估联邦学习是否能在保持数据本地性的同时维持预测性能，并支持未来个性化临床规划工具。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19532v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19532v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19528v1" target="_blank">D3VL: Understanding Driving Scenes from 3D Time Series Data and Video with Language Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Heesang Han, A. Lynn Abbott, Abhijit Sarkar · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multimodal llm</span><span class="tag tag-kw">autonomous driving</span><span class="tag tag-kw">lidar</span><span class="tag tag-kw">3d scene understanding</span></div>
+  <div class="summary-en">This paper introduces D3VL, a multimodal large language model framework for driving-scene understanding with 2D and 3D time-series inputs. It addresses the difficulty of incorporating sparse, non-grid LiDAR and stereo-camera data into MLLM pipelines through a unified architecture for traffic scene question answering and safety reasoning. The authors report improved performance on KITTI QA and introduce a Waymo QA extension for evaluating 3D and temporal driving-scene understanding.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出D3VL，一个用于驾驶场景理解的多模态大语言模型框架，融合2D与3D时间序列输入。论文针对稀疏、非网格化LiDAR和立体相机数据难以集成到MLLM流程的问题，构建统一架构以支持交通场景问答和安全理解。作者报告其在KITTI QA上优于基线，并引入Waymo QA扩展来评估3D与时序驾驶场景理解能力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19528v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19528v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19524v1" target="_blank">SynPre-FL: Synthetic data-driven pretraining integrated Federated Learning training framework</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Akarsh K Nair, Muhammad Arifur Rahman, Nicholas Shopland, Andy Burton et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.DC</span><span class="tag tag-kw">federated learning</span><span class="tag tag-kw">synthetic ehr</span><span class="tag tag-kw">clinical prediction</span><span class="tag tag-kw">non-iid robustness</span></div>
+  <div class="summary-en">This paper proposes SynPre-FL, a synthetic-data-driven pretraining framework for federated clinical risk prediction under non-IID conditions. It uses a latent autoencoder-diffusion model to generate privacy-preserving synthetic EHR cohorts for warm-starting federated training, followed by heterogeneity-aware optimization, calibration, and explainability. The authors claim improved robustness, scalability, calibration, and stable feature attributions across heterogeneous federated settings.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出SynPre-FL，一个面向非独立同分布临床风险预测的合成数据预训练联邦学习框架。方法使用潜在自编码器-扩散模型生成隐私保护的合成电子健康记录队列来热启动联邦训练，并结合异质性感知优化、校准和可解释性分析。作者声称该框架在异质联邦场景中提升了鲁棒性、可扩展性、概率校准和特征归因稳定性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19524v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19524v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19518v1" target="_blank">Sophisticated Policies from Epistemic Priors</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Wouter W. L. Nuijten, Bert de Vries · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">active inference</span><span class="tag tag-kw">closed-loop planning</span><span class="tag tag-kw">epistemic priors</span><span class="tag tag-kw">state-contingent control</span></div>
+  <div class="summary-en">This paper analyzes Sophisticated Inference in active inference, arguing that its key role is enabling closed-loop planning in which future actions depend on future states and observations. It represents this structure within an epistemic-prior variational free energy framework and evaluates it in a stochastic Reactivity Maze benchmark. The results suggest that both epistemic drive and closed-loop state-contingent control are necessary for reliable information seeking and goal reaching.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文分析主动推断中的Sophisticated Inference，认为其核心作用在于实现闭环规划，使未来动作依赖未来状态和观测。论文将这种结构表示在认知先验变分自由能框架中，并在随机Reactivity Maze基准上进行评估。结果表明，认知驱动和闭环状态条件控制二者都对可靠的信息搜寻与目标达成是必要的。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19518v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19518v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.21641v1" target="_blank">Tool-Guided Retrieval-Augmented Repair for Securing LLM-Generated C Code</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Vidyut Sriram, Saatvik Pradhan, Suman Saha · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm code generation</span><span class="tag tag-kw">program repair</span><span class="tag tag-kw">static analysis</span><span class="tag tag-kw">tool feedback</span></div>
+  <div class="summary-en">This paper studies how tool feedback and retrieval can improve the security and compilability of LLM-generated C code. It proposes an iterative repair workflow combining compiler diagnostics, CodeQL static analysis, KLEE symbolic execution, and retrieval of prior repair patterns. Evaluations on C programming tasks show reduced compilation failures and security defects, supporting the claim that lightweight analysis tools can improve generated code reliability.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究工具反馈与检索如何提升LLM生成C代码的安全性和可编译性。方法上提出迭代修复流程，结合编译诊断、CodeQL静态分析、KLEE符号执行以及历史修复模式检索。基于C编程任务的评估显示，该方法降低了编译失败和安全缺陷，支持轻量分析工具可提升生成代码可靠性的结论。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.21641v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.21641v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19490v1" target="_blank">Integrity of peer-to-peer distributed LLM inference under malicious nodes</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Mert Cihangiroglu, Antonino Nocera · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">distributed llm inference</span><span class="tag tag-kw">integrity checking</span><span class="tag tag-kw">malicious nodes</span><span class="tag tag-kw">activation drift</span></div>
+  <div class="summary-en">This paper addresses integrity checking in peer-to-peer distributed LLM inference, where independent nodes can tamper with intermediate layer outputs. It proposes secret canary inputs with known reference activations, mixed into normal traffic, and models malicious-node detection as a probabilistic test over activation drift distributions. The authors report perfect ranking of malicious shards over benign shards across the studied configurations, arguing that activation-variation checks can detect tampering without full trusted recomputation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究点对点分布式LLM推理中的完整性检查问题，其中独立节点可能篡改中间层输出。方法使用具有已知参考激活的秘密金丝雀输入混入正常流量，并将恶意节点识别建模为基于激活漂移分布的概率检验。作者报告在所研究配置中恶意分片均被排在良性分片之上，认为激活变化检查可在无需完全可信重算的情况下检测篡改。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19490v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19490v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19479v1" target="_blank">ModPack: An Extensible Teleoperation Interface for Bimanual Mobile Manipulation</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Joshua Citron, Renee Zbizika, Zeyi Liu, Shuran Song · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">teleoperation</span><span class="tag tag-kw">bimanual manipulation</span><span class="tag tag-kw">robot interface</span><span class="tag tag-kw">policy learning</span></div>
+  <div class="summary-en">This paper presents ModPack, a modular teleoperation interface for bimanual mobile manipulation across different robot platforms. The system centers on a wearable backpack integrating computation, power, communication, and storage, with plug-and-play modules for haptics, mobile manipulation, and active perception. Experiments on two robot platforms and real-world tasks support its use as a reusable framework for data collection and policy learning.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出ModPack，一个面向双臂移动操作的模块化遥操作接口，可适配不同机器人平台。系统以集成计算、电源、通信和存储的可穿戴背包为核心，并支持触觉反馈、移动操作和主动感知等即插即用模块。作者在两个机器人平台和真实任务上实验，表明该系统可作为数据收集与策略学习的可复用框架。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19479v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19479v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19345v1" target="_blank">Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Lizhe Fang, Weizhou Shen, Tianyi Tang, Yisen Wang · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">long-context reasoning</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">evidence grounding</span><span class="tag tag-kw">repetitive copying</span></div>
+  <div class="summary-en">This paper identifies repetitive copying as a failure mode in long-context reasoning, where LLMs copy prompt text into reasoning traces instead of grounding on relevant evidence. It proposes GEAR, a reinforcement-learning reward shaping method that rewards overlap with key evidence and penalizes overlap with distractor context, supported by an automated pipeline for evidence-annotated data construction. The authors report improved benchmark performance, reduced copying, and shorter reasoning traces, especially in longer-context settings.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文指出长上下文推理中的一种失败模式：LLM在推理轨迹中重复复制提示文本，而不是基于关键证据进行求解。论文提出GEAR奖励塑形方法，奖励与关键证据的重合并惩罚与干扰上下文的重合，同时构建自动化流程生成带证据标注的训练数据。作者报告该方法提升基准表现、减少重复复制并缩短思考长度，尤其在更长上下文中收益更明显。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19345v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19345v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.19344v1" target="_blank">Appearance Pointers -- Multimodal Region Control of Diffusion Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Rahul Sajnani, Yulia Gryaditskaya, Radomír Měch, Srinath Sridhar et al. · 2026-07-21</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.GR</span><span class="tag tag-kw">diffusion transformers</span><span class="tag tag-kw">multimodal control</span><span class="tag tag-kw">region guidance</span><span class="tag tag-kw">image generation</span></div>
+  <div class="summary-en">This paper addresses localized multimodal control in Diffusion Transformers for image generation. It introduces appearance pointers, compact tokens produced from text or image inputs and user-specified masks via a region correspondence network and spatial aggregation, enabling regional control without retraining the base model from scratch. The authors claim the approach matches or exceeds modality-specific state-of-the-art methods while offering a unified interface for region-aware multimodal guidance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究扩散Transformer图像生成中的局部多模态控制问题。论文提出外观指针，即由文本或图像输入与用户指定掩码通过区域对应网络和空间聚合生成的紧凑token，使模型无需从头重训基础模型即可进行区域控制。作者声称该方法达到或超过特定模态的先进方法，并提供统一的区域感知多模态引导接口。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.19344v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.19344v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 157 篇低相关文章未显示</div>
+<a class="back-top" href="#top">顶部</a>
 
 <footer>
   <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>

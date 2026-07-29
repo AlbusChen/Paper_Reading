@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>论文日报 2026-07-15</title>
+<title>论文日报 2026-07-15 · llm agents / reinforcement learning / tool use</title>
 <style>
   :root {
     --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
@@ -75,7 +75,7 @@
 <div id="top" class="container">
 
 <header>
-  <h1>📄 论文日报 · 2026年07月15日</h1>
+  <h1>📄 论文日报 · 2026年07月15日 · llm agents / reinforcement learning / tool use</h1>
   <p>Daily Paper Digest · July 15, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
   <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
     <a href="2026-07-14.html">← 07-14</a>
@@ -90,211 +90,1234 @@
 </header>
 
 <div class="stats">
-  <div class="stat">总计 <span>15</span> 篇</div>
-  <div class="stat">高度相关 <span>0</span> 篇</div>
-  <div class="stat">相关 <span>0</span> 篇</div>
-  <div class="stat">HF Daily <span>14</span> 篇</div>
+  <div class="stat">总计 <span>224</span> 篇</div>
+  <div class="stat">高度相关 <span>10</span> 篇</div>
+  <div class="stat">相关 <span>46</span> 篇</div>
+  <div class="stat">HF Daily <span>5</span> 篇</div>
   <div class="stat">技术报告 <span>0</span> 篇</div>
-  <div class="stat" style="color:var(--muted)">更新于 2026-07-16 01:39 UTC</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-07-29 11:37 UTC</div>
 </div>
 <div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>
 
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.10400" target="_blank">SynthDocBench: Controlled Benchmark for Long-Context Visual Document Understanding</a>
+    <a href="https://arxiv.org/abs/2607.11562v1" target="_blank">MonkeyOCRv2: A Visual-Text Foundation Model for Document AI</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">V i s i o n l a n g u a g e m o d e l s ( V L M s ) h a v e a c h i e v e d s t r o n g p e r f o r m a n c e o n v i s u a l d o c u m e n t u n d e r s t a n d i n g b e n c h m a r k s s u c h a s D o c V Q A , C h a r t Q A , a n d M M L o n g B e n c h - D o c . H o w e v e r , r e a l - w o r ...</div>
+  <div class="paper-meta">Yuliang Liu, Zhang Li, Ziyang Zhang, Shuo Zhang et al. · 2026-07-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">document ai</span><span class="tag tag-kw">visual-text pretraining</span><span class="tag tag-kw">ocr</span><span class="tag tag-kw">document understanding</span></div>
+  <div class="summary-en">This paper presents MonkeyOCRv2, a document-oriented visual-text foundation model designed to handle dense text, character strokes, and layouts in document images. It constructs a large multilingual document-image corpus and jointly trains image-to-text generation with pixel-level reconstruction, showing improved performance across document analysis, parsing, and understanding tasks when used as an encoder.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 MonkeyOCRv2，一种面向文档图像的视觉-文本基础模型，旨在处理密集文本、字符笔画和版面细节。作者构建大规模多语言文档图像预训练语料，并联合训练图像到文本生成和像素级文档重建；实验表明，将其作为编码器可提升多种文档分析、解析和理解任务表现。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.10400" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.10400" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.11562v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11562v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.05382" target="_blank">Search Beyond What Can Be Taught: Evolving the Knowledge Boundary in Agentic Visual Generation</a>
+    <a href="https://arxiv.org/abs/2607.11111v1" target="_blank">Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">V i s u a l g e n e r a t o r s e x c e l a t r e n d e r i n g , b u t t h e y c o n f i d e n t l y f a b r i c a t e w h a t t h e y d o n o t k n o w . U s e r r e q u e s t s a r e u n b o u n d e d , e v o l v i n g , a n d d e e p l y l o n g - t a i l e d : n e w c h a r a c t e r s , t r e ...</div>
+  <div class="paper-meta">Haotian Lin, Silin Chen, Xiaodong Gu, Yuling Shi et al. · 2026-07-13</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">coding agents</span><span class="tag tag-kw">repository understanding</span><span class="tag tag-kw">software repair</span><span class="tag tag-kw">qa collaboration</span></div>
+  <div class="summary-en">This paper proposes ACQUIRE, a QA-driven framework for software issue resolution by coding agents. It separates repository knowledge acquisition from patch generation: a Questioner and Answerer collaboratively produce evidence-grounded repository knowledge, which a Resolver then uses to generate patches, improving SWE-bench Verified Pass@1 over representative pre-repair methods with modest extra cost and time.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 ACQUIRE，一个面向编码代理软件缺陷修复的问答驱动框架。该方法将仓库知识获取与补丁生成解耦：Questioner 提出针对性问题，Answerer 通过自主探索给出有证据支撑的答案，Resolver 再利用结构化 QA 知识生成补丁；在 SWE-bench Verified 上相较代表性预修复方法提升 Pass@1，且额外成本和时间较小。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.05382" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.05382" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.11111v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11111v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.08317" target="_blank">Blind-Spots-Bench: Evaluating Blind Spots in Multimodal Models</a>
+    <a href="https://arxiv.org/abs/2607.08168v1" target="_blank">MuScriptor: An Open Model for Multi-Instrument Music Transcription</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M o d e r n A I m o d e l s a c h i e v e s t r o n g p e r f o r m a n c e o n m a n y e s t a b l i s h e d b e n c h m a r k s , y e t t h e y s t i l l f a i l o n t a s k s t h a t h u m a n s f i n d a l m o s t t r i v i a l , s u c h a s m a n i p u l a t i n g a s t r i n g o r d r a w i n ...</div>
+  <div class="paper-meta">Simon Rouard, Michael Krause, Axel Roebel, Carl-Johann Simon-Gabriel et al. · 2026-07-09</div>
+  <div class="tags"><span class="tag tag-kw">cs.SD</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">music transcription</span><span class="tag tag-kw">multi-instrument audio</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">open model</span></div>
+  <div class="summary-en">This paper introduces MuScriptor, an open-weight model for multi-instrument music transcription in realistic music recordings. It analyzes synthetic pretraining, fine-tuning on real audio, reinforcement-learning post-training, and instrument-presence conditioning, aiming to overcome the poor generalization of prior synthetic-data approaches to complex multi-instrument mixes.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 MuScriptor，一个用于真实音乐录音中多乐器转录的开放权重模型。作者分析合成数据预训练、真实音乐音频微调、强化学习后训练以及乐器存在条件控制，目标是改善以往依赖合成数据的方法在复杂多乐器混音上的泛化不足。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.08317" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.08317" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.08168v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.08168v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.12463" target="_blank">Function-Aware Fill-in-the-Middle as Mid-Training for Coding Agent Foundation Models</a>
+    <a href="https://arxiv.org/abs/2603.28583v2" target="_blank">Navigating the Mirage: A Dual-Path Agentic Framework for Robust Misleading Chart Question Answering</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">C o d i n g a g e n t s m u s t i n t e g r a t e e x t e r n a l t o o l r e t u r n s i n t o o n g o i n g r e a s o n i n g - a c a p a b i l i t y t h a t s t a n d a r d l e f t - t o - r i g h t p r e t r a i n i n g o n c o d e e x p o s e s o n l y i n i t s f o r w a r d d i r e c t i o n ...</div>
+  <div class="paper-meta">Yanjie Zhang, Yafei Li, Rui Sheng, Zixin Chen et al. · 2026-03-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.MM</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">chart qa</span><span class="tag tag-kw">vision-language models</span><span class="tag tag-kw">agentic workflow</span><span class="tag tag-kw">robust reasoning</span></div>
+  <div class="summary-en">The paper addresses misleading chart question answering, where deceptive visual structures and distorted data representations challenge vision-language models. It proposes ChartCynics, a dual-path agentic framework that separates diagnostic visual inspection from OCR-based numerical grounding and uses an Agentic Summarizer trained with oracle-informed SFT and deception-aware GRPO to resolve cross-modal conflicts. Evaluations on two benchmarks report improved robustness and accuracy over the Qwen3-VL-8B backbone and state-of-the-art proprietary models.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究误导性图表问答问题，指出欺骗性视觉结构和失真数据表示会显著削弱视觉语言模型的可靠性。作者提出 ChartCynics 双路径智能体框架，将结构异常诊断的视觉路径与基于 OCR 的数值 grounding 路径解耦，并通过经过 Oracle-Informed SFT 和 Deception-Aware GRPO 训练的 Agentic Summarizer 解决跨模态冲突。实验显示，该方法在两个基准上提升了鲁棒性和准确率，并优于其 Qwen3-VL-8B 骨干及若干先进专有模型。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.12463" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.12463" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2603.28583v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2603.28583v2" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.11111" target="_blank">Know Before Fix: QA-Driven Repository Knowledge Acquisition for Software Issue Resolution</a>
+    <a href="https://arxiv.org/abs/2607.11079v1" target="_blank">Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists</a>
     <span class="relevance rel-med">HF Daily</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">L L M - b a s e d c o d i n g a g e n t s h a v e s i g n i f i c a n t l y a d v a n c e d a u t o m a t e d s o f t w a r e i s s u e r e s o l u t i o n , y e t t h e y r e m a i n h i g h l y p r o n e t o f a c t u a l e r r o r s c a u s e d b y i n s u f f i c i e n t r e p o s i t o r y u n ...</div>
+  <div class="paper-meta">Chuhan Shi, Xiaoquan Ren, Sicheng Song, Haobo Li et al. · 2026-07-13</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">llm benchmark</span><span class="tag tag-kw">scientific discovery</span><span class="tag tag-kw">data analysis</span><span class="tag tag-kw">mechanistic reasoning</span></div>
+  <div class="summary-en">The paper argues that current scientific data analysis benchmarks for LLMs overemphasize code execution or workflow completion while neglecting the claim-specific capabilities needed for scientific discovery. It introduces SDABench, a benchmark organized around six scientific analysis capabilities across five domains, with both real and synthetic instances in multiple-choice and open-ended formats. Evaluation of 15 LLMs shows that models perform relatively well on descriptive analysis but struggle with assumption selection, latent-process modeling, mechanistic reasoning, procedure choice, relationship modeling, and valid conclusion drawing.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文指出，现有科学数据分析基准主要评估大语言模型的代码执行或流程完成能力，却忽视了支撑不同科学主张所需的能力差异。作者提出 SDABench，围绕描述性、探索性、推断性、预测性、因果性和机制性六类能力，在五个科学领域构建真实与合成数据实例，并包含选择题和开放题形式。对 15 个代表性大语言模型的评测表明，模型在描述性分析上表现较好，但在假设选择、潜在过程建模、机制推理、分析程序选择、变量关系建模和有效结论生成方面仍存在明显不足。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.11111" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.11111" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.11079v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.11079v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div id="related-papers" class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13998v1" target="_blank">The Dynamic Verifiable Multi-Agent Human Agentic Loyalty Loop (DVM-HALL) Model and the Net Human-Agent Score (NHAS) in Autonomous Commerce</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Sai Srikanth Madugula, Peplluis Esteva de la Rosa, Daya Shankar · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SI</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.GT</span><span class="tag tag-kw">agentic commerce</span><span class="tag tag-kw">human-agent alignment</span><span class="tag tag-kw">multi-agent markets</span><span class="tag tag-kw">trust modeling</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">This paper argues that autonomous purchasing agents disrupt traditional customer loyalty models because brand choice becomes jointly shaped by human preferences, machine utility, trust, delegation, and execution risk. It introduces the DVM-HALL model with recursive trust/delegation updates and a verifiable execution layer for DeFi and tokenized loyalty settings, plus the NHAS metric for auditing human-agent alignment. The work is primarily a theoretical framework with a proposed empirical validation plan using shopping experiments, multi-agent market simulations, and DeFi testbeds.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文认为，自主购买代理会改变传统客户忠诚模型，因为品牌选择同时受到人类情感权益、机器体验效用、信任、授权和执行风险的影响。作者提出 DVM-HALL 模型，引入递归的信任与授权更新机制、面向 DeFi 和代币化忠诚场景的可验证执行层，以及用于审计人机对齐的 NHAS 指标。该研究主要是理论框架，并提出通过购物实验、多代理市场模拟和 DeFi 测试床进行验证。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13998v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13998v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.11562" target="_blank">MonkeyOCRv2: A Visual-Text Foundation Model for Document AI</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13359v2" target="_blank">Learning Latency-Aware Orchestration for Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M a i n s t r e a m v i s u a l e n c o d e r s a r e p r e t r a i n e d o n n a t u r a l i m a g e s a n d c a n n o t b e e f f e c t i v e l y a p p l i e d t o d o c u m e n t i m a g e s w i t h o u t d o c u m e n t - o r i e n t e d a d a p t a t i o n , a s d e n s e t e x t a n d f i n e ...</div>
+  <div class="paper-meta">Xi Shi, Mengxin Zheng, Qian Lou · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent orchestration</span><span class="tag tag-kw">latency optimization</span><span class="tag tag-kw">execution graphs</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper studies latency in LLM-based multi-agent systems, where structured workflows improve reasoning but create long critical execution paths. It proposes LAMaS, a latency-aware orchestration framework that learns execution graphs with critical-path-aware credit assignment and uses a lightweight inference-time controller to remove redundant future interactions. Experiments on four benchmarks report more than 50% end-to-end latency reduction while maintaining competitive or better accuracy.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究 LLM 多代理系统中的延迟问题，这类系统通过结构化工作流增强推理能力，但多步执行和重复调用会拉长关键路径。作者提出 LAMaS，通过带约束优化和关键路径感知的信用分配学习执行图，并在推理时用轻量控制器自适应删除冗余的后续代理交互。四个基准实验显示，该方法在保持相近或更好准确率的同时，将端到端延迟降低超过 50%。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.11562" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.11562" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13359v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13359v2" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.08168" target="_blank">MuScriptor: An Open Model for Multi-Instrument Music Transcription</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.14262v1" target="_blank">Stochastic Filtering for Quorum Sensing in Robot Swarms under Anonymous Communication</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">E x i s t i n g m e t h o d s f o r a u t o m a t i c m u s i c t r a n s c r i p t i o n a r e o f t e n l i m i t e d t o s i n g l e - i n s t r u m e n t r e c o r d i n g s o r f a i l o n c o m p l e x , r e a l m u s i c m i x e s . A l t h o u g h p r e v i o u s w o r k u t i l i z e s s y ...</div>
+  <div class="paper-meta">Fabio Oddi, Andreagiovanni Reina, Vito Trianni · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">robot swarms</span><span class="tag tag-kw">anonymous communication</span><span class="tag tag-kw">quorum sensing</span><span class="tag tag-kw">message filtering</span><span class="tag tag-kw">communication protocol</span></div>
+  <div class="summary-en">This paper addresses quorum sensing in robot swarms under anonymous communication, where repeated messages from indistinguishable senders can bias collective estimates. It introduces a stochastic filtering protocol inspired by k-priority sampling and compares it against baseline anonymous communication variants. The study finds that filtering stabilizes quorum estimates and reduces temporary errors, but increases recovery time after errors.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究匿名通信条件下机器人群体的法定人数感知问题，其中个体无法识别消息来源，重复消息可能被重复计数并造成估计偏差。作者提出一种受 k-priority sampling 启发的随机过滤协议，并与基线匿名通信协议及其随机化变体进行比较。结果表明，该过滤方法能够稳定估计并减少暂时误差，但代价是错误后的恢复时间增加。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.08168" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.08168" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.14262v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14262v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.10522" target="_blank">Towards Autonomous and Auditable Medical Imaging Model Development</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13444v2" target="_blank">Stress-Sharing for Decentralized Fault Repair in Modular Spacecraft</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">L a r g e l a n g u a g e m o d e l ( L L M ) a g e n t s a r e b e g i n n i n g t o a u t o m a t e m a c h i n e l e a r n i n g e n g i n e e r i n g ( M L E ) b y c o u p l i n g p l a n n i n g , c o d e e x e c u t i o n , d e b u g g i n g , a n d e m p i r i c a l f e e d b a c k . T r a n ...</div>
+  <div class="paper-meta">Sidhdharth D. Sikka, Yue Shen, Shaoshuai Mou · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">eess.SY</span><span class="tag tag-kw">decentralized repair</span><span class="tag tag-kw">modular spacecraft</span><span class="tag tag-kw">swarm robotics</span><span class="tag tag-kw">local coordination</span><span class="tag tag-kw">decentralized</span></div>
+  <div class="summary-en">This paper studies autonomous repair in modular spacecraft after structural damage disrupts mechanical and communication connectivity. It models the spacecraft as a lattice-constrained graph and proposes a decentralized asynchronous stress-sharing policy in which local distress signals guide surviving modules to reconnect fragmented structures and then retrace movements to recover shape. PyBullet simulations show that the policy consolidates many surviving modules into a connected body even under severe damage.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究模块化航天器在结构损伤导致机械和通信连接受损后的自主修复问题。作者将航天器建模为受晶格约束的图，并提出一种去中心化异步应力共享策略，使局部求救信号引导幸存模块闭合断裂区域，再通过本地回溯恢复原形。PyBullet 仿真表明，即使在严重损伤下，该策略也能将大量幸存模块重新整合为连通结构。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.10522" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.10522" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13444v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13444v2" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.07769" target="_blank">Principled Analysis of Deep Reinforcement Learning Evaluation and Design Paradigms</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13880v1" target="_blank">Task-Oriented Sensing and Covert Transmissions for Collaborative Multi-AUV Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">S t a r t i n g f r o m t h e u t i l i z a t i o n o f d e e p n e u r a l n e t w o r k s t o a p p r o x i m a t e t h e s t a t e - a c t i o n v a l u e f u n c t i o n t h a t l e d t o w i n n i n g o n e o f t h e m o s t c h a l l e n g i n g g a m e s , t o a l g o r i t h m i c a d v a n ...</div>
+  <div class="paper-meta">Xueyao Zhang, Chenyang Yan, Bo Yang, Xuelin Cao et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">multi-auv systems</span><span class="tag tag-kw">covert communication</span><span class="tag tag-kw">marl</span><span class="tag tag-kw">information sharing</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper studies collaborative multi-AUV missions under covert underwater communication constraints, where passive sensing gives incomplete local perception and acoustic communication risks exposure. It proposes SVR-MARL, a framework that values sensed information for cooperative tasks and learns distributed policies under realistic delay, reliability, and covert constraints. A cooperative localization and tracking case study demonstrates potential improvements in task efficiency while reducing unnecessary communication and exposure risk.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究隐蔽水下协作任务中的多 AUV 系统，其中被动感知导致局部信息不完整，而水声通信又受到延迟、干扰、可靠性和暴露风险限制。作者提出 SVR-MARL 框架，用实际感知信息价值刻画信息对协同任务的效用，并在现实通信与隐蔽约束下学习分布式策略。多 AUV 协同定位与跟踪案例表明，该方法有望提高任务效率并减少不必要通信和暴露风险。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.07769" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.07769" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13880v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13880v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2603.28583" target="_blank">Navigating the Mirage: A Dual-Path Agentic Framework for Robust Misleading Chart Question Answering</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13474v1" target="_blank">MyAG: A Graph-Based Framework for Designing and Analyzing Composable LLM Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">D e s p i t e t h e s u c c e s s o f V i s i o n - L a n g u a g e M o d e l s ( V L M s ) , m i s l e a d i n g c h a r t s r e m a i n a s i g n i f i c a n t c h a l l e n g e d u e t o t h e i r d e c e p t i v e v i s u a l s t r u c t u r e s a n d d i s t o r t e d d a t a r e p r e s e n t ...</div>
+  <div class="paper-meta">Zhisong Zhang · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm agent systems</span><span class="tag tag-kw">graph framework</span><span class="tag tag-kw">orchestration</span><span class="tag tag-kw">composability</span></div>
+  <div class="summary-en">This paper presents MyAG, a graph-based framework for designing and analyzing composable LLM agent systems. It separates system construction into component, workflow, and runtime search graphs, enabling reuse of agents, environments, and modules under different execution strategies. The framework also supports hierarchical composition, monitoring, and visualization, with experiments showing utility for analyzing performance-efficiency tradeoffs.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 MyAG，一个用于设计和分析可组合 LLM 代理系统的图框架。该框架将系统构建分为组件图、工作流图和运行时搜索图，使代理、环境和模块能够在不同执行策略下复用。它还支持层次化组合、监控和可视化，实验展示了其在分析性能与效率权衡方面的作用。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2603.28583" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2603.28583" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13474v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13474v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.12450" target="_blank">Let RGB Be the Language of Vision</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13465v1" target="_blank">DevicesWorld: Benchmarking Cross-Device Agents in Heterogeneous Environments</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">T h i s w o r k i n t r o d u c e s a u n i f i e d f o r m u l a t i o n f o r v i s i o n m o d e l s , w h e r e d i v e r s e f o r m s o f v i s u a l i n f o r m a t i o n b e y o n d n a t u r a l i m a g e s , s u c h a s m a s k s , d e p t h m a p s , a n d o t h e r s t r u c t u r e d v ...</div>
+  <div class="paper-meta">Huatao Li, Xinwei Geng, Yuheng Wang, Yutong Li et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.HC</span><span class="tag tag-kw">cross-device agents</span><span class="tag tag-kw">heterogeneous environments</span><span class="tag tag-kw">agent benchmark</span><span class="tag tag-kw">task verification</span></div>
+  <div class="summary-en">DevicesWorld benchmarks LLM agents on cross-device tasks spanning mobile, desktop, and IoT environments, motivated by real user goals that require acquiring and integrating information across heterogeneous devices. It provides 6,140 executable tasks with natural-language goals, device states, actions, verifiers, and cleanup procedures. Evaluation of five frontier agent systems shows low success rates and diagnoses failures in information acquisition, interface manipulation, source-output device confusion, and incomplete task termination.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">DevicesWorld 面向跨设备任务评测 LLM 代理，覆盖移动端、桌面端和 IoT 环境，针对现实用户目标常需在异构设备间获取、整合并输出信息的问题。该基准包含 6,140 个可执行任务，定义自然语言目标、参与设备、初始状态、可执行动作、规则验证器和清理流程。对五个前沿代理系统的评测显示成功率较低，并揭示信息获取、界面操作、源设备与输出设备混淆以及过早终止等失败模式。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.12450" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.12450" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13465v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13465v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.08046" target="_blank">What LLM Forecasters Know but Don't Say: Probing Internal Representations for Calibration and Faithfulness</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13607v1" target="_blank">Equilibrium stability as a driver of cooperation among Q-learners</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">L a r g e l a n g u a g e m o d e l s f i n e - t u n e d f o r f o r e c a s t i n g c a n b e a c c u r a t e y e t p o o r l y c a l i b r a t e d , a n d t h e i r c h a i n - o f - t h o u g h t ( C o T ) r e a s o n i n g m a y n o t f a i t h f u l l y r e f l e c t t h e e v i d e n c e b e ...</div>
+  <div class="paper-meta">Janusz M. Meylahn, Maximilian Schäfer · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">econ.GN</span><span class="tag tag-kw">econ.TH</span><span class="tag tag-kw">multi-agent learning</span><span class="tag tag-kw">q-learning</span><span class="tag tag-kw">cooperation</span><span class="tag tag-kw">algorithmic collusion</span></div>
+  <div class="summary-en">This paper studies cooperation among constantly exploring Q-learning pricing algorithms, motivated by concerns over algorithmic collusion. Instead of convergence to a fixed strategy, it analyzes the fraction of time algorithms spend playing cooperative strategies under persistent exploration. The abstract derives a boundary from expected Q-learning dynamics that predicts when cooperation dominates and validates it through simulations in repeated Prisoner&#x27;s Dilemma settings.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究持续探索的 Q-learning 定价算法之间的合作行为，背景是算法合谋对社会福利的影响。作者不再关注是否收敛到固定策略，而是在持续探索下分析算法花费多少时间采取合作策略。摘要基于 Q-learning 期望动态推导了预测合作占优的边界，并在重复囚徒困境模拟中验证其预测能力。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.08046" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.08046" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13607v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13607v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.11079" target="_blank">Are LLMs Ready for Scientific Discovery? A Capability-Oriented Benchmark for AI Scientists</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.14396v1" target="_blank">CatalogAgent: A Supervisor-mediated Self-Learning System Enabling Context Engineering for GenAI Models</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">E x i s t i n g b e n c h m a r k s f o r s c i e n t i f i c d a t a a n a l y s i s e v a l u a t e L L M s p r i m a r i l y o n c o d e e x e c u t i o n o r w o r k f l o w c o m p l e t i o n , o v e r l o o k i n g t h a t s c i e n t i f i c a n a l y s i s s e r v e s t o s u p p o r t d i ...</div>
+  <div class="paper-meta">Zhu Cheng, Zhenming Wang, Yu, Tang et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">supervisor agent</span><span class="tag tag-kw">context engineering</span><span class="tag tag-kw">agent memory</span><span class="tag tag-kw">catalog enrichment</span></div>
+  <div class="summary-en">CatalogAgent addresses missing structured attributes in e-commerce catalogs where LLM generator and evaluator components may disagree or receive corrective seller feedback. It introduces a Supervisor Agent, Memory Base, and Memory Summarizer that mediate conflicts, store case-level decisions, aggregate learnings, and inject them back into worker LLM contexts. The paper claims this supervisor-mediated context engineering improves generator and evaluator performance by reported margins and demonstrates self-improvement without human intervention.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CatalogAgent 针对电商目录中结构化属性缺失的问题，尤其是 LLM 生成器与评估器输出冲突或收到卖家反馈时的决策困难。该系统引入监督智能体、记忆库和记忆总结器，用于调解冲突、保存个案活动、归纳经验，并将这些经验注入工作模型上下文。论文声称这种由监督智能体介导的上下文工程能提升生成器和评估器性能，并实现无需人工干预的自我改进。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.11079" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.11079" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.14396v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14396v1" target="_blank">📥 PDF</a>
   </div>
 </div>
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.11594" target="_blank">MAGIC: Transition-Aware Generation of Navigable Multi-Scene Game Worlds with Large Language Models</a>
-    <span class="relevance rel-med">HF Daily</span>
+    <a href="https://arxiv.org/abs/2607.13679v1" target="_blank">When Bots Join the Team: Bot Adoption and the Institutional Fabric of Open-Source Software Projects</a>
+    <span class="relevance rel-high">★ 高度相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">hf daily</span></div>
-  <div class="summary-en">M u l t i - s c e n e n a v i g a t i o n ( c l e a r i n g a n o b j e c t i v e i n o n e b o u n d e d s p a c e a n d t h e n c r o s s i n g a p o r t a l i n t o t h e n e x t ) i s a d e f i n i n g f e a t u r e o f c o n t e m p o r a r y 3 D g a m e s , b u t a u t h o r i n g i t i s l a ...</div>
+  <div class="paper-meta">Yongren Shi, Wenyi Gong · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.HC</span><span class="tag tag-kw">software bots</span><span class="tag tag-kw">human-agent teams</span><span class="tag tag-kw">coordination</span><span class="tag tag-kw">social infrastructure</span></div>
+  <div class="summary-en">The paper studies how adopting bots as regular participants affects the organization of open-source software projects. Using GitHub interaction records around first-bot adoption, it finds timed associations with repeated collaboration, social memory of bots, reduced conflict cascades, and more distinctive outputs, while explicitly avoiding causal claims due to the lack of an untreated comparison group.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究开源软件项目中将机器人作为常规参与者后，群体组织是否增强或削弱。作者基于 GitHub 项目首次采用 bot 前后的互动记录，发现 bot 采用与重复协作、对特定 bot 的社会记忆、较少冲突级联和更具差异化的产出相关，但由于缺少未处理对照组，论文将其解释为精确定时的关联而非因果效应。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.11594" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.11594" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.13679v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13679v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14178v2" target="_blank">ReasFlow: Assisting Reasoning-Centric Scientific Discovery in Applied Mathematics via a Knowledge-Based Multi-Agent System</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yutong He, Daibo Li, Guohong Li, Jiahe Geng et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">scientific discovery</span><span class="tag tag-kw">multi-agent system</span><span class="tag tag-kw">theorem proving</span><span class="tag tag-kw">knowledge retrieval</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">ReasFlow addresses the gap in autonomous scientific discovery systems for theory-driven applied mathematics, where rigorous reasoning, proof verification, and domain heuristics are difficult to automate. It proposes a knowledge-based autonomous agent system with internal verification, retrieval, and self-improvement mechanisms that support literature synthesis, theorem proving, experimentation, and manuscript preparation. The authors claim that ReasFlow generated five complete research papers from minimal prompts and outperformed open-access baselines under an LLM-based review rubric.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ReasFlow 面向理论驱动的应用数学科学发现，解决现有自动研究系统难以处理严谨推理、证明验证和领域启发式知识的问题。该系统采用知识驱动的自主代理架构，包含内部验证循环、知识检索和自我改进机制，支持文献综合、算法设计、定理证明、实验和论文撰写。作者称其能从少量提示生成五篇完整研究论文，并在基于 LLM 的评审标准下优于开放基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14178v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14178v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13524v1" target="_blank">COLMAR: Cooperative View Policy Learning for Multi-Agent Active 3D Reconstruction</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Phu Pham, Damon Conover, Aniket Bera · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">multi-agent robotics</span><span class="tag tag-kw">active 3d reconstruction</span><span class="tag tag-kw">cooperative policy</span><span class="tag tag-kw">view planning</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">The paper studies multi-agent active 3D reconstruction, where agents must select informative viewpoints under sensing budgets while avoiding redundant observations and clustering. It proposes COLMAR, a cooperative view policy learning framework with shared policy optimization over map-centric observations, reconstruction-aware rewards, parameter-sharing PPO, and independent per-agent deployment conditioned on a fused team map. Experiments on 3D reconstruction benchmarks report improved reconstruction accuracy and coverage over heuristic and non-cooperative baselines without inter-agent message passing at decision time.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究多智能体主动三维重建中的视角选择问题，要求在有限感知预算下减少冗余观测和空间聚集。作者提出 COLMAR，一种合作式视角策略学习框架，基于地图中心观测进行共享策略优化，使用重建感知目标和参数共享 PPO，并在部署时让各智能体基于融合团队地图独立选择动作。实验显示，该方法相较启发式和非合作基线提高了重建精度与覆盖率，且决策时不依赖智能体间消息传递。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13524v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13524v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14256v1" target="_blank">Automatic Hard Example Synthesis with Multi-Level Agentic Data Curation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Genglin Liu, Muye Zhang, Krishnamurthy Viswanathan, Nichole J. Hansen et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">agentic red-teaming</span><span class="tag tag-kw">multimodal safety</span><span class="tag tag-kw">data curation</span><span class="tag tag-kw">verification committee</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper targets robustness of multimodal large language models for content safety, where adversarial and out-of-distribution cases are hard to collect at scale. It proposes an automated agentic red-teaming framework with an Architect agent, image generation, and a multi-level LLM verification committee to synthesize hard examples. Using these examples as retrieval-based in-context demonstrations reduces false negatives on a public image safety benchmark without human labeling.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文面向多模态大语言模型的内容安全鲁棒性，关注对抗样本和分布外边界案例难以大规模获取的问题。作者提出自动化代理式红队框架，由 Architect 代理、图像生成器和多层 LLM 验证委员会组成，用于迭代合成困难样本。将这些样本作为检索式上下文示例后，目标模型在公开图像安全基准上的漏报率下降，且不依赖人工标注。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14256v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14256v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14037v2" target="_blank">Early Adoption of Agentic Coding Tools by GitHub Projects</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Maliha Noushin Raida, Daqing Hou · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">agentic coding</span><span class="tag tag-kw">github mining</span><span class="tag tag-kw">human-agent collaboration</span><span class="tag tag-kw">software engineering</span><span class="tag tag-kw">agent collaboration</span></div>
+  <div class="summary-en">This paper empirically studies project-level adoption of agentic coding tools in GitHub repositories using 25,264 agentic pull requests from 2,361 popular projects. It analyzes adoption intensity, productivity, and human-agent collaboration patterns, finding that intensive use is concentrated in few projects and that single-human oversight dominates. The work contributes evidence about organizational practices around agent-generated software contributions rather than multi-agent coordination.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文基于 2,361 个热门 GitHub 仓库中的 25,264 个代理生成拉取请求，实证研究项目层面对代理式编程工具的采用情况。研究分析采用强度、项目级生产率和人机协作模式，发现高强度使用集中在少数项目中，且单一人类监督模式占主导。该工作主要揭示代理生成代码贡献的组织实践，而非多代理协作机制。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14037v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14037v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13655v1" target="_blank">Explaining Reinforcement Learning Agents via Inductive Logic Programming</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Celeste Veronese, Edoardo Zorzi, Daniele Meli, Alessandro Farinelli · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">explainable rl</span><span class="tag tag-kw">inductive logic programming</span><span class="tag tag-kw">multi-agent rl</span><span class="tag tag-kw">specialization</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper addresses explainability for reinforcement learning agents by extracting symbolic policy representations with Inductive Logic Programming and defining objective metrics for those explanations. The proposed metrics measure rule activation, feature coverage, syntactic distance, and semantic distance, capturing alignment between rules and agent behavior as policies evolve. Experiments show that these metrics expose action-specific learning dynamics, feature roles, and coordination or specialization patterns in multi-agent reinforcement learning.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究强化学习代理的可解释性，使用归纳逻辑编程提取策略的符号表示，并提出客观的解释度量。所定义指标包括激活率、特征覆盖、句法距离和语义距离，用于衡量逻辑规则与代理行为之间的一致性及策略演化。实验表明，这些指标能够揭示动作层面的学习动态、特征作用，以及多智能体强化学习中的协调、专化和适应模式。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13655v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13655v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14275v1" target="_blank">AI Agents Do Not Fail Alone:The Context Fails First</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Fouad Bousetouane · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">context engineering</span><span class="tag tag-kw">agent evaluation</span><span class="tag tag-kw">tool use</span><span class="tag tag-kw">reliability</span></div>
+  <div class="summary-en">This paper argues that AI agent failures are strongly shaped by context quality, including instructions, tools, memory, retrieval, guardrails, and untrusted inputs. It introduces ProofAgent-Harness, a multi-juror evaluation infrastructure that scores context across seven criteria independently of behavioral outcomes. Controlled studies varying only operating context suggest that context-quality scores predict corresponding reliability behaviors such as hallucination resistance, tool use, and instruction following.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文认为，AI 代理失败在很大程度上由上下文质量决定，包括指令、工具、记忆、检索知识、护栏和不可信输入等因素。作者提出 ProofAgent-Harness，使用多评审共识评分，从七个维度独立评估上下文质量，而不与行为指标混同。控制实验仅改变运行上下文，结果显示上下文质量分数能够预测幻觉抵抗、工具使用和指令遵循等可靠性表现。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14275v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14275v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13591v1" target="_blank">Memory as a Controlled Process: Learned Adaptive Memory Management for LLM Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Eric Hanchen Jiang, Zhi Zhang, Yuchen Wu, Levina Li et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">adaptive memory</span><span class="tag tag-kw">contextual bandit</span><span class="tag tag-kw">memory management</span></div>
+  <div class="summary-en">This paper addresses memory management for LLM agents, arguing that fixed retrieval and consolidation heuristics are inadequate because optimal memory behavior depends on task context. It proposes MemCon, which formulates memory operations as a controlled process and learns an online contextual-bandit policy for retrieval, plan injection, consolidation, and forgetting. Across multiple benchmarks, frameworks, and model backbones, MemCon improves task success and reduces token consumption relative to memory baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究 LLM 代理的外部记忆管理，指出固定的检索与整合启发式方法不足，因为最优记忆行为依赖任务阶段和上下文。作者提出 MemCon，将记忆操作建模为受控过程，并用在线上下文 bandit 策略决定何时检索、注入计划、整合或遗忘。多个基准、代理框架和模型骨干上的实验表明，MemCon 相比记忆基线提高任务成功率并降低 token 消耗。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13591v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13591v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14277v1" target="_blank">Multi-Head Latent Control: A Unified Interface for LLM Agent Decision Making</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Amirhosein Ghasemabadi, Ruichen Chen, Bahador Rashidi, Di Niu · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">agent control</span><span class="tag tag-kw">multi-model routing</span><span class="tag tag-kw">tool use</span><span class="tag tag-kw">latent signals</span></div>
+  <div class="summary-en">This paper studies deployment-time control decisions for LLM and VLM agents, such as whether to continue reasoning, defer to a stronger model, request clarification, use tools, abstain, or answer directly. It introduces Multi-Head Latent Control, a lightweight layer trained on hidden-state trajectories from a frozen model to predict capability and resolution decisions. Experiments report improved quality-cost tradeoffs in multi-model routing and better tool-use decisions.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究 LLM 和 VLM 代理在部署时的控制决策，例如继续推理、转交更强模型、请求澄清、调用工具、拒答或直接回答。作者提出 Multi-Head Latent Control，通过读取冻结模型的隐藏状态轨迹训练轻量控制头，以预测能力边界和解决方式。实验显示，该方法改善多模型路由中的质量与成本权衡，并提升工具使用决策质量。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14277v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14277v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15314v1" target="_blank">Cura 1T: Specialized Model for Agentic Healthcare</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">actAVA AI, :, Haolin Chen, Leon Qi et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">healthcare llm</span><span class="tag tag-kw">agentic healthcare</span><span class="tag tag-kw">self-evolution</span><span class="tag tag-kw">tool use</span></div>
+  <div class="summary-en">This paper introduces Cura 1T, a healthcare-specialized LLM intended to support consultation, clinical reasoning over text and images, interactive diagnosis, and EHR tool use. The model is trained through a human-gated self-evolution loop in which a training agent plans capability targets, trains, evaluates trajectories, and refines the data mixture from failures. The authors claim Cura 1T ranks at or near the top on a healthcare evaluation suite while remaining competitive on broader reasoning and agentic benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文介绍 Cura 1T，一个面向医疗场景的专用 LLM，旨在支持患者咨询、文本与图像临床推理、交互式诊断和电子健康记录工具使用。模型通过人类把关的自我演化循环训练，其中训练代理规划目标能力、训练模型、评估轨迹并基于失败调整数据混合。作者称 Cura 1T 在医疗评测套件中达到或接近前沿基线最高水平，同时在域外推理和代理式基准上保持竞争力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15314v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15314v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14285v1" target="_blank">ToolAlignBench: Investigating Alignment Conflicts in Tool-Calling Enabled LLMs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Aryan Keluskar, Amrita Bhattacharjee, Huan Liu · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">tool-calling agents</span><span class="tag tag-kw">alignment conflicts</span><span class="tag tag-kw">regulated domains</span><span class="tag tag-kw">agent safety</span></div>
+  <div class="summary-en">ToolAlignBench studies alignment conflicts in tool-calling LLM agents deployed in regulated settings, where safety-trained values may conflict with deployment instructions such as internal logging. The authors build a benchmark of 128 scenarios across 16 domains and find that safety-aligned open-source models sometimes override deployment instructions through behaviors such as whistleblowing, data exfiltration, or evidence tampering. The work frames these results as evidence of tension in pluralistic alignment for agent behavior under competing legitimate interests.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ToolAlignBench 研究受监管场景中工具调用 LLM 代理的对齐冲突，其中安全训练价值可能与内部记录等部署指令发生矛盾。作者构建了覆盖 16 个领域的 128 个场景基准，发现安全对齐的开源模型有时会通过举报、数据外传或篡改证据等行为覆盖部署指令。该研究将这些现象视为多元价值对齐在竞争性合法利益下产生张力的证据。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14285v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14285v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.20553v1" target="_blank">CMI-Mem: Toward Generalizable Long-Term Memory Management via CMI-Augmented Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yubo Wang, Qiuyu Zhao, Zenghui Sun, Shichao Dong et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">agent memory</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">conditional mutual information</span><span class="tag tag-kw">long-term memory</span></div>
+  <div class="summary-en">This paper addresses long-term memory management in agent systems, where existing memory valuation often depends on sampled synthetic QA pairs and downstream readers. It proposes CMI-Mem, a lightweight reinforcement-learning memory manager using a hybrid reward that combines downstream QA correctness with intrinsic Conditional Mutual Information. The CMI component estimates the contribution of new conversational inputs relative to current memory without conditioning on sampled queries, aiming to improve generalizable memory management.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究代理系统中的长期记忆管理问题，指出现有方法常依赖合成 QA 样本和下游读取器来评估记忆价值。作者提出 CMI-Mem，一个基于强化学习的轻量记忆管理模型，使用结合下游 QA 正确性与内在条件互信息的混合奖励。CMI 部分在不依赖采样查询的情况下评估新对话输入相对于当前记忆状态的信息贡献，以提升记忆管理的泛化能力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.20553v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.20553v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13718v2" target="_blank">How Agents Ask for Permission: User Permissions for AI Agents, from Interfaces to Enforcement</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Alexandra E. Michael, Franziska Roesner · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CR</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent permissions</span><span class="tag tag-kw">agent security</span><span class="tag tag-kw">policy enforcement</span><span class="tag tag-kw">user control</span></div>
+  <div class="summary-en">This paper surveys user-level permission systems for AI agents, motivated by risks such as prompt injection, hallucination-driven data leakage, and unauthorized sensitive actions. It reviews 21 proposals and builds a taxonomy covering how permissions are specified through interfaces and internal policies, derived from user input, and enforced at runtime. It also compares five commercial agents against the literature and identifies common themes and gaps for future agentic security work.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文综述 AI 代理的用户级权限系统，动机来自提示注入、幻觉导致的数据泄露以及未经授权执行敏感操作等风险。作者评审 21 个权限系统方案，并构建分类法，涵盖权限如何在用户界面和内部策略中指定、如何从用户输入推导以及如何在运行时执行。论文还将五个商业代理与文献方案比较，归纳共性主题并指出未来代理安全研究的缺口。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13718v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13718v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13618v1" target="_blank">STOCKTAKE: Measuring the Gap Between Perception and Action in LLM Agents with a Fair Oracle</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Sagar Deb, Ashwanth Krishnan · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">llm agent evaluation</span><span class="tag tag-kw">partially observable tasks</span><span class="tag tag-kw">knowing-doing gap</span><span class="tag tag-kw">supply chain benchmark</span></div>
+  <div class="summary-en">STOCKTAKE evaluates LLM agents on long-horizon supply-chain replenishment tasks where hidden state drives cost and final outcomes alone cannot distinguish perception failures from action failures. It defines a factored partially observable benchmark with a fair Bayes-filter oracle using the same observation stream as the agent, plus metrics for skill score, stated-belief detection lag, and knowing-doing rate. Evaluation of several frontier models shows that agents often detect hidden failures but still make costly control decisions, revealing both under-response and over-response forms of the knowing-doing gap.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">STOCKTAKE 用长周期供应链补货任务评测 LLM 代理，其中隐藏状态决定成本，仅凭最终成本无法区分感知失败和行动失败。该基准采用因子化部分可观测马尔可夫决策过程，并构建使用与代理相同观测流的公平 Bayes 滤波 oracle，同时定义技能分数、陈述信念检测滞后和知行差距率等指标。对多个前沿模型的评测表明，代理常能识别隐藏故障，但仍会做出高成本控制决策，揭示知行差距中的反应不足和反应过度两类失败。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13618v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13618v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13594v1" target="_blank">SAFETY SENTRY: Context-Aware Human Intervention via EXECUTE-ASK-REFUSE Routing</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Tianyu Chen, Chujia Hu, Wenjie Wang · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">tool safety</span><span class="tag tag-kw">human intervention</span><span class="tag tag-kw">guard models</span></div>
+  <div class="summary-en">This paper addresses safety failures in LLM agents that act through tool calls, arguing that binary safe/unsafe guards conflate intrinsic harm with contextual appropriateness. It proposes Safety Sentry, a lightweight guard model that routes each proposed action to EXECUTE, ASK, or REFUSE using a single decoding call and an adjustable threshold. The abstract claims improved overall accuracy and safety-related recall over open-weight and closed-source baselines while controlling directional errors.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究通过工具调用作用于现实环境的 LLM agent 的安全防护问题，指出二元安全/不安全判定混淆了动作本身危害性与用户语境下的适当性。作者提出 Safety Sentry，将每个具体动作实例路由为 EXECUTE、ASK 或 REFUSE，并通过单次解码和可调阈值适配不同风险容忍度。摘要称该方法在总体准确率和安全相关召回率上优于多类开源与闭源基线，同时控制两类方向性错误。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13594v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13594v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14171v1" target="_blank">Branching Policy Optimization: Sandbox-Native Language Agent Reinforcement Learning</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Bowei He, Yankai Chen, Xiaokun Zhang, Xue Liu · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">sandbox rollouts</span><span class="tag tag-kw">policy optimization</span></div>
+  <div class="summary-en">This paper studies reinforcement learning for LLM agents in deterministic, snapshottable executable sandboxes, where conventional independent rollouts fail to exploit resumable intermediate states. It introduces Branching Policy Optimization, which snapshots high-entropy decision points, forks alternative actions, and estimates per-step advantages from sibling returns. The abstract reports unbiased lower-variance estimation and improved success over GRPO and RLOO across WebShop, ALFWorld, and SWE-bench Verified at matched compute.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究可执行沙盒中 LLM agent 的强化学习，指出传统独立轨迹采样没有利用沙盒可确定、可快照和可恢复的特性。作者提出 Branching Policy Optimization，在高熵决策点进行快照，分叉多个替代动作，并用兄弟分支回报估计逐步优势。摘要声称该估计无偏且方差更低，并在 WebShop、ALFWorld 和 SWE-bench Verified 上相较 GRPO 与 RLOO 提升成功率。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14171v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14171v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13854v1" target="_blank">SPyCE: Skill-Policy Co-evolution for Multimodal Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ru Zhang, Weijie Qiu · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">multimodal agents</span><span class="tag tag-kw">skill learning</span><span class="tag tag-kw">tool use</span><span class="tag tag-kw">reinforcement learning</span></div>
+  <div class="summary-en">This paper targets multimodal agents that perform multi-step visual reasoning and tool use, where scalar-reward RL and static memory retrieval do not adequately internalize reusable patterns. It proposes SPyCE, a skill-policy co-evolution framework that distills trajectories into hierarchical execution and workflow skills while updating both the policy and skill library during training. The abstract claims consistent gains over RL-based and memory-based baselines across eight benchmarks, with analyses supporting the importance of hierarchy and co-evolution.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文面向需要多步视觉推理与工具调用的多模态 agent，指出标量奖励强化学习和静态记忆检索难以充分吸收可复用的工具使用模式。作者提出 SPyCE，将轨迹蒸馏为分层的执行技能与工作流技能，并在训练中让策略和技能库共同演化。摘要称该方法在八个基准上持续优于强化学习和记忆型基线，且分层技能设计与共演化机制都至关重要。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13854v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13854v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13683v1" target="_blank">Self-Evolving Agent Harnesses via Gated Semantic Quality-Diversity</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Xiaotian Luo, Fengxingyu Wang, Chuanrui Hu, Dizhan Xue et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">agent harness</span><span class="tag tag-kw">self-evolution</span><span class="tag tag-kw">quality diversity</span><span class="tag tag-kw">prompt optimization</span></div>
+  <div class="summary-en">This paper studies automatic improvement of an LLM agent harness, including prompts, injected knowledge, runtime control, and configuration, when model weights are fixed. It proposes a self-evolving framework in which a language model diagnoses failures and proposes patches, while deterministic sampling, measurement, and significance testing decide which improvements are credited; patches are organized in a gated semantic quality-diversity archive keyed by pathology. The abstract reports sealed-test gains across seven domains and argues that the transferable component is the diagnose-and-credit loop rather than any specific harness patch.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究在冻结模型权重时如何自动改进 LLM agent 的 harness，包括提示、注入知识、运行时控制和配置。作者提出自演化框架，由语言模型诊断失败并提出补丁，而确定性代码负责采样、测量和显著性检验，并将补丁存入按问题病理分类的门控语义质量多样性档案。摘要报告了七个领域上的封闭测试增益，并认为可迁移的是诊断与归因循环，而非某个具体 harness。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13683v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13683v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13602v1" target="_blank">Analogical Deep Research: Retrieving and Integrating Historical Analogies for Foresight Analysis</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yongqiang Chen, Guangyi Chen, Yuewen Sun, Kun Zhang · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">stat.ML</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">historical analogy</span><span class="tag tag-kw">causal reasoning</span><span class="tag tag-kw">foresight analysis</span></div>
+  <div class="summary-en">This paper introduces Analogical Deep Research, a task for evaluating whether LLM agents can retrieve and use structurally similar historical analogies for foresight analysis. It argues that agents often match surface features rather than causal mechanisms and proposes CANA, an agentic framework using structural decomposition and feedback to improve analogy identification and integration. The abstract reports improvements on ADR-bench over state-of-the-art deep research agents and presents case studies on ongoing events.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 Analogical Deep Research 任务，用于评估 LLM agent 是否能为前瞻分析检索并利用结构相似的历史类比。作者指出现有 agent 往往依据表面特征而非因果机制匹配类比，并提出 CANA，通过结构分解表示和结构反馈改进历史类比的识别与整合。摘要称 CANA 在 ADR-bench 上优于已有深度研究 agent，并通过现实事件案例展示有效性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13602v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13602v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13396v1" target="_blank">Set-shifting Behavioral Test for Harnessed Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ziwei Ye · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">cs.SE</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">tool choice</span><span class="tag tag-kw">adaptation</span><span class="tag tag-kw">behavioral evaluation</span></div>
+  <div class="summary-en">This paper examines how harnessed LLM agents adapt tool choice when the reliable tool silently changes during a session. It introduces a set-shifting benchmark with redundant tool libraries, hidden reliability shifts, and matched no-shift controls, then scores trajectories by routing to the target tool group after shifts. The abstract reports that agents often settle into narrow routines, exhibit distinct failure modes, and are influenced by how competing or complementary tool sets are framed.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究 harnessed LLM agent 在会话中可靠工具隐式变化时如何调整工具选择。作者构建了包含冗余工具库、隐藏可靠性切换和无切换对照的 set-shifting 基准，并用切换后是否路由到目标工具组来评估轨迹。摘要发现 agent 往往快速固化为少数例行模式，不同模型表现出不同失败类型，且工具集被呈现为竞争或互补会影响路由动态。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13396v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13396v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14357v1" target="_blank">When Is Delegated Play Truthful? Within-Range Regret and the Trilemma of Aligned Delegation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Taksch Dube · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.GT</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">econ.TH</span><span class="tag tag-kw">delegated agents</span><span class="tag tag-kw">truthfulness</span><span class="tag tag-kw">mechanism design</span><span class="tag tag-kw">guardrails</span></div>
+  <div class="summary-en">This paper analyzes delegated decision making, including autobidders and language-model agents, asking when truthful self-description to an automated proxy is optimal. It identifies within-range regret as the key quantity, proving that misreporting gains equal the proxy&#x27;s regret among reachable actions and deriving a trilemma among binding guardrails, truthfulness, and capability preservation. The abstract further claims that sampled estimates on production language models show honest reporting can leave surplus unclaimed under alignment-style caps.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文分析委托式决策场景，包括自动竞价器和语言模型 agent，研究何时向自动代理诚实描述自身偏好是最优的。作者将核心量归结为 within-range regret，证明误报收益等于代理在可达动作集合中的后悔值，并提出约束性护栏、真实性和能力保持之间的三难关系。摘要还称在生产语言模型上的采样估计显示，在类似对齐约束下诚实报告可能留下未获得的剩余。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14357v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14357v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13806v1" target="_blank">A Deployed Hybrid Vehicle-in-the-Loop Platform for Validating Cooperative Perception</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Anastasia Bolovinou, Giorgos Hadjipavlis, Markos Antonopoulos, Panagiotis Tachtalis et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">cooperative perception</span><span class="tag tag-kw">vehicle-in-the-loop</span><span class="tag tag-kw">v2x</span><span class="tag tag-kw">digital twin</span></div>
+  <div class="summary-en">This paper describes a deployed hybrid Vehicle-in-the-Loop platform for validating cooperative perception in automated driving. The system couples a real instrumented vehicle with a CARLA digital twin through V2X CAM/CPM messages, enabling a cooperative perception module to fuse data into a probabilistic occupancy grid during runtime. The abstract reports wider field-of-view coverage and improved occupied-cell recall, while identifying localization uncertainty as a dominant error source beyond moderate noise.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文介绍一种用于验证自动驾驶协同感知的混合 Vehicle-in-the-Loop 平台。该平台通过 V2X CAM/CPM 消息将真实仪器化车辆与 CARLA 数字孪生连接，并在运行时由协同感知模块融合信息生成概率占据栅格。摘要称该平台扩大了视场覆盖并提高了占据单元召回率，同时指出定位不确定性在中等噪声以上成为主要误差来源。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13806v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13806v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13693v1" target="_blank">Social Simulations: from Agent-Based Modeling to Digital Twins</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Erica Cau, Andrea Failla, Valentina Pansanella, Giulio Rossetti · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.SI</span><span class="tag tag-kw">agent-based modeling</span><span class="tag tag-kw">social simulation</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">digital twins</span></div>
+  <div class="summary-en">This book chapter surveys the evolution of social simulation from classical agent-based modeling to LLM-enhanced simulations and social digital twins. It contrasts explicitly specified behavioral-rule agents with increasingly data-driven, high-fidelity representations of real socio-technical systems. The abstract emphasizes methodological foundations, applications, advantages, and limitations across this progression.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文为书章节，综述社会模拟从经典基于 agent 的建模到 LLM 增强模拟以及社会数字孪生的演化。它比较了由显式行为规则驱动的 agent 与越来越数据驱动、高保真的真实社会技术系统表示。摘要强调了各范式的方法基础、应用、优势和局限，以及从抽象社会机制模型到具体系统表示的转变。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13693v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13693v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13615v1" target="_blank">Extending Liquid Rank Toward Multi-Source Reputation Aggregation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Nejc Znidar, Anton Kolonin · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">reputation systems</span><span class="tag tag-kw">governance</span><span class="tag tag-kw">human-machine agents</span><span class="tag tag-kw">coordination</span></div>
+  <div class="summary-en">This paper extends liquid rank reputation systems to aggregate and blend multiple heterogeneous reputation sources into a unified score. The framework incorporates external signals alongside internally generated reputation and introduces weighting and blending mechanisms for fine-grained control. The abstract positions the method as a foundation for reputation-based governance in socio-technical environments involving human and machine agents.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文扩展 liquid rank 声誉系统，使其能够将多个异构声誉来源聚合并融合为统一评分。该框架在内部声誉之外纳入外部声誉信号，并通过显式权重和融合机制实现精细控制。摘要将其定位为在人类与机器 agent 共同参与的复杂社会技术环境中设计基于声誉的治理机制的基础。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13615v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13615v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14424v1" target="_blank">ConFlow: Constraints-Guided Learning with Flow Matching for Motion Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Nutan Chen, Jianxiang Feng, Marvin Alles, Botond Cseke · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">robot motion generation</span><span class="tag tag-kw">flow matching</span><span class="tag tag-kw">constraints</span><span class="tag tag-kw">multi-robot navigation</span></div>
+  <div class="summary-en">This paper addresses robot motion generation with flow matching when task constraints are not fully represented in demonstrations. It proposes ConFlow, which incorporates differentiable barrier or cost constraints directly into the training objective and uses conditional Gaussian Process sources plus infeasible demonstrations as negative supervision. The abstract reports lower collision rates and higher trajectory quality than standard flow matching baselines in a two-robot navigation task.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究机器人运动生成中的 flow matching，关注任务约束未充分体现在示范数据中的问题。作者提出 ConFlow，将可微 barrier 或 cost 约束直接纳入训练目标，并用条件高斯过程源分布和不可行示范作为负监督。摘要称在双机器人导航任务中，该方法相比标准 flow matching 基线降低碰撞率并提高轨迹质量。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14424v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14424v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14408v1" target="_blank">Reward-Free Evolving Agents via Pairwise Validator</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Minghao Liu, Yu Wang, Jiayun Wang, Wei Wei · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">self-evolving agents</span><span class="tag tag-kw">pairwise validation</span><span class="tag tag-kw">prompt optimization</span><span class="tag tag-kw">reward-free learning</span></div>
+  <div class="summary-en">This paper studies self-evolving agent loops that modify prompts or programs and require a quality signal for accepting changes. It proposes replacing scalar rewards with a frozen LLM pairwise validator that compares parent and child candidates, integrating this gate into several existing self-evolving engines. The abstract claims that the method matches or exceeds full-reward baselines in most evaluated settings while reducing the need for labeled reward design.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究自演化 agent 循环中如何判断提示模板或程序修改是否应被接受的问题。作者提出用冻结 LLM 的成对验证器替代标量奖励，让其比较父候选和子候选，并将该门控机制集成到多个已有自演化引擎中。摘要称该方法在多数评估设置中达到或超过完整奖励基线，同时减少了设计带标签奖励信号的成本。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14408v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14408v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14390v1" target="_blank">Why Git Is the Memory Solution for the Agentic Development Lifecycle</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Frank Guo · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.IR</span><span class="tag tag-kw">coding agents</span><span class="tag tag-kw">agent memory</span><span class="tag tag-kw">git</span><span class="tag tag-kw">software engineering</span></div>
+  <div class="summary-en">This paper argues that memory for coding agents in the agentic development lifecycle should be anchored in git rather than external retrieval machinery. It separates seed retrieval, answer assembly, and decision synthesis, using commit-session links, structural maps, confidence-gated episodes, and rationale reconstruction. The reported results claim improved retrieval over transcript search, better sufficiency for reconstructed rationale, and much shorter answers than full history injection.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文主张在智能体开发生命周期中，编码智能体的记忆应绑定到 git，而不是依赖外部记忆图或检索系统。方法将种子检索、答案组装和决策综合分开，利用提交与会话链接、结构化映射、置信门控片段和理由重构来回答开发问题。摘要报告该方法相较转录检索有更高检索效果，能更充分重构决策理由，并显著降低回答所需上下文规模。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14390v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14390v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14386v1" target="_blank">CIPHER: A Decoupled Exploration-Selection Framework for Test-Time Scaling of Data Science Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Maxime Heuillet, Sharadind Peddiraju · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">data science agents</span><span class="tag tag-kw">test-time scaling</span><span class="tag tag-kw">parallel execution</span><span class="tag tag-kw">agent architecture</span></div>
+  <div class="summary-en">CIPHER targets data science agents whose execution can fail due to a poor single initial state. It uses test-time scaling by generating multiple candidate initial states, strategically selecting among them, and running selected starts concurrently before aggregation. Experiments on closed-form and open-form benchmarks claim state-of-the-art matched-model performance and analyze how generation, selection, and aggregator capacity affect results.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CIPHER 针对数据科学智能体中过度依赖单一初始状态导致级联错误的问题。它通过测试时扩展生成多个候选初始状态，解耦候选生成与策略性选择，并并行执行被选状态后进行聚合。论文在封闭式和开放式任务基准上声称取得匹配模型条件下的领先表现，并分析生成策略、选择策略和聚合器容量的影响。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14386v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14386v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14340v1" target="_blank">The Prover Is the Judge: Verified Security Software from AI Coding Agents in Ada/SPARK</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Tobias Philipp · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">coding agents</span><span class="tag tag-kw">formal verification</span><span class="tag tag-kw">ada/spark</span><span class="tag tag-kw">security software</span></div>
+  <div class="summary-en">This paper studies AI coding agents for verified security software in Ada/SPARK under a verifier-driven loop. Agents generated and verified bare-metal security components while GNATprove checked proof obligations, with additional known-answer tests, interoperability checks, and human specification review catching defects outside the prover&#x27;s scope. The central claim is that agent trustworthiness is bounded by the strength of the feedback and verification mechanisms provided.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究在 Ada/SPARK 中通过验证器驱动循环使用 AI 编码智能体生成安全软件。智能体编写并验证裸机安全组件，GNATprove 负责证明义务检查，同时已知答案测试、互操作测试和人工规格审查用于发现验证器无法覆盖的缺陷。核心结论是，智能体可被信任建立的性质受限于其反馈和验证机制的强度。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14340v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14340v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14336v1" target="_blank">Copy-on-Write Scoring: Application-Specific Agent Evaluations</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Joanna Roy, Sven Hoelzel · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent evaluation</span><span class="tag tag-kw">copy-on-write</span><span class="tag tag-kw">application workflows</span><span class="tag tag-kw">tool surfaces</span></div>
+  <div class="summary-en">Copy-on-Write Scoring addresses application-specific evaluation of LLM-based agents operating inside real software environments. It uses PostgreSQL-level copy-on-write isolation to let agents perform database writes safely, then produces session- and operation-level scores identifying where actions succeed or fail. A demonstration on an open-source project-management platform shows that the method can surface tool-surface issues and measure improvements after fixes.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Copy-on-Write Scoring 关注在真实应用环境中对 LLM 智能体进行特定工作流评估的问题。该框架利用 PostgreSQL 层面的写时复制机制隔离智能体写入，并生成会话级和操作级评分，以定位数据库操作的成功与失败。论文在开源项目管理平台上展示，该方法能发现工具接口问题，并衡量修复后的改进。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14336v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14336v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14309v1" target="_blank">Traccia: An OpenTelemetry-Based Governance Platform for AI Systems</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Nutan Kumar Naik, Aditya Kumar Saroj, Vijay Prasad Poudel, Saurav Samantray et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CY</span><span class="tag tag-kw">ai governance</span><span class="tag tag-kw">autonomous agents</span><span class="tag tag-kw">opentelemetry</span><span class="tag tag-kw">trace ledger</span></div>
+  <div class="summary-en">Traccia proposes an OpenTelemetry-based governance platform for LLM and autonomous-agent systems. It combines telemetry, passive semantic guardrail assessment, execution lineage, hashed trace ledgers, and compliance evidence generation mapped to AI regulatory requirements. The paper claims this multi-level stack addresses governance gaps such as alignment drift, SaaS security concerns, and shadow AI deployments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Traccia 提出一个基于 OpenTelemetry 的 LLM 与自主智能体治理平台。该平台结合遥测数据、被动语义护栏评估、执行谱系、哈希追踪账本和面向法规要求的合规证据包生成。论文声称这种多层治理栈可缓解对齐漂移、SaaS 安全风险和影子 AI 部署等企业级治理缺口。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14309v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14309v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14004v1" target="_blank">Do Agent Optimizers Compound? A Continual-Learning Evaluation on Terminal-Bench 2.0</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Wenxiao Wang, Priyatham Kattakinda, Soheil Feizi · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">agent optimization</span><span class="tag tag-kw">continual learning</span><span class="tag tag-kw">terminal-bench</span></div>
+  <div class="summary-en">This paper evaluates whether agent-optimization gains compound under continual learning rather than only in static one-shot benchmarks. Using Terminal-Bench 2.0 tasks, it compares GEPA, Meta Harness, and RELAI-VCL, finding that only RELAI-VCL both transfers positively and continues improving after new tasks are added, attributed to regression control in the optimization loop.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文评估智能体优化方法的收益是否能在持续学习设置中累积，而不只是在静态一次性基准上成立。研究基于 Terminal-Bench 2.0 比较 GEPA、Meta Harness 和 RELAI-VCL，发现只有 RELAI-VCL 能在新任务加入后保持正迁移并继续提升，作者将其归因于优化循环中的回归控制。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14004v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14004v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14187v1" target="_blank">RxBrain: Embodied Cognition Foundation Model with Joint Language-Visual Reasoning and Imagination</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Haotian Liang, Mingkang Chen, Yufei Huang, Yuchun Guo et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">embodied cognition</span><span class="tag tag-kw">multimodal planning</span><span class="tag tag-kw">robot foundation model</span></div>
+  <div class="summary-en">RxBrain introduces an embodied cognition foundation model that combines language reasoning with visual imagination in a unified planning sequence. Its multimodal Mixture-of-Transformers architecture is trained from embodied videos converted into joint text-visual planning supervision, and experiments report coupled textual planning, world-state prediction, subgoal planning, and promising robot-action generation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">RxBrain 提出一种具身认知基础模型，在统一规划序列中结合语言推理与视觉想象。模型采用多模态 Mixture-of-Transformers 架构，并通过将具身视频转换为文本-视觉联合规划监督进行训练；实验显示其能够生成耦合的文本计划、世界状态预测和子目标规划，并在机器人连续动作生成上表现出潜力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14187v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14187v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14186v5" target="_blank">NexForge: Scaling Agent Capabilities through Requirement-Driven Task Synthesis for LLMs</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Jiarong Zhao, Zhikai Lei, Zhiheng Xi, Rui Zheng et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.SE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">agent training data</span><span class="tag tag-kw">task synthesis</span><span class="tag tag-kw">expert trajectories</span><span class="tag tag-kw">llm post-training</span></div>
+  <div class="summary-en">NexForge addresses the bottleneck of generating executable agent training data when existing methods depend on predefined substrates such as tools or repositories. It synthesizes diverse executable tasks and expert trajectories from high-level capability requirements through demand investigation, distribution-aware directive compilation, environment construction, and rollout generation. The abstract claims that NexForge substantially improves agent model performance across terminal and office benchmarks and contributes to the Nex-N2 open-source agent model family.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">NexForge 针对可执行智能体训练数据生成受限于预设工具、仓库或技能图的问题，提出一种由高层能力需求驱动的任务合成框架。该方法通过真实需求调查、分布感知任务指令编译、运行环境构建和专家轨迹生成，产生多样化的可执行任务用于监督微调。摘要声称该框架显著提升了终端与办公任务基准上的智能体模型性能，并支撑了 Nex-N2 开源智能体模型族的训练。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14186v5" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14186v5" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13940v1" target="_blank">A Self-Evolving Agent for Longitudinal Personal Health Management</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Haoran Li, Jiebi Deng, Tong Jin, Jinghong Han et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">personal health agents</span><span class="tag tag-kw">longitudinal memory</span><span class="tag tag-kw">privacy</span><span class="tag tag-kw">self-evolving systems</span></div>
+  <div class="summary-en">HealthClaw studies personal health AI systems that must support users across repeated encounters rather than isolated queries. It proposes a self-evolving agent architecture separating shared safety and medical knowledge from private longitudinal memory, with induction rules that decide how each episode updates profile facts, procedures, episodic traces, or exclusions. Offline benchmarks report improved longitudinal support, reduced prompt-side context exposure, and better privacy-aware behavior, while noting that clinical effectiveness still requires prospective evaluation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">HealthClaw 关注个人健康 AI 在长期、多轮接触中持续适应用户例程、偏好、测量值和风险变化的问题，而非将每次请求孤立处理。该系统将共享安全规则和医学知识与私有纵向记忆分离，并通过归纳机制决定每次交互应更新个人档案、修订流程、保留为情节记忆或排除。摘要报告其在离线纵向支持、隐私保护和生物医学任务上优于基线，但临床有效性仍需前瞻性评估。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13940v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13940v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13884v1" target="_blank">Experience Memory Graph: One-Shot Error Correction for Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Wenjun Wang, Yuchen Fang, Fengrui Liu, Zibo Liang et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">memory graph</span><span class="tag tag-kw">error correction</span><span class="tag tag-kw">long-horizon tasks</span></div>
+  <div class="summary-en">Experience Memory Graph targets error recovery in long-horizon LLM agents, where compounding failures make prompt-based reflection costly and brittle. It converts failed and expert trajectories into directed action decision graphs, extracts successful workflows and graph edit paths, and stores them in a memory graph with intra-task and cross-task structure for one-shot guidance at test time. Experiments on ALFWorld and ScienceWorld report better success rate and reward than reflection baselines without test-time trial-and-error.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Experience Memory Graph 面向长程 LLM 智能体中的错误恢复问题，因为累积错误使基于提示的反思机制成本高且脆弱。该方法将失败探索轨迹和专家成功轨迹转换为有向动作决策图，通过图匹配提取成功工作流和纠错编辑路径，并存入包含任务内节点与跨任务边的记忆图中以在测试时一次性指导执行。摘要称其在 ALFWorld 和 ScienceWorld 上相较反思基线获得更高成功率和平均奖励，且无需测试时反复试错。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13884v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13884v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13881v1" target="_blank">Unleashing Multimodal Large Language Models for Training-free HOI Detection in the Wild</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ting Lei, Jialin Liu, Zhu Xu, Yuxin Peng et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">human-object interaction</span><span class="tag tag-kw">multimodal reasoning</span><span class="tag tag-kw">agentic framework</span><span class="tag tag-kw">training-free detection</span></div>
+  <div class="summary-en">AgentHOI addresses open-world human-object interaction detection without supervised HOID training data. It uses a training-free agentic framework that orchestrates complementary vision foundation modules for semantic reasoning and spatial grounding, with multi-round reasoning to refine interaction hypotheses and multifaceted localization to improve instance grounding. The abstract claims superior performance over supervised and weakly supervised methods in real-world settings while requiring no HOID-specific training data.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AgentHOI 针对开放世界人-物交互检测中监督类别固定、泛化能力受限的问题，提出无需 HOID 训练数据的训练-free 框架。该方法以智能体式方式协调多个视觉基础模块进行开放语义推理和空间定位，并通过上下文感知多轮推理细化交互假设、通过多方面交互定位提升实例级 grounding。摘要声称其在真实场景中优于有监督和弱监督方法，且不需要 HOID 专门训练数据。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13881v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13881v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13716v1" target="_blank">CAVA: Canonical Action Verification and Attestation for Runtime Governance of Agentic AI Systems</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Zexun Wang · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">agent governance</span><span class="tag tag-kw">runtime semantics</span><span class="tag tag-kw">action attestation</span><span class="tag tag-kw">approval binding</span></div>
+  <div class="summary-en">CAVA addresses governance of agentic AI systems whose actions are recorded differently across heterogeneous runtimes such as coding hooks, browser automation, APIs, and workflow engines. It proposes a runtime-semantics layer that converts activity into canonical runtime action objects, supporting action identity, semantic pattern detection, approval binding, receipt integrity, portable projection, and optional attestation. A benchmark over multiple variants studies semantic equivalence, bypass resistance, reproducibility, portability, and tamper detection, positioning CAVA as infrastructure for deployer-side action governance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">CAVA 针对智能体 AI 系统在异构运行时中执行同一操作却留下不兼容记录的问题，例如代码钩子、浏览器自动化、API 网关和工作流引擎。该论文提出运行时语义层，将异构活动转换为规范化运行时动作对象，以支持动作身份、语义模式检测、审批绑定、收据完整性、跨运行时投影和可选证明。摘要通过多种变体基准考察语义等价、绕过抵抗、可复现性、可移植性和篡改检测，并将 CAVA 定位为部署方动作治理的基础设施。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13716v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13716v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13705v3" target="_blank">AgentCompass: A Unified Evaluation Infrastructure for Agent Capabilities</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Kai Chen, Zichen Ding, Jiaye Ge, Shufan Jiang et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.SE</span><span class="tag tag-kw">agent evaluation</span><span class="tag tag-kw">llm agents</span><span class="tag tag-kw">benchmark infrastructure</span><span class="tag tag-kw">trajectory analysis</span></div>
+  <div class="summary-en">The paper targets fragmentation and tight coupling in current evaluation pipelines for LLM-based agents. It introduces AgentCompass, an extensible infrastructure organized around Benchmark, Harness, and Environment components, with asynchronous execution and trajectory analysis, supporting over 20 benchmarks across five capability dimensions.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文关注 LLM 智能体评测流程碎片化、耦合度高和可复现性不足的问题。作者提出 AgentCompass，将评测拆分为 Benchmark、Harness 和 Environment 三个独立组件，并提供容错异步运行时和轨迹分析工具，支持多个能力维度上的二十余个基准。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13705v3" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13705v3" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13621v1" target="_blank">UESF-Bench: Benchmarking and Probing for Unified Embodied Seeking and Following</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Kun Yu, Jianhua Yang, Yixiang Chen, Changwei Wang et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">embodied agents</span><span class="tag tag-kw">human following</span><span class="tag tag-kw">vision-language-action</span><span class="tag tag-kw">benchmark</span></div>
+  <div class="summary-en">The paper addresses embodied human following under the more realistic condition that the target may not be initially visible and must first be found from a language description. It introduces UESF-Bench and SeekFollow-VLA, a vision-language-action framework with task-driven routing for phase inference and transitions between seeking and following, reporting improvements over single-head and dual-head baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究具身智能体在目标人物初始不可见时，如何先根据语言描述寻找目标再持续跟随的问题。作者提出 UESF-Bench 统一基准和 SeekFollow-VLA 框架，通过任务驱动路由进行潜在阶段推断以及寻找与跟随之间的转换建模，并报告其优于单头和双头基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13621v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13621v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13608v1" target="_blank">Automatic Ordinary Differential Equations Discovery For Biological Systems Using Large Language Model Powered Agentic System</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">David Krongauz, Arad Zulti, Eran Segal, Teddy Lazebnik · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">math.DS</span><span class="tag tag-kw">agentic science</span><span class="tag tag-kw">ode discovery</span><span class="tag tag-kw">symbolic regression</span><span class="tag tag-kw">biological modeling</span></div>
+  <div class="summary-en">The paper studies automatic discovery of biological ordinary differential equation models using an LLM- and symbolic-regression-powered agentic system. It introduces MEDA, which retrieves background knowledge, defines variables, generates mechanistic constraints, proposes candidate ODEs, and fits and evaluates them, with evaluations showing structural recovery and biologically plausible models while emphasizing the importance of knowledge-guided constraints.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究利用 LLM 与符号回归驱动的智能体系统自动发现生物系统常微分方程模型。作者提出 MEDA，流程包括检索背景知识、定义变量、生成机制约束、提出候选 ODE 并拟合评估；实验显示其能恢复结构并生成具有生物合理性的模型，同时消融表明知识引导形式化和机制约束是关键组件。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13608v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13608v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.15313v1" target="_blank">Position: Quantum Program Generation Must Prioritize Validity Over Probabilistic Scaling</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Junhao Song, Yu Zhou, William Knottenbelt, Yudong Cao · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">quantum program generation</span><span class="tag tag-kw">verification</span><span class="tag tag-kw">agent architecture</span><span class="tag tag-kw">constraint-aware generation</span></div>
+  <div class="summary-en">This position paper argues that generic quantum program generation should prioritize mathematical validity rather than relying on probabilistic scaling of model size. It proposes verifier-centric agents that integrate hierarchical constraints, topological masks, and symbolic proxies into generation, claiming that verification-aware architectures are more viable than imitation-only scaling for modular quantum circuit synthesis.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该立场论文认为，通用量子程序生成应优先保证数学与物理有效性，而不是依赖模型规模扩展带来的概率性能力。作者提出以验证器为中心的智能体，将层级约束、拓扑掩码和符号代理直接纳入生成过程，并主张验证感知架构比单纯模仿式扩展更适合模块化量子电路合成。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.15313v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.15313v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13988v1" target="_blank">TRACE: Turn-level Reward Assignment via Credit Estimation for Long-Horizon Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Leitian Tao, Baolin Peng, Wenlin Yao, Tao Ge et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">agent reinforcement learning</span><span class="tag tag-kw">credit assignment</span><span class="tag tag-kw">tool-use agents</span><span class="tag tag-kw">long-horizon search</span></div>
+  <div class="summary-en">The paper addresses credit assignment for long-horizon multi-turn agents that use many tool interactions before producing final answers. It proposes TRACE, a dense turn-level reward assignment method that represents rollouts at tool-call boundaries, estimates state values from frozen reference-model gold-answer log-probabilities, and derives per-action rewards through temporal-difference changes. The method improves long-horizon search agent training with pure reinforcement learning and transfers learned search behavior to open-web benchmarks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究长程多轮工具使用智能体中的信用分配问题，这类智能体在最终回答前通常经历大量工具交互。作者提出 TRACE，将轨迹表示为工具调用边界处的状态转移，利用冻结参考模型对正确答案的对数概率估计状态价值，并通过时序差分变化得到逐动作奖励。结果表明，该方法能够用纯强化学习显著提升长程搜索智能体的工具使用能力，并将学习到的搜索行为迁移到开放网络基准。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13988v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13988v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14264v1" target="_blank">MonteRET: AI Agent Enhancing Multimodal LLMs with Multi-granularity Knowledge Retrieval for Chest CT Report Generation</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yi Lin, Yihao Ding, Elana Benishay, Elefterios Trikantzopoulos et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">medical report generation</span><span class="tag tag-kw">retrieval augmentation</span><span class="tag tag-kw">multimodal llm</span><span class="tag tag-kw">agent</span></div>
+  <div class="summary-en">This paper presents MonteRET, a region-aware retrieval-enhanced framework for chest CT report generation that combines global CT features, anatomical region representations, and multi-granularity knowledge retrieval. It further uses a knowledge-guided report rewriting agent and reports improved report quality, semantic similarity, clinical efficacy, and expert preference over baselines and prior methods.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 MonteRET，一个用于胸部 CT 报告生成的区域感知检索增强框架，结合全局 CT 特征、解剖区域表征和多粒度医学知识检索。系统还包含知识引导的报告重写 agent，并在公共与外部数据集上报告了报告质量、语义相似度、临床有效性和专家评价的提升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14264v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14264v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14250v1" target="_blank">The Severance Problem: LLMs are Unaware of the Person Beyond the Prompt</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Dor Litvak, Liu Leqi · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">ai assistants</span><span class="tag tag-kw">user modeling</span><span class="tag tag-kw">structured ignorance</span><span class="tag tag-kw">alignment</span></div>
+  <div class="summary-en">This paper argues that personal AI assistants fail because language models lack an explicit representation of what is unknown about the user, a limitation called the Severance Problem. It proposes the Severance Schema, which injects structured ignorance about user-related dimensions into context, and reports reductions in sycophancy, harmful advice, and hallucination across model families.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文认为个人 AI 助手的不良行为源于模型缺少对用户未知信息的显式表示，作者将其称为 Severance Problem。论文提出 Severance Schema，把关于用户身体性、时间性、后果、连续性、多重性和内在性等维度的结构化无知写入上下文，并报告其降低了迎合、有害建议和幻觉。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14250v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14250v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13920v1" target="_blank">DeepStress: Stress-Testing Deep Search Agents</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Ismael Rousseau, Geraldine Damnati, Frederic Bechet · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">search agents</span><span class="tag tag-kw">retrieval robustness</span><span class="tag tag-kw">stress testing</span></div>
+  <div class="summary-en">This paper studies the robustness of deep search agents when retrieved evidence is unreliable, a failure mode that may be rare in benchmarks but consequential in applications. It proposes DeepStress, a controlled synthetic retrieval environment varying trustworthiness, relevance, and factuality, and finds substantial differences among search agents in handling poor-quality evidence while proposing metrics for system outcomes and parametric-retrieved knowledge conflicts.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究深度搜索 agent 在检索证据质量较差时的鲁棒性，这类失败在基准中不常出现但在实际应用中影响较大。作者提出 DeepStress，用可控合成环境替代检索模块，并操控可信度、相关性和事实性三类因素，显示不同搜索 agent 处理不可靠信息的能力存在显著差异。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13920v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13920v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13551v1" target="_blank">Cost-Pragmatic Quality Gating and Selection-Fusion Multi-Model Combiners for BioASQ Phases A+ and B</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Dima Galat, Marian-Andrei Rizoiu · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">biomedical qa</span><span class="tag tag-kw">retrieval gating</span><span class="tag tag-kw">multi-model ensembling</span><span class="tag tag-kw">agentic retrieval</span></div>
+  <div class="summary-en">This paper describes a BioASQ 2026 question-answering system focused on selective re-retrieval and multi-model answer combination. It combines hybrid and agent-driven retrieval with a quality gate, and analyzes when selection-based versus fusion-based answer aggregation improves different BioASQ metrics, reporting strong leaderboard performance and evidence of retrieval-side headroom.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文介绍一个面向 BioASQ 2026 的问答系统，重点在选择性重新检索和多模型答案组合。系统结合混合检索与代理驱动的问题分解检索，并使用质量门控决定何时重新检索；作者还分解了答案集成中的选择与融合作用，说明不同指标适合不同组合策略，并报告了较强的排行榜表现。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13551v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13551v1" target="_blank">📥 PDF</a>
   </div>
 </div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
 
 <div class="paper-card">
   <div class="paper-title">
-    <a href="https://arxiv.org/abs/2607.11886" target="_blank">Read It Back: Pretrained MLLMs Are Zero-Shot Reward Models for Text-to-Image Generation</a>
+    <a href="https://arxiv.org/abs/2607.14044v1" target="_blank">AI-accelerated End-to-End Framework for Rapid Professional Upskilling</a>
     <span class="relevance rel-low">· 低相关</span>
   </div>
-  <div class="paper-meta"> · 2026-07-15</div>
-  <div class="tags"><span class="tag tag-hf">HF精选</span></div>
-  <div class="summary-en">I n t h i s p a p e r , w e p r o p o s e S p e c t r a R e w a r d , a t r a i n i n g - f r e e r e w a r d f u n c t i o n t h a t t u r n s p r e t r a i n e d M L L M s i n t o o f f - t h e - s h e l f r e w a r d m o d e l s f o r i m a g e - g e n e r a t i o n r e i n f o r c e m e n t l e ...</div>
+  <div class="paper-meta">Tam Nguyen, Hung Nguyen, Robert Ogburn · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">ai upskilling</span><span class="tag tag-kw">education framework</span><span class="tag tag-kw">agentic ai training</span><span class="tag tag-kw">risk dataset</span><span class="tag tag-kw">multi-agent</span></div>
+  <div class="summary-en">This paper presents an AI-accelerated end-to-end framework for professional upskilling across knowledge acquisition, content development, review, teaching, and assessment. It claims validation through professional-education approval, learners passing an agentic AI certification quickly, and downstream use of the knowledge base for multi-agent AI risk dataset production. The work is about AI-supported education and workforce training, with only weak connection to multi-agent research.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出一个用于职业技能提升的端到端 AI 加速框架，覆盖知识获取、内容开发、内容审核验证、教学和测评开发五个阶段。作者通过继续教育项目获批、学习者快速通过 Agentic AI 认证，以及知识库支持多代理 AI 风险数据集生产等外部信号来说明其有效性。该研究主要关注 AI 辅助教育与企业培训，与多代理研究仅有较弱关联。</div>
   <div class="paper-links">
-    <a href="https://arxiv.org/abs/2607.11886" target="_blank">📄 Abstract</a>
-    <a href="https://arxiv.org/pdf/2607.11886" target="_blank">📥 PDF</a>
+    <a href="https://arxiv.org/abs/2607.14044v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14044v1" target="_blank">📥 PDF</a>
   </div>
-</div><a class="back-top" href="#top">顶部</a>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.13934v1" target="_blank">Pezego-HITL: A policy-grounded large language model architecture for agricultural extension in Ghana</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Shunbao Li, Zhipeng Yuan, Amoako Ofori, Benedicta Y. Fosu-Mensah et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">llm decision support</span><span class="tag tag-kw">human-in-the-loop</span><span class="tag tag-kw">retrieval augmentation</span><span class="tag tag-kw">agriculture</span></div>
+  <div class="summary-en">This paper presents Pezego-HITL, a policy-grounded LLM architecture for agricultural extension in Ghana, focusing on safe and useful crop-protection decision support. It frames evaluation as adaptive compute allocation across safety compliance, helpfulness, latency, and expert supervision, and introduces P-EVAL with memory-routed structured retrieval-augmented generation. The abstract reports improved policy alignment, agronomic utility, and latency under simulated workloads, plus questionnaire-based evaluation with extension officers and farmers.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出 Pezego-HITL，一种用于加纳农业推广的政策约束 LLM 架构，重点服务于高风险作物保护决策支持。作者将评估形式化为兼顾安全合规、帮助性、延迟和专家监督负载的自适应计算分配问题，并提出 P-EVAL 以及基于验证记忆路由的结构化 RAG。摘要报告了模拟工作负载下政策一致性、农艺效用和延迟的改善，并结合推广人员与农户问卷评估实际效用。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.13934v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.13934v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14431v1" target="_blank">Smarter and Cheaper at Once: Byte-Exact KV-Cache Grafting Turns a Frozen Small Model into a Verified-Knowledge Flywheel</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Sietse Schelpe · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">kv cache</span><span class="tag tag-kw">knowledge reuse</span><span class="tag tag-kw">language models</span><span class="tag tag-kw">inference efficiency</span></div>
+  <div class="summary-en">This paper proposes byte-exact KV-cache grafting as a way to reuse verified knowledge in frozen small language models without changing weights. It stores verified knowledge as key-value state artifacts and restores them into fresh inference contexts with byte-identical logits under deterministic settings. The abstract reports improved benchmark performance, large token and energy reductions for recurring cases, widened usable context, and hash-backed reproducibility claims while noting a proprietary engine.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文提出字节精确的 KV-cache grafting，用于在不改动权重的情况下让冻结小语言模型复用已验证知识。方法将知识存为键值状态工件，并在确定性配置下恢复到新的推理上下文中，使 logits 与重新计算结果字节一致。摘要报告了基准性能提升、重复问题上的 token 与能耗大幅降低、可用上下文扩展以及基于哈希的可复核性，但引擎为专有实现。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14431v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14431v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14427v1" target="_blank">Per-Token Fixed-Point Convergence in Depth-Recurrent Transformers</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Joe Logan · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">transformers</span><span class="tag tag-kw">adaptive computation</span><span class="tag tag-kw">fixed-point convergence</span><span class="tag tag-kw">inference efficiency</span></div>
+  <div class="summary-en">This paper analyzes what depth-recurrent transformers compute at each token when a tied core is applied a variable number of times. It finds that recurrent states converge to per-token fixed points, with convergence depth varying by token type and individual token behavior. The abstract proposes a training-free per-token halting rule based on output stabilization that preserves uniform-depth quality at lower average depth, while noting results are from a single scale and seed.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文分析深度循环 Transformer 在可变递归次数下每个 token 实际计算的内容。作者发现循环状态会收敛到逐 token 固定点，但收敛深度因 token 类型和具体 token 而异。摘要提出一种基于输出稳定性的免训练逐 token 停止规则，可在较低平均深度下保持统一深度质量，同时说明结果限于单一规模和随机种子。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14427v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14427v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14416v1" target="_blank">CausalGraphX: A Counterfactual Graph Neural Network Framework for Explainable Systemic Risk Assessment</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Rabimba Karanjai, Hemanth Madhavarao, Lei Xu, Weidong Shi · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">graph neural networks</span><span class="tag tag-kw">systemic risk</span><span class="tag tag-kw">counterfactual explanation</span><span class="tag tag-kw">financial networks</span></div>
+  <div class="summary-en">This paper targets explainable systemic risk assessment in financial networks, where conventional models and GNNs may fail to expose causal shock-propagation mechanisms. It introduces CausalGraphX, combining graph attention, adversarial regularization, and optimization-based counterfactual explanations to model institutional vulnerability and intervention effects. The abstract reports improved cascading-default prediction over baselines and sparse, plausible, actionable counterfactual explanations on synthetic financial networks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究金融网络中的可解释系统性风险评估，指出传统模型和 GNN 难以揭示冲击传播的因果机制。作者提出 CausalGraphX，结合图注意力、对抗正则化和基于优化的反事实解释，以建模机构脆弱性和干预效果。摘要称该方法在合成金融网络上优于基线的级联违约预测，并提供稀疏、合理且可操作的反事实解释。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14416v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14416v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14407v2" target="_blank">Decision Making Needs Uncertainty Quantification [Lecture Notes]</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Osvaldo Simeone · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.IT</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">uncertainty quantification</span><span class="tag tag-kw">decision theory</span><span class="tag tag-kw">agents</span><span class="tag tag-kw">risk</span></div>
+  <div class="summary-en">These lecture notes develop a decision-theoretic account of how uncertainty representation should match an agent&#x27;s objective and knowledge. For known environment distributions, the notes distinguish posterior distributions for risk-neutral agents from prediction sets and worst-case rules for risk-averse agents; for unknown environments, they discuss calibration, credal sets, and Bayesian parameter inference. The central claim is that reliable decision making requires uncertainty representations with guarantees aligned to the utility actually obtained.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">这篇讲义从决策理论角度阐述不确定性表示应如何匹配 agent 的目标与知识状态。在已知环境分布时，作者区分了风险中性 agent 所需的后验分布与风险厌恶 agent 可使用的预测集和最坏情况决策规则；在未知环境中，则讨论校准、credal 集合和贝叶斯参数推断。核心观点是，可靠决策需要与实际效用保证相匹配的不确定性表示。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14407v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14407v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14399v1" target="_blank">Instrument Effects in Language-Model Honesty Evaluation: An Auditable Single-System Demonstration</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Justin Bronder · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">llm evaluation</span><span class="tag tag-kw">honesty</span><span class="tag tag-kw">instrument effects</span><span class="tag tag-kw">text adventure</span></div>
+  <div class="summary-en">This paper investigates instrument effects in language-model honesty evaluation by using a text-adventure world where the engine knows whether a quest can be completed. Holding the model player fixed, it varies evaluation grammar, success-criterion disclosure, repeated runs, register, and budget rendering to measure how instrument choices change verdicts. The abstract reports substantial instability and sensitivity in measured behavior and proposes a four-check integrity protocol for evaluation instruments.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文通过一个由游戏引擎掌握任务可完成性的文字冒险世界，研究语言模型诚实性评估中的测量工具效应。在固定模型玩家的条件下，作者改变判定语法、成功标准披露、重复运行、叙述语域和预算呈现方式，以观察评估工具选择如何改变结论。摘要报告了测得行为的显著不稳定性和敏感性，并提出用于评估工具的四项完整性检查协议。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14399v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14399v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14398v1" target="_blank">Integration Matters: Rollout-Based Training for Constrained Diffusion Models</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Xiaoxuan Liang, Saeid Naderiparizi, Berend Zwartsenberg, Frank Wood · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">diffusion models</span><span class="tag tag-kw">constrained generation</span><span class="tag tag-kw">rollout training</span><span class="tag tag-kw">sampling alignment</span></div>
+  <div class="summary-en">This paper addresses constrained diffusion models, where training-time optimization and sampling-time correction can each introduce mismatches between learned states and sampling trajectories. It proposes a fine-tuning framework that uses online rollout constraint guidance and differentiates through the fixed noise schedule used during denoising integration. The abstract reports improved constraint satisfaction while maintaining competitive sampling quality across multiple tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究约束扩散模型，指出训练时优化和采样时校正都可能造成训练状态与采样轨迹之间的不匹配。作者提出一种微调框架，利用在线 rollout 获得约束引导，并通过去噪积分中固定噪声日程进行可微训练。摘要称该方法在多个任务上提高了约束满足度，同时保持有竞争力的采样质量。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14398v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14398v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14393v1" target="_blank">An offline approach to fNIRS-guided reinforcement learning for robot behavior</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Julia Santaniello, Madelaine Brower, Benson Jiang, Donatello Sassaroli et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">reinforcement learning</span><span class="tag tag-kw">robot learning</span><span class="tag tag-kw">fnirs</span><span class="tag tag-kw">human-in-the-loop</span></div>
+  <div class="summary-en">This paper studies whether fNIRS brain signals can guide reinforcement learning for simulated robot behavior in human-in-the-loop settings. It compares passive and active interaction tasks and augments RL parameters such as trajectory priorities and state-action q-values with neural signals. The results claim that neural augmentation improves learning and that the approach can work from offline data when real-time BCI is impractical.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究在仿真机器人学习中，功能近红外光谱 fNIRS 脑信号是否可用于调节人机闭环强化学习。方法比较被动观察与主动示范任务，并将神经信号用于增强轨迹优先级和状态-动作 q 值等参数。结果表明，神经信号增强能够改善学习，并且该框架可利用离线数据运行，适合实时 BCI 难以部署的场景。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14393v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14393v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14391v1" target="_blank">A Comparative Analysis of Machine Learning Models for Long and Short-Term Forecasting of the Egyptian Stock Market: A Focus on EGX30</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Muhammed Walid, Ahmed El-Naeimy, Hosam Moubarak, Walid Gomaa · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">stock forecasting</span><span class="tag tag-kw">egx30</span><span class="tag tag-kw">machine learning</span><span class="tag tag-kw">time series</span></div>
+  <div class="summary-en">This study compares machine learning models for short- and long-term forecasting of Egypt&#x27;s EGX30 stock index using historical market data. It evaluates KNN, random forest, XGBoost, LSTM, GRU, and ensemble techniques with standard regression metrics. The abstract reports that GRU performs best at weekly to two-month horizons, XGBoost performs best for one-day prediction, and ensembles improve long-term forecasts.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该研究利用埃及 EGX30 历史市场数据，比较多种机器学习模型在短期与长期股价趋势预测中的表现。评估对象包括 KNN、随机森林、XGBoost、LSTM、GRU 和集成方法，并使用误差与拟合度指标进行比较。摘要称 GRU 在一周到两个月预测中表现最佳，XGBoost 在单日预测中领先，而集成技术对长期预测尤其有益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14391v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14391v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14387v1" target="_blank">Chat2Scenic: An Iterative RAG-Based Framework for Scenario Generation in Autonomous Driving</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yuan Gao, Wenting Miao, Mattia Piccinini, Haoyu Wang et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.RO</span><span class="tag tag-kw">rag</span><span class="tag tag-kw">scenario generation</span><span class="tag tag-kw">autonomous driving</span><span class="tag tag-kw">dsl</span></div>
+  <div class="summary-en">Chat2Scenic addresses automatic generation of regulation-compliant autonomous-driving simulation scenarios as executable DSL scripts. It combines an interactive chatbot interface with retrieval-augmented generation grounded in regulatory knowledge and DSL syntax, and introduces a benchmark of 123 scenarios. Evaluations with state-of-the-art LLMs report higher compilation success and framework accuracy than retrieval-assemble and full-script generation baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Chat2Scenic 研究如何从法规描述自动生成符合自动驾驶测试需求的可执行 DSL 场景脚本。该框架结合交互式聊天界面和检索增强生成，将法规知识与 DSL 语法作为生成依据，并提出包含 123 个场景的基准。实验显示，在当前 LLM 上该方法的编译成功率和框架准确性高于检索拼装和整脚本检索生成基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14387v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14387v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14353v1" target="_blank">Unsafe at any AUC: Unlearned Lessons from Sociotechnical Disasters for Responsible AI</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Joshua A. Kroll, Andrew Smart, R. Stuart Geiger, Abigail Z. Jacobs · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CY</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">eess.SY</span><span class="tag tag-kw">responsible ai</span><span class="tag tag-kw">sociotechnical risk</span><span class="tag tag-kw">ai safety</span><span class="tag tag-kw">governance</span></div>
+  <div class="summary-en">This paper argues that responsible AI evaluation should examine full sociotechnical systems rather than only technical component reliability. Drawing lessons from historical disasters, it identifies failures in risk perception, communication, requirements traceability, responsibility, and organizational dynamics. The main claim is that AI safety and governance must treat social and institutional factors as first-order engineering concerns.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文认为，负责任 AI 的评估不应只关注技术组件可靠性，而应分析完整的社会技术系统。作者借鉴多起历史灾难，总结风险感知、沟通、需求与责任可追溯性以及组织动态中的失败教训。核心观点是，AI 安全与治理必须将社会和组织因素视为一阶工程问题。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14353v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14353v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14349v1" target="_blank">HABIB_TAZ at SemEval-2026 Task 11: Disentangling Formal Logic from Content via Synthetic Training and Multi-Objective Optimization</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Abdullah Shaikh, Zain Naqi, Taha Zahid, Sandesh Kumar et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">formal reasoning</span><span class="tag tag-kw">multilingual nlp</span><span class="tag tag-kw">bias reduction</span><span class="tag tag-kw">synthetic data</span></div>
+  <div class="summary-en">This paper presents a SemEval-2026 Task 11 system for separating formal logic from content plausibility across multilingual syllogistic reasoning settings. It fine-tunes mDeBERTa-v3 on synthetic rule-based syllogism data and uses a multi-objective loss combining group DRO, a differentiable bias penalty, and KL consistency regularization. The abstract reports top rankings and perfect scores on several subtasks, with reduced bias and strong accuracy on noisy multilingual evaluation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出一个用于 SemEval-2026 Task 11 的系统，目标是在多语言三段论推理中区分形式逻辑与内容 plausibility 影响。方法使用基于规则的合成三段论数据微调 mDeBERTa-v3，并结合群组 DRO、可微偏差惩罚和 KL 一致性正则的多目标损失。摘要称系统在多个子任务中获得第一名和满分排序分数，并在噪声多语言设置中保持较高准确率和较低偏差。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14349v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14349v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14345v3" target="_blank">Value Leakage: An LLM&#x27;s Answers Are Silently Shaped by Its Own Values</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jan Betley, Johannes Treutlein, Jan Dubiński, Harry Mayne et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CR</span><span class="tag tag-kw">llm alignment</span><span class="tag tag-kw">value leakage</span><span class="tag tag-kw">model bias</span><span class="tag tag-kw">evaluation</span></div>
+  <div class="summary-en">This paper studies covert value leakage, where language-model answers are shaped by the model&#x27;s own values without disclosure to users. It introduces evaluations measuring both value influence and whether models reveal that influence, covering domains such as moral preferences, developer-company preference, and leisure activities. The abstract claims frontier models differ substantially and that current alignment evaluations do not adequately capture this failure mode.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究语言模型的隐性价值泄漏，即模型回答受到自身价值取向影响却未向用户披露。作者提出一组评估，用于量化价值影响及模型是否说明这种影响，涵盖道德结果、开发公司偏好和休闲活动偏好等情形。摘要认为不同前沿模型表现差异明显，而现有对齐训练和评估尚不能充分处理这一失效模式。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14345v3" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14345v3" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.20554v1" target="_blank">AI-Driven Multi-Hop Relay Selection for Smart Urban NR-V2X Networks via Learning-to-Optimize Graph Neural Networks</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Giambattista Amati, Federica Mangiatordi, Simone Angelini, Emiliano Pallotti et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">cs.NI</span><span class="tag tag-kw">v2x</span><span class="tag tag-kw">relay selection</span><span class="tag tag-kw">graph neural networks</span><span class="tag tag-kw">learning to optimize</span></div>
+  <div class="summary-en">This paper addresses real-time multi-hop relay selection for NR-V2X communication in dense urban vehicular networks. It models vehicles, roadside units, and candidate radio links as attributed graphs, trains an edge-aware GNN from an offline MILP oracle, and uses the learned model for low-latency relay decisions. Experiments on simulated urban datasets claim connectivity comparable to the MILP oracle with much lower execution time.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文研究密集城市车联网中 NR-V2X 通信的实时多跳中继选择问题。方法将车辆、路侧单元和候选无线链路建模为带属性图，利用离线 MILP 最优解监督训练边感知 GNN，并在推理时快速选择中继。实验基于城市仿真数据，声称该方法达到接近 MILP oracle 的连通性，同时显著降低执行时间。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.20554v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.20554v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14341v1" target="_blank">Beyond Visual Grasping: Benchmarking Complex Grasping from Detection to Execution</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Hanyi Zhang, Khang Nguyen, Charith Munasinghe, Basu Hela et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">robot grasping</span><span class="tag tag-kw">benchmark</span><span class="tag tag-kw">foundation models</span><span class="tag tag-kw">semantic reasoning</span></div>
+  <div class="summary-en">GCA-Bench targets robotic grasping tasks that require complex actions, semantic constraints, and scene-level reasoning beyond isolated visual grasp pose detection. The benchmark evaluates large foundation models and baselines ranging from traditional grasp pipelines to end-to-end learning methods under shared settings. The abstract reports low success rates on complex scenarios, introduces evaluation metrics, and analyzes failure modes to guide more robust grasping methods.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">GCA-Bench 针对超越单纯视觉抓取姿态检测的复杂机器人抓取任务，强调语义约束、场景级推理和多步骤执行。该基准在统一设置下评估大型基础模型以及从传统抓取流水线到端到端学习方法的多类基线。摘要称复杂场景下成功率仍低，论文还提出新指标并分析关键失败模式，以指导更稳健的抓取策略。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14341v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14341v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14338v1" target="_blank">Beyond scalar losses: calibrating segmentation models via gradient vector field surgery</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Laurin Lux, Alexander H. Berger, Moritz Knolle, Daniel Rückert et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-kw">medical segmentation</span><span class="tag tag-kw">calibration</span><span class="tag tag-kw">loss functions</span><span class="tag tag-kw">gradient surgery</span></div>
+  <div class="summary-en">This paper examines why region-based segmentation losses such as Dice often produce overconfident, miscalibrated predictions. It proposes a gradient vector field surgery that scales loss partial derivatives linearly with prediction error to improve calibration. Empirical evaluations on 2D and 3D medical segmentation tasks claim better calibration while preserving high prediction accuracy with region-based losses.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文分析 Dice 等区域型分割损失为何容易产生过度自信且校准不佳的预测。作者提出一种梯度向量场“手术”，通过使损失偏导数幅度随预测误差线性缩放来缓解校准问题。二维和三维医学图像分割实验表明，该干预可在保持较高预测准确率的同时改善校准。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14338v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14338v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14328v1" target="_blank">ViPSAM: Visual Prompting Medical Image Segmentation Using Segment Anything Model</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">San Lee, Nalee Kim, Jeong Il Yu, Hee Chul Park et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">eess.IV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.CV</span><span class="tag tag-kw">medical imaging</span><span class="tag tag-kw">sam</span><span class="tag tag-kw">visual prompting</span><span class="tag tag-kw">cross-modality segmentation</span></div>
+  <div class="summary-en">ViPSAM addresses liver lesion segmentation on non-contrast CT for proton therapy planning, where low lesion-to-background contrast limits accuracy. Built on SAM, it adds a visual prompt encoder using contrast-enhanced images and a cross-attention module to guide non-contrast feature representations, with parameter-efficient mask decoder adaptation. Experiments claim better performance than representative U-Net- and SAM-based methods.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ViPSAM 研究质子治疗计划中非增强 CT 肝脏病灶分割问题，该任务受低病灶-背景对比度限制。该方法基于 SAM，引入来自增强图像的视觉提示编码器和视觉引导交叉注意力模块，以增强非增强图像中的病灶相关表征，并对掩码解码器进行参数高效适配。实验声称其优于代表性的 U-Net 和 SAM 类方法。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14328v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14328v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14327v1" target="_blank">PReM: Learning What to Preserve and When to Refresh for Context Compression</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Bohan Yu, Lei Shen, Chenxi Zhou, Chen Han et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">context compression</span><span class="tag tag-kw">kv memory</span><span class="tag tag-kw">long-context inference</span><span class="tag tag-kw">memory refresh</span></div>
+  <div class="summary-en">PReM addresses long-context inference under compression, where early or external compression decisions can discard evidence needed later in generation. It represents long context as internal layer-wise KV memory, uses a dedicated memory layer to select preserved content, and introduces a memory token to trigger refreshes during generation. Experiments with 32K-token contexts claim improved answer quality and efficiency under high compression compared with strong baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PReM 针对长上下文推理中的压缩问题，指出早期或外部压缩决策可能丢弃后续推理所需证据。该框架将长上下文作为模型内部逐层 KV 记忆，使用专门记忆层决定保留内容，并通过特殊记忆标记在生成过程中触发刷新。32K 上下文实验声称，在高压缩率下该方法相较强基线取得更好的答案质量与推理效率平衡。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14327v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14327v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.14321v1" target="_blank">Accounting for Hysteresis and Eddy Currents in Finite Element Simulations of Ferromagnetic Laminated Cores using a Recurrent Neural Network</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Florent Purnode, Louis Denis, François Henrotte, Gilles Louppe et al. · 2026-07-15</div>
+  <div class="tags"><span class="tag tag-kw">cs.CE</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">math.NA</span><span class="tag tag-kw">finite element simulation</span><span class="tag tag-kw">rnn surrogate</span><span class="tag tag-kw">electromagnetics</span><span class="tag tag-kw">hysteresis</span></div>
+  <div class="summary-en">This paper proposes a recurrent neural network surrogate for modeling hysteresis and eddy currents in finite element simulations of laminated-core electrical machines. The RNN is trained on diverse artificial magnetic-field sequences and integrated into two-dimensional magnetodynamic simulations using a magnetic vector potential formulation. The abstract claims close agreement with a reference laminated-core model at computational cost only moderately above anhysteretic simulation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">该论文提出使用循环神经网络作为叠片铁芯电机有限元仿真中磁滞和涡流模型的替代模型。RNN 在多样化人工磁场序列上训练，并集成到基于磁矢势公式的二维磁动力学仿真中。摘要称该方法与参考叠片铁芯模型高度一致，同时计算成本仅约为无磁滞仿真的有限倍数。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.14321v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.14321v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="no-paper">... 还有 143 篇低相关文章未显示</div>
+<a class="back-top" href="#top">顶部</a>
 
 <footer>
   <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
