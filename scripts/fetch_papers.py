@@ -15,6 +15,11 @@ import feedparser
 
 ARXIV_CATEGORIES = ["cs.MA", "cs.AI", "cs.LG", "cs.CL"]
 ARXIV_API = "https://export.arxiv.org/api/query"
+ARXIV_HEADERS = {
+    "User-Agent": "PaperReading/1.0 (mailto:582161075@qq.com)",
+}
+REQUEST_ATTEMPTS = 3
+REQUEST_TIMEOUT = 45
 
 # Keywords for the current research focus:
 # 1. Single-agent vs multi-agent comparisons and heterogeneous settings.
@@ -123,6 +128,40 @@ def visible_text(element) -> str:
     return " ".join("".join(element.strings).split())
 
 
+def request_with_retries(
+    url: str,
+    *,
+    label: str,
+    attempts: int = REQUEST_ATTEMPTS,
+    retry_delay: int = 5,
+    timeout: int = REQUEST_TIMEOUT,
+    **kwargs,
+):
+    """Fetch a required source without silently accepting transient data loss."""
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.get(url, timeout=timeout, **kwargs)
+            response.raise_for_status()
+            return response
+        except requests.RequestException as error:
+            last_error = error
+            print(
+                f"[warn] {label} attempt {attempt}/{attempts} failed: {error}",
+                file=sys.stderr,
+            )
+            if attempt < attempts:
+                retry_after = None
+                if error.response is not None:
+                    retry_after = error.response.headers.get("Retry-After")
+                try:
+                    delay = int(retry_after) if retry_after else retry_delay * (2 ** (attempt - 1))
+                except ValueError:
+                    delay = retry_delay * (2 ** (attempt - 1))
+                time.sleep(min(delay, 120))
+    raise RuntimeError(f"{label} failed after {attempts} attempts") from last_error
+
+
 def score_paper(title: str, abstract: str) -> dict:
     """Score paper relevance. Returns dict with score and matched keywords."""
     text = (title + " " + abstract).lower()
@@ -193,15 +232,18 @@ def fetch_arxiv(date: datetime) -> list:
             "sortBy": "submittedDate",
             "sortOrder": "descending",
         }
-        try:
-            resp = requests.get(ARXIV_API, params=params, timeout=30)
-            feed = feedparser.parse(resp.text)
-            for entry in feed.entries:
-                paper = paper_from_arxiv_entry(entry, source="arxiv", primary_category=category)
-                papers.append(paper)
-        except Exception as e:
-            print(f"[warn] arxiv {category} fetch failed: {e}", file=sys.stderr)
-        time.sleep(1)  # be nice to arxiv
+        resp = request_with_retries(
+            ARXIV_API,
+            label=f"arxiv {category}",
+            headers=ARXIV_HEADERS,
+            params=params,
+            retry_delay=30,
+        )
+        feed = feedparser.parse(resp.text)
+        for entry in feed.entries:
+            paper = paper_from_arxiv_entry(entry, source="arxiv", primary_category=category)
+            papers.append(paper)
+        time.sleep(3)  # arXiv asks API clients to leave three seconds between calls
 
     # Deduplicate by arxiv ID
     seen = set()
@@ -224,16 +266,18 @@ def fetch_arxiv_by_ids(ids: list[str]) -> dict:
     for start in range(0, len(normalized_ids), 50):
         batch = normalized_ids[start:start + 50]
         params = {"id_list": ",".join(batch), "max_results": len(batch)}
-        try:
-            resp = requests.get(ARXIV_API, params=params, timeout=30)
-            resp.raise_for_status()
-            feed = feedparser.parse(resp.text)
-            for entry in feed.entries:
-                paper = paper_from_arxiv_entry(entry, source="arxiv")
-                papers[paper["id"]] = paper
-        except Exception as e:
-            print(f"[warn] arxiv id lookup failed for {','.join(batch)}: {e}", file=sys.stderr)
-        time.sleep(1)
+        resp = request_with_retries(
+            ARXIV_API,
+            label=f"arxiv id lookup for {','.join(batch)}",
+            headers=ARXIV_HEADERS,
+            params=params,
+            retry_delay=30,
+        )
+        feed = feedparser.parse(resp.text)
+        for entry in feed.entries:
+            paper = paper_from_arxiv_entry(entry, source="arxiv")
+            papers[paper["id"]] = paper
+        time.sleep(3)
     return papers
 
 
@@ -252,29 +296,31 @@ def fetch_arxiv_focus_2026(cutoff_date: datetime, max_results: int = 80) -> list
             "sortBy": "submittedDate",
             "sortOrder": "descending",
         }
-        try:
-            resp = requests.get(ARXIV_API, params=params, timeout=30)
-            resp.raise_for_status()
-            feed = feedparser.parse(resp.text)
-            for entry in feed.entries:
-                paper = paper_from_arxiv_entry(
-                    entry,
-                    source="arxiv_focus_2026",
-                    focus_track=focus_track,
-                )
-                arxiv_id = paper["id"]
-                paper["focus_query"] = focus_query
-                existing = papers.get(arxiv_id)
-                if existing:
-                    existing_tracks = set(existing.get("focus_tracks", []))
-                    existing_tracks.add(focus_track)
-                    existing["focus_tracks"] = sorted(existing_tracks)
-                    continue
-                paper["focus_tracks"] = [focus_track]
-                papers[arxiv_id] = paper
-        except Exception as e:
-            print(f"[warn] arxiv 2026 focus fetch failed for {focus_query}: {e}", file=sys.stderr)
-        time.sleep(1)
+        resp = request_with_retries(
+            ARXIV_API,
+            label=f"arxiv 2026 focus query {focus_query}",
+            headers=ARXIV_HEADERS,
+            params=params,
+            retry_delay=30,
+        )
+        feed = feedparser.parse(resp.text)
+        for entry in feed.entries:
+            paper = paper_from_arxiv_entry(
+                entry,
+                source="arxiv_focus_2026",
+                focus_track=focus_track,
+            )
+            arxiv_id = paper["id"]
+            paper["focus_query"] = focus_query
+            existing = papers.get(arxiv_id)
+            if existing:
+                existing_tracks = set(existing.get("focus_tracks", []))
+                existing_tracks.add(focus_track)
+                existing["focus_tracks"] = sorted(existing_tracks)
+                continue
+            paper["focus_tracks"] = [focus_track]
+            papers[arxiv_id] = paper
+        time.sleep(3)
 
     results = list(papers.values())
     results.sort(key=lambda p: (p["relevance"]["score"], p.get("published", "")), reverse=True)
@@ -285,7 +331,13 @@ def fetch_huggingface_detail(arxiv_id: str) -> dict:
     """Fetch title and abstract from a HuggingFace paper detail page."""
     url = f"https://huggingface.co/papers/{arxiv_id}"
     try:
-        resp = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
+        resp = request_with_retries(
+            url,
+            label=f"HuggingFace detail {arxiv_id}",
+            attempts=2,
+            headers={"User-Agent": "Mozilla/5.0"},
+            retry_delay=5,
+        )
         from bs4 import BeautifulSoup
         soup = BeautifulSoup(resp.text, "html.parser")
         title_el = soup.find("h1")
@@ -312,42 +364,44 @@ def fetch_huggingface(date: datetime) -> list:
     date_str = date.strftime("%Y-%m-%d")
     url = f"https://huggingface.co/papers?date={date_str}"
     papers = []
-    try:
-        resp = requests.get(url, timeout=30, headers={"User-Agent": "Mozilla/5.0"})
-        from bs4 import BeautifulSoup
-        soup = BeautifulSoup(resp.text, "html.parser")
+    resp = request_with_retries(
+        url,
+        label=f"HuggingFace daily {date_str}",
+        headers={"User-Agent": "Mozilla/5.0"},
+        retry_delay=5,
+    )
+    from bs4 import BeautifulSoup
+    soup = BeautifulSoup(resp.text, "html.parser")
 
-        # HF papers page: each paper is in an article element
-        articles = soup.find_all("article")
-        for article in articles:
-            title_el = article.find("h3") or article.find("h2")
-            link_el = article.find("a", href=True)
-            abstract_el = article.find("p")
-            if not title_el or not link_el:
-                continue
-            title = visible_text(title_el)
-            href = link_el["href"]
-            if href.startswith("/papers/"):
-                arxiv_id = canonical_arxiv_id(href.replace("/papers/", ""))
-                abstract = visible_text(abstract_el)
-                paper = {
-                    "id": arxiv_id,
-                    "title": title,
-                    "authors": [],
-                    "abstract": abstract,
-                    "url": f"https://arxiv.org/abs/{arxiv_id}",
-                    "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}",
-                    "published": date_str,
-                    "categories": [],
-                    "source": "huggingface_daily",
-                    "primary_category": "HF Daily",
-                    "hf_daily": True,
-                }
-                relevance = score_paper(title, abstract)
-                paper["relevance"] = relevance
-                papers.append(paper)
-    except Exception as e:
-        print(f"[warn] HuggingFace fetch failed: {e}", file=sys.stderr)
+    # HF papers page: each paper is in an article element
+    articles = soup.find_all("article")
+    for article in articles:
+        title_el = article.find("h3") or article.find("h2")
+        link_el = article.find("a", href=True)
+        abstract_el = article.find("p")
+        if not title_el or not link_el:
+            continue
+        title = visible_text(title_el)
+        href = link_el["href"]
+        if href.startswith("/papers/"):
+            arxiv_id = canonical_arxiv_id(href.replace("/papers/", ""))
+            abstract = visible_text(abstract_el)
+            paper = {
+                "id": arxiv_id,
+                "title": title,
+                "authors": [],
+                "abstract": abstract,
+                "url": f"https://arxiv.org/abs/{arxiv_id}",
+                "pdf_url": f"https://arxiv.org/pdf/{arxiv_id}",
+                "published": date_str,
+                "categories": [],
+                "source": "huggingface_daily",
+                "primary_category": "HF Daily",
+                "hf_daily": True,
+            }
+            relevance = score_paper(title, abstract)
+            paper["relevance"] = relevance
+            papers.append(paper)
 
     # The HF listing often omits abstracts. Enrich from HF detail pages first so
     # fallback pages still have useful text and relevance scores when Codex fails.
