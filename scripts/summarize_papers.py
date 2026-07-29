@@ -7,6 +7,7 @@ import re
 import subprocess
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 CHINESE_RE = re.compile(r"[\u3400-\u9fff]")
@@ -301,7 +302,10 @@ def main():
     parser.add_argument("--batch-size", type=int, default=20)
     parser.add_argument("--max-input-chars", type=int, default=42_000)
     parser.add_argument("--timeout", type=int, default=300)
+    parser.add_argument("--workers", type=int, default=1)
     args = parser.parse_args()
+    if args.workers < 1:
+        parser.error("--workers must be at least 1")
 
     digest_path = Path(args.digest_json)
     prompt_text = Path(args.prompt).read_text(encoding="utf-8")
@@ -317,7 +321,8 @@ def main():
     )
 
     processed = 0
-    for batch_number, records in enumerate(batches, start=1):
+
+    def summarize_batch(batch_number: int, records: list[dict]):
         paper_ids = [record["id"] for record in records]
         print(
             f"[info] Summary batch {batch_number}/{len(batches)}: "
@@ -330,15 +335,24 @@ def main():
             prompt_text=prompt_text,
             timeout=args.timeout,
         )
-        data = load_json(digest_path)
-        applied = apply_summaries(data, summaries)
-        save_json_atomic(digest_path, data)
-        processed += len(records)
-        print(
-            f"[info] Saved summaries: canonical={processed}/{len(missing)}, "
-            f"records_applied={applied}",
-            flush=True,
-        )
+        return batch_number, records, summaries
+
+    with ThreadPoolExecutor(max_workers=args.workers) as executor:
+        futures = [
+            executor.submit(summarize_batch, batch_number, records)
+            for batch_number, records in enumerate(batches, start=1)
+        ]
+        for future in as_completed(futures):
+            batch_number, records, summaries = future.result()
+            data = load_json(digest_path)
+            applied = apply_summaries(data, summaries)
+            save_json_atomic(digest_path, data)
+            processed += len(records)
+            print(
+                f"[info] Saved batch {batch_number}/{len(batches)}: "
+                f"canonical={processed}/{len(missing)}, records_applied={applied}",
+                flush=True,
+            )
 
     data = load_json(digest_path)
     synchronize_existing_summaries(data)

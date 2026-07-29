@@ -15,6 +15,7 @@ DIGEST_JSON="/tmp/papers_${DATE}.json"
 LOCK_FILE="/tmp/paper-reading-daily.lock"
 PULL_CHANGES="${PAPER_PULL:-1}"
 PUBLISH_CHANGES="${PAPER_PUBLISH:-1}"
+SUMMARY_WORKERS="${PAPER_SUMMARY_WORKERS:-2}"
 
 # Cron has a minimal environment. Node comes from Anaconda and this server's
 # GitHub SSH client is under /usr/local/bin.
@@ -54,7 +55,8 @@ echo "[$(date)] Generating bilingual summaries with Codex..."
 "${PYTHON}" scripts/summarize_papers.py \
   "${DIGEST_JSON}" \
   --codex "${CODEX}" \
-  --prompt scripts/daily_prompt.md
+  --prompt scripts/daily_prompt.md \
+  --workers "${SUMMARY_WORKERS}"
 
 # Fail closed: no HTML, commit, or push is allowed unless every fetched/HF
 # record has valid bilingual summaries and HF metadata is healthy.
