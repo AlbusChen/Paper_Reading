@@ -44,11 +44,10 @@ echo "[$(date)] Applying persistent summary cache..."
 "${PYTHON}" scripts/summary_cache.py apply "${DIGEST_JSON}"
 
 echo "[$(date)] Generating bilingual summaries with Codex..."
-"${CODEX}" exec \
-  --ephemeral \
-  --cd "${REPO_DIR}" \
-  --dangerously-bypass-approvals-and-sandbox \
-  - < scripts/daily_prompt.md
+"${PYTHON}" scripts/summarize_papers.py \
+  "${DIGEST_JSON}" \
+  --codex "${CODEX}" \
+  --prompt scripts/daily_prompt.md
 
 # Fail closed: no HTML, commit, or push is allowed unless every fetched/HF
 # record has valid bilingual summaries and HF metadata is healthy.

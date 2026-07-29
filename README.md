@@ -31,6 +31,9 @@ Hosted on GitHub Pages: **https://AlbusChen.github.io/Paper_Reading**
 Paper_Reading/
 ├── scripts/
 │   ├── fetch_papers.py       # Fetch paper metadata from arxiv + HuggingFace
+│   ├── summarize_papers.py   # Batched, resumable Codex summary generation
+│   ├── validate_digest.py    # Fail-closed completeness/format validation
+│   ├── summary_cache.py      # Reuse summaries for unchanged arXiv abstracts
 │   ├── generate_html.py      # Generate bilingual HTML digest from JSON
 │   ├── run_daily.sh          # Cron entry point: fetch → summarize → HTML → push
 │   ├── daily_prompt.md       # Instructions for the daily Codex agent session
@@ -73,17 +76,20 @@ Each paper is scored by keyword matching (primary keywords score ×3, secondary 
 
 **Step 2 — Read and evaluate each paper** (Codex agent, via `daily_prompt.md`)
 
-After applying `papers/summary_cache.json`, the daily Codex session
-(`codex exec --ephemeral --cd "$REPO_DIR" --dangerously-bypass-approvals-and-sandbox - < scripts/daily_prompt.md`)
-reads the remaining unsummarized candidates and:
+After applying `papers/summary_cache.json`, `summarize_papers.py` sends the
+remaining unsummarized candidates to authenticated, read-only Codex CLI calls
+in bounded batches. Each batch uses `daily_prompt.md`, is validated before an
+atomic JSON save, and automatically splits into smaller retries when needed.
+The summarizer:
 
-1. Uses every paper's complete fetched abstract as the primary evidence; for
-   highly relevant or ambiguous papers it may also fetch the arXiv page
+1. Uses every paper's complete fetched abstract as the evidence source; generic
+   or metadata-only fallback summaries are not allowed
 2. Reads the abstract carefully and re-scores based on actual content (keyword scoring produces false positives)
 3. Writes summary fields into the JSON for every fetched paper:
    - `summary_en`: 2–3 sentence English summary — what problem, what method, key result, and relevance to the two tracks
    - `summary_zh`: 2–3 sentence Chinese summary (中文学术风格，可补充背景)
-   - `institutions`: main author affiliations or organizations, when visible from arxiv/Hugging Face/PDF metadata
+   - `institutions`: main author affiliations or organizations when present in
+     trusted input/cache metadata; otherwise an empty list
    - Optional `topic_keywords`: 2–4 compact labels for page/index discovery
 4. Writes bilingual summaries and institutions for `hf_daily_papers` using a broader paper-summary lens, without forcing them into the two-track research framing
 5. Adjusts `relevance.score` to reflect true relevance (override keyword score)
