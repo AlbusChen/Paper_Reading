@@ -237,14 +237,14 @@ def fetch_arxiv_by_ids(ids: list[str]) -> dict:
     return papers
 
 
-def fetch_arxiv_focus_2026(max_results: int = 80) -> list:
+def fetch_arxiv_focus_2026(cutoff_date: datetime, max_results: int = 80) -> list:
     """Fetch recent 2026 papers matching the current two-track focus."""
     papers = {}
-    today = datetime.now(timezone.utc).strftime("%Y%m%d")
+    cutoff = cutoff_date.strftime("%Y%m%d")
     per_query = max(10, min(30, max_results // max(1, len(FOCUS_2026_QUERIES)) + 1))
 
     for focus_track, focus_query in FOCUS_2026_QUERIES:
-        query = f"({focus_query}) AND submittedDate:[202601010000 TO {today}2359]"
+        query = f"({focus_query}) AND submittedDate:[202601010000 TO {cutoff}2359]"
         params = {
             "search_query": query,
             "start": 0,
@@ -447,7 +447,7 @@ def main():
     print(f"[info] HuggingFace module: {len(hf_daily_papers)} papers", file=sys.stderr)
     focus_papers = []
     if args.include_2026_focus:
-        focus_papers = fetch_arxiv_focus_2026(args.max_focus_results)
+        focus_papers = fetch_arxiv_focus_2026(target_date, args.max_focus_results)
         print(f"[info] arxiv 2026 focus: {len(focus_papers)} papers", file=sys.stderr)
 
     # Merge: prefer arxiv metadata if same ID appears in both

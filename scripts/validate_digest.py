@@ -28,9 +28,6 @@ def main():
     hf_papers = data.get("hf_daily_papers", [])
     all_records = papers + hf_papers
 
-    if not papers:
-        errors.append("papers list is empty")
-
     ids = [canonical_id(p.get("id", "")) for p in papers]
     duplicates = sorted(paper_id for paper_id, count in Counter(ids).items() if paper_id and count > 1)
     if duplicates:

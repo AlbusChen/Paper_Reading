@@ -32,7 +32,9 @@ Paper_Reading/
 ├── scripts/
 │   ├── fetch_papers.py       # Fetch paper metadata from arxiv + HuggingFace
 │   ├── summarize_papers.py   # Batched, resumable Codex summary generation
+│   ├── deduplicate_papers.py # Keep each arXiv ID on its earliest date only
 │   ├── validate_digest.py    # Fail-closed completeness/format validation
+│   ├── validate_month.py     # Verify no paper repeats across backfilled days
 │   ├── summary_cache.py      # Reuse summaries for unchanged arXiv abstracts
 │   ├── generate_html.py      # Generate bilingual HTML digest from JSON
 │   ├── run_daily.sh          # Cron entry point: fetch → summarize → HTML → push
@@ -98,6 +100,9 @@ The workflow is fail-closed: if any paper record lacks a substantive Chinese
 summary, validation fails and that day's HTML is not committed or pushed.
 Summaries are cached by canonical arXiv ID plus abstract fingerprint so repeated
 2026 focus papers are not needlessly summarized again.
+`papers/seen_papers.json` records the earliest digest date for each canonical
+arXiv ID; papers already published on an earlier date are removed before
+summarization and never appear again in later daily pages.
 
 **Relevance scoring guide:**
 | Score | Meaning |
