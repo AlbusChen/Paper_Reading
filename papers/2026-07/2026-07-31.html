@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>论文日报 2026-07-31 · multimodal agents / verification / adaptive communication</title>
+<style>
+  :root {
+    --bg: #f8f9fa; --card: #fff; --border: #e1e4e8;
+    --text: #24292e; --muted: #6a737d; --accent: #0366d6;
+    --tag-ma: #d4f0d4; --tag-ai: #d4e8f0; --tag-lg: #f0e8d4;
+    --tag-hf: #ffd4e8; --tag-tr: #e8d4ff;
+    --high: #28a745; --med: #f6a623; --low: #959da5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+         background: var(--bg); color: var(--text); line-height: 1.6; }
+  .container { max-width: 960px; margin: 0 auto; padding: 24px 16px; }
+  header { border-bottom: 1px solid var(--border); padding-bottom: 16px; margin-bottom: 24px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.9rem; margin-top: 4px; }
+  nav a { color: var(--accent); text-decoration: none; margin-right: 12px; font-size: 0.9rem; }
+  .quick-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .quick-nav a { display: inline-flex; align-items: center; justify-content: center;
+                  min-height: 34px; padding: 6px 12px; border: 1px solid var(--border);
+                  border-radius: 6px; background: var(--card); color: var(--accent);
+                  text-decoration: none; font-size: 0.86rem; font-weight: 600; }
+  .quick-nav a:hover { border-color: var(--accent); background: #f1f7ff; }
+  .stats { display: flex; gap: 16px; margin: 16px 0; flex-wrap: wrap; }
+  .stat { background: var(--card); border: 1px solid var(--border); border-radius: 6px;
+           padding: 8px 16px; font-size: 0.85rem; }
+  .stat span { font-weight: 600; color: var(--accent); }
+  .section-title { font-size: 1.1rem; font-weight: 600; margin: 24px 0 12px;
+                    padding-bottom: 6px; border-bottom: 2px solid var(--border); }
+  .paper-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px;
+                 padding: 16px; margin-bottom: 12px; }
+  .paper-card:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+  .paper-title { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .paper-title a { color: var(--text); text-decoration: none; }
+  .paper-title a:hover { color: var(--accent); }
+  .paper-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 8px; }
+  .paper-institutions { font-size: 0.8rem; color: #4f5b66; margin: -4px 0 8px; }
+  .paper-institutions span { color: var(--muted); font-weight: 600; }
+  .tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 10px; }
+  .tag { font-size: 0.72rem; padding: 2px 8px; border-radius: 12px; font-weight: 500; }
+  .tag-ma { background: var(--tag-ma); }
+  .tag-ai { background: var(--tag-ai); }
+  .tag-lg { background: var(--tag-lg); }
+  .tag-hf { background: var(--tag-hf); }
+  .tag-tr { background: var(--tag-tr); }
+  .tag-kw { background: #f0f0f0; }
+  .relevance { display: inline-block; font-size: 0.75rem; font-weight: 600; padding: 2px 8px;
+               border-radius: 4px; margin-left: 6px; }
+  .rel-high { background: #e6f4ea; color: var(--high); }
+  .rel-med  { background: #fff8e1; color: var(--med); }
+  .rel-low  { background: #f6f8fa; color: var(--low); }
+  .summary-en { font-size: 0.88rem; color: #444; margin-bottom: 8px; line-height: 1.55; }
+  .summary-zh { font-size: 0.88rem; color: #333; background: #f6f8fa; border-left: 3px solid var(--border);
+                 padding: 8px 12px; border-radius: 0 4px 4px 0; line-height: 1.6; }
+  .summary-zh-label { font-size: 0.75rem; color: var(--muted); margin-bottom: 2px; font-weight: 600; }
+  .paper-links { margin-top: 10px; font-size: 0.8rem; }
+  .paper-links a { color: var(--accent); text-decoration: none; margin-right: 12px; }
+  .no-paper { color: var(--muted); font-size: 0.9rem; padding: 16px; text-align: center; }
+  .back-top { position: fixed; right: 18px; bottom: 18px; display: inline-flex;
+               align-items: center; justify-content: center; min-width: 42px; min-height: 42px;
+               padding: 8px 10px; border-radius: 6px; background: var(--accent);
+               color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: 600;
+               box-shadow: 0 2px 8px rgba(0,0,0,0.18); }
+  .back-top:hover { background: #024f9d; }
+  footer { margin-top: 40px; padding-top: 16px; border-top: 1px solid var(--border);
+            font-size: 0.8rem; color: var(--muted); text-align: center; }
+</style>
+</head>
+<body>
+<div id="top" class="container">
+
+<header>
+  <h1>📄 论文日报 · 2026年07月31日 · multimodal agents / verification / adaptive communication</h1>
+  <p>Daily Paper Digest · July 31, 2026 · single-vs-multi agents &amp; agent-agent communication</p>
+  <nav style="margin-top:10px;display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <a href="2026-07-30.html">← 07-30</a>
+    <a href="../index.html">主页</a>
+    <a href="index.html">本月</a>
+    <a href="../2026-08/2026-08-01.html">08-01 →</a>
+  </nav>
+  <div class="quick-nav">
+    <a href="#related-papers">相关 Papers</a>
+    <a href="#hf-daily">HF Daily</a>
+  </div>
+</header>
+
+<div class="stats">
+  <div class="stat">总计 <span>23</span> 篇</div>
+  <div class="stat">高度相关 <span>2</span> 篇</div>
+  <div class="stat">相关 <span>2</span> 篇</div>
+  <div class="stat">HF Daily <span>17</span> 篇</div>
+  <div class="stat">技术报告 <span>0</span> 篇</div>
+  <div class="stat" style="color:var(--muted)">更新于 2026-08-01 01:31 UTC</div>
+</div>
+<div id="hf-daily" class="section-title">🤗 Hugging Face Daily / Broad Picks</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28618v1" target="_blank">AskChem: Claim-Centered Infrastructure for Chemistry Literature Synthesis</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Bing Yan, Gregory Wolfe, Stefano Martiniani, Kyunghyun Cho · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">cs.IR</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">literature synthesis</span><span class="tag tag-kw">claim retrieval</span><span class="tag tag-kw">provenance</span><span class="tag tag-kw">chemistry search</span></div>
+  <div class="summary-en">AskChem addresses chemistry literature synthesis, where users and AI agents must manually locate, verify, and combine findings across many papers. It converts papers into atomic provenance-carrying claims and provides faceted search, evidence graphs, living taxonomies, and API access over a shared claim store. Benchmark results indicate improved DOI resolvability and citation density when a GPT reader is grounded in AskChem.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AskChem面向化学文献综合中跨论文查找、验证和组装证据困难的问题，现有系统通常只返回排序后的文档列表。它将论文转换为带有来源和证据定位的原子化类型声明，并在共享声明库上提供分面检索、证据图、动态分类体系以及REST、SDK和MCP接口。基准结果表明，将GPT阅读器接入AskChem后，DOI可解析性和引用密度得到提升。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28618v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28618v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28624v1" target="_blank">PhiZero: A World Model Built Around Physical Language</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Shuyao Shang, Yuqi Wang, Ruopeng Gao, Xu Chen et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">world models</span><span class="tag tag-kw">physical language</span><span class="tag tag-kw">video generation</span><span class="tag tag-kw">simulation</span></div>
+  <div class="summary-en">PhiZero proposes a physical world model centered on physical language, a compact discrete representation of world-state transitions. Instead of predicting future videos directly in pixel space, it first reasons over future evolution as physical-language sequences and then renders those transitions into video. Experiments across generation and understanding benchmarks support its ability to model physically coherent evolution and enable interactive simulation, action-conditioned generation, and motion transfer.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PhiZero提出一种围绕“物理语言”构建的物理世界模型，物理语言是表示世界状态转移的紧凑离散表征。不同于直接在像素空间预测未来视频，该模型先以物理语言序列推断未来演化，再将这些转移渲染为视频。多项生成和理解实验表明，该方法能够建模物理一致的世界演化，并具备交互式世界建模、动作条件仿真和零样本运动迁移潜力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28624v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28624v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28568v1" target="_blank">Frontis-MA1: Training an AI4AI Model towards Recursive Self-Improvement in Machine Learning Engineering</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Junlin Yang, Che Jiang, Yu Fu, Tianwei Luo et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-ai">cs.CL</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">ai4ai</span><span class="tag tag-kw">machine learning engineering</span><span class="tag tag-kw">program evolution</span><span class="tag tag-kw">meta-evolution agent</span></div>
+  <div class="summary-en">Frontis-MA1 studies recursive self-improvement for machine learning engineering through an open full-stack AI4AI system. OpenMLE provides executable environments, operator learning, and long-horizon search, while Frontis-MA1 is post-trained as a meta-evolution agent using program-evolution operators such as Draft, Improve, Debug, and Crossover. Results on MLE benchmarks show substantial improvements over the base model and transfer across held-out tasks and framework components.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Frontis-MA1研究机器学习工程场景中的递归自我改进，并提出开放的AI4AI全栈系统OpenMLE。该系统包含可执行任务环境、算子学习和长时程搜索，Frontis-MA1则作为元进化智能体围绕Draft、Improve、Debug和Crossover等程序进化算子进行训练与推理组合。实验显示，该模型在MLE基准上显著优于基座模型，并且训练模型和OpenMLE-Evo框架都能在保留任务上迁移。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28568v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28568v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28595v1" target="_blank">Beacon: Knowing When and How to Perform Agentic Visual Reasoning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Qixun Wang, Yang Shi, Letian Cheng, Zhuoran Zhang et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">visual reasoning</span><span class="tag tag-kw">tool use</span><span class="tag tag-kw">multimodal agents</span><span class="tag tag-kw">reinforcement learning</span></div>
+  <div class="summary-en">Beacon examines agentic visual reasoning through whether multimodal models know when tools are needed and whether tool use actually improves hard cases without harming easy ones. The authors quantify Mode Adaptiveness and Tool Effect, finding that existing models often invoke tools poorly and lose gains on easy examples. Beacon uses necessity-aware rewards and hint-guided capability expansion during reinforcement learning to improve adaptive tool invocation and tool-induced performance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Beacon从工具使用角度重新审视智能体式视觉推理，关注多模态模型是否知道何时需要工具，以及工具是否能在困难样例上带来真实收益而不损害简单样例。论文量化了模式自适应性和工具效果，发现现有模型工具调用能力有限，且困难样例收益常被简单样例损失抵消。Beacon在强化学习阶段引入必要性感知奖励和提示引导的能力扩展，以提升自适应工具调用和工具带来的性能增益。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28595v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28595v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28509v1" target="_blank">RefCaptioner: Multi-Reference Image-Grounded Video Captioning</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Tengfei Liu, Yang Shi, Yuran Wang, Xiaohan Zhang et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">video captioning</span><span class="tag tag-kw">reference grounding</span><span class="tag tag-kw">multimodal alignment</span><span class="tag tag-kw">grpo</span></div>
+  <div class="summary-en">RefCaptioner introduces multi-reference image-grounded video captioning, requiring video descriptions that explicitly bind phrases to multiple reference images. The method uses mixed-data supervised fine-tuning and Hierarchical Coverage-Discounted GRPO to improve reference selection, phrase grounding, distractor rejection, and consistency. New training data and MRVBench experiments show strong open-source performance while preserving general video captioning ability.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">RefCaptioner提出多参考图像扎根的视频字幕生成任务，要求模型生成事实性视频描述并将短语级内容显式绑定到多个参考图像。该方法通过混合数据监督微调和层级覆盖折扣GRPO，提升参考选择、短语绑定、干扰项拒绝和跨参考一致性。基于新构建数据和MRVBench的实验表明，RefCaptioner在开源模型中整体表现最好，同时保持了通用视频字幕能力。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28509v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28509v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28611v1" target="_blank">Chimera: Designing and Chinchilla-Scaling Hybrid Visual Diffusion Transformers</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Chongjian Ge, Hanwen Jiang, Tianyu Wang, Jiuxiang Gu et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">diffusion transformers</span><span class="tag tag-kw">long-context video</span><span class="tag tag-kw">efficient attention</span><span class="tag tag-kw">scaling laws</span></div>
+  <div class="summary-en">Chimera addresses the high cost of full attention for high-resolution image, long-video, and multimodal generation. It proposes a hybrid visual diffusion backbone combining linear-complexity Kimi Delta Attention, interleaved latent attention, modality-aware convolutions, sparse MoE layers, and a HeteroP scaling recipe for heterogeneous modules. Experiments report improved compute efficiency, zero-shot extrapolation to longer videos, and compute-optimal scaling laws for image and video pretraining.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Chimera针对高分辨率图像、长视频和多模态生成中全注意力成本过高的问题，提出混合视觉扩散骨干网络。该架构结合线性复杂度Kimi Delta Attention、交错的潜在注意力、模态感知短卷积、稀疏MoE层，以及用于异构模块的HeteroP缩放方案。实验显示其具备更高计算效率、对更长视频的零样本外推能力，并给出了图像和视频预训练的计算最优缩放规律。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28611v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28611v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28362v1" target="_blank">ShadowDancer: Teaching Video World Models Any Action by Learning Unified Dynamics Representations from a Video and Its Shadow</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Jin Cao, Zian Meng, Kaipeng Zhang · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">video world models</span><span class="tag tag-kw">action control</span><span class="tag tag-kw">dynamics representation</span><span class="tag tag-kw">transfer</span></div>
+  <div class="summary-en">ShadowDancer studies frame-level action control for interactive video world models, where demonstrations encode dynamics but often entangle them with appearance. It constructs shadow pairs that replay the same dynamics under resampled appearances and trains cross-shadow prediction to isolate reusable dynamics representations. Experiments show improved action transfer and long action rollout over latent-action and interactive world-model baselines.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ShadowDancer研究交互式视频世界模型的帧级任意动作控制问题，指出示范视频虽能表达动态过程，但往往与具体外观纠缠，导致迁移困难。该方法构造在不同外观下重放相同动态的shadow pairs，并通过跨shadow预测学习可复用的统一动态表示。实验表明，它在动作迁移和长动作展开方面优于强潜动作和交互式世界模型基线。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28362v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28362v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28582v1" target="_blank">$β$-OPSD: Deriving with Policy Optimization, Training with Self-Distillation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Jiawei Xu, Minghui Liu, Juzheng Zhang, Tom Goldstein et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">self-distillation</span><span class="tag tag-kw">policy optimization</span><span class="tag tag-kw">reasoning models</span><span class="tag tag-kw">kl regularization</span></div>
+  <div class="summary-en">β-OPSD analyzes on-policy self-distillation for reasoning language models as a member of a broader policy-optimization family controlled by a KL weight β. The paper derives the optimal policy as a geometric interpolation between a reference policy and privileged teacher, then implements the closed-form target through token-level logit mixing instead of costly reinforcement learning. Experiments on mathematical reasoning benchmarks show improved stability and downstream performance over vanilla OPSD.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">β-OPSD将推理语言模型中的on-policy self-distillation解释为由KL权重β控制的更广义策略优化族的一员。论文推导出最优策略是参考策略与特权教师之间的几何插值，并用token级logit混合来实现闭式蒸馏目标，从而避免昂贵且高方差的强化学习优化。数学推理基准实验显示，该方法比普通OPSD具有更好的优化稳定性和下游推理性能。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28582v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28582v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28410v1" target="_blank">Can Large Language Models Execute Parent Orders?</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Zane Shen, Xinli Xu, Guangyi Zhang, Jialong Chen et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CE</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-kw">q-fin.TR</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">algorithmic trading</span><span class="tag tag-kw">llm planning</span><span class="tag tag-kw">order execution</span><span class="tag tag-kw">finance</span></div>
+  <div class="summary-en">PACE studies whether LLMs can execute parent orders in algorithmic trading by splitting large orders to reduce execution costs. The framework decomposes execution into long-horizon planning and short-horizon controlled execution without explicit market assumptions or task-specific training. Experiments on Shenzhen Stock Exchange data show PACE outperforming classical and learning-based baselines, with behavioral analysis suggesting distinct execution patterns from human investors.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">PACE研究LLM是否能够在算法交易中执行母单，即将大额订单拆分为小订单以降低执行成本。该层级框架将任务分解为长时程规划和短时程受控执行，不依赖显式市场假设或特定任务训练。基于深圳证券交易所Level-1数据的实验表明，PACE优于经典和学习式基线，行为分析还显示LLM的执行决策模式不同于人类投资者。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28410v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28410v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.26056v1" target="_blank">INTACT: Isomorphic Intent-to-Action Learning for Search-Free World Models</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Junhan Sun, Hao Zhao, Guofeng Zhang · 2026-07-28</div>
+  <div class="tags"><span class="tag tag-kw">cs.RO</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">world models</span><span class="tag tag-kw">intent-to-action</span><span class="tag tag-kw">robot control</span><span class="tag tag-kw">search-free planning</span></div>
+  <div class="summary-en">INTACT addresses latent world models that can predict action effects but require expensive test-time search to recover actions for desired changes. It learns an isomorphic intent-to-action JEPA from action-labeled, reward-free trajectories, using shared graph structure and action-law semantics to map local and goal intents into executable actions. Results on LeWM tasks show high zero-search success, improved efficiency over CEM, and strong shared-encoder performance.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">INTACT针对前向潜在世界模型虽能预测动作影响、但为实现期望变化需要昂贵测试时搜索的问题。它从带动作标签但无奖励的轨迹中学习同构的意图到动作JEPA，通过共享图结构和动作律语义，将局部意图和目标意图映射为可执行动作。LeWM任务结果显示，该方法在零搜索条件下成功率较高，相比CEM显著降低采样开销，并在共享编码器设置下表现稳健。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.26056v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.26056v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28374v1" target="_blank">LEDGERMIND: Provenance-Constrained Multimodal Agentic Reasoning with a Structured Evidence Ledger</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Enjun Du, Hange Zhou, Chenxu Du, Siyi Liu et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">multimodal agents</span><span class="tag tag-kw">provenance</span><span class="tag tag-kw">evidence ledger</span><span class="tag tag-kw">verification</span></div>
+  <div class="summary-en">LedgerMind addresses multimodal agentic reasoning where final-answer accuracy obscures whether intermediate reasoning is grounded in evidence. It models the trajectory as a provenance-constrained state machine using a Structured Evidence Ledger, citation-limited downstream claims, entity- and numeric-level grounding checks, and typed repair transitions. Experiments across multimodal reasoning benchmarks show improvements in both answer accuracy and trajectory-level faithfulness.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">LedgerMind研究多模态智能体推理中仅看最终答案准确率无法判断中间推理是否有证据支撑的问题。它将轨迹建模为受溯源约束的状态机，使用结构化证据账本作为状态，并限制后续推理和决策声明只能引用活跃账本条目，同时进行实体和数值级扎根检查以及类型化修复。多模态推理基准实验表明，LedgerMind同时提升了答案准确率和轨迹级忠实性。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28374v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28374v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.27230v1" target="_blank">Multi-Head Attention Residuals</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Cheng Luo, Zefan Cai, Junjie Hu · 2026-07-22</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">transformer architecture</span><span class="tag tag-kw">attention residuals</span><span class="tag tag-kw">scaling</span><span class="tag tag-kw">language models</span></div>
+  <div class="summary-en">Multi-Head Attention Residuals addresses the limitation that attention residuals read depth history through a single distribution shared across all feature subspaces. MHAR reshapes the routing query into multiple per-subspace heads, allowing separate softmaxes over depth history with no added parameters and negligible compute. Training results across model scales show validation-loss improvements and support subspace disagreement as the mechanism behind the gains.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Multi-Head Attention Residuals研究注意力残差中所有特征子空间共享单一深度历史读取分布所带来的限制。MHAR将路由查询重塑为多个按子空间划分的头，使每个头对深度历史拥有独立softmax，同时不增加参数且计算开销很小。不同规模模型的训练结果显示验证损失下降，并通过探针支持子空间读取偏好分歧是收益来源。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.27230v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.27230v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.27372v1" target="_blank">Explorative Modeling: Unlocking a Third Pretraining Axis and End-to-End Generation</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Alexi Gladstone, Heng Ji, Yilun Du · 2026-07-29</div>
+  <div class="tags"><span class="tag tag-lg">cs.LG</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-ai">cs.CL</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">generative modeling</span><span class="tag tag-kw">training exploration</span><span class="tag tag-kw">scaling axis</span><span class="tag tag-kw">end-to-end generation</span></div>
+  <div class="summary-en">Explorative Modeling proposes a generative modeling paradigm that factors the training loop rather than the generation procedure. It explores multiple candidate matches between model generations and data, trains on the best match, and thereby encourages predictions to commit to modes instead of averaging them. Results across images, video, and language show exploration as a third scaling axis and support end-to-end reconstructive generative modeling with fewer inference steps.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">Explorative Modeling提出一种新的生成建模范式，不再分解生成过程，而是分解训练循环。该方法在模型生成结果和数据之间探索多个候选匹配，并基于最佳匹配训练，从而鼓励预测选择具体模态而非模糊平均。图像、视频和语言实验表明，探索可作为参数和数据之外的第三个缩放轴，并能支持推理步数更少的端到端重构式生成建模。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.27372v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.27372v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.20891v2" target="_blank">Is Deep Research Reliable? Misleading Knowledge Induces False Conclusions</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Pengyu Zhu, Lijun Li, Longju Yang, Sen Su et al. · 2026-07-23</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">deep research agents</span><span class="tag tag-kw">misleading evidence</span><span class="tag tag-kw">verification</span><span class="tag tag-kw">long-horizon research</span></div>
+  <div class="summary-en">MisKnow-Agent evaluates whether deep research agents resist credible but false information injected into long-horizon research workflows. It constructs task-specific misleading documents that support audited false conclusions and measures report-level false-conclusion adoption across agent frameworks and models. The study finds that a single misleading document can substantially increase false-conclusion adoption, while existing defenses reduce but do not eliminate the problem, motivating continuous verification during research.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MisKnow-Agent评估Deep Research智能体在长时程研究流程中能否抵抗看似可信但事实错误的信息注入。该框架构造支持人工审计错误结论的任务特定误导文档，并在不同智能体框架和模型上以报告级错误结论采纳率进行衡量。研究发现，一个误导文档即可显著提高错误结论采纳率，现有前置和后置防御虽能降低风险但无法消除问题，因此需要在证据进入中间研究状态和最终综合时持续验证。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.20891v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.20891v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.23193v2" target="_blank">OmniScope: Modality-Decoupled Token Compression for Omnimodal Large Language Models</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Jinsen Su, Yongdong Luo, Yuexiao Ma, Yibo Hu et al. · 2026-07-25</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">omnimodal llms</span><span class="tag tag-kw">token compression</span><span class="tag tag-kw">audio-video inference</span><span class="tag tag-kw">multimodal salience</span></div>
+  <div class="summary-en">The paper addresses token compression for omnimodal large language models, arguing that audio and video relevance often peak at different moments and that cross-modal guidance can discard critical cues. It proposes OmniScope, a training-free framework that uses the query as a shared semantic anchor while estimating audio and video salience separately, allocating modality-specific budgets and applying distinct pruning or merging strategies. Across audio-video benchmarks and Qwen2.5-Omni scales, the method claims the best average accuracy under compression and improved prefill speed and memory use with minimal accuracy loss at 25% token retention.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文研究全模态大语言模型的 token 压缩问题，指出音频与视频在同一查询下的相关性峰值常出现在不同时间，单向跨模态指导可能在高压缩率下丢弃关键线索。作者提出无需训练的 OmniScope，以查询作为共享语义锚点，但分别估计音频和视频显著性，并采用模态特定预算、视觉 token 剪枝和音频 token 合并策略。实验声称该方法在多个音视频基准和 Qwen2.5-Omni 模型规模上取得最佳平均准确率，并在 25% token 保留率下提升预填充速度、降低显存占用且准确率损失很小。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.23193v2" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.23193v2" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28627v1" target="_blank">ReToken: One Token to Improve Vision-Language Models for Visual Retrieval</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Yao Xiao, Reuben Tan, Zhen Zhu, Yuqun Wu et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-lg">cs.LG</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">vision-language models</span><span class="tag tag-kw">visual retrieval</span><span class="tag tag-kw">long context</span><span class="tag tag-kw">kv cache</span></div>
+  <div class="summary-en">The paper studies visual retrieval under long visual contexts, where vision-language model performance degrades with many distractors and full-token processing is constrained by GPU memory. It introduces ReToken, a single learnable embedding trained as an explicit retrieval target to select sparse query-relevant visual tokens from a pre-filled visual KV cache. The method reports consistent improvements on image and video benchmarks, including zero-shot transfer to long video, while remaining lightweight enough for single-H100 training and inference.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文关注长视觉上下文中的视觉检索问题，即干扰项增多会降低视觉语言模型性能，而一次性处理全部 token 又受 GPU 显存限制。作者提出 ReToken，将一个可学习嵌入训练为显式检索目标，用于从预填充的视觉 KV 缓存中选择稀疏且与查询相关的视觉 token。论文报告该方法在图像和视频基准上带来稳定提升，并可零样本迁移到长视频场景，同时训练和推理设计较轻量。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28627v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28627v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.16922v1" target="_blank">Pedestrian Archetypes Extension -- More Pedestrian Models for Autonomous Vehicle Safety Testing</a>
+    <span class="relevance rel-med">HF Daily</span>
+  </div>
+  <div class="paper-meta">Taorui Huang, Namita Gaidhani, Ritvik Bansal, S M Jubaer et al. · 2026-07-18</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">autonomous driving</span><span class="tag tag-kw">pedestrian behavior</span><span class="tag tag-kw">safety testing</span><span class="tag tag-kw">behavior taxonomy</span></div>
+  <div class="summary-en">The paper extends prior work on pedestrian archetypes for autonomous vehicle safety testing, where archetypes are defined as behavior collections characterizing pedestrian types rather than isolated labels. Based on further annotation of YouTube dash-cam videos, it identifies seven additional pedestrian archetypes with behavioral patterns not covered by the original taxonomy. The paper defines essential and optional behaviors for each new archetype, distinguishes them from prior categories, and provides video-frame evidence.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">本文扩展了用于自动驾驶安全测试的行人原型研究，将行人原型定义为能够刻画特定行人类型的一组行为，而不是单一行为标签。作者通过进一步标注 YouTube 行车记录仪视频，发现了 7 个新增行人原型，这些原型具有原有分类无法充分解释的行为模式。论文为每个新原型定义必要和可选行为，说明其与既有原型的差异，并提供视频帧证据。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.16922v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.16922v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div id="related-papers" class="section-title">⭐ 高度相关 / Highly Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28430v1" target="_blank">AgentRadio: Passive Awareness for Long-Horizon Multi-Agent Collaboration</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Xinxing Ren, Qianbo Zang, Ziyan Wang, Caelum Forder et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-ma">cs.MA</span><span class="tag tag-kw">multi-agent collaboration</span><span class="tag tag-kw">message passing</span><span class="tag tag-kw">coding agents</span><span class="tag tag-kw">long-horizon reasoning</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single agent</span><span class="tag tag-kw">agent collaboration</span></div>
+  <div class="summary-en">AgentRadio addresses long-horizon codebase comprehension, where single LLM coding agents struggle and interdependent subtasks require coordination during execution. It introduces an asynchronous message-passing layer with threads, messages, and mention-based passive awareness, enabling agents to incorporate peers&#x27; findings without stopping foreground work. In a five-phase multi-agent protocol, four agents substantially outperform a single agent on SWE-Atlas QnA, with gains increasing on harder tasks.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">AgentRadio研究长时程代码库理解任务中单个LLM编码智能体能力不足、且子任务相互依赖需要执行中协调的问题。该方法提出异步消息传递层，包含线程、消息和等待提及等机制，使智能体在不中断当前工作的情况下被动感知同伴发现并及时整合信息。在五阶段多智能体协议下，四个AgentRadio组织的智能体在SWE-Atlas QnA上显著优于单智能体，且难题上的收益更大。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28430v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28430v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28527v1" target="_blank">MANTA: Multi-Agent Network Topology Adaptation for Self-Evolving Multi-Agent Systems</a>
+    <span class="relevance rel-high">★ 高度相关</span>
+  </div>
+  <div class="paper-meta">Mao-xun Huang, Jerry Wang, Yi-Cheng Lai, Zhengxin Zhang et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-kw">multi-agent topology</span><span class="tag tag-kw">adaptive communication</span><span class="tag tag-kw">agent orchestration</span><span class="tag tag-kw">self-evolving systems</span><span class="tag tag-kw">multi-agent</span><span class="tag tag-kw">single-agent</span></div>
+  <div class="summary-en">MANTA studies how communication structures in LLM-based multi-agent systems can adapt rather than remain fixed or optimized only offline. The framework initializes a task-conditioned topology from prior experience, monitors collaboration traces during inference, and performs bounded updates to roles, links, execution order, visibility, and validation pathways. Across five benchmarks, it outperforms representative single-agent and multi-agent baselines, supporting inference-time adaptation of collaboration architecture.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MANTA研究LLM多智能体系统中的通信拓扑如何在推理时自适应演化，而不是固定设计或仅离线优化。该框架先基于结构经验初始化任务条件拓扑，再在部署过程中监控协作轨迹，并对角色、通信链路、执行顺序、信息可见性和验证路径进行有界更新。在五类基准上，MANTA优于代表性的单智能体和多智能体基线，表明协作架构本身可以进行推理时自改进。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28527v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28527v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title">◆ 相关 / Relevant</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.27703v1" target="_blank">SpatialCLI: Learning to Reason With Spatial Tools, Then Without Them</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Yang Zhou, Zixuan Huang, Sunzhu Li, Zhuo Yang et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">spatial reasoning</span><span class="tag tag-kw">vision-language models</span><span class="tag tag-kw">tool learning</span><span class="tag tag-kw">embodied agents</span></div>
+  <div class="summary-en">SpatialCLI targets the gap between general VLM task reasoning and specialist vision models&#x27; fine-grained spatial perception. It teaches VLMs to call spatial tools, improve tool use through supervised and agentic reinforcement learning, and internalize successful tool-use trajectories into the base model. Experiments on spatial reasoning benchmarks show large gains with tools and substantial retained performance after tool-free internalization.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">SpatialCLI针对通用VLM具备任务级推理但缺乏精细空间感知、而专用视觉模型难以转化为任务决策的问题。该框架先让VLM调用空间工具，再通过冷启动监督微调和智能体式强化学习改进工具使用，最后将成功的工具调用轨迹语言化以内部化感知能力。实验显示其在空间推理基准上使用工具时大幅提升，并在去除工具后保留了相当性能。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.27703v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.27703v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.27380v1" target="_blank">VideoCoCo: Code-as-CoT for Physically-Consistent Video Generation via an Agentic Dual-Engine System</a>
+    <span class="relevance rel-med">◆ 相关</span>
+  </div>
+  <div class="paper-meta">Haodong Li, Tianfei Ren, Xiaoxiao Ma, Chunmei Qing et al. · 2026-07-29</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-ai">cs.AI</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">video generation</span><span class="tag tag-kw">code-as-cot</span><span class="tag tag-kw">tool-mediated generation</span><span class="tag tag-kw">physical consistency</span></div>
+  <div class="summary-en">VideoCoCo addresses physically inconsistent text-to-video generation caused by implicit temporal reasoning from compressed prompts. It uses an agentic dual-engine framework in which a coding agent writes executable Blender code as process-level chain of thought, producing a deterministic spatiotemporal draft that a generative video engine converts into photorealistic output. Experiments report improvements over a baseline on physical-generation and video benchmarks, supporting executable code as a controllable intermediate representation.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">VideoCoCo针对文本到视频模型难以生成物理一致动态的问题，认为压缩文本提示难以隐式表达完整时空过程。该方法采用智能体式双引擎框架，由编码智能体生成可执行Blender程序作为过程级思维链，先产生确定性的时空草稿，再由生成式视频引擎转为写实视频。实验结果显示其优于基线，说明可执行代码是物理一致视频生成中可控且可检查的中间表示。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.27380v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.27380v1" target="_blank">📥 PDF</a>
+  </div>
+</div><div class="section-title" style="color:var(--muted)">· 其他 / Others</div>
+
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.27616v1" target="_blank">MPIE-Bench: Benchmarking Anatomically Plausible Multi-Person Interaction Editing</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Jiajia Lin, Mingxuan Du, Tuowen Zhou, Benfeng Xu et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">image editing</span><span class="tag tag-kw">multi-person interaction</span><span class="tag tag-kw">anatomical plausibility</span><span class="tag tag-kw">evaluation</span></div>
+  <div class="summary-en">MPIE-Bench evaluates multi-person image editing, especially shared contact actions where current models produce anatomical and geometric failures. The benchmark contains video-mined editing triplets across scenes, interaction categories, and contact densities, and MPIE-Eval uses public multi-person mesh reconstruction to score anatomy and interaction geometry. Across ten editors, no model is strong on both axes, and the proposed metrics align better with human judgments than VLM checklist judges.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">MPIE-Bench评估多人图像编辑，重点关注拥抱、搬运、缠斗等共享接触动作中常见的肢体融合、凭空生成肢体和身体穿插等问题。该基准包含从视频挖掘的编辑三元组，并提出MPIE-Eval，通过公开多人网格重建来衡量解剖完整性和交互几何一致性。对十个编辑器的评估显示没有模型能同时在两个轴上表现优异，且这些指标比VLM清单式裁判更贴近人类判断。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.27616v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.27616v1" target="_blank">📥 PDF</a>
+  </div>
+</div>
+<div class="paper-card">
+  <div class="paper-title">
+    <a href="https://arxiv.org/abs/2607.28625v1" target="_blank">ACE-Data-0: Human-Centric Ambient Capture as Embodied Data Engine</a>
+    <span class="relevance rel-low">· 低相关</span>
+  </div>
+  <div class="paper-meta">Yukang Cao, Haozhe Xie, Beichen Wen, Runmao Yao et al. · 2026-07-30</div>
+  <div class="tags"><span class="tag tag-kw">cs.CV</span><span class="tag tag-hf">HF精选</span><span class="tag tag-kw">embodied data</span><span class="tag tag-kw">multisensory capture</span><span class="tag tag-kw">human demonstrations</span><span class="tag tag-kw">benchmark</span></div>
+  <div class="summary-en">ACE-Data-0 addresses the data bottleneck in embodied intelligence by capturing synchronized human perception, motion, manipulation, object state, audio, and touch during goal-directed activity. The Ambient Capture Engine records table-scale and room-scale interactions in calibrated home environments, producing a large multisensory dataset across task categories and episodes. The paper also introduces hierarchical benchmarks whose evaluations reveal gaps in current methods under contact, occlusion, egomotion, and long horizons.</div>
+  <div class="summary-zh-label">中文摘要</div>
+  <div class="summary-zh">ACE-Data-0面向具身智能的数据瓶颈，试图同步捕获人类在目标导向活动中的第一人称感知、全身运动、灵巧操作、物体状态、声音和触觉。Ambient Capture Engine在空间校准的家庭环境中记录桌面尺度和房间尺度交互，形成覆盖多类任务和大量交互片段的统一多感官数据集。论文还提出层级化基准，评估显示现有方法在接触、遮挡、自运动和长时间跨度条件下仍存在明显不足。</div>
+  <div class="paper-links">
+    <a href="https://arxiv.org/abs/2607.28625v1" target="_blank">📄 Abstract</a>
+    <a href="https://arxiv.org/pdf/2607.28625v1" target="_blank">📥 PDF</a>
+  </div>
+</div><a class="back-top" href="#top">顶部</a>
+
+<footer>
+  <p>Generated by Codex · Paper Reading Collection · Multi-Agent Efficiency &amp; Communication</p>
+</footer>
+</div>
+</body>
+</html>
